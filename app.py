@@ -145,6 +145,8 @@ Live, every forecast on the full slate is graded on log loss and Brier score aga
 floors: the base-rate constant and an Elo baseline. A rolling skill monitor flags any
 target whose recent performance drops below the base rate (one target is currently
 flagged and paused, by design).
+
+st.markdown("Built by Mark Parsons, CPHR · [Code & methodology](https://github.com/azcal/forecasting-lab)")
 """)
 
 for i, b in enumerate(boards, start=1):
