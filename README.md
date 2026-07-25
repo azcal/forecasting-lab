@@ -4,7 +4,7 @@ Four automated sports-forecasting pipelines with a live model-monitoring dashboa
 Built end to end: data engineering, feature pipelines, probabilistic models,
 walk-forward validation, CI/CD deployment, and automated model-health monitoring.
 
-**Dashboard:** (Streamlit Cloud link goes here after deploy)
+**Dashboard:** (https://mustbemoose-forecasting-lab.streamlit.app)
 
 ## What this demonstrates
 
