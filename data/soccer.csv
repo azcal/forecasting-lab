@@ -1,0 +1,1307 @@
+id,date,league,home,away,p_home,p_elo,model,result
+LaLiga|2025-08-15|Villarreal|Oviedo,2025-08-15,LaLiga,Villarreal,Oviedo,0.8490127811276406,0.8063212739495609,v1-backfill,1.0
+Ligue1|2025-08-15|Rennes|Marseille,2025-08-15,Ligue1,Rennes,Marseille,0.3507565376216308,0.4521976250938409,v1-backfill,1.0
+LaLiga|2025-08-15|Girona|Vallecano,2025-08-15,LaLiga,Girona,Vallecano,0.468338924168096,0.5556345203682255,v1-backfill,0.0
+EPL|2025-08-15|Liverpool|Bournemouth,2025-08-15,EPL,Liverpool,Bournemouth,0.7938382428768608,0.7536992809361243,v1-backfill,1.0
+EPL|2025-08-16|Sunderland|West Ham,2025-08-16,EPL,Sunderland,West Ham,0.5084801145681173,0.4378858637581131,v1-backfill,1.0
+Ligue1|2025-08-16|Lens|Lyon,2025-08-16,Ligue1,Lens,Lyon,0.5432519966408913,0.5480016742468631,v1-backfill,0.0
+LaLiga|2025-08-16|Mallorca|Barcelona,2025-08-16,LaLiga,Mallorca,Barcelona,0.1015248742716408,0.2978107443280213,v1-backfill,0.0
+Ligue1|2025-08-16|Nice|Toulouse,2025-08-16,Ligue1,Nice,Toulouse,0.6724409344678735,0.6822663409402348,v1-backfill,0.0
+Ligue1|2025-08-16|Monaco|Le Havre,2025-08-16,Ligue1,Monaco,Le Havre,0.8462915291249092,0.7629943201443441,v1-backfill,1.0
+EPL|2025-08-16|Wolves|Man City,2025-08-16,EPL,Wolves,Man City,0.1712054469839047,0.3246721347359634,v1-backfill,0.0
+EPL|2025-08-16|Tottenham|Burnley,2025-08-16,EPL,Tottenham,Burnley,0.6487099998753285,0.6849562542163424,v1-backfill,1.0
+LaLiga|2025-08-16|Alaves|Levante,2025-08-16,LaLiga,Alaves,Levante,0.7476863868674264,0.6840841220762408,v1-backfill,1.0
+Ligue1|2025-08-17|Angers|Paris FC,2025-08-17,Ligue1,Angers,Paris FC,0.5145856401777887,0.6345503739358795,v1-backfill,1.0
+Ligue1|2025-08-17|Auxerre|Lorient,2025-08-17,Ligue1,Auxerre,Lorient,0.6563446113964783,0.6673867572193366,v1-backfill,1.0
+Ligue1|2025-08-17|Metz|Strasbourg,2025-08-17,Ligue1,Metz,Strasbourg,0.3640023563779175,0.3485149664980587,v1-backfill,0.0
+Ligue1|2025-08-17|Nantes|Paris SG,2025-08-17,Ligue1,Nantes,Paris SG,0.1010774510753775,0.2586865663456915,v1-backfill,0.0
+LaLiga|2025-08-17|Espanol|Ath Madrid,2025-08-17,LaLiga,Espanol,Ath Madrid,0.2073315333599609,0.3259026552924876,v1-backfill,1.0
+LaLiga|2025-08-17|Ath Bilbao|Sevilla,2025-08-17,LaLiga,Ath Bilbao,Sevilla,0.7719369499297987,0.7310901797152417,v1-backfill,1.0
+LaLiga|2025-08-17|Celta|Getafe,2025-08-17,LaLiga,Celta,Getafe,0.6909700868419277,0.640090425141781,v1-backfill,0.0
+EPL|2025-08-17|Nott'm Forest|Brentford,2025-08-17,EPL,Nott'm Forest,Brentford,0.5609642133989419,0.5740360681500059,v1-backfill,1.0
+EPL|2025-08-17|Man United|Arsenal,2025-08-17,EPL,Man United,Arsenal,0.2609507686742831,0.3627129198239005,v1-backfill,0.0
+EPL|2025-08-18|Leeds|Everton,2025-08-18,EPL,Leeds,Everton,0.4081376730686812,0.3910510431178549,v1-backfill,1.0
+LaLiga|2025-08-19|Real Madrid|Osasuna,2025-08-19,LaLiga,Real Madrid,Osasuna,0.8788848602825255,0.7714299942806223,v1-backfill,1.0
+Ligue1|2025-08-22|Paris SG|Angers,2025-08-22,Ligue1,Paris SG,Angers,0.9526503764774396,0.8572874578926512,v1-backfill,1.0
+LaLiga|2025-08-22|Betis|Alaves,2025-08-22,LaLiga,Betis,Alaves,0.7033327387851261,0.6725887838361605,v1-backfill,1.0
+EPL|2025-08-22|West Ham|Chelsea,2025-08-22,EPL,West Ham,Chelsea,0.2396410280955847,0.4130804523714914,v1-backfill,0.0
+Bundesliga|2025-08-22|Bayern Munich|RB Leipzig,2025-08-22,Bundesliga,Bayern Munich,RB Leipzig,0.8966167795503247,0.714393740591203,v1-backfill,1.0
+Ligue1|2025-08-23|Marseille|Paris FC,2025-08-23,Ligue1,Marseille,Paris FC,0.8637921910995163,0.8028483271736583,v1-backfill,1.0
+Bundesliga|2025-08-23|Ein Frankfurt|Werder Bremen,2025-08-23,Bundesliga,Ein Frankfurt,Werder Bremen,0.677449784281689,0.6346772244028228,v1-backfill,1.0
+Bundesliga|2025-08-23|Heidenheim|Wolfsburg,2025-08-23,Bundesliga,Heidenheim,Wolfsburg,0.4472261857812563,0.4993116131861722,v1-backfill,0.0
+SerieA|2025-08-23|Roma|Bologna,2025-08-23,SerieA,Roma,Bologna,0.5375452015393231,0.6154042598163652,v1-backfill,1.0
+Bundesliga|2025-08-23|Leverkusen|Hoffenheim,2025-08-23,Bundesliga,Leverkusen,Hoffenheim,0.865877591296891,0.7967500361390731,v1-backfill,0.0
+SerieA|2025-08-23|Sassuolo|Napoli,2025-08-23,SerieA,Sassuolo,Napoli,0.1673489398850521,0.2487034984326673,v1-backfill,0.0
+SerieA|2025-08-23|Milan|Cremonese,2025-08-23,SerieA,Milan,Cremonese,0.8497487852229909,0.8095222930994437,v1-backfill,0.0
+Bundesliga|2025-08-23|Union Berlin|Stuttgart,2025-08-23,Bundesliga,Union Berlin,Stuttgart,0.3278842017881706,0.4864936228533307,v1-backfill,1.0
+Bundesliga|2025-08-23|Freiburg|Augsburg,2025-08-23,Bundesliga,Freiburg,Augsburg,0.6609680916825789,0.6458637827495779,v1-backfill,0.0
+Ligue1|2025-08-23|Nice|Auxerre,2025-08-23,Ligue1,Nice,Auxerre,0.7550884879151104,0.7077171036941619,v1-backfill,1.0
+Ligue1|2025-08-23|Lyon|Metz,2025-08-23,Ligue1,Lyon,Metz,0.8534173051357088,0.8059714341746237,v1-backfill,1.0
+LaLiga|2025-08-23|Levante|Barcelona,2025-08-23,LaLiga,Levante,Barcelona,0.0772484673179336,0.1948071662882417,v1-backfill,0.0
+EPL|2025-08-23|Bournemouth|Wolves,2025-08-23,EPL,Bournemouth,Wolves,0.675626591021072,0.6285286038244418,v1-backfill,1.0
+EPL|2025-08-23|Brentford|Aston Villa,2025-08-23,EPL,Brentford,Aston Villa,0.3948789745838744,0.4763125522061716,v1-backfill,1.0
+EPL|2025-08-23|Burnley|Sunderland,2025-08-23,EPL,Burnley,Sunderland,0.456864206737746,0.5515743893992168,v1-backfill,1.0
+EPL|2025-08-23|Arsenal|Leeds,2025-08-23,EPL,Arsenal,Leeds,0.8752894411222999,0.853545168181559,v1-backfill,1.0
+EPL|2025-08-23|Man City|Tottenham,2025-08-23,EPL,Man City,Tottenham,0.884187209562837,0.7883543543204315,v1-backfill,0.0
+Ligue1|2025-08-24|Lorient|Rennes,2025-08-24,Ligue1,Lorient,Rennes,0.3203385107577234,0.3901189232724932,v1-backfill,1.0
+LaLiga|2025-08-24|Osasuna|Valencia,2025-08-24,LaLiga,Osasuna,Valencia,0.5736052638608757,0.5909211166011553,v1-backfill,1.0
+SerieA|2025-08-24|Juventus|Parma,2025-08-24,SerieA,Juventus,Parma,0.8009654051068421,0.7890150773499798,v1-backfill,1.0
+EPL|2025-08-24|Everton|Brighton,2025-08-24,EPL,Everton,Brighton,0.3697357232024453,0.5105430496541831,v1-backfill,1.0
+SerieA|2025-08-24|Como|Lazio,2025-08-24,SerieA,Como,Lazio,0.428679071410559,0.4189667484228307,v1-backfill,1.0
+LaLiga|2025-08-24|Villarreal|Girona,2025-08-24,LaLiga,Villarreal,Girona,0.8176953544167085,0.7174019327097706,v1-backfill,1.0
+LaLiga|2025-08-24|Oviedo|Real Madrid,2025-08-24,LaLiga,Oviedo,Real Madrid,0.0914648093126007,0.1972005884141717,v1-backfill,0.0
+Ligue1|2025-08-24|Lille|Monaco,2025-08-24,Ligue1,Lille,Monaco,0.4711222868183671,0.5553619224392411,v1-backfill,1.0
+Ligue1|2025-08-24|Toulouse|Brest,2025-08-24,Ligue1,Toulouse,Brest,0.5470683528139308,0.5229275862656665,v1-backfill,1.0
+Ligue1|2025-08-24|Strasbourg|Nantes,2025-08-24,Ligue1,Strasbourg,Nantes,0.6733343048788989,0.6939939309910018,v1-backfill,1.0
+Ligue1|2025-08-24|Le Havre|Lens,2025-08-24,Ligue1,Le Havre,Lens,0.2632748446732111,0.4191488696109173,v1-backfill,0.0
+Bundesliga|2025-08-24|Mainz|FC Koln,2025-08-24,Bundesliga,Mainz,FC Koln,0.7731619303645172,0.7468703981688226,v1-backfill,0.0
+EPL|2025-08-25|Newcastle|Liverpool,2025-08-25,EPL,Newcastle,Liverpool,0.3307425670530435,0.4423785567301132,v1-backfill,0.0
+LaLiga|2025-08-25|Ath Bilbao|Vallecano,2025-08-25,LaLiga,Ath Bilbao,Vallecano,0.7012963820856382,0.6892683412355509,v1-backfill,1.0
+LaLiga|2025-08-25|Sevilla|Getafe,2025-08-25,LaLiga,Sevilla,Getafe,0.5847235462219583,0.5630352610150053,v1-backfill,0.0
+SerieA|2025-08-25|Inter|Torino,2025-08-25,SerieA,Inter,Torino,0.8443330876481794,0.7822611081467763,v1-backfill,1.0
+SerieA|2025-08-29|Cremonese|Sassuolo,2025-08-29,SerieA,Cremonese,Sassuolo,0.6003802907783197,0.5951481898754362,v1-backfill,1.0
+Bundesliga|2025-08-29|Hamburg|St Pauli,2025-08-29,Bundesliga,Hamburg,St Pauli,0.4550158532116414,0.5231341730165301,v1-backfill,0.0
+SerieA|2025-08-29|Lecce|Milan,2025-08-29,SerieA,Lecce,Milan,0.2407159842560506,0.3799348221441481,v1-backfill,0.0
+LaLiga|2025-08-29|Valencia|Getafe,2025-08-29,LaLiga,Valencia,Getafe,0.5687002604132954,0.5892730575798129,v1-backfill,1.0
+LaLiga|2025-08-29|Elche|Levante,2025-08-29,LaLiga,Elche,Levante,0.7187925372639653,0.5937834204944489,v1-backfill,1.0
+Ligue1|2025-08-29|Lens|Brest,2025-08-29,Ligue1,Lens,Brest,0.6212225254295026,0.5980331111288113,v1-backfill,1.0
+SerieA|2025-08-30|Bologna|Como,2025-08-30,SerieA,Bologna,Como,0.5971786551280278,0.6830556348134261,v1-backfill,1.0
+LaLiga|2025-08-30|Girona|Sevilla,2025-08-30,LaLiga,Girona,Sevilla,0.5006510765697806,0.5986722168527053,v1-backfill,0.0
+LaLiga|2025-08-30|Oviedo|Sociedad,2025-08-30,LaLiga,Oviedo,Sociedad,0.2657030603414128,0.4020474155511732,v1-backfill,1.0
+LaLiga|2025-08-30|Real Madrid|Mallorca,2025-08-30,LaLiga,Real Madrid,Mallorca,0.9398879709390616,0.8184049117019688,v1-backfill,1.0
+SerieA|2025-08-30|Napoli|Cagliari,2025-08-30,SerieA,Napoli,Cagliari,0.8436011667680288,0.8031801977712038,v1-backfill,1.0
+Bundesliga|2025-08-30|RB Leipzig|Heidenheim,2025-08-30,Bundesliga,RB Leipzig,Heidenheim,0.7364000841836269,0.737684382790068,v1-backfill,1.0
+Bundesliga|2025-08-30|Stuttgart|M'gladbach,2025-08-30,Bundesliga,Stuttgart,M'gladbach,0.7980128683980734,0.6505226576413445,v1-backfill,1.0
+Ligue1|2025-08-30|Lorient|Lille,2025-08-30,Ligue1,Lorient,Lille,0.3681109049137907,0.292972701808506,v1-backfill,0.0
+Ligue1|2025-08-30|Nantes|Auxerre,2025-08-30,Ligue1,Nantes,Auxerre,0.5104040600720189,0.5650833466896555,v1-backfill,1.0
+Ligue1|2025-08-30|Toulouse|Paris SG,2025-08-30,Ligue1,Toulouse,Paris SG,0.1694348561982716,0.3102119966441385,v1-backfill,0.0
+Bundesliga|2025-08-30|Augsburg|Bayern Munich,2025-08-30,Bundesliga,Augsburg,Bayern Munich,0.0822622807648773,0.3159777502691108,v1-backfill,0.0
+EPL|2025-08-30|Tottenham|Bournemouth,2025-08-30,EPL,Tottenham,Bournemouth,0.4600065894364881,0.535175344305775,v1-backfill,0.0
+EPL|2025-08-30|Wolves|Everton,2025-08-30,EPL,Wolves,Everton,0.4746784799167172,0.499732792964677,v1-backfill,0.0
+EPL|2025-08-30|Sunderland|Brentford,2025-08-30,EPL,Sunderland,Brentford,0.4532702912646401,0.3841299652917447,v1-backfill,1.0
+EPL|2025-08-30|Man United|Burnley,2025-08-30,EPL,Man United,Burnley,0.775263072307414,0.7103434705827649,v1-backfill,1.0
+EPL|2025-08-30|Chelsea|Fulham,2025-08-30,EPL,Chelsea,Fulham,0.7387889087770794,0.6785294944082024,v1-backfill,1.0
+SerieA|2025-08-30|Pisa|Roma,2025-08-30,SerieA,Pisa,Roma,0.1936292663743917,0.2773936749846931,v1-backfill,0.0
+Bundesliga|2025-08-30|Hoffenheim|Ein Frankfurt,2025-08-30,Bundesliga,Hoffenheim,Ein Frankfurt,0.3497258031477967,0.4425117174747001,v1-backfill,0.0
+EPL|2025-08-31|Aston Villa|Crystal Palace,2025-08-31,EPL,Aston Villa,Crystal Palace,0.5704961129560829,0.6190645100462847,v1-backfill,0.0
+EPL|2025-08-31|Liverpool|Arsenal,2025-08-31,EPL,Liverpool,Arsenal,0.5630951525085346,0.5898254325038229,v1-backfill,1.0
+SerieA|2025-08-31|Genoa|Juventus,2025-08-31,SerieA,Genoa,Juventus,0.2488732827514279,0.3773272496065176,v1-backfill,0.0
+Ligue1|2025-08-31|Le Havre|Nice,2025-08-31,Ligue1,Le Havre,Nice,0.2327699660497107,0.3729592540946638,v1-backfill,1.0
+Ligue1|2025-08-31|Monaco|Strasbourg,2025-08-31,Ligue1,Monaco,Strasbourg,0.6915190708779073,0.6205896712702462,v1-backfill,1.0
+Ligue1|2025-08-31|Paris FC|Metz,2025-08-31,Ligue1,Paris FC,Metz,0.6692543706929409,0.5710106452298862,v1-backfill,1.0
+EPL|2025-08-31|Nott'm Forest|West Ham,2025-08-31,EPL,Nott'm Forest,West Ham,0.6955959353251202,0.659034922943496,v1-backfill,0.0
+EPL|2025-08-31|Brighton|Man City,2025-08-31,EPL,Brighton,Man City,0.3177637575882275,0.4232569094007822,v1-backfill,1.0
+LaLiga|2025-08-31|Espanol|Osasuna,2025-08-31,LaLiga,Espanol,Osasuna,0.4664198956419476,0.4847645748428463,v1-backfill,1.0
+Ligue1|2025-08-31|Lyon|Marseille,2025-08-31,Ligue1,Lyon,Marseille,0.44174088235035,0.576627889136324,v1-backfill,1.0
+Bundesliga|2025-08-31|FC Koln|Freiburg,2025-08-31,Bundesliga,FC Koln,Freiburg,0.4398250018472672,0.3912620405322745,v1-backfill,1.0
+Bundesliga|2025-08-31|Dortmund|Union Berlin,2025-08-31,Bundesliga,Dortmund,Union Berlin,0.7961914821655465,0.6940776633543515,v1-backfill,1.0
+SerieA|2025-08-31|Lazio|Verona,2025-08-31,SerieA,Lazio,Verona,0.7874936859887768,0.7274018095556478,v1-backfill,1.0
+SerieA|2025-08-31|Inter|Udinese,2025-08-31,SerieA,Inter,Udinese,0.8710877597943243,0.8166075489562662,v1-backfill,0.0
+LaLiga|2025-08-31|Betis|Ath Bilbao,2025-08-31,LaLiga,Betis,Ath Bilbao,0.519450599955782,0.51149198261498,v1-backfill,0.0
+Bundesliga|2025-09-12|Leverkusen|Ein Frankfurt,2025-09-12,Bundesliga,Leverkusen,Ein Frankfurt,0.6714080774880804,0.6568856671758971,v1-backfill,1.0
+Ligue1|2025-09-12|Marseille|Lorient,2025-09-12,Ligue1,Marseille,Lorient,0.8774473397085361,0.7943166137372741,v1-backfill,1.0
+Ligue1|2025-09-13|Nice|Nantes,2025-09-13,Ligue1,Nice,Nantes,0.7610594665864725,0.7039871433979648,v1-backfill,1.0
+Ligue1|2025-09-13|Auxerre|Monaco,2025-09-13,Ligue1,Auxerre,Monaco,0.2675619566728424,0.3652133917245965,v1-backfill,0.0
+Bundesliga|2025-09-13|Union Berlin|Hoffenheim,2025-09-13,Bundesliga,Union Berlin,Hoffenheim,0.5565130466986182,0.5987704272140429,v1-backfill,0.0
+Bundesliga|2025-09-13|Heidenheim|Dortmund,2025-09-13,Bundesliga,Heidenheim,Dortmund,0.1981815742417803,0.3381095365397166,v1-backfill,0.0
+LaLiga|2025-09-13|Getafe|Oviedo,2025-09-13,LaLiga,Getafe,Oviedo,0.8769188088564878,0.6777254597145891,v1-backfill,1.0
+Bundesliga|2025-09-13|Freiburg|Stuttgart,2025-09-13,Bundesliga,Freiburg,Stuttgart,0.3587537995084422,0.5345031513754207,v1-backfill,1.0
+LaLiga|2025-09-13|Ath Bilbao|Alaves,2025-09-13,LaLiga,Ath Bilbao,Alaves,0.7905527486224051,0.7421813352710684,v1-backfill,0.0
+LaLiga|2025-09-13|Ath Madrid|Villarreal,2025-09-13,LaLiga,Ath Madrid,Villarreal,0.6390949781557608,0.5843712893225532,v1-backfill,1.0
+SerieA|2025-09-13|Fiorentina|Napoli,2025-09-13,SerieA,Fiorentina,Napoli,0.3424657290040155,0.4677970817932925,v1-backfill,0.0
+SerieA|2025-09-13|Juventus|Inter,2025-09-13,SerieA,Juventus,Inter,0.4581535462453736,0.5193125817006229,v1-backfill,1.0
+SerieA|2025-09-13|Cagliari|Parma,2025-09-13,SerieA,Cagliari,Parma,0.558419993233832,0.5728281181419596,v1-backfill,1.0
+Bundesliga|2025-09-13|Bayern Munich|Hamburg,2025-09-13,Bundesliga,Bayern Munich,Hamburg,0.9803595172562674,0.8820127350205346,v1-backfill,1.0
+Bundesliga|2025-09-13|Mainz|RB Leipzig,2025-09-13,Bundesliga,Mainz,RB Leipzig,0.5539902312239502,0.5025429332480695,v1-backfill,0.0
+LaLiga|2025-09-13|Sociedad|Real Madrid,2025-09-13,LaLiga,Sociedad,Real Madrid,0.1946563332160308,0.304228216706787,v1-backfill,0.0
+EPL|2025-09-13|West Ham|Tottenham,2025-09-13,EPL,West Ham,Tottenham,0.4939077886311537,0.5634357961065796,v1-backfill,0.0
+EPL|2025-09-13|Arsenal|Nott'm Forest,2025-09-13,EPL,Arsenal,Nott'm Forest,0.8469180123495674,0.7381264093803958,v1-backfill,1.0
+EPL|2025-09-13|Bournemouth|Brighton,2025-09-13,EPL,Bournemouth,Brighton,0.5117490859408805,0.5364684627543904,v1-backfill,1.0
+EPL|2025-09-13|Newcastle|Wolves,2025-09-13,EPL,Newcastle,Wolves,0.7710923539533344,0.7123445474857546,v1-backfill,1.0
+EPL|2025-09-13|Fulham|Leeds,2025-09-13,EPL,Fulham,Leeds,0.7720467753485509,0.711785685241675,v1-backfill,1.0
+LaLiga|2025-09-14|Barcelona|Valencia,2025-09-14,LaLiga,Barcelona,Valencia,0.9209579378618524,0.7930697923511504,v1-backfill,1.0
+LaLiga|2025-09-14|Osasuna|Vallecano,2025-09-14,LaLiga,Osasuna,Vallecano,0.5254152403771595,0.5778560739920885,v1-backfill,1.0
+Bundesliga|2025-09-14|M'gladbach|Werder Bremen,2025-09-14,Bundesliga,M'gladbach,Werder Bremen,0.4639650444029869,0.5179934249199877,v1-backfill,0.0
+Bundesliga|2025-09-14|St Pauli|Augsburg,2025-09-14,Bundesliga,St Pauli,Augsburg,0.6020190430070379,0.4934875459185703,v1-backfill,1.0
+Ligue1|2025-09-14|Lille|Toulouse,2025-09-14,Ligue1,Lille,Toulouse,0.7244346164988695,0.6918524568758033,v1-backfill,1.0
+SerieA|2025-09-14|Sassuolo|Lazio,2025-09-14,SerieA,Sassuolo,Lazio,0.1963374626343502,0.3000362909033387,v1-backfill,1.0
+SerieA|2025-09-14|Milan|Bologna,2025-09-14,SerieA,Milan,Bologna,0.5695861192720696,0.5881413470013456,v1-backfill,1.0
+SerieA|2025-09-14|Roma|Torino,2025-09-14,SerieA,Roma,Torino,0.8012256314525811,0.7245504624571503,v1-backfill,0.0
+Ligue1|2025-09-14|Brest|Paris FC,2025-09-14,Ligue1,Brest,Paris FC,0.7130387253805831,0.7502994417014576,v1-backfill,0.0
+Ligue1|2025-09-14|Paris SG|Lens,2025-09-14,Ligue1,Paris SG,Lens,0.8300419208711252,0.7592737538470758,v1-backfill,1.0
+Ligue1|2025-09-14|Strasbourg|Le Havre,2025-09-14,Ligue1,Strasbourg,Le Havre,0.7017929427728062,0.7137261830028301,v1-backfill,1.0
+Ligue1|2025-09-14|Rennes|Lyon,2025-09-14,Ligue1,Rennes,Lyon,0.4014640155080872,0.4434747750713794,v1-backfill,1.0
+EPL|2025-09-14|Burnley|Liverpool,2025-09-14,EPL,Burnley,Liverpool,0.090070426237631,0.2003348403259625,v1-backfill,0.0
+EPL|2025-09-14|Man City|Man United,2025-09-14,EPL,Man City,Man United,0.7836820445861086,0.7424894902175666,v1-backfill,1.0
+SerieA|2025-09-14|Pisa|Udinese,2025-09-14,SerieA,Pisa,Udinese,0.4029852446631559,0.4434266753193486,v1-backfill,0.0
+SerieA|2025-09-14|Atalanta|Lecce,2025-09-14,SerieA,Atalanta,Lecce,0.836674647772871,0.7717680462034558,v1-backfill,1.0
+LaLiga|2025-09-15|Espanol|Mallorca,2025-09-15,LaLiga,Espanol,Mallorca,0.6446449564432439,0.5670449964371458,v1-backfill,1.0
+Bundesliga|2025-09-19|Stuttgart|St Pauli,2025-09-19,Bundesliga,Stuttgart,St Pauli,0.7237267343839665,0.6961244408886191,v1-backfill,1.0
+LaLiga|2025-09-19|Betis|Sociedad,2025-09-19,LaLiga,Betis,Sociedad,0.7329055525487066,0.6533795743144715,v1-backfill,1.0
+Ligue1|2025-09-19|Lyon|Angers,2025-09-19,Ligue1,Lyon,Angers,0.8353487324693886,0.7527539295103455,v1-backfill,1.0
+SerieA|2025-09-19|Lecce|Cagliari,2025-09-19,SerieA,Lecce,Cagliari,0.4618294497282979,0.5546976617531358,v1-backfill,0.0
+LaLiga|2025-09-20|Real Madrid|Espanol,2025-09-20,LaLiga,Real Madrid,Espanol,0.9333102955548837,0.8242180707544582,v1-backfill,1.0
+EPL|2025-09-20|Liverpool|Everton,2025-09-20,EPL,Liverpool,Everton,0.8615941910315379,0.7684199339883223,v1-backfill,1.0
+EPL|2025-09-20|West Ham|Crystal Palace,2025-09-20,EPL,West Ham,Crystal Palace,0.3265392761184144,0.4631329483868347,v1-backfill,0.0
+EPL|2025-09-20|Wolves|Leeds,2025-09-20,EPL,Wolves,Leeds,0.6711759825752522,0.6490382858340689,v1-backfill,0.0
+EPL|2025-09-20|Man United|Chelsea,2025-09-20,EPL,Man United,Chelsea,0.3601918657522229,0.4314750305875662,v1-backfill,1.0
+EPL|2025-09-20|Fulham|Brentford,2025-09-20,EPL,Fulham,Brentford,0.6295071677306681,0.56720610418095,v1-backfill,1.0
+Ligue1|2025-09-20|Lens|Lille,2025-09-20,Ligue1,Lens,Lille,0.4395943602390624,0.4998787308313832,v1-backfill,1.0
+Ligue1|2025-09-20|Brest|Nice,2025-09-20,Ligue1,Brest,Nice,0.3997389280951431,0.4966668195852814,v1-backfill,1.0
+LaLiga|2025-09-20|Girona|Levante,2025-09-20,LaLiga,Girona,Levante,0.8131807145208142,0.6897290488339253,v1-backfill,0.0
+SerieA|2025-09-20|Bologna|Genoa,2025-09-20,SerieA,Bologna,Genoa,0.7527156915874074,0.6874950946120539,v1-backfill,1.0
+SerieA|2025-09-20|Udinese|Milan,2025-09-20,SerieA,Udinese,Milan,0.2841103923802195,0.4232305374923971,v1-backfill,0.0
+Bundesliga|2025-09-20|Augsburg|Mainz,2025-09-20,Bundesliga,Augsburg,Mainz,0.4414630008275277,0.5332786982128563,v1-backfill,0.0
+Bundesliga|2025-09-20|Hamburg|Heidenheim,2025-09-20,Bundesliga,Hamburg,Heidenheim,0.400317272000442,0.5163205448431493,v1-backfill,1.0
+Bundesliga|2025-09-20|Hoffenheim|Bayern Munich,2025-09-20,Bundesliga,Hoffenheim,Bayern Munich,0.086327783494581,0.291179895361166,v1-backfill,0.0
+Bundesliga|2025-09-20|Werder Bremen|Freiburg,2025-09-20,Bundesliga,Werder Bremen,Freiburg,0.5917487481678444,0.5646798174102649,v1-backfill,0.0
+Bundesliga|2025-09-20|RB Leipzig|FC Koln,2025-09-20,Bundesliga,RB Leipzig,FC Koln,0.7222364273242609,0.7684165731070841,v1-backfill,1.0
+LaLiga|2025-09-20|Alaves|Sevilla,2025-09-20,LaLiga,Alaves,Sevilla,0.621706800903937,0.6071001013794574,v1-backfill,0.0
+LaLiga|2025-09-20|Villarreal|Osasuna,2025-09-20,LaLiga,Villarreal,Osasuna,0.7664300371491343,0.6667754633645986,v1-backfill,1.0
+LaLiga|2025-09-20|Valencia|Ath Bilbao,2025-09-20,LaLiga,Valencia,Ath Bilbao,0.341552985643436,0.4247454684441114,v1-backfill,1.0
+SerieA|2025-09-21|Fiorentina|Como,2025-09-21,SerieA,Fiorentina,Como,0.5526407516533297,0.6805742205701624,v1-backfill,0.0
+Ligue1|2025-09-21|Monaco|Metz,2025-09-21,Ligue1,Monaco,Metz,0.9295425487064016,0.8350395806935998,v1-backfill,1.0
+SerieA|2025-09-21|Torino|Atalanta,2025-09-21,SerieA,Torino,Atalanta,0.2423581096770231,0.4384020011112112,v1-backfill,0.0
+SerieA|2025-09-21|Lazio|Roma,2025-09-21,SerieA,Lazio,Roma,0.4964726892487784,0.5160743835061722,v1-backfill,0.0
+Ligue1|2025-09-21|Auxerre|Toulouse,2025-09-21,Ligue1,Auxerre,Toulouse,0.4323542681281064,0.4886088338547714,v1-backfill,1.0
+Ligue1|2025-09-21|Paris FC|Strasbourg,2025-09-21,Ligue1,Paris FC,Strasbourg,0.3455168856978641,0.3496723687793011,v1-backfill,0.0
+SerieA|2025-09-21|Inter|Sassuolo,2025-09-21,SerieA,Inter,Sassuolo,0.9166278321091428,0.8598231051107218,v1-backfill,1.0
+Bundesliga|2025-09-21|Dortmund|Wolfsburg,2025-09-21,Bundesliga,Dortmund,Wolfsburg,0.7897033683663132,0.7095187379058585,v1-backfill,1.0
+LaLiga|2025-09-21|Barcelona|Getafe,2025-09-21,LaLiga,Barcelona,Getafe,0.9310971518034392,0.814829619846314,v1-backfill,1.0
+LaLiga|2025-09-21|Elche|Oviedo,2025-09-21,LaLiga,Elche,Oviedo,0.8431339356048567,0.597429370294736,v1-backfill,1.0
+Bundesliga|2025-09-21|Ein Frankfurt|Union Berlin,2025-09-21,Bundesliga,Ein Frankfurt,Union Berlin,0.7626764635568786,0.6897947506961845,v1-backfill,0.0
+Ligue1|2025-09-22|Marseille|Paris SG,2025-09-22,Ligue1,Marseille,Paris SG,0.3128068148187095,0.3780136596963243,v1-backfill,1.0
+SerieA|2025-09-22|Napoli|Pisa,2025-09-22,SerieA,Napoli,Pisa,0.926970575747626,0.8583888868327294,v1-backfill,1.0
+LaLiga|2025-09-23|Sevilla|Villarreal,2025-09-23,LaLiga,Sevilla,Villarreal,0.4023898232262581,0.3989848000563458,v1-backfill,0.0
+LaLiga|2025-09-23|Levante|Real Madrid,2025-09-23,LaLiga,Levante,Real Madrid,0.0974783482296164,0.1869298295953571,v1-backfill,0.0
+LaLiga|2025-09-24|Ath Madrid|Vallecano,2025-09-24,LaLiga,Ath Madrid,Vallecano,0.7796456917847757,0.7152412238107414,v1-backfill,1.0
+LaLiga|2025-09-24|Sociedad|Mallorca,2025-09-24,LaLiga,Sociedad,Mallorca,0.6503161145334266,0.596591083473734,v1-backfill,1.0
+LaLiga|2025-09-25|Oviedo|Barcelona,2025-09-25,LaLiga,Oviedo,Barcelona,0.037853964084246,0.1861732444781624,v1-backfill,0.0
+Ligue1|2025-09-26|Strasbourg|Marseille,2025-09-26,Ligue1,Strasbourg,Marseille,0.3569655538717807,0.5366902460296876,v1-backfill,0.0
+Bundesliga|2025-09-26|Bayern Munich|Werder Bremen,2025-09-26,Bundesliga,Bayern Munich,Werder Bremen,0.94094582064573,0.7880965548095378,v1-backfill,1.0
+EPL|2025-09-27|Nott'm Forest|Sunderland,2025-09-27,EPL,Nott'm Forest,Sunderland,0.6923233538342473,0.7122540149205072,v1-backfill,0.0
+Ligue1|2025-09-27|Lorient|Monaco,2025-09-27,Ligue1,Lorient,Monaco,0.1475107657790977,0.2727043097916439,v1-backfill,1.0
+Bundesliga|2025-09-27|M'gladbach|Ein Frankfurt,2025-09-27,Bundesliga,M'gladbach,Ein Frankfurt,0.3346020349342146,0.4461187475628573,v1-backfill,0.0
+Bundesliga|2025-09-27|Wolfsburg|RB Leipzig,2025-09-27,Bundesliga,Wolfsburg,RB Leipzig,0.4548832199296809,0.4463221793710272,v1-backfill,0.0
+Bundesliga|2025-09-27|St Pauli|Leverkusen,2025-09-27,Bundesliga,St Pauli,Leverkusen,0.2592356739814557,0.2950308251833741,v1-backfill,0.0
+Bundesliga|2025-09-27|Mainz|Dortmund,2025-09-27,Bundesliga,Mainz,Dortmund,0.3692034796805238,0.4476967552177671,v1-backfill,0.0
+Bundesliga|2025-09-27|Heidenheim|Augsburg,2025-09-27,Bundesliga,Heidenheim,Augsburg,0.4745715987499839,0.4863119253116468,v1-backfill,1.0
+EPL|2025-09-27|Brentford|Man United,2025-09-27,EPL,Brentford,Man United,0.4293978697034928,0.5717842834802571,v1-backfill,1.0
+EPL|2025-09-27|Chelsea|Brighton,2025-09-27,EPL,Chelsea,Brighton,0.6621971756653512,0.6343608159795435,v1-backfill,0.0
+LaLiga|2025-09-27|Villarreal|Ath Bilbao,2025-09-27,LaLiga,Villarreal,Ath Bilbao,0.6447015366007258,0.5922015157209862,v1-backfill,1.0
+LaLiga|2025-09-27|Mallorca|Alaves,2025-09-27,LaLiga,Mallorca,Alaves,0.4748828128576402,0.5419158458407521,v1-backfill,1.0
+LaLiga|2025-09-27|Ath Madrid|Real Madrid,2025-09-27,LaLiga,Ath Madrid,Real Madrid,0.4865950709237469,0.4498783730938938,v1-backfill,1.0
+EPL|2025-09-27|Crystal Palace|Liverpool,2025-09-27,EPL,Crystal Palace,Liverpool,0.2912752639901446,0.3834763553211444,v1-backfill,1.0
+Ligue1|2025-09-27|Paris SG|Auxerre,2025-09-27,Ligue1,Paris SG,Auxerre,0.9236422328142913,0.8470279832777169,v1-backfill,1.0
+EPL|2025-09-27|Man City|Burnley,2025-09-27,EPL,Man City,Burnley,0.9527480711578084,0.8533880474540944,v1-backfill,1.0
+SerieA|2025-09-27|Cagliari|Inter,2025-09-27,SerieA,Cagliari,Inter,0.2056583681561772,0.2920903196178581,v1-backfill,0.0
+SerieA|2025-09-28|Sassuolo|Udinese,2025-09-28,SerieA,Sassuolo,Udinese,0.404302820632429,0.4398091433432365,v1-backfill,1.0
+SerieA|2025-09-28|Roma|Verona,2025-09-28,SerieA,Roma,Verona,0.8278925296853016,0.7741983741624436,v1-backfill,1.0
+EPL|2025-09-28|Newcastle|Arsenal,2025-09-28,EPL,Newcastle,Arsenal,0.3503929101132654,0.4496361949767489,v1-backfill,0.0
+Ligue1|2025-09-28|Lille|Lyon,2025-09-28,Ligue1,Lille,Lyon,0.6205188965793047,0.5887926215378747,v1-backfill,0.0
+Ligue1|2025-09-28|Angers|Brest,2025-09-28,Ligue1,Angers,Brest,0.3196796361839038,0.4432240996309968,v1-backfill,0.0
+SerieA|2025-09-28|Milan|Napoli,2025-09-28,SerieA,Milan,Napoli,0.4841841730358344,0.4984330935693653,v1-backfill,1.0
+EPL|2025-09-28|Aston Villa|Fulham,2025-09-28,EPL,Aston Villa,Fulham,0.5768190689322966,0.6304587971897346,v1-backfill,1.0
+LaLiga|2025-09-28|Vallecano|Sevilla,2025-09-28,LaLiga,Vallecano,Sevilla,0.6559483506618664,0.6103750242777407,v1-backfill,0.0
+LaLiga|2025-09-28|Elche|Celta,2025-09-28,LaLiga,Elche,Celta,0.5315904415093716,0.4510600198313438,v1-backfill,1.0
+LaLiga|2025-09-28|Barcelona|Sociedad,2025-09-28,LaLiga,Barcelona,Sociedad,0.954595346895155,0.8098868332766664,v1-backfill,1.0
+LaLiga|2025-09-28|Betis|Osasuna,2025-09-28,LaLiga,Betis,Osasuna,0.7303427838139274,0.6337909778417427,v1-backfill,1.0
+Bundesliga|2025-09-28|FC Koln|Stuttgart,2025-09-28,Bundesliga,FC Koln,Stuttgart,0.3123118133298084,0.3848898001377493,v1-backfill,0.0
+SerieA|2025-09-29|Genoa|Lazio,2025-09-29,SerieA,Genoa,Lazio,0.336167147377464,0.4523447712407752,v1-backfill,0.0
+SerieA|2025-09-29|Parma|Torino,2025-09-29,SerieA,Parma,Torino,0.5262746616219015,0.4698051777804866,v1-backfill,1.0
+LaLiga|2025-09-30|Valencia|Oviedo,2025-09-30,LaLiga,Valencia,Oviedo,0.8878376561037055,0.7334355453524837,v1-backfill,0.0
+SerieA|2025-10-03|Verona|Sassuolo,2025-10-03,SerieA,Verona,Sassuolo,0.6328643725975052,0.6366928938637119,v1-backfill,0.0
+Ligue1|2025-10-03|Paris FC|Lorient,2025-10-03,Ligue1,Paris FC,Lorient,0.630651969894427,0.5690650913417014,v1-backfill,1.0
+LaLiga|2025-10-03|Osasuna|Getafe,2025-10-03,LaLiga,Osasuna,Getafe,0.6015587419520724,0.6161757402936768,v1-backfill,1.0
+Bundesliga|2025-10-03|Hoffenheim|FC Koln,2025-10-03,Bundesliga,Hoffenheim,FC Koln,0.689122001845002,0.6719326218409024,v1-backfill,0.0
+EPL|2025-10-03|Bournemouth|Fulham,2025-10-03,EPL,Bournemouth,Fulham,0.6381709017369323,0.5983304027865305,v1-backfill,1.0
+LaLiga|2025-10-04|Oviedo|Levante,2025-10-04,LaLiga,Oviedo,Levante,0.5819081044106316,0.5733116566653075,v1-backfill,0.0
+Ligue1|2025-10-04|Metz|Marseille,2025-10-04,Ligue1,Metz,Marseille,0.0953849315741103,0.2688750477562995,v1-backfill,0.0
+Bundesliga|2025-10-04|Leverkusen|Union Berlin,2025-10-04,Bundesliga,Leverkusen,Union Berlin,0.8534432745076728,0.7649819167317778,v1-backfill,1.0
+Bundesliga|2025-10-04|Augsburg|Wolfsburg,2025-10-04,Bundesliga,Augsburg,Wolfsburg,0.4777657470775929,0.5473087440978271,v1-backfill,1.0
+Ligue1|2025-10-04|Auxerre|Lens,2025-10-04,Ligue1,Auxerre,Lens,0.3186884811611432,0.4139814281112426,v1-backfill,0.0
+SerieA|2025-10-04|Parma|Lecce,2025-10-04,SerieA,Parma,Lecce,0.6096158486612948,0.5898241375587137,v1-backfill,0.0
+LaLiga|2025-10-04|Girona|Valencia,2025-10-04,LaLiga,Girona,Valencia,0.5302768117999496,0.5229634806184192,v1-backfill,1.0
+LaLiga|2025-10-04|Ath Bilbao|Mallorca,2025-10-04,LaLiga,Ath Bilbao,Mallorca,0.844093866768028,0.7181352468667438,v1-backfill,1.0
+LaLiga|2025-10-04|Real Madrid|Villarreal,2025-10-04,LaLiga,Real Madrid,Villarreal,0.7817963213257972,0.6822734666574598,v1-backfill,1.0
+EPL|2025-10-04|Leeds|Tottenham,2025-10-04,EPL,Leeds,Tottenham,0.4552902461079179,0.4492584816713988,v1-backfill,0.0
+EPL|2025-10-04|Arsenal|West Ham,2025-10-04,EPL,Arsenal,West Ham,0.9135785434206852,0.805931674243745,v1-backfill,1.0
+EPL|2025-10-04|Man United|Sunderland,2025-10-04,EPL,Man United,Sunderland,0.7709088818290805,0.6802398404355651,v1-backfill,1.0
+EPL|2025-10-04|Chelsea|Liverpool,2025-10-04,EPL,Chelsea,Liverpool,0.3828745603953312,0.4315666208441668,v1-backfill,1.0
+Bundesliga|2025-10-04|Ein Frankfurt|Bayern Munich,2025-10-04,Bundesliga,Ein Frankfurt,Bayern Munich,0.15844642163034,0.3905790145850836,v1-backfill,0.0
+SerieA|2025-10-04|Inter|Cremonese,2025-10-04,SerieA,Inter,Cremonese,0.9409275090930695,0.8484426868426483,v1-backfill,1.0
+Bundesliga|2025-10-04|Werder Bremen|St Pauli,2025-10-04,Bundesliga,Werder Bremen,St Pauli,0.5947663503785028,0.6728395788793983,v1-backfill,1.0
+LaLiga|2025-10-05|Alaves|Elche,2025-10-05,LaLiga,Alaves,Elche,0.6870934047368671,0.6355196046502383,v1-backfill,1.0
+LaLiga|2025-10-05|Sevilla|Barcelona,2025-10-05,LaLiga,Sevilla,Barcelona,0.1358530090051519,0.2746220932448839,v1-backfill,1.0
+LaLiga|2025-10-05|Espanol|Betis,2025-10-05,LaLiga,Espanol,Betis,0.3709852531621525,0.4444019809150798,v1-backfill,0.0
+EPL|2025-10-05|Newcastle|Nott'm Forest,2025-10-05,EPL,Newcastle,Nott'm Forest,0.7141763464662837,0.650444769619533,v1-backfill,1.0
+SerieA|2025-10-05|Bologna|Pisa,2025-10-05,SerieA,Bologna,Pisa,0.8728257723285764,0.7944630406156301,v1-backfill,1.0
+SerieA|2025-10-05|Fiorentina|Roma,2025-10-05,SerieA,Fiorentina,Roma,0.3936563837255522,0.470675861457588,v1-backfill,0.0
+SerieA|2025-10-05|Napoli|Genoa,2025-10-05,SerieA,Napoli,Genoa,0.8643169235029508,0.7841618542294568,v1-backfill,1.0
+EPL|2025-10-05|Brentford|Man City,2025-10-05,EPL,Brentford,Man City,0.2018409817099873,0.387063358357253,v1-backfill,0.0
+EPL|2025-10-05|Aston Villa|Burnley,2025-10-05,EPL,Aston Villa,Burnley,0.9000054769342348,0.7931888880483223,v1-backfill,1.0
+EPL|2025-10-05|Everton|Crystal Palace,2025-10-05,EPL,Everton,Crystal Palace,0.4264121462364776,0.5064146985786516,v1-backfill,1.0
+LaLiga|2025-10-05|Sociedad|Vallecano,2025-10-05,LaLiga,Sociedad,Vallecano,0.5482566291436243,0.574892395728141,v1-backfill,0.0
+Bundesliga|2025-10-05|Hamburg|Mainz,2025-10-05,Bundesliga,Hamburg,Mainz,0.2902027896548176,0.4059571830932557,v1-backfill,1.0
+Ligue1|2025-10-05|Lyon|Toulouse,2025-10-05,Ligue1,Lyon,Toulouse,0.671347032581185,0.7029196159868821,v1-backfill,0.0
+Ligue1|2025-10-05|Strasbourg|Angers,2025-10-05,Ligue1,Strasbourg,Angers,0.7880466664822136,0.7340167673241055,v1-backfill,1.0
+Bundesliga|2025-10-05|Stuttgart|Heidenheim,2025-10-05,Bundesliga,Stuttgart,Heidenheim,0.8455906246143207,0.7342258710528864,v1-backfill,1.0
+Bundesliga|2025-10-17|Union Berlin|M'gladbach,2025-10-17,Bundesliga,Union Berlin,M'gladbach,0.6202184506621571,0.6000807494460583,v1-backfill,1.0
+LaLiga|2025-10-17|Oviedo|Espanol,2025-10-17,LaLiga,Oviedo,Espanol,0.3600120540029674,0.4532313194477939,v1-backfill,0.0
+EPL|2025-10-18|Fulham|Arsenal,2025-10-18,EPL,Fulham,Arsenal,0.2270851866776346,0.3488243484104865,v1-backfill,0.0
+EPL|2025-10-18|Sunderland|Wolves,2025-10-18,EPL,Sunderland,Wolves,0.5179590524446684,0.5273024039232048,v1-backfill,1.0
+EPL|2025-10-18|Man City|Everton,2025-10-18,EPL,Man City,Everton,0.8490128429102074,0.7337447765255876,v1-backfill,1.0
+SerieA|2025-10-18|Torino|Napoli,2025-10-18,SerieA,Torino,Napoli,0.2069524489400671,0.3630138669484585,v1-backfill,1.0
+EPL|2025-10-18|Burnley|Leeds,2025-10-18,EPL,Burnley,Leeds,0.3892656594221278,0.5432386190372684,v1-backfill,1.0
+EPL|2025-10-18|Brighton|Newcastle,2025-10-18,EPL,Brighton,Newcastle,0.5573851285858501,0.5469280463400149,v1-backfill,1.0
+SerieA|2025-10-18|Roma|Inter,2025-10-18,SerieA,Roma,Inter,0.4044408394895131,0.5123090703355833,v1-backfill,0.0
+Bundesliga|2025-10-18|RB Leipzig|Hamburg,2025-10-18,Bundesliga,RB Leipzig,Hamburg,0.8481946175638398,0.7919069565367495,v1-backfill,1.0
+Bundesliga|2025-10-18|Mainz|Leverkusen,2025-10-18,Bundesliga,Mainz,Leverkusen,0.2907003808415034,0.3627024388598697,v1-backfill,0.0
+Bundesliga|2025-10-18|Wolfsburg|Stuttgart,2025-10-18,Bundesliga,Wolfsburg,Stuttgart,0.3708479477456909,0.459908241697688,v1-backfill,0.0
+LaLiga|2025-10-18|Ath Madrid|Osasuna,2025-10-18,LaLiga,Ath Madrid,Osasuna,0.8467170692750734,0.7159960228680448,v1-backfill,1.0
+LaLiga|2025-10-18|Barcelona|Girona,2025-10-18,LaLiga,Barcelona,Girona,0.9615090649702576,0.8221423519420176,v1-backfill,1.0
+LaLiga|2025-10-18|Sevilla|Mallorca,2025-10-18,LaLiga,Sevilla,Mallorca,0.755798559960161,0.6073086527882158,v1-backfill,0.0
+Bundesliga|2025-10-18|Bayern Munich|Dortmund,2025-10-18,Bundesliga,Bayern Munich,Dortmund,0.8639908743879945,0.6928282670450555,v1-backfill,1.0
+EPL|2025-10-18|Nott'm Forest|Chelsea,2025-10-18,EPL,Nott'm Forest,Chelsea,0.3090923436422075,0.4461120185102736,v1-backfill,0.0
+Ligue1|2025-10-18|Marseille|Le Havre,2025-10-18,Ligue1,Marseille,Le Havre,0.8758438465955968,0.7730537065109329,v1-backfill,1.0
+Ligue1|2025-10-18|Nice|Lyon,2025-10-18,Ligue1,Nice,Lyon,0.5432220529868402,0.5344064030722353,v1-backfill,1.0
+SerieA|2025-10-19|Milan|Fiorentina,2025-10-19,SerieA,Milan,Fiorentina,0.7228602848431945,0.6652138534262143,v1-backfill,1.0
+EPL|2025-10-19|Tottenham|Aston Villa,2025-10-19,EPL,Tottenham,Aston Villa,0.4638360591429534,0.4705284801770207,v1-backfill,0.0
+Ligue1|2025-10-19|Nantes|Lille,2025-10-19,Ligue1,Nantes,Lille,0.2636624053972063,0.3907612468615227,v1-backfill,0.0
+Ligue1|2025-10-19|Toulouse|Metz,2025-10-19,Ligue1,Toulouse,Metz,0.9034444848228784,0.7486199169074335,v1-backfill,1.0
+Ligue1|2025-10-19|Lens|Paris FC,2025-10-19,Ligue1,Lens,Paris FC,0.820484837405297,0.7761023703153378,v1-backfill,1.0
+LaLiga|2025-10-19|Getafe|Real Madrid,2025-10-19,LaLiga,Getafe,Real Madrid,0.1933832437874859,0.262589240141317,v1-backfill,0.0
+SerieA|2025-10-19|Cagliari|Bologna,2025-10-19,SerieA,Cagliari,Bologna,0.2661862577112833,0.3994015054521043,v1-backfill,0.0
+SerieA|2025-10-19|Como|Juventus,2025-10-19,SerieA,Como,Juventus,0.419875128655303,0.3751776653681449,v1-backfill,1.0
+LaLiga|2025-10-19|Levante|Vallecano,2025-10-19,LaLiga,Levante,Vallecano,0.3540180005496237,0.4362166558148891,v1-backfill,0.0
+Bundesliga|2025-10-19|St Pauli|Hoffenheim,2025-10-19,Bundesliga,St Pauli,Hoffenheim,0.5784226654678645,0.514581554361983,v1-backfill,0.0
+EPL|2025-10-19|Liverpool|Man United,2025-10-19,EPL,Liverpool,Man United,0.8044610548260321,0.7701659962165042,v1-backfill,0.0
+EPL|2025-10-20|West Ham|Brentford,2025-10-20,EPL,West Ham,Brentford,0.4733798701766164,0.5039206952210972,v1-backfill,0.0
+Ligue1|2025-10-24|Paris FC|Nantes,2025-10-24,Ligue1,Paris FC,Nantes,0.5854188931054773,0.4916833170141723,v1-backfill,0.0
+Bundesliga|2025-10-24|Werder Bremen|Union Berlin,2025-10-24,Bundesliga,Werder Bremen,Union Berlin,0.5985264500769663,0.6008417862048532,v1-backfill,1.0
+LaLiga|2025-10-24|Sociedad|Sevilla,2025-10-24,LaLiga,Sociedad,Sevilla,0.6002218111159258,0.5733099621486908,v1-backfill,1.0
+EPL|2025-10-24|Leeds|West Ham,2025-10-24,EPL,Leeds,West Ham,0.6277874483280015,0.4855619180742714,v1-backfill,1.0
+LaLiga|2025-10-25|Ath Bilbao|Getafe,2025-10-25,LaLiga,Ath Bilbao,Getafe,0.8054903425537129,0.7266707224517834,v1-backfill,0.0
+LaLiga|2025-10-25|Valencia|Villarreal,2025-10-25,LaLiga,Valencia,Villarreal,0.3863010289344809,0.4105901161375203,v1-backfill,0.0
+SerieA|2025-10-25|Napoli|Inter,2025-10-25,SerieA,Napoli,Inter,0.4867321984370902,0.5155281175809155,v1-backfill,1.0
+SerieA|2025-10-25|Udinese|Lecce,2025-10-25,SerieA,Udinese,Lecce,0.6232276684449021,0.6202206731178631,v1-backfill,1.0
+Bundesliga|2025-10-25|Augsburg|RB Leipzig,2025-10-25,Bundesliga,Augsburg,RB Leipzig,0.3760590675820047,0.405115479333972,v1-backfill,0.0
+Bundesliga|2025-10-25|Ein Frankfurt|St Pauli,2025-10-25,Bundesliga,Ein Frankfurt,St Pauli,0.7672194476388966,0.7497953262930457,v1-backfill,1.0
+LaLiga|2025-10-25|Espanol|Elche,2025-10-25,LaLiga,Espanol,Elche,0.6865315801303501,0.6390947673383912,v1-backfill,1.0
+Bundesliga|2025-10-25|Hoffenheim|Heidenheim,2025-10-25,Bundesliga,Hoffenheim,Heidenheim,0.7064621266823368,0.6505722258589446,v1-backfill,1.0
+Bundesliga|2025-10-25|Hamburg|Wolfsburg,2025-10-25,Bundesliga,Hamburg,Wolfsburg,0.4793304639420057,0.4749458885080331,v1-backfill,0.0
+Ligue1|2025-10-25|Lens|Marseille,2025-10-25,Ligue1,Lens,Marseille,0.401631490646426,0.5300441695851973,v1-backfill,1.0
+Ligue1|2025-10-25|Monaco|Toulouse,2025-10-25,Ligue1,Monaco,Toulouse,0.671626370110496,0.6800679859973597,v1-backfill,1.0
+Bundesliga|2025-10-25|Dortmund|FC Koln,2025-10-25,Bundesliga,Dortmund,FC Koln,0.8837817129727205,0.7978610247980538,v1-backfill,1.0
+EPL|2025-10-25|Brentford|Liverpool,2025-10-25,EPL,Brentford,Liverpool,0.2421979797969247,0.3772672162611641,v1-backfill,1.0
+Ligue1|2025-10-25|Brest|Paris SG,2025-10-25,Ligue1,Brest,Paris SG,0.1814608258197666,0.3292324509716406,v1-backfill,0.0
+EPL|2025-10-25|Chelsea|Sunderland,2025-10-25,EPL,Chelsea,Sunderland,0.890097849330252,0.7814569681950962,v1-backfill,0.0
+EPL|2025-10-25|Man United|Brighton,2025-10-25,EPL,Man United,Brighton,0.5148790244603534,0.5150927286265946,v1-backfill,1.0
+Bundesliga|2025-10-25|M'gladbach|Bayern Munich,2025-10-25,Bundesliga,M'gladbach,Bayern Munich,0.0579564557118508,0.244169050740638,v1-backfill,0.0
+EPL|2025-10-25|Newcastle|Fulham,2025-10-25,EPL,Newcastle,Fulham,0.6992084593163977,0.6528944595888544,v1-backfill,1.0
+EPL|2025-10-26|Everton|Tottenham,2025-10-26,EPL,Everton,Tottenham,0.5909562019488493,0.610015873465336,v1-backfill,0.0
+SerieA|2025-10-26|Lazio|Juventus,2025-10-26,SerieA,Lazio,Juventus,0.4614376791880152,0.4937799225193531,v1-backfill,1.0
+EPL|2025-10-26|Bournemouth|Nott'm Forest,2025-10-26,EPL,Bournemouth,Nott'm Forest,0.7430817815170274,0.6378927448036565,v1-backfill,1.0
+SerieA|2025-10-26|Torino|Genoa,2025-10-26,SerieA,Torino,Genoa,0.5793698354383137,0.6339400411210245,v1-backfill,1.0
+SerieA|2025-10-26|Sassuolo|Roma,2025-10-26,SerieA,Sassuolo,Roma,0.206147341143683,0.289336635882821,v1-backfill,0.0
+EPL|2025-10-26|Arsenal|Crystal Palace,2025-10-26,EPL,Arsenal,Crystal Palace,0.8031940276971611,0.7239242532740807,v1-backfill,1.0
+EPL|2025-10-26|Wolves|Burnley,2025-10-26,EPL,Wolves,Burnley,0.8083668274207549,0.6401898380373916,v1-backfill,0.0
+EPL|2025-10-26|Aston Villa|Man City,2025-10-26,EPL,Aston Villa,Man City,0.3001841416054456,0.4615408920739741,v1-backfill,1.0
+Ligue1|2025-10-26|Lille|Metz,2025-10-26,Ligue1,Lille,Metz,0.9590479326073952,0.8362464881089544,v1-backfill,1.0
+Ligue1|2025-10-26|Angers|Lorient,2025-10-26,Ligue1,Angers,Lorient,0.5334140000801318,0.6149150254571997,v1-backfill,1.0
+Ligue1|2025-10-26|Lyon|Strasbourg,2025-10-26,Ligue1,Lyon,Strasbourg,0.6190686205905032,0.5916977468827275,v1-backfill,1.0
+Ligue1|2025-10-26|Auxerre|Le Havre,2025-10-26,Ligue1,Auxerre,Le Havre,0.6136226359881745,0.5943894934568559,v1-backfill,0.0
+LaLiga|2025-10-26|Real Madrid|Barcelona,2025-10-26,LaLiga,Real Madrid,Barcelona,0.5465192008962725,0.5893683643845763,v1-backfill,1.0
+Ligue1|2025-10-26|Rennes|Nice,2025-10-26,Ligue1,Rennes,Nice,0.5126033384218542,0.4882367758485426,v1-backfill,0.0
+LaLiga|2025-10-26|Vallecano|Alaves,2025-10-26,LaLiga,Vallecano,Alaves,0.6669010752537999,0.6038756747644836,v1-backfill,1.0
+LaLiga|2025-10-26|Osasuna|Celta,2025-10-26,LaLiga,Osasuna,Celta,0.5597891900741588,0.588796257430231,v1-backfill,0.0
+Bundesliga|2025-10-26|Leverkusen|Freiburg,2025-10-26,Bundesliga,Leverkusen,Freiburg,0.8206774525373743,0.7292743881478122,v1-backfill,1.0
+Bundesliga|2025-10-26|Stuttgart|Mainz,2025-10-26,Bundesliga,Stuttgart,Mainz,0.776161593293526,0.660234652312945,v1-backfill,1.0
+LaLiga|2025-10-27|Betis|Ath Madrid,2025-10-27,LaLiga,Betis,Ath Madrid,0.5115507130771971,0.4923626705449845,v1-backfill,0.0
+SerieA|2025-10-28|Lecce|Napoli,2025-10-28,SerieA,Lecce,Napoli,0.1742328619041842,0.280693891735968,v1-backfill,0.0
+SerieA|2025-10-29|Inter|Fiorentina,2025-10-29,SerieA,Inter,Fiorentina,0.7708058335293967,0.7412236315933758,v1-backfill,1.0
+Ligue1|2025-10-29|Le Havre|Brest,2025-10-29,Ligue1,Le Havre,Brest,0.4868621552671542,0.4588127855381169,v1-backfill,1.0
+SerieA|2025-10-29|Roma|Parma,2025-10-29,SerieA,Roma,Parma,0.8705642752409408,0.7967951159043062,v1-backfill,1.0
+SerieA|2025-10-29|Juventus|Udinese,2025-10-29,SerieA,Juventus,Udinese,0.8297284375194262,0.7429560767795533,v1-backfill,1.0
+SerieA|2025-10-29|Como|Verona,2025-10-29,SerieA,Como,Verona,0.7241807981669339,0.6604104361585703,v1-backfill,1.0
+Ligue1|2025-10-29|Metz|Lens,2025-10-29,Ligue1,Metz,Lens,0.1084405226190364,0.2719429725436759,v1-backfill,1.0
+Ligue1|2025-10-29|Nice|Lille,2025-10-29,Ligue1,Nice,Lille,0.4247383670068942,0.5345457475784755,v1-backfill,1.0
+Ligue1|2025-10-29|Nantes|Monaco,2025-10-29,Ligue1,Nantes,Monaco,0.2694678147426875,0.383777116204783,v1-backfill,0.0
+SerieA|2025-10-29|Genoa|Cremonese,2025-10-29,SerieA,Genoa,Cremonese,0.8117225743834153,0.6282639659805092,v1-backfill,0.0
+Ligue1|2025-10-29|Strasbourg|Auxerre,2025-10-29,Ligue1,Strasbourg,Auxerre,0.7355373451871996,0.721717630779655,v1-backfill,1.0
+SerieA|2025-10-30|Cagliari|Sassuolo,2025-10-30,SerieA,Cagliari,Sassuolo,0.6875633737996925,0.6280103715362377,v1-backfill,0.0
+Bundesliga|2025-10-31|Augsburg|Dortmund,2025-10-31,Bundesliga,Augsburg,Dortmund,0.2257177371477061,0.370965984763307,v1-backfill,0.0
+LaLiga|2025-10-31|Getafe|Girona,2025-10-31,LaLiga,Getafe,Girona,0.7333741490130894,0.5873366223117757,v1-backfill,1.0
+LaLiga|2025-11-01|Real Madrid|Valencia,2025-11-01,LaLiga,Real Madrid,Valencia,0.9349441615833912,0.8296085938243435,v1-backfill,1.0
+LaLiga|2025-11-01|Ath Madrid|Sevilla,2025-11-01,LaLiga,Ath Madrid,Sevilla,0.8489240362329981,0.7718004092030668,v1-backfill,1.0
+LaLiga|2025-11-01|Sociedad|Ath Bilbao,2025-11-01,LaLiga,Sociedad,Ath Bilbao,0.4766121948454929,0.4524004258959208,v1-backfill,1.0
+Bundesliga|2025-11-01|Bayern Munich|Leverkusen,2025-11-01,Bundesliga,Bayern Munich,Leverkusen,0.8521701860019762,0.6409017695292483,v1-backfill,1.0
+Bundesliga|2025-11-01|St Pauli|M'gladbach,2025-11-01,Bundesliga,St Pauli,M'gladbach,0.6504656961395875,0.516324396453632,v1-backfill,0.0
+LaLiga|2025-11-01|Villarreal|Vallecano,2025-11-01,LaLiga,Villarreal,Vallecano,0.7289537546663167,0.7025720061167384,v1-backfill,1.0
+Bundesliga|2025-11-01|RB Leipzig|Stuttgart,2025-11-01,Bundesliga,RB Leipzig,Stuttgart,0.5391382548627909,0.612879593709563,v1-backfill,1.0
+EPL|2025-11-01|Tottenham|Chelsea,2025-11-01,EPL,Tottenham,Chelsea,0.3654180952707044,0.4590841834554993,v1-backfill,0.0
+Ligue1|2025-11-01|Auxerre|Marseille,2025-11-01,Ligue1,Auxerre,Marseille,0.1973466510794041,0.3522106382374356,v1-backfill,0.0
+Ligue1|2025-11-01|Monaco|Paris FC,2025-11-01,Ligue1,Monaco,Paris FC,0.8095684982938094,0.814362401712574,v1-backfill,0.0
+SerieA|2025-11-01|Cremonese|Juventus,2025-11-01,SerieA,Cremonese,Juventus,0.1657634902982825,0.3090115542948581,v1-backfill,0.0
+Ligue1|2025-11-01|Paris SG|Nice,2025-11-01,Ligue1,Paris SG,Nice,0.857815602473824,0.7264607776961401,v1-backfill,1.0
+SerieA|2025-11-01|Udinese|Atalanta,2025-11-01,SerieA,Udinese,Atalanta,0.3133596350042232,0.3876110848879038,v1-backfill,1.0
+EPL|2025-11-01|Liverpool|Aston Villa,2025-11-01,EPL,Liverpool,Aston Villa,0.7588337233129151,0.649061878312503,v1-backfill,1.0
+EPL|2025-11-01|Brighton|Leeds,2025-11-01,EPL,Brighton,Leeds,0.8115609312995262,0.7582670830038692,v1-backfill,1.0
+EPL|2025-11-01|Fulham|Wolves,2025-11-01,EPL,Fulham,Wolves,0.6926537380059727,0.6629136867131287,v1-backfill,1.0
+EPL|2025-11-01|Burnley|Arsenal,2025-11-01,EPL,Burnley,Arsenal,0.0713625569265701,0.2133609397570658,v1-backfill,0.0
+EPL|2025-11-01|Crystal Palace|Brentford,2025-11-01,EPL,Crystal Palace,Brentford,0.6839979263062762,0.6020803402133763,v1-backfill,1.0
+EPL|2025-11-02|West Ham|Newcastle,2025-11-02,EPL,West Ham,Newcastle,0.2658932532962774,0.3990424453318349,v1-backfill,1.0
+LaLiga|2025-11-02|Barcelona|Elche,2025-11-02,LaLiga,Barcelona,Elche,0.9370542232243204,0.8580500491377178,v1-backfill,1.0
+LaLiga|2025-11-02|Betis|Mallorca,2025-11-02,LaLiga,Betis,Mallorca,0.8362868260068275,0.6948437783677496,v1-backfill,1.0
+Ligue1|2025-11-02|Nantes|Metz,2025-11-02,Ligue1,Nantes,Metz,0.7638619861068922,0.6866723595168603,v1-backfill,0.0
+Ligue1|2025-11-02|Lens|Lorient,2025-11-02,Ligue1,Lens,Lorient,0.779453585055901,0.7865213107745802,v1-backfill,1.0
+EPL|2025-11-02|Man City|Bournemouth,2025-11-02,EPL,Man City,Bournemouth,0.7900680496927049,0.7041910229736612,v1-backfill,1.0
+Ligue1|2025-11-02|Rennes|Strasbourg,2025-11-02,Ligue1,Rennes,Strasbourg,0.5264270794833402,0.4865792032972906,v1-backfill,1.0
+Bundesliga|2025-11-02|FC Koln|Hamburg,2025-11-02,Bundesliga,FC Koln,Hamburg,0.599159427296494,0.5993388282668297,v1-backfill,1.0
+LaLiga|2025-11-02|Levante|Celta,2025-11-02,LaLiga,Levante,Celta,0.4125069923614858,0.4183596328161261,v1-backfill,0.0
+Ligue1|2025-11-02|Lille|Angers,2025-11-02,Ligue1,Lille,Angers,0.895213790055716,0.7652999746873561,v1-backfill,1.0
+LaLiga|2025-11-02|Alaves|Espanol,2025-11-02,LaLiga,Alaves,Espanol,0.6721922259478057,0.5620970457150735,v1-backfill,1.0
+Bundesliga|2025-11-02|Wolfsburg|Hoffenheim,2025-11-02,Bundesliga,Wolfsburg,Hoffenheim,0.5364095465530968,0.5611699666844064,v1-backfill,0.0
+SerieA|2025-11-02|Verona|Inter,2025-11-02,SerieA,Verona,Inter,0.1490035836428245,0.2493367607962565,v1-backfill,0.0
+SerieA|2025-11-02|Fiorentina|Lecce,2025-11-02,SerieA,Fiorentina,Lecce,0.7257641754429159,0.7090180839463013,v1-backfill,0.0
+SerieA|2025-11-02|Parma|Bologna,2025-11-02,SerieA,Parma,Bologna,0.2606161498550443,0.3645977120922585,v1-backfill,0.0
+SerieA|2025-11-02|Milan|Roma,2025-11-02,SerieA,Milan,Roma,0.5722149256057333,0.5504059896372646,v1-backfill,1.0
+SerieA|2025-11-03|Lazio|Cagliari,2025-11-03,SerieA,Lazio,Cagliari,0.7934754989170947,0.7418278407913187,v1-backfill,1.0
+SerieA|2025-11-03|Sassuolo|Genoa,2025-11-03,SerieA,Sassuolo,Genoa,0.5058581214730865,0.5277303855231326,v1-backfill,0.0
+Bundesliga|2025-11-07|Werder Bremen|Wolfsburg,2025-11-07,Bundesliga,Werder Bremen,Wolfsburg,0.6380449911484158,0.6454419439664298,v1-backfill,1.0
+SerieA|2025-11-07|Pisa|Cremonese,2025-11-07,SerieA,Pisa,Cremonese,0.5276123050029458,0.5334750275647544,v1-backfill,1.0
+Ligue1|2025-11-07|Paris FC|Rennes,2025-11-07,Ligue1,Paris FC,Rennes,0.4592224647073027,0.4291282564032641,v1-backfill,0.0
+EPL|2025-11-08|Everton|Fulham,2025-11-08,EPL,Everton,Fulham,0.517111512074963,0.5846990734740412,v1-backfill,1.0
+EPL|2025-11-08|West Ham|Burnley,2025-11-08,EPL,West Ham,Burnley,0.7034963187333764,0.6530262113840365,v1-backfill,1.0
+Ligue1|2025-11-08|Marseille|Brest,2025-11-08,Ligue1,Marseille,Brest,0.8063042005058493,0.6837849216530844,v1-backfill,1.0
+LaLiga|2025-11-08|Girona|Alaves,2025-11-08,LaLiga,Girona,Alaves,0.4592757376918721,0.5382473281931908,v1-backfill,1.0
+Ligue1|2025-11-08|Monaco|Lens,2025-11-08,Ligue1,Monaco,Lens,0.6257833304975102,0.5947187588352447,v1-backfill,0.0
+EPL|2025-11-08|Chelsea|Wolves,2025-11-08,EPL,Chelsea,Wolves,0.8713865948649104,0.7760971249376842,v1-backfill,1.0
+Bundesliga|2025-11-08|M'gladbach|FC Koln,2025-11-08,Bundesliga,M'gladbach,FC Koln,0.6289063749971984,0.6327693694188908,v1-backfill,1.0
+LaLiga|2025-11-08|Sevilla|Osasuna,2025-11-08,LaLiga,Sevilla,Osasuna,0.644790967515915,0.5333910660039882,v1-backfill,1.0
+LaLiga|2025-11-08|Espanol|Villarreal,2025-11-08,LaLiga,Espanol,Villarreal,0.3634764265329126,0.3727830470715234,v1-backfill,0.0
+Bundesliga|2025-11-08|Leverkusen|Heidenheim,2025-11-08,Bundesliga,Leverkusen,Heidenheim,0.9033297058085004,0.8394338082025591,v1-backfill,1.0
+Bundesliga|2025-11-08|Hoffenheim|RB Leipzig,2025-11-08,Bundesliga,Hoffenheim,RB Leipzig,0.4097200823417854,0.414195690300641,v1-backfill,1.0
+LaLiga|2025-11-08|Ath Madrid|Levante,2025-11-08,LaLiga,Ath Madrid,Levante,0.93262858808313,0.847635183062023,v1-backfill,1.0
+Ligue1|2025-11-09|Lyon|Paris SG,2025-11-09,Ligue1,Lyon,Paris SG,0.2321358635040624,0.3936015906887131,v1-backfill,0.0
+Ligue1|2025-11-09|Angers|Auxerre,2025-11-09,Ligue1,Angers,Auxerre,0.4857475743388429,0.5752710047441986,v1-backfill,1.0
+Ligue1|2025-11-09|Strasbourg|Lille,2025-11-09,Ligue1,Strasbourg,Lille,0.4048294104176597,0.5091176098830935,v1-backfill,1.0
+Ligue1|2025-11-09|Metz|Nice,2025-11-09,Ligue1,Metz,Nice,0.2174511409075342,0.3051199359759049,v1-backfill,1.0
+LaLiga|2025-11-09|Celta|Barcelona,2025-11-09,LaLiga,Celta,Barcelona,0.2175538222335144,0.3303068783601787,v1-backfill,0.0
+LaLiga|2025-11-09|Ath Bilbao|Oviedo,2025-11-09,LaLiga,Ath Bilbao,Oviedo,0.9073989626479134,0.7908466846045101,v1-backfill,1.0
+Bundesliga|2025-11-09|Stuttgart|Augsburg,2025-11-09,Bundesliga,Stuttgart,Augsburg,0.8362723756015074,0.7029465944693095,v1-backfill,1.0
+Bundesliga|2025-11-09|Ein Frankfurt|Mainz,2025-11-09,Bundesliga,Ein Frankfurt,Mainz,0.7303335512243581,0.6712363626829836,v1-backfill,1.0
+EPL|2025-11-09|Brentford|Newcastle,2025-11-09,EPL,Brentford,Newcastle,0.4563217591779244,0.5197264874986426,v1-backfill,1.0
+EPL|2025-11-09|Aston Villa|Bournemouth,2025-11-09,EPL,Aston Villa,Bournemouth,0.5819862164882718,0.6270266269036163,v1-backfill,1.0
+EPL|2025-11-09|Nott'm Forest|Leeds,2025-11-09,EPL,Nott'm Forest,Leeds,0.5970442740945834,0.6888299612644252,v1-backfill,1.0
+LaLiga|2025-11-09|Mallorca|Getafe,2025-11-09,LaLiga,Mallorca,Getafe,0.5152122816661489,0.5496981453784119,v1-backfill,1.0
+Bundesliga|2025-11-09|Freiburg|St Pauli,2025-11-09,Bundesliga,Freiburg,St Pauli,0.7258301316902855,0.7265661936975089,v1-backfill,1.0
+SerieA|2025-11-09|Atalanta|Sassuolo,2025-11-09,SerieA,Atalanta,Sassuolo,0.8433993633085286,0.7945266912127293,v1-backfill,0.0
+SerieA|2025-11-09|Bologna|Napoli,2025-11-09,SerieA,Bologna,Napoli,0.4799110500889285,0.484865383648761,v1-backfill,1.0
+SerieA|2025-11-09|Roma|Udinese,2025-11-09,SerieA,Roma,Udinese,0.7997216852754265,0.7433392510399524,v1-backfill,1.0
+SerieA|2025-11-09|Inter|Lazio,2025-11-09,SerieA,Inter,Lazio,0.7865970246068908,0.7040287157523201,v1-backfill,1.0
+EPL|2025-11-09|Man City|Liverpool,2025-11-09,EPL,Man City,Liverpool,0.6330487774979632,0.5740578789797217,v1-backfill,1.0
+Ligue1|2025-11-21|Nice|Marseille,2025-11-21,Ligue1,Nice,Marseille,0.3415240262707578,0.5187674864479664,v1-backfill,0.0
+LaLiga|2025-11-21|Valencia|Levante,2025-11-21,LaLiga,Valencia,Levante,0.7584658574011518,0.6945308871892457,v1-backfill,1.0
+Bundesliga|2025-11-22|Wolfsburg|Leverkusen,2025-11-22,Bundesliga,Wolfsburg,Leverkusen,0.210084255669076,0.3027050808202312,v1-backfill,0.0
+Bundesliga|2025-11-22|FC Koln|Ein Frankfurt,2025-11-22,Bundesliga,FC Koln,Ein Frankfurt,0.3946124865220593,0.3531615438640132,v1-backfill,0.0
+Bundesliga|2025-11-22|Augsburg|Hamburg,2025-11-22,Bundesliga,Augsburg,Hamburg,0.5991759216158336,0.6599178816272224,v1-backfill,1.0
+Bundesliga|2025-11-22|Heidenheim|M'gladbach,2025-11-22,Bundesliga,Heidenheim,M'gladbach,0.4944071910278526,0.4909220471639639,v1-backfill,0.0
+Bundesliga|2025-11-22|Bayern Munich|Freiburg,2025-11-22,Bundesliga,Bayern Munich,Freiburg,0.9494004216716294,0.7887204917024745,v1-backfill,1.0
+SerieA|2025-11-22|Napoli|Atalanta,2025-11-22,SerieA,Napoli,Atalanta,0.6643434579386444,0.647350607586988,v1-backfill,1.0
+LaLiga|2025-11-22|Villarreal|Mallorca,2025-11-22,LaLiga,Villarreal,Mallorca,0.8716955024018249,0.7554754950303538,v1-backfill,1.0
+Ligue1|2025-11-22|Paris SG|Le Havre,2025-11-22,Ligue1,Paris SG,Le Havre,0.9366299467266804,0.8553021688239955,v1-backfill,1.0
+SerieA|2025-11-22|Udinese|Bologna,2025-11-22,SerieA,Udinese,Bologna,0.2797053200550095,0.4106881426784963,v1-backfill,0.0
+EPL|2025-11-22|Newcastle|Man City,2025-11-22,EPL,Newcastle,Man City,0.2821693761982921,0.4156594959172818,v1-backfill,1.0
+EPL|2025-11-22|Wolves|Crystal Palace,2025-11-22,EPL,Wolves,Crystal Palace,0.2905085203360461,0.3801508782212491,v1-backfill,0.0
+Ligue1|2025-11-22|Rennes|Monaco,2025-11-22,Ligue1,Rennes,Monaco,0.495644257953665,0.4786579576704948,v1-backfill,1.0
+EPL|2025-11-22|Liverpool|Nott'm Forest,2025-11-22,EPL,Liverpool,Nott'm Forest,0.858396076346781,0.7617857013510817,v1-backfill,0.0
+EPL|2025-11-22|Brighton|Brentford,2025-11-22,EPL,Brighton,Brentford,0.7022921916362969,0.6092269929697027,v1-backfill,1.0
+EPL|2025-11-22|Burnley|Chelsea,2025-11-22,EPL,Burnley,Chelsea,0.1367133765127402,0.2933765635665765,v1-backfill,0.0
+LaLiga|2025-11-22|Alaves|Celta,2025-11-22,LaLiga,Alaves,Celta,0.6097818692802572,0.5245253209730896,v1-backfill,0.0
+LaLiga|2025-11-22|Barcelona|Ath Bilbao,2025-11-22,LaLiga,Barcelona,Ath Bilbao,0.8818702601844688,0.7304374361899625,v1-backfill,1.0
+LaLiga|2025-11-22|Osasuna|Sociedad,2025-11-22,LaLiga,Osasuna,Sociedad,0.567800295094149,0.5610199004629376,v1-backfill,0.0
+EPL|2025-11-22|Fulham|Sunderland,2025-11-22,EPL,Fulham,Sunderland,0.6641495534820012,0.6463215023196587,v1-backfill,1.0
+Ligue1|2025-11-22|Lens|Strasbourg,2025-11-22,Ligue1,Lens,Strasbourg,0.6551530056017988,0.6040339602307088,v1-backfill,1.0
+SerieA|2025-11-23|Inter|Milan,2025-11-23,SerieA,Inter,Milan,0.712761497256224,0.6607840376081916,v1-backfill,0.0
+SerieA|2025-11-23|Verona|Parma,2025-11-23,SerieA,Verona,Parma,0.5746359149910355,0.5698915122602389,v1-backfill,0.0
+SerieA|2025-11-23|Cremonese|Roma,2025-11-23,SerieA,Cremonese,Roma,0.1883045256021066,0.286820901015046,v1-backfill,0.0
+SerieA|2025-11-23|Lazio|Lecce,2025-11-23,SerieA,Lazio,Lecce,0.782434761451087,0.743162963079633,v1-backfill,1.0
+Bundesliga|2025-11-23|RB Leipzig|Werder Bremen,2025-11-23,Bundesliga,RB Leipzig,Werder Bremen,0.7430897139005427,0.6614417409611939,v1-backfill,1.0
+Bundesliga|2025-11-23|St Pauli|Union Berlin,2025-11-23,Bundesliga,St Pauli,Union Berlin,0.5009000336876581,0.4487897199553683,v1-backfill,0.0
+Ligue1|2025-11-23|Brest|Metz,2025-11-23,Ligue1,Brest,Metz,0.78490337765756,0.7194530581873424,v1-backfill,1.0
+Ligue1|2025-11-23|Lille|Paris FC,2025-11-23,Ligue1,Lille,Paris FC,0.8023591433040567,0.7947272683384241,v1-backfill,1.0
+EPL|2025-11-23|Arsenal|Tottenham,2025-11-23,EPL,Arsenal,Tottenham,0.886702685023657,0.7893696677443511,v1-backfill,1.0
+EPL|2025-11-23|Leeds|Aston Villa,2025-11-23,EPL,Leeds,Aston Villa,0.3295145601219654,0.3030443928160993,v1-backfill,0.0
+Ligue1|2025-11-23|Toulouse|Angers,2025-11-23,Ligue1,Toulouse,Angers,0.7899038609951885,0.6549689856449198,v1-backfill,0.0
+LaLiga|2025-11-23|Getafe|Ath Madrid,2025-11-23,LaLiga,Getafe,Ath Madrid,0.2822876807764027,0.3379265667577714,v1-backfill,0.0
+EPL|2025-11-24|Man United|Everton,2025-11-24,EPL,Man United,Everton,0.6855118066517976,0.5854332863930369,v1-backfill,0.0
+LaLiga|2025-11-24|Espanol|Sevilla,2025-11-24,LaLiga,Espanol,Sevilla,0.5905717925939108,0.5570565039361214,v1-backfill,1.0
+SerieA|2025-11-24|Torino|Como,2025-11-24,SerieA,Torino,Como,0.411919367670262,0.58415211152872,v1-backfill,0.0
+Ligue1|2025-11-28|Metz|Rennes,2025-11-28,Ligue1,Metz,Rennes,0.215362768701034,0.3811635490859409,v1-backfill,0.0
+LaLiga|2025-11-28|Getafe|Elche,2025-11-28,LaLiga,Getafe,Elche,0.6500292500133369,0.6354570206546729,v1-backfill,1.0
+SerieA|2025-11-28|Como|Sassuolo,2025-11-28,SerieA,Como,Sassuolo,0.7599536285835656,0.7006314217855955,v1-backfill,1.0
+LaLiga|2025-11-29|Levante|Ath Bilbao,2025-11-29,LaLiga,Levante,Ath Bilbao,0.2751798674402523,0.3230174737914117,v1-backfill,0.0
+SerieA|2025-11-29|Parma|Udinese,2025-11-29,SerieA,Parma,Udinese,0.5314179016056908,0.5217443371113605,v1-backfill,0.0
+LaLiga|2025-11-29|Ath Madrid|Oviedo,2025-11-29,LaLiga,Ath Madrid,Oviedo,0.9560483339840424,0.8607206675617064,v1-backfill,1.0
+SerieA|2025-11-29|Juventus|Cagliari,2025-11-29,SerieA,Juventus,Cagliari,0.8614349012105926,0.7908156271478257,v1-backfill,1.0
+EPL|2025-11-29|Everton|Newcastle,2025-11-29,EPL,Everton,Newcastle,0.4609884070621795,0.525770741039646,v1-backfill,0.0
+LaLiga|2025-11-29|Barcelona|Alaves,2025-11-29,LaLiga,Barcelona,Alaves,0.938973058467668,0.8328650051304867,v1-backfill,1.0
+EPL|2025-11-29|Man City|Leeds,2025-11-29,EPL,Man City,Leeds,0.919572170025991,0.8569030938480289,v1-backfill,1.0
+EPL|2025-11-29|Brentford|Burnley,2025-11-29,EPL,Brentford,Burnley,0.8229536180238113,0.7459813194979599,v1-backfill,1.0
+SerieA|2025-11-29|Genoa|Verona,2025-11-29,SerieA,Genoa,Verona,0.6523393795775834,0.6245694259094988,v1-backfill,1.0
+EPL|2025-11-29|Sunderland|Bournemouth,2025-11-29,EPL,Sunderland,Bournemouth,0.3782159306655623,0.4303715732117494,v1-backfill,1.0
+SerieA|2025-11-29|Milan|Lazio,2025-11-29,SerieA,Milan,Lazio,0.6532248022297807,0.6409096712335846,v1-backfill,1.0
+EPL|2025-11-29|Tottenham|Fulham,2025-11-29,EPL,Tottenham,Fulham,0.505381145461692,0.5596751095684526,v1-backfill,0.0
+Bundesliga|2025-11-29|Hoffenheim|Augsburg,2025-11-29,Bundesliga,Hoffenheim,Augsburg,0.7190996900920483,0.6281179330792415,v1-backfill,1.0
+Bundesliga|2025-11-29|Union Berlin|Heidenheim,2025-11-29,Bundesliga,Union Berlin,Heidenheim,0.7660302298518072,0.6932329886678541,v1-backfill,0.0
+Bundesliga|2025-11-29|Leverkusen|Dortmund,2025-11-29,Bundesliga,Leverkusen,Dortmund,0.6743530918843382,0.6437768099931759,v1-backfill,0.0
+Bundesliga|2025-11-29|Bayern Munich|St Pauli,2025-11-29,Bundesliga,Bayern Munich,St Pauli,0.9750737287931972,0.8926250728237513,v1-backfill,1.0
+Ligue1|2025-11-29|Monaco|Paris SG,2025-11-29,Ligue1,Monaco,Paris SG,0.217887264592958,0.3718911904726074,v1-backfill,1.0
+Bundesliga|2025-11-30|Freiburg|Mainz,2025-11-30,Bundesliga,Freiburg,Mainz,0.623417896825495,0.634915853584364,v1-backfill,1.0
+LaLiga|2025-11-30|Sociedad|Villarreal,2025-11-30,LaLiga,Sociedad,Villarreal,0.4393031510863653,0.403575756557235,v1-backfill,0.0
+LaLiga|2025-11-30|Sevilla|Betis,2025-11-30,LaLiga,Sevilla,Betis,0.4375214692530313,0.4362333432204666,v1-backfill,0.0
+LaLiga|2025-11-30|Celta|Espanol,2025-11-30,LaLiga,Celta,Espanol,0.7240599943817889,0.6269851255592669,v1-backfill,0.0
+Bundesliga|2025-11-30|Hamburg|Stuttgart,2025-11-30,Bundesliga,Hamburg,Stuttgart,0.2828157805896902,0.3188170519698816,v1-backfill,1.0
+EPL|2025-11-30|Aston Villa|Wolves,2025-11-30,EPL,Aston Villa,Wolves,0.8334949722642395,0.7892541027848619,v1-backfill,1.0
+EPL|2025-11-30|Crystal Palace|Man United,2025-11-30,EPL,Crystal Palace,Man United,0.6306080566359608,0.6300596403116825,v1-backfill,0.0
+SerieA|2025-11-30|Roma|Napoli,2025-11-30,SerieA,Roma,Napoli,0.5204422861750967,0.5503734498974733,v1-backfill,0.0
+SerieA|2025-11-30|Atalanta|Fiorentina,2025-11-30,SerieA,Atalanta,Fiorentina,0.7106545449666792,0.6464771337410703,v1-backfill,1.0
+SerieA|2025-11-30|Pisa|Inter,2025-11-30,SerieA,Pisa,Inter,0.1126048944612866,0.2238121059190629,v1-backfill,0.0
+SerieA|2025-11-30|Lecce|Torino,2025-11-30,SerieA,Lecce,Torino,0.5019058709860822,0.4629228747033532,v1-backfill,1.0
+EPL|2025-11-30|Nott'm Forest|Brighton,2025-11-30,EPL,Nott'm Forest,Brighton,0.3916510115897978,0.4877185604947169,v1-backfill,0.0
+EPL|2025-11-30|West Ham|Liverpool,2025-11-30,EPL,West Ham,Liverpool,0.2112153109187033,0.3371775503461648,v1-backfill,0.0
+Ligue1|2025-11-30|Lyon|Nantes,2025-11-30,Ligue1,Lyon,Nantes,0.805595370554232,0.732026389227778,v1-backfill,1.0
+Ligue1|2025-11-30|Lorient|Nice,2025-11-30,Ligue1,Lorient,Nice,0.4065020914515284,0.3429917477286048,v1-backfill,1.0
+Ligue1|2025-11-30|Le Havre|Lille,2025-11-30,Ligue1,Le Havre,Lille,0.2335722375796539,0.3721237501000247,v1-backfill,0.0
+Ligue1|2025-11-30|Angers|Lens,2025-11-30,Ligue1,Angers,Lens,0.2227378753154666,0.3740420853485896,v1-backfill,0.0
+Ligue1|2025-11-30|Strasbourg|Brest,2025-11-30,Ligue1,Strasbourg,Brest,0.6504560421692798,0.6278016110465643,v1-backfill,0.0
+SerieA|2025-12-01|Bologna|Cremonese,2025-12-01,SerieA,Bologna,Cremonese,0.8988280237512976,0.7984854952030318,v1-backfill,0.0
+LaLiga|2025-12-02|Barcelona|Ath Madrid,2025-12-02,LaLiga,Barcelona,Ath Madrid,0.7942323953216701,0.6367188408355176,v1-backfill,1.0
+EPL|2025-12-02|Bournemouth|Everton,2025-12-02,EPL,Bournemouth,Everton,0.6973624726696184,0.5792241026316209,v1-backfill,0.0
+EPL|2025-12-02|Fulham|Man City,2025-12-02,EPL,Fulham,Man City,0.2650107664980038,0.3701960398322562,v1-backfill,0.0
+EPL|2025-12-03|Arsenal|Brentford,2025-12-03,EPL,Arsenal,Brentford,0.8985923789939829,0.760952867142562,v1-backfill,1.0
+EPL|2025-12-03|Brighton|Aston Villa,2025-12-03,EPL,Brighton,Aston Villa,0.6225637033758621,0.5339550495365913,v1-backfill,0.0
+EPL|2025-12-03|Burnley|Crystal Palace,2025-12-03,EPL,Burnley,Crystal Palace,0.1673636988200256,0.3347709521575691,v1-backfill,0.0
+EPL|2025-12-03|Wolves|Nott'm Forest,2025-12-03,EPL,Wolves,Nott'm Forest,0.4458145491728564,0.4489246914019393,v1-backfill,0.0
+EPL|2025-12-03|Leeds|Chelsea,2025-12-03,EPL,Leeds,Chelsea,0.1684606743837261,0.2825497870149349,v1-backfill,1.0
+LaLiga|2025-12-03|Ath Bilbao|Real Madrid,2025-12-03,LaLiga,Ath Bilbao,Real Madrid,0.265601985139424,0.3850021771090501,v1-backfill,0.0
+Bundesliga|2025-12-05|Mainz|M'gladbach,2025-12-05,Bundesliga,Mainz,M'gladbach,0.5907205540616552,0.5690447355129312,v1-backfill,0.0
+Ligue1|2025-12-05|Lille|Marseille,2025-12-05,Ligue1,Lille,Marseille,0.4889085787592066,0.5574177399610901,v1-backfill,1.0
+Ligue1|2025-12-05|Brest|Monaco,2025-12-05,Ligue1,Brest,Monaco,0.4434355295008844,0.4859428341237993,v1-backfill,1.0
+Bundesliga|2025-12-06|Heidenheim|Freiburg,2025-12-06,Bundesliga,Heidenheim,Freiburg,0.3491205686783379,0.402503824693852,v1-backfill,1.0
+EPL|2025-12-06|Everton|Nott'm Forest,2025-12-06,EPL,Everton,Nott'm Forest,0.5424786084672469,0.6060224945756424,v1-backfill,1.0
+EPL|2025-12-06|Man City|Sunderland,2025-12-06,EPL,Man City,Sunderland,0.8890245993487448,0.8164715870486202,v1-backfill,1.0
+Bundesliga|2025-12-06|Stuttgart|Bayern Munich,2025-12-06,Bundesliga,Stuttgart,Bayern Munich,0.1778254022625425,0.3456285426521581,v1-backfill,0.0
+SerieA|2025-12-06|Verona|Atalanta,2025-12-06,SerieA,Verona,Atalanta,0.2533306516750601,0.3363310217405575,v1-backfill,1.0
+SerieA|2025-12-06|Sassuolo|Fiorentina,2025-12-06,SerieA,Sassuolo,Fiorentina,0.4863657233057054,0.4289358070228049,v1-backfill,1.0
+Ligue1|2025-12-06|Nantes|Lens,2025-12-06,Ligue1,Nantes,Lens,0.2259122302174352,0.3558071317731038,v1-backfill,0.0
+Ligue1|2025-12-06|Toulouse|Strasbourg,2025-12-06,Ligue1,Toulouse,Strasbourg,0.5638107007889434,0.500927801006129,v1-backfill,1.0
+Ligue1|2025-12-06|Paris SG|Rennes,2025-12-06,Ligue1,Paris SG,Rennes,0.8661622218727527,0.7831314938618956,v1-backfill,1.0
+EPL|2025-12-06|Tottenham|Brentford,2025-12-06,EPL,Tottenham,Brentford,0.467421731384736,0.5193208382534085,v1-backfill,1.0
+EPL|2025-12-06|Aston Villa|Arsenal,2025-12-06,EPL,Aston Villa,Arsenal,0.3131677006337068,0.4616851945723368,v1-backfill,1.0
+SerieA|2025-12-06|Inter|Como,2025-12-06,SerieA,Inter,Como,0.7504475302144338,0.7612550673253838,v1-backfill,1.0
+EPL|2025-12-06|Newcastle|Burnley,2025-12-06,EPL,Newcastle,Burnley,0.857907208358698,0.7978985823686388,v1-backfill,1.0
+LaLiga|2025-12-06|Alaves|Sociedad,2025-12-06,LaLiga,Alaves,Sociedad,0.5754976829266748,0.5186701487820773,v1-backfill,1.0
+LaLiga|2025-12-06|Villarreal|Getafe,2025-12-06,LaLiga,Villarreal,Getafe,0.8164534207833611,0.7649207028832669,v1-backfill,1.0
+Bundesliga|2025-12-06|RB Leipzig|Ein Frankfurt,2025-12-06,Bundesliga,RB Leipzig,Ein Frankfurt,0.641097910835791,0.6074763959644187,v1-backfill,1.0
+Bundesliga|2025-12-06|Wolfsburg|Union Berlin,2025-12-06,Bundesliga,Wolfsburg,Union Berlin,0.5822358672348459,0.5338860587309097,v1-backfill,1.0
+Bundesliga|2025-12-06|Augsburg|Leverkusen,2025-12-06,Bundesliga,Augsburg,Leverkusen,0.2015703781530403,0.3020867577626527,v1-backfill,1.0
+LaLiga|2025-12-06|Ath Bilbao|Ath Madrid,2025-12-06,LaLiga,Ath Bilbao,Ath Madrid,0.4936437544091889,0.4538399736720709,v1-backfill,1.0
+LaLiga|2025-12-06|Betis|Barcelona,2025-12-06,LaLiga,Betis,Barcelona,0.2797991824926511,0.3862688217728432,v1-backfill,0.0
+Ligue1|2025-12-07|Lorient|Lyon,2025-12-07,Ligue1,Lorient,Lyon,0.3617772982767731,0.332689371024395,v1-backfill,1.0
+Bundesliga|2025-12-07|Hamburg|Werder Bremen,2025-12-07,Bundesliga,Hamburg,Werder Bremen,0.4948781406059689,0.3983153191694632,v1-backfill,1.0
+SerieA|2025-12-07|Cagliari|Roma,2025-12-07,SerieA,Cagliari,Roma,0.2356641392992197,0.3140098684534054,v1-backfill,1.0
+SerieA|2025-12-07|Cremonese|Lecce,2025-12-07,SerieA,Cremonese,Lecce,0.5069260991803993,0.5457601245795729,v1-backfill,1.0
+Bundesliga|2025-12-07|Dortmund|Hoffenheim,2025-12-07,Bundesliga,Dortmund,Hoffenheim,0.7777822840561115,0.7156147580447525,v1-backfill,1.0
+EPL|2025-12-07|Fulham|Crystal Palace,2025-12-07,EPL,Fulham,Crystal Palace,0.509360504567041,0.4965626817104534,v1-backfill,0.0
+Ligue1|2025-12-07|Nice|Angers,2025-12-07,Ligue1,Nice,Angers,0.7649185399463679,0.7062863790694569,v1-backfill,0.0
+SerieA|2025-12-07|Napoli|Juventus,2025-12-07,SerieA,Napoli,Juventus,0.6093714234578729,0.6138565188840023,v1-backfill,1.0
+Ligue1|2025-12-07|Auxerre|Metz,2025-12-07,Ligue1,Auxerre,Metz,0.6933511018121761,0.6295144235523891,v1-backfill,1.0
+LaLiga|2025-12-07|Real Madrid|Celta,2025-12-07,LaLiga,Real Madrid,Celta,0.9061243699698648,0.8084982704531798,v1-backfill,0.0
+LaLiga|2025-12-07|Elche|Girona,2025-12-07,LaLiga,Elche,Girona,0.6863493980644926,0.4927211194088411,v1-backfill,1.0
+LaLiga|2025-12-07|Espanol|Vallecano,2025-12-07,LaLiga,Espanol,Vallecano,0.5406174582416836,0.542557688040149,v1-backfill,1.0
+SerieA|2025-12-08|Pisa|Parma,2025-12-08,SerieA,Pisa,Parma,0.4895669038879296,0.5297777490215674,v1-backfill,0.0
+LaLiga|2025-12-08|Osasuna|Levante,2025-12-08,LaLiga,Osasuna,Levante,0.7847899865870512,0.7068193743336217,v1-backfill,1.0
+SerieA|2025-12-08|Torino|Milan,2025-12-08,SerieA,Torino,Milan,0.2642449991368029,0.3841984495999807,v1-backfill,0.0
+SerieA|2025-12-08|Udinese|Genoa,2025-12-08,SerieA,Udinese,Genoa,0.5729489350399987,0.596840279455725,v1-backfill,0.0
+EPL|2025-12-08|Wolves|Man United,2025-12-08,EPL,Wolves,Man United,0.2862367721347743,0.3970465985951771,v1-backfill,0.0
+Bundesliga|2025-12-12|Union Berlin|RB Leipzig,2025-12-12,Bundesliga,Union Berlin,RB Leipzig,0.315236565143231,0.3948932949327007,v1-backfill,1.0
+LaLiga|2025-12-12|Sociedad|Girona,2025-12-12,LaLiga,Sociedad,Girona,0.7796677868843249,0.6100623162394689,v1-backfill,0.0
+Ligue1|2025-12-12|Angers|Nantes,2025-12-12,Ligue1,Angers,Nantes,0.5807878212182404,0.5975913371864227,v1-backfill,1.0
+SerieA|2025-12-12|Lecce|Pisa,2025-12-12,SerieA,Lecce,Pisa,0.6308302529825095,0.6284499379609076,v1-backfill,1.0
+Ligue1|2025-12-13|Metz|Paris SG,2025-12-13,Ligue1,Metz,Paris SG,0.0478531347745049,0.1672687749478834,v1-backfill,0.0
+Ligue1|2025-12-13|Rennes|Brest,2025-12-13,Ligue1,Rennes,Brest,0.6012159863222833,0.5657706817861647,v1-backfill,1.0
+SerieA|2025-12-13|Atalanta|Cagliari,2025-12-13,SerieA,Atalanta,Cagliari,0.797286011720738,0.7344114811918387,v1-backfill,1.0
+SerieA|2025-12-13|Parma|Lazio,2025-12-13,SerieA,Parma,Lazio,0.3178542525340363,0.3868260885593051,v1-backfill,0.0
+Ligue1|2025-12-13|Paris FC|Toulouse,2025-12-13,Ligue1,Paris FC,Toulouse,0.419078278378553,0.4269356968863019,v1-backfill,0.0
+Bundesliga|2025-12-13|Hoffenheim|Hamburg,2025-12-13,Bundesliga,Hoffenheim,Hamburg,0.706633265327304,0.7009454436550989,v1-backfill,1.0
+LaLiga|2025-12-13|Ath Madrid|Valencia,2025-12-13,LaLiga,Ath Madrid,Valencia,0.8762487892141617,0.7582692156247876,v1-backfill,1.0
+LaLiga|2025-12-13|Mallorca|Elche,2025-12-13,LaLiga,Mallorca,Elche,0.5647939942492265,0.6306886098768952,v1-backfill,1.0
+Bundesliga|2025-12-13|Leverkusen|FC Koln,2025-12-13,Bundesliga,Leverkusen,FC Koln,0.8594231109351678,0.8332311743747189,v1-backfill,1.0
+Bundesliga|2025-12-13|St Pauli|Heidenheim,2025-12-13,Bundesliga,St Pauli,Heidenheim,0.6289567556286981,0.5297359088189819,v1-backfill,1.0
+LaLiga|2025-12-13|Getafe|Espanol,2025-12-13,LaLiga,Getafe,Espanol,0.6230381837813819,0.5423854736515313,v1-backfill,0.0
+Bundesliga|2025-12-13|Ein Frankfurt|Augsburg,2025-12-13,Bundesliga,Ein Frankfurt,Augsburg,0.7673975451287016,0.7012499900719893,v1-backfill,1.0
+Bundesliga|2025-12-13|M'gladbach|Wolfsburg,2025-12-13,Bundesliga,M'gladbach,Wolfsburg,0.6013539768081706,0.6009824472651343,v1-backfill,0.0
+EPL|2025-12-13|Burnley|Fulham,2025-12-13,EPL,Burnley,Fulham,0.2832310645018933,0.3965984905079735,v1-backfill,0.0
+EPL|2025-12-13|Liverpool|Brighton,2025-12-13,EPL,Liverpool,Brighton,0.6965392531004665,0.6657770983751031,v1-backfill,1.0
+EPL|2025-12-13|Chelsea|Everton,2025-12-13,EPL,Chelsea,Everton,0.7741223973790049,0.6428136124731878,v1-backfill,1.0
+LaLiga|2025-12-13|Barcelona|Osasuna,2025-12-13,LaLiga,Barcelona,Osasuna,0.9529297222537892,0.827680266976497,v1-backfill,1.0
+SerieA|2025-12-13|Torino|Cremonese,2025-12-13,SerieA,Torino,Cremonese,0.639719960558678,0.657537636256139,v1-backfill,1.0
+EPL|2025-12-13|Arsenal|Wolves,2025-12-13,EPL,Arsenal,Wolves,0.9512971835598858,0.8673990295770739,v1-backfill,1.0
+LaLiga|2025-12-14|Sevilla|Oviedo,2025-12-14,LaLiga,Sevilla,Oviedo,0.8189344970941749,0.6862335272371315,v1-backfill,1.0
+SerieA|2025-12-14|Udinese|Napoli,2025-12-14,SerieA,Udinese,Napoli,0.2272772753497463,0.3147318672080099,v1-backfill,1.0
+SerieA|2025-12-14|Fiorentina|Verona,2025-12-14,SerieA,Fiorentina,Verona,0.6650468737622366,0.6815106720782184,v1-backfill,0.0
+LaLiga|2025-12-14|Celta|Ath Bilbao,2025-12-14,LaLiga,Celta,Ath Bilbao,0.5423752192225992,0.4966599786858208,v1-backfill,1.0
+LaLiga|2025-12-14|Alaves|Real Madrid,2025-12-14,LaLiga,Alaves,Real Madrid,0.2126712251208837,0.2709617956625824,v1-backfill,0.0
+SerieA|2025-12-14|Genoa|Inter,2025-12-14,SerieA,Genoa,Inter,0.1739325912361689,0.290933113776319,v1-backfill,0.0
+SerieA|2025-12-14|Bologna|Juventus,2025-12-14,SerieA,Bologna,Juventus,0.5596597458710816,0.5327260313783778,v1-backfill,0.0
+Ligue1|2025-12-14|Lyon|Le Havre,2025-12-14,Ligue1,Lyon,Le Havre,0.7816054032143918,0.7299797811560111,v1-backfill,1.0
+Bundesliga|2025-12-14|Werder Bremen|Stuttgart,2025-12-14,Bundesliga,Werder Bremen,Stuttgart,0.4245405718864763,0.510746874439212,v1-backfill,0.0
+EPL|2025-12-14|West Ham|Aston Villa,2025-12-14,EPL,West Ham,Aston Villa,0.2828365152902035,0.3610111188456548,v1-backfill,0.0
+EPL|2025-12-14|Crystal Palace|Man City,2025-12-14,EPL,Crystal Palace,Man City,0.3161478746520385,0.4331122508712067,v1-backfill,0.0
+EPL|2025-12-14|Sunderland|Newcastle,2025-12-14,EPL,Sunderland,Newcastle,0.3074570539072081,0.3975009441899613,v1-backfill,1.0
+EPL|2025-12-14|Nott'm Forest|Tottenham,2025-12-14,EPL,Nott'm Forest,Tottenham,0.5477129174142776,0.5754393096707092,v1-backfill,1.0
+Ligue1|2025-12-14|Marseille|Monaco,2025-12-14,Ligue1,Marseille,Monaco,0.738453919421555,0.6071147679634055,v1-backfill,1.0
+Ligue1|2025-12-14|Lens|Nice,2025-12-14,Ligue1,Lens,Nice,0.7579987463387637,0.6609862071580707,v1-backfill,1.0
+Ligue1|2025-12-14|Auxerre|Lille,2025-12-14,Ligue1,Auxerre,Lille,0.2389735016572616,0.3311990043729302,v1-backfill,0.0
+SerieA|2025-12-15|Roma|Como,2025-12-15,SerieA,Roma,Como,0.6149998340351429,0.6898808335686888,v1-backfill,1.0
+Bundesliga|2025-12-19|Dortmund|M'gladbach,2025-12-19,Bundesliga,Dortmund,M'gladbach,0.8434823258967463,0.7523454288868814,v1-backfill,1.0
+Bundesliga|2025-12-20|RB Leipzig|Leverkusen,2025-12-20,Bundesliga,RB Leipzig,Leverkusen,0.5028168030748623,0.5016801586061789,v1-backfill,0.0
+Bundesliga|2025-12-20|Wolfsburg|Freiburg,2025-12-20,Bundesliga,Wolfsburg,Freiburg,0.519402678512696,0.4999393535880181,v1-backfill,0.0
+EPL|2025-12-20|Man City|West Ham,2025-12-20,EPL,Man City,West Ham,0.9301706518453036,0.8162683332732098,v1-backfill,1.0
+EPL|2025-12-20|Wolves|Brentford,2025-12-20,EPL,Wolves,Brentford,0.3881097802638158,0.4047489528381759,v1-backfill,0.0
+EPL|2025-12-20|Tottenham|Liverpool,2025-12-20,EPL,Tottenham,Liverpool,0.2652761347198245,0.3650694466483995,v1-backfill,0.0
+EPL|2025-12-20|Everton|Arsenal,2025-12-20,EPL,Everton,Arsenal,0.2057021333357336,0.3643741426227307,v1-backfill,0.0
+EPL|2025-12-20|Leeds|Crystal Palace,2025-12-20,EPL,Leeds,Crystal Palace,0.3951664034220973,0.3575464988553009,v1-backfill,1.0
+SerieA|2025-12-20|Juventus|Roma,2025-12-20,SerieA,Juventus,Roma,0.6211749754345746,0.5859480755054084,v1-backfill,1.0
+LaLiga|2025-12-20|Osasuna|Alaves,2025-12-20,LaLiga,Osasuna,Alaves,0.5814927332911595,0.5960887197963505,v1-backfill,1.0
+LaLiga|2025-12-20|Real Madrid|Sevilla,2025-12-20,LaLiga,Real Madrid,Sevilla,0.914927364629112,0.8304886262565311,v1-backfill,1.0
+Bundesliga|2025-12-20|FC Koln|Union Berlin,2025-12-20,Bundesliga,FC Koln,Union Berlin,0.5294204789237361,0.4552386149675085,v1-backfill,0.0
+SerieA|2025-12-21|Fiorentina|Udinese,2025-12-21,SerieA,Fiorentina,Udinese,0.5632113826984793,0.5881006072264732,v1-backfill,1.0
+SerieA|2025-12-21|Genoa|Atalanta,2025-12-21,SerieA,Genoa,Atalanta,0.3335001380946455,0.4195732894627703,v1-backfill,0.0
+LaLiga|2025-12-21|Girona|Ath Madrid,2025-12-21,LaLiga,Girona,Ath Madrid,0.2364391267701886,0.3404766053181458,v1-backfill,0.0
+SerieA|2025-12-21|Sassuolo|Torino,2025-12-21,SerieA,Sassuolo,Torino,0.5680582638105726,0.4722082219753212,v1-backfill,0.0
+Bundesliga|2025-12-21|Heidenheim|Bayern Munich,2025-12-21,Bundesliga,Heidenheim,Bayern Munich,0.0467526063389136,0.1935136642010529,v1-backfill,0.0
+LaLiga|2025-12-21|Villarreal|Barcelona,2025-12-21,LaLiga,Villarreal,Barcelona,0.3271512981175434,0.4604313534120714,v1-backfill,0.0
+LaLiga|2025-12-21|Elche|Vallecano,2025-12-21,LaLiga,Elche,Vallecano,0.5038980008270996,0.4585809211475086,v1-backfill,1.0
+LaLiga|2025-12-21|Betis|Getafe,2025-12-21,LaLiga,Betis,Getafe,0.7882174530625315,0.7066656218835382,v1-backfill,1.0
+EPL|2025-12-21|Aston Villa|Man United,2025-12-21,EPL,Aston Villa,Man United,0.6043493895062612,0.6897954127329982,v1-backfill,1.0
+LaLiga|2025-12-22|Ath Bilbao|Espanol,2025-12-22,LaLiga,Ath Bilbao,Espanol,0.7434264342471508,0.6549820947410121,v1-backfill,0.0
+EPL|2025-12-22|Fulham|Nott'm Forest,2025-12-22,EPL,Fulham,Nott'm Forest,0.6322729297861119,0.5693035956807387,v1-backfill,1.0
+EPL|2025-12-26|Man United|Newcastle,2025-12-26,EPL,Man United,Newcastle,0.5888153246241459,0.5255260406978959,v1-backfill,1.0
+SerieA|2025-12-27|Pisa|Juventus,2025-12-27,SerieA,Pisa,Juventus,0.1554963578208526,0.2499919917510525,v1-backfill,0.0
+EPL|2025-12-27|West Ham|Fulham,2025-12-27,EPL,West Ham,Fulham,0.3900298157184356,0.4952956346976543,v1-backfill,0.0
+SerieA|2025-12-27|Torino|Cagliari,2025-12-27,SerieA,Torino,Cagliari,0.648581311643247,0.6650200585514738,v1-backfill,0.0
+SerieA|2025-12-27|Lecce|Como,2025-12-27,SerieA,Lecce,Como,0.3324909756289471,0.4652219249697821,v1-backfill,0.0
+EPL|2025-12-27|Chelsea|Aston Villa,2025-12-27,EPL,Chelsea,Aston Villa,0.6580837973302864,0.5259514516693593,v1-backfill,0.0
+SerieA|2025-12-27|Parma|Fiorentina,2025-12-27,SerieA,Parma,Fiorentina,0.4780872526861482,0.4724559401383832,v1-backfill,1.0
+EPL|2025-12-27|Liverpool|Wolves,2025-12-27,EPL,Liverpool,Wolves,0.9209273694658574,0.8497508368173757,v1-backfill,1.0
+EPL|2025-12-27|Brentford|Bournemouth,2025-12-27,EPL,Brentford,Bournemouth,0.5122442687884523,0.5790305188662411,v1-backfill,1.0
+EPL|2025-12-27|Arsenal|Brighton,2025-12-27,EPL,Arsenal,Brighton,0.8200575254350195,0.7395409904428432,v1-backfill,1.0
+EPL|2025-12-27|Nott'm Forest|Man City,2025-12-27,EPL,Nott'm Forest,Man City,0.1836407750951908,0.3288593757256237,v1-backfill,0.0
+EPL|2025-12-28|Crystal Palace|Tottenham,2025-12-28,EPL,Crystal Palace,Tottenham,0.6987334995809167,0.6602814485077539,v1-backfill,0.0
+SerieA|2025-12-28|Milan|Verona,2025-12-28,SerieA,Milan,Verona,0.8530700715324021,0.8064418105028469,v1-backfill,1.0
+SerieA|2025-12-28|Cremonese|Napoli,2025-12-28,SerieA,Cremonese,Napoli,0.1731761340358194,0.2759359328255118,v1-backfill,0.0
+SerieA|2025-12-28|Atalanta|Inter,2025-12-28,SerieA,Atalanta,Inter,0.3323488972261095,0.4271580555931216,v1-backfill,0.0
+SerieA|2025-12-29|Roma|Genoa,2025-12-29,SerieA,Roma,Genoa,0.7973874575688069,0.7536883452188143,v1-backfill,1.0
+EPL|2025-12-30|Burnley|Newcastle,2025-12-30,EPL,Burnley,Newcastle,0.2830707080864366,0.3245653103514243,v1-backfill,0.0
+EPL|2025-12-30|Nott'm Forest|Everton,2025-12-30,EPL,Nott'm Forest,Everton,0.5689591403294846,0.5302635883551025,v1-backfill,0.0
+EPL|2025-12-30|Arsenal|Aston Villa,2025-12-30,EPL,Arsenal,Aston Villa,0.7938097587869035,0.6432605984167601,v1-backfill,1.0
+SerieA|2026-01-02|Cagliari|Milan,2026-01-02,SerieA,Cagliari,Milan,0.2257078164634241,0.3116222121858645,v1-backfill,0.0
+Ligue1|2026-01-02|Toulouse|Lens,2026-01-02,Ligue1,Toulouse,Lens,0.4365235958507614,0.4317567151702353,v1-backfill,0.0
+SerieA|2026-01-03|Atalanta|Roma,2026-01-03,SerieA,Atalanta,Roma,0.5409195384834944,0.5212054755058076,v1-backfill,1.0
+EPL|2026-01-03|Aston Villa|Nott'm Forest,2026-01-03,EPL,Aston Villa,Nott'm Forest,0.7542958125799032,0.7534717562894592,v1-backfill,1.0
+EPL|2026-01-03|Brighton|Burnley,2026-01-03,EPL,Brighton,Burnley,0.8657205185941615,0.7866908238512148,v1-backfill,1.0
+EPL|2026-01-03|Wolves|West Ham,2026-01-03,EPL,Wolves,West Ham,0.5267925853009322,0.4870913119660133,v1-backfill,1.0
+EPL|2026-01-03|Bournemouth|Arsenal,2026-01-03,EPL,Bournemouth,Arsenal,0.2206562174451738,0.3186386711266434,v1-backfill,0.0
+LaLiga|2026-01-03|Espanol|Barcelona,2026-01-03,LaLiga,Espanol,Barcelona,0.1385837758675133,0.2873707933780127,v1-backfill,0.0
+Ligue1|2026-01-03|Monaco|Lyon,2026-01-03,Ligue1,Monaco,Lyon,0.5575430444717432,0.5697653025947244,v1-backfill,0.0
+SerieA|2026-01-03|Como|Udinese,2026-01-03,SerieA,Como,Udinese,0.7468092589110307,0.6316989184664399,v1-backfill,1.0
+LaLiga|2026-01-03|Celta|Valencia,2026-01-03,LaLiga,Celta,Valencia,0.720405399654135,0.6301458163640861,v1-backfill,1.0
+LaLiga|2026-01-03|Elche|Villarreal,2026-01-03,LaLiga,Elche,Villarreal,0.3630947727837393,0.2981963165176404,v1-backfill,0.0
+Ligue1|2026-01-03|Lille|Rennes,2026-01-03,Ligue1,Lille,Rennes,0.7297915804487599,0.6731977464532529,v1-backfill,0.0
+LaLiga|2026-01-04|Sevilla|Levante,2026-01-04,LaLiga,Sevilla,Levante,0.8227620774887293,0.694177663001597,v1-backfill,0.0
+SerieA|2026-01-04|Lazio|Napoli,2026-01-04,SerieA,Lazio,Napoli,0.4029092600942001,0.4553293647745906,v1-backfill,0.0
+SerieA|2026-01-04|Fiorentina|Cremonese,2026-01-04,SerieA,Fiorentina,Cremonese,0.7450752176979419,0.6645718816802223,v1-backfill,1.0
+SerieA|2026-01-04|Verona|Torino,2026-01-04,SerieA,Verona,Torino,0.4778808699959108,0.4794828094242394,v1-backfill,0.0
+SerieA|2026-01-04|Inter|Bologna,2026-01-04,SerieA,Inter,Bologna,0.7540192507741443,0.7209941167488294,v1-backfill,1.0
+LaLiga|2026-01-04|Mallorca|Girona,2026-01-04,LaLiga,Mallorca,Girona,0.6826667887817964,0.5813962845919998,v1-backfill,0.0
+Ligue1|2026-01-04|Marseille|Nantes,2026-01-04,Ligue1,Marseille,Nantes,0.9178902004491388,0.7858943701330733,v1-backfill,0.0
+LaLiga|2026-01-04|Real Madrid|Betis,2026-01-04,LaLiga,Real Madrid,Betis,0.8391302633634534,0.7368442219419342,v1-backfill,1.0
+Ligue1|2026-01-04|Le Havre|Angers,2026-01-04,Ligue1,Le Havre,Angers,0.5908557629216677,0.5372693419797621,v1-backfill,1.0
+Ligue1|2026-01-04|Brest|Auxerre,2026-01-04,Ligue1,Brest,Auxerre,0.6876122256243429,0.7001014236099502,v1-backfill,1.0
+EPL|2026-01-04|Newcastle|Crystal Palace,2026-01-04,EPL,Newcastle,Crystal Palace,0.6113645193823504,0.6004693531006107,v1-backfill,1.0
+EPL|2026-01-04|Everton|Brentford,2026-01-04,EPL,Everton,Brentford,0.5250930374635631,0.5797286736207847,v1-backfill,0.0
+Ligue1|2026-01-04|Paris SG|Paris FC,2026-01-04,Ligue1,Paris SG,Paris FC,0.9450383879463438,0.8912749040240708,v1-backfill,1.0
+SerieA|2026-01-06|Sassuolo|Juventus,2026-01-06,SerieA,Sassuolo,Juventus,0.2327211968208386,0.2928183585104236,v1-backfill,0.0
+EPL|2026-01-06|West Ham|Nott'm Forest,2026-01-06,EPL,West Ham,Nott'm Forest,0.438912917790727,0.516737364747477,v1-backfill,0.0
+SerieA|2026-01-06|Lecce|Roma,2026-01-06,SerieA,Lecce,Roma,0.2614334495719058,0.3400683392179992,v1-backfill,0.0
+SerieA|2026-01-06|Pisa|Como,2026-01-06,SerieA,Pisa,Como,0.2160711676746908,0.3737011673900881,v1-backfill,0.0
+SerieA|2026-01-07|Torino|Udinese,2026-01-07,SerieA,Torino,Udinese,0.6841377130074789,0.6156373156304218,v1-backfill,0.0
+SerieA|2026-01-07|Parma|Inter,2026-01-07,SerieA,Parma,Inter,0.1082167757925889,0.2380071688074837,v1-backfill,0.0
+SerieA|2026-01-07|Bologna|Atalanta,2026-01-07,SerieA,Bologna,Atalanta,0.6305117058938817,0.5538939324473745,v1-backfill,0.0
+EPL|2026-01-07|Newcastle|Leeds,2026-01-07,EPL,Newcastle,Leeds,0.7490231238869819,0.746523034425005,v1-backfill,1.0
+EPL|2026-01-07|Fulham|Chelsea,2026-01-07,EPL,Fulham,Chelsea,0.4369860426446716,0.4795357957728214,v1-backfill,1.0
+EPL|2026-01-07|Brentford|Sunderland,2026-01-07,EPL,Brentford,Sunderland,0.698268347489729,0.6666602550115284,v1-backfill,1.0
+EPL|2026-01-07|Bournemouth|Tottenham,2026-01-07,EPL,Bournemouth,Tottenham,0.5954658557436997,0.5880783744664793,v1-backfill,1.0
+LaLiga|2026-01-09|Getafe|Sociedad,2026-01-09,LaLiga,Getafe,Sociedad,0.5469413844575503,0.5384591177432501,v1-backfill,0.0
+Bundesliga|2026-01-10|Leverkusen|Stuttgart,2026-01-10,Bundesliga,Leverkusen,Stuttgart,0.7155057629496301,0.6957730689591344,v1-backfill,0.0
+SerieA|2026-01-10|Roma|Sassuolo,2026-01-10,SerieA,Roma,Sassuolo,0.8371214683195881,0.7964187937627727,v1-backfill,1.0
+SerieA|2026-01-10|Atalanta|Torino,2026-01-10,SerieA,Atalanta,Torino,0.7675129604205246,0.7004871951630187,v1-backfill,1.0
+Bundesliga|2026-01-10|Freiburg|Hamburg,2026-01-10,Bundesliga,Freiburg,Hamburg,0.7346625421195585,0.7398400768981916,v1-backfill,1.0
+LaLiga|2026-01-10|Girona|Osasuna,2026-01-10,LaLiga,Girona,Osasuna,0.5347684057599508,0.5537251119958324,v1-backfill,1.0
+LaLiga|2026-01-10|Villarreal|Alaves,2026-01-10,LaLiga,Villarreal,Alaves,0.8410100033967423,0.7849921973039754,v1-backfill,1.0
+Bundesliga|2026-01-11|M'gladbach|Augsburg,2026-01-11,Bundesliga,M'gladbach,Augsburg,0.5942270325643922,0.590559487016792,v1-backfill,1.0
+SerieA|2026-01-11|Lecce|Parma,2026-01-11,SerieA,Lecce,Parma,0.5483039921245525,0.5627325982802224,v1-backfill,0.0
+SerieA|2026-01-11|Verona|Lazio,2026-01-11,SerieA,Verona,Lazio,0.322843004620883,0.3860858738257652,v1-backfill,0.0
+LaLiga|2026-01-11|Vallecano|Mallorca,2026-01-11,LaLiga,Vallecano,Mallorca,0.7444135909340255,0.6015128421493112,v1-backfill,1.0
+Bundesliga|2026-01-11|Bayern Munich|Wolfsburg,2026-01-11,Bundesliga,Bayern Munich,Wolfsburg,0.9662426362574378,0.8497452429003252,v1-backfill,1.0
+SerieA|2026-01-12|Juventus|Cremonese,2026-01-12,SerieA,Juventus,Cremonese,0.9189210813398536,0.8212804324658587,v1-backfill,1.0
+SerieA|2026-01-12|Genoa|Cagliari,2026-01-12,SerieA,Genoa,Cagliari,0.5811294689663956,0.5941588386535755,v1-backfill,1.0
+LaLiga|2026-01-12|Sevilla|Celta,2026-01-12,LaLiga,Sevilla,Celta,0.5280939606934792,0.467082203520014,v1-backfill,0.0
+Bundesliga|2026-01-13|Mainz|Heidenheim,2026-01-13,Bundesliga,Mainz,Heidenheim,0.708944757659038,0.6518218243770048,v1-backfill,1.0
+Bundesliga|2026-01-13|Stuttgart|Ein Frankfurt,2026-01-13,Bundesliga,Stuttgart,Ein Frankfurt,0.7371615714474679,0.5724010722728439,v1-backfill,1.0
+Bundesliga|2026-01-13|Dortmund|Werder Bremen,2026-01-13,Bundesliga,Dortmund,Werder Bremen,0.8291875465370427,0.7331347795844193,v1-backfill,1.0
+Bundesliga|2026-01-14|Wolfsburg|St Pauli,2026-01-14,Bundesliga,Wolfsburg,St Pauli,0.6786564227303112,0.6522740710870416,v1-backfill,1.0
+Bundesliga|2026-01-14|FC Koln|Bayern Munich,2026-01-14,Bundesliga,FC Koln,Bayern Munich,0.04545065019378,0.1738147970532934,v1-backfill,0.0
+Bundesliga|2026-01-14|Hoffenheim|M'gladbach,2026-01-14,Bundesliga,Hoffenheim,M'gladbach,0.6744757365108316,0.6119629941137198,v1-backfill,1.0
+Bundesliga|2026-01-14|RB Leipzig|Freiburg,2026-01-14,Bundesliga,RB Leipzig,Freiburg,0.7311010678953845,0.634896269850817,v1-backfill,1.0
+SerieA|2026-01-14|Inter|Lecce,2026-01-14,SerieA,Inter,Lecce,0.9410879335040434,0.8650912843083438,v1-backfill,1.0
+SerieA|2026-01-15|Verona|Bologna,2026-01-15,SerieA,Verona,Bologna,0.2778187065662775,0.3753025214976958,v1-backfill,0.0
+SerieA|2026-01-15|Como|Milan,2026-01-15,SerieA,Como,Milan,0.4847005416828446,0.4266173085592331,v1-backfill,0.0
+Ligue1|2026-01-16|Paris SG|Lille,2026-01-16,Ligue1,Paris SG,Lille,0.8215505535065951,0.7183976197268196,v1-backfill,1.0
+Ligue1|2026-01-16|Monaco|Lorient,2026-01-16,Ligue1,Monaco,Lorient,0.6862064328149322,0.7512762384196515,v1-backfill,0.0
+LaLiga|2026-01-16|Espanol|Girona,2026-01-16,LaLiga,Espanol,Girona,0.7226598655501092,0.5996501876456265,v1-backfill,0.0
+SerieA|2026-01-17|Udinese|Inter,2026-01-17,SerieA,Udinese,Inter,0.1242787006904937,0.273852359084048,v1-backfill,0.0
+SerieA|2026-01-17|Napoli|Sassuolo,2026-01-17,SerieA,Napoli,Sassuolo,0.9127993912734296,0.8354407536909582,v1-backfill,1.0
+SerieA|2026-01-17|Cagliari|Juventus,2026-01-17,SerieA,Cagliari,Juventus,0.1677692966786121,0.2977000996791261,v1-backfill,1.0
+LaLiga|2026-01-17|Real Madrid|Levante,2026-01-17,LaLiga,Real Madrid,Levante,0.9713498923376614,0.8912276292963166,v1-backfill,1.0
+LaLiga|2026-01-17|Mallorca|Ath Bilbao,2026-01-17,LaLiga,Mallorca,Ath Bilbao,0.3673209709689992,0.4404791571931773,v1-backfill,1.0
+LaLiga|2026-01-17|Osasuna|Oviedo,2026-01-17,LaLiga,Osasuna,Oviedo,0.8027862462684192,0.7039329168211099,v1-backfill,1.0
+LaLiga|2026-01-17|Betis|Villarreal,2026-01-17,LaLiga,Betis,Villarreal,0.5466869733066152,0.4687068658685218,v1-backfill,1.0
+Bundesliga|2026-01-17|FC Koln|Mainz,2026-01-17,Bundesliga,FC Koln,Mainz,0.6316207260545311,0.4568871027199186,v1-backfill,1.0
+Bundesliga|2026-01-17|Hoffenheim|Leverkusen,2026-01-17,Bundesliga,Hoffenheim,Leverkusen,0.4503058205322823,0.3975416183880118,v1-backfill,1.0
+Bundesliga|2026-01-17|RB Leipzig|Bayern Munich,2026-01-17,Bundesliga,RB Leipzig,Bayern Munich,0.1732131272009736,0.3814018943942022,v1-backfill,0.0
+Bundesliga|2026-01-17|Dortmund|St Pauli,2026-01-17,Bundesliga,Dortmund,St Pauli,0.8718811715818471,0.8322289838000498,v1-backfill,1.0
+EPL|2026-01-17|Chelsea|Brentford,2026-01-17,EPL,Chelsea,Brentford,0.7173213371267928,0.6244024494274338,v1-backfill,1.0
+EPL|2026-01-17|Tottenham|West Ham,2026-01-17,EPL,Tottenham,West Ham,0.7397772600508102,0.6439268286287868,v1-backfill,0.0
+EPL|2026-01-17|Sunderland|Crystal Palace,2026-01-17,EPL,Sunderland,Crystal Palace,0.4160818199157852,0.4670467607357292,v1-backfill,1.0
+Ligue1|2026-01-17|Angers|Marseille,2026-01-17,Ligue1,Angers,Marseille,0.2006513038528184,0.3744436984276727,v1-backfill,0.0
+Ligue1|2026-01-17|Toulouse|Nice,2026-01-17,Ligue1,Toulouse,Nice,0.6252432606931132,0.5334949306109529,v1-backfill,1.0
+Ligue1|2026-01-17|Lens|Auxerre,2026-01-17,Ligue1,Lens,Auxerre,0.8560591871981468,0.8007250647958432,v1-backfill,1.0
+EPL|2026-01-17|Leeds|Fulham,2026-01-17,EPL,Leeds,Fulham,0.4724969734973883,0.4170082389756325,v1-backfill,1.0
+EPL|2026-01-17|Man United|Man City,2026-01-17,EPL,Man United,Man City,0.3364648979806131,0.3729219915818687,v1-backfill,1.0
+LaLiga|2026-01-18|Sociedad|Barcelona,2026-01-18,LaLiga,Sociedad,Barcelona,0.1550336016299041,0.2600092334083275,v1-backfill,1.0
+SerieA|2026-01-18|Torino|Roma,2026-01-18,SerieA,Torino,Roma,0.3153728371747932,0.397625590202534,v1-backfill,0.0
+EPL|2026-01-18|Aston Villa|Everton,2026-01-18,EPL,Aston Villa,Everton,0.7477743643233763,0.7197317969034515,v1-backfill,0.0
+SerieA|2026-01-18|Milan|Lecce,2026-01-18,SerieA,Milan,Lecce,0.9085161642533583,0.8257713684235027,v1-backfill,1.0
+Ligue1|2026-01-18|Strasbourg|Metz,2026-01-18,Ligue1,Strasbourg,Metz,0.8312451152425157,0.7654060090492976,v1-backfill,1.0
+Ligue1|2026-01-18|Nantes|Paris FC,2026-01-18,Ligue1,Nantes,Paris FC,0.527401757755471,0.640676408918198,v1-backfill,0.0
+Ligue1|2026-01-18|Lyon|Brest,2026-01-18,Ligue1,Lyon,Brest,0.6878294143981641,0.639406699451209,v1-backfill,1.0
+LaLiga|2026-01-18|Getafe|Valencia,2026-01-18,LaLiga,Getafe,Valencia,0.6054878577310698,0.5410522659405516,v1-backfill,0.0
+LaLiga|2026-01-18|Ath Madrid|Alaves,2026-01-18,LaLiga,Ath Madrid,Alaves,0.8776985246555437,0.7979096653296253,v1-backfill,1.0
+LaLiga|2026-01-18|Celta|Vallecano,2026-01-18,LaLiga,Celta,Vallecano,0.6661429116697846,0.6306313410266631,v1-backfill,1.0
+SerieA|2026-01-18|Bologna|Fiorentina,2026-01-18,SerieA,Bologna,Fiorentina,0.7307777914680219,0.6592662563567715,v1-backfill,0.0
+SerieA|2026-01-19|Lazio|Como,2026-01-19,SerieA,Lazio,Como,0.5351707400956652,0.6269800950924744,v1-backfill,0.0
+SerieA|2026-01-23|Inter|Pisa,2026-01-23,SerieA,Inter,Pisa,0.950103861567382,0.8903559240762139,v1-backfill,1.0
+LaLiga|2026-01-23|Levante|Elche,2026-01-23,LaLiga,Levante,Elche,0.4718497125662559,0.5163542371884788,v1-backfill,1.0
+Ligue1|2026-01-23|Auxerre|Paris SG,2026-01-23,Ligue1,Auxerre,Paris SG,0.0843584279935909,0.1942874075686222,v1-backfill,0.0
+LaLiga|2026-01-24|Vallecano|Osasuna,2026-01-24,LaLiga,Vallecano,Osasuna,0.6758762278332725,0.5719439702778037,v1-backfill,0.0
+LaLiga|2026-01-24|Valencia|Espanol,2026-01-24,LaLiga,Valencia,Espanol,0.5965994167525489,0.5517245345432938,v1-backfill,1.0
+Ligue1|2026-01-24|Marseille|Lens,2026-01-24,Ligue1,Marseille,Lens,0.6069911165433415,0.5471283390964571,v1-backfill,1.0
+Ligue1|2026-01-24|Rennes|Lorient,2026-01-24,Ligue1,Rennes,Lorient,0.6691894584922905,0.7182189208158585,v1-backfill,0.0
+EPL|2026-01-24|Bournemouth|Liverpool,2026-01-24,EPL,Bournemouth,Liverpool,0.346496705686111,0.4019214441496082,v1-backfill,1.0
+SerieA|2026-01-24|Fiorentina|Cagliari,2026-01-24,SerieA,Fiorentina,Cagliari,0.719650091194573,0.6599384591044151,v1-backfill,0.0
+SerieA|2026-01-24|Como|Torino,2026-01-24,SerieA,Como,Torino,0.7748957974743252,0.6445056813023581,v1-backfill,1.0
+LaLiga|2026-01-24|Sevilla|Ath Bilbao,2026-01-24,LaLiga,Sevilla,Ath Bilbao,0.4855975504510793,0.4389406903510829,v1-backfill,1.0
+Bundesliga|2026-01-24|Union Berlin|Dortmund,2026-01-24,Bundesliga,Union Berlin,Dortmund,0.3293228791043157,0.3795472233900335,v1-backfill,0.0
+Bundesliga|2026-01-24|Mainz|Wolfsburg,2026-01-24,Bundesliga,Mainz,Wolfsburg,0.5808011630858213,0.572190492089829,v1-backfill,1.0
+EPL|2026-01-24|Man City|Wolves,2026-01-24,EPL,Man City,Wolves,0.9253225767544164,0.8499141972201402,v1-backfill,1.0
+Bundesliga|2026-01-24|Heidenheim|RB Leipzig,2026-01-24,Bundesliga,Heidenheim,RB Leipzig,0.2396974626281006,0.3290595294814243,v1-backfill,0.0
+EPL|2026-01-24|Fulham|Brighton,2026-01-24,EPL,Fulham,Brighton,0.5263106310591111,0.5280923230356251,v1-backfill,1.0
+Bundesliga|2026-01-24|Ein Frankfurt|Hoffenheim,2026-01-24,Bundesliga,Ein Frankfurt,Hoffenheim,0.5799912802202275,0.617633098331818,v1-backfill,0.0
+Bundesliga|2026-01-24|Bayern Munich|Augsburg,2026-01-24,Bundesliga,Bayern Munich,Augsburg,0.9758341643138544,0.867274364374044,v1-backfill,0.0
+EPL|2026-01-24|West Ham|Sunderland,2026-01-24,EPL,West Ham,Sunderland,0.4913741787941996,0.5396753726170881,v1-backfill,1.0
+Bundesliga|2026-01-24|Leverkusen|Werder Bremen,2026-01-24,Bundesliga,Leverkusen,Werder Bremen,0.8515080525946668,0.7416926880173147,v1-backfill,1.0
+LaLiga|2026-01-24|Villarreal|Real Madrid,2026-01-24,LaLiga,Villarreal,Real Madrid,0.3387083323596574,0.4587274391002637,v1-backfill,0.0
+EPL|2026-01-25|Newcastle|Aston Villa,2026-01-25,EPL,Newcastle,Aston Villa,0.5940995146834079,0.4929098600280544,v1-backfill,0.0
+EPL|2026-01-25|Crystal Palace|Chelsea,2026-01-25,EPL,Crystal Palace,Chelsea,0.4091381040203614,0.4842096447723846,v1-backfill,0.0
+EPL|2026-01-25|Brentford|Nott'm Forest,2026-01-25,EPL,Brentford,Nott'm Forest,0.654539897000583,0.6279627631995237,v1-backfill,0.0
+Ligue1|2026-01-25|Metz|Lyon,2026-01-25,Ligue1,Metz,Lyon,0.1726325944943921,0.2843687035834816,v1-backfill,0.0
+Ligue1|2026-01-25|Brest|Toulouse,2026-01-25,Ligue1,Brest,Toulouse,0.5043046113346887,0.5904629808115162,v1-backfill,0.0
+Ligue1|2026-01-25|Lille|Strasbourg,2026-01-25,Ligue1,Lille,Strasbourg,0.7092473437359039,0.649877283638996,v1-backfill,0.0
+Ligue1|2026-01-25|Nantes|Nice,2026-01-25,Ligue1,Nantes,Nice,0.4135058116730893,0.4446125174329733,v1-backfill,0.0
+LaLiga|2026-01-25|Sociedad|Celta,2026-01-25,LaLiga,Sociedad,Celta,0.5785916463916455,0.5155665301714619,v1-backfill,1.0
+LaLiga|2026-01-25|Alaves|Betis,2026-01-25,LaLiga,Alaves,Betis,0.3894558029403884,0.3981099158280979,v1-backfill,1.0
+SerieA|2026-01-25|Sassuolo|Cremonese,2026-01-25,SerieA,Sassuolo,Cremonese,0.6798978458333368,0.5721145559127393,v1-backfill,1.0
+Bundesliga|2026-01-25|M'gladbach|Stuttgart,2026-01-25,Bundesliga,M'gladbach,Stuttgart,0.2926979438088375,0.4328999294048034,v1-backfill,0.0
+Bundesliga|2026-01-25|Freiburg|FC Koln,2026-01-25,Bundesliga,Freiburg,FC Koln,0.7035478963059084,0.7327304980790768,v1-backfill,1.0
+LaLiga|2026-01-25|Ath Madrid|Mallorca,2026-01-25,LaLiga,Ath Madrid,Mallorca,0.8945620861245387,0.7861145150388222,v1-backfill,1.0
+LaLiga|2026-01-25|Barcelona|Oviedo,2026-01-25,LaLiga,Barcelona,Oviedo,0.9783781493280036,0.9011115991052612,v1-backfill,1.0
+SerieA|2026-01-25|Atalanta|Parma,2026-01-25,SerieA,Atalanta,Parma,0.8243454021570805,0.750655932448339,v1-backfill,1.0
+SerieA|2026-01-25|Genoa|Bologna,2026-01-25,SerieA,Genoa,Bologna,0.3559446878495023,0.4427536119571403,v1-backfill,1.0
+SerieA|2026-01-25|Juventus|Napoli,2026-01-25,SerieA,Juventus,Napoli,0.607390577945546,0.5324108330715595,v1-backfill,1.0
+EPL|2026-01-25|Arsenal|Man United,2026-01-25,EPL,Arsenal,Man United,0.7950677363449229,0.7647900449487423,v1-backfill,0.0
+SerieA|2026-01-26|Verona|Udinese,2026-01-26,SerieA,Verona,Udinese,0.4867051660758593,0.4918397129499774,v1-backfill,0.0
+Bundesliga|2026-01-27|Werder Bremen|Hoffenheim,2026-01-27,Bundesliga,Werder Bremen,Hoffenheim,0.3952474023425232,0.5081866075485091,v1-backfill,0.0
+SerieA|2026-01-30|Lazio|Genoa,2026-01-30,SerieA,Lazio,Genoa,0.6997699366530569,0.6762631382822556,v1-backfill,1.0
+Ligue1|2026-01-30|Lens|Le Havre,2026-01-30,Ligue1,Lens,Le Havre,0.8428495844360899,0.7700429029307552,v1-backfill,1.0
+LaLiga|2026-01-30|Espanol|Alaves,2026-01-30,LaLiga,Espanol,Alaves,0.6503649524836571,0.6114908983245769,v1-backfill,0.0
+Bundesliga|2026-01-30|FC Koln|Wolfsburg,2026-01-30,Bundesliga,FC Koln,Wolfsburg,0.6115194179064437,0.486233801962171,v1-backfill,1.0
+LaLiga|2026-01-31|Oviedo|Girona,2026-01-31,LaLiga,Oviedo,Girona,0.4482767455454329,0.4063508309525065,v1-backfill,1.0
+EPL|2026-01-31|Wolves|Bournemouth,2026-01-31,EPL,Wolves,Bournemouth,0.3471866969660541,0.400508028864931,v1-backfill,0.0
+Ligue1|2026-01-31|Lorient|Nantes,2026-01-31,Ligue1,Lorient,Nantes,0.7470558709879376,0.5922898573451958,v1-backfill,1.0
+EPL|2026-01-31|Leeds|Arsenal,2026-01-31,EPL,Leeds,Arsenal,0.2080378373848214,0.2453135950530087,v1-backfill,0.0
+Bundesliga|2026-01-31|Augsburg|St Pauli,2026-01-31,Bundesliga,Augsburg,St Pauli,0.6816230857777873,0.6635929918890903,v1-backfill,1.0
+Bundesliga|2026-01-31|Ein Frankfurt|Leverkusen,2026-01-31,Bundesliga,Ein Frankfurt,Leverkusen,0.4133232559485729,0.4517188359040625,v1-backfill,0.0
+Bundesliga|2026-01-31|RB Leipzig|Mainz,2026-01-31,Bundesliga,RB Leipzig,Mainz,0.8000480580840791,0.7155066107161456,v1-backfill,0.0
+EPL|2026-01-31|Liverpool|Newcastle,2026-01-31,EPL,Liverpool,Newcastle,0.7053323685519571,0.6615288327483079,v1-backfill,1.0
+EPL|2026-01-31|Chelsea|West Ham,2026-01-31,EPL,Chelsea,West Ham,0.8566860646933682,0.7486583777085726,v1-backfill,1.0
+Ligue1|2026-01-31|Monaco|Rennes,2026-01-31,Ligue1,Monaco,Rennes,0.5591216868549332,0.593630287379078,v1-backfill,1.0
+LaLiga|2026-01-31|Elche|Barcelona,2026-01-31,LaLiga,Elche,Barcelona,0.0997347883574823,0.1951424190789336,v1-backfill,0.0
+Bundesliga|2026-01-31|Hoffenheim|Union Berlin,2026-01-31,Bundesliga,Hoffenheim,Union Berlin,0.7172451562931671,0.6444376565057347,v1-backfill,1.0
+SerieA|2026-01-31|Cagliari|Verona,2026-01-31,SerieA,Cagliari,Verona,0.638727749339588,0.6381485836979255,v1-backfill,1.0
+SerieA|2026-01-31|Napoli|Fiorentina,2026-01-31,SerieA,Napoli,Fiorentina,0.7675420804412085,0.7512086243039815,v1-backfill,1.0
+SerieA|2026-01-31|Pisa|Sassuolo,2026-01-31,SerieA,Pisa,Sassuolo,0.4459043898952805,0.5211565271465585,v1-backfill,0.0
+Bundesliga|2026-02-01|Stuttgart|Freiburg,2026-02-01,Bundesliga,Stuttgart,Freiburg,0.7580937809801466,0.6287957927709,v1-backfill,1.0
+Ligue1|2026-02-01|Strasbourg|Paris SG,2026-02-01,Ligue1,Strasbourg,Paris SG,0.1698743364835546,0.3314865559525195,v1-backfill,0.0
+LaLiga|2026-02-01|Real Madrid|Vallecano,2026-02-01,LaLiga,Real Madrid,Vallecano,0.9309859694354888,0.8364240017052477,v1-backfill,1.0
+LaLiga|2026-02-01|Betis|Valencia,2026-02-01,LaLiga,Betis,Valencia,0.7807553962499238,0.6703939050937261,v1-backfill,1.0
+Ligue1|2026-02-01|Angers|Metz,2026-02-01,Ligue1,Angers,Metz,0.6861419333355351,0.6779840087188848,v1-backfill,1.0
+Ligue1|2026-02-01|Lyon|Lille,2026-02-01,Ligue1,Lyon,Lille,0.6015810305478396,0.5783416676177184,v1-backfill,1.0
+EPL|2026-02-01|Aston Villa|Brentford,2026-02-01,EPL,Aston Villa,Brentford,0.7189104141422101,0.7088832877978579,v1-backfill,0.0
+EPL|2026-02-01|Man United|Fulham,2026-02-01,EPL,Man United,Fulham,0.6966648046830934,0.6007375486445755,v1-backfill,1.0
+SerieA|2026-02-01|Cremonese|Inter,2026-02-01,SerieA,Cremonese,Inter,0.0591682127801913,0.19509049811649,v1-backfill,0.0
+SerieA|2026-02-01|Torino|Lecce,2026-02-01,SerieA,Torino,Lecce,0.6436469814041464,0.6493819294499419,v1-backfill,1.0
+Bundesliga|2026-02-01|Dortmund|Heidenheim,2026-02-01,Bundesliga,Dortmund,Heidenheim,0.9206197501258472,0.8358023923703677,v1-backfill,1.0
+SerieA|2026-02-01|Parma|Juventus,2026-02-01,SerieA,Parma,Juventus,0.1607489921412803,0.3145411752368566,v1-backfill,0.0
+EPL|2026-02-02|Sunderland|Burnley,2026-02-02,EPL,Sunderland,Burnley,0.758788677074826,0.6836208085658663,v1-backfill,1.0
+LaLiga|2026-02-02|Mallorca|Sevilla,2026-02-02,LaLiga,Mallorca,Sevilla,0.5170183948896534,0.5807274360882098,v1-backfill,1.0
+SerieA|2026-02-02|Udinese|Roma,2026-02-02,SerieA,Udinese,Roma,0.2941308882685945,0.3799494544904914,v1-backfill,1.0
+SerieA|2026-02-03|Bologna|Milan,2026-02-03,SerieA,Bologna,Milan,0.4349317155537742,0.4341741504387087,v1-backfill,0.0
+EPL|2026-02-06|Leeds|Nott'm Forest,2026-02-06,EPL,Leeds,Nott'm Forest,0.5538954975670253,0.4696673861675906,v1-backfill,1.0
+LaLiga|2026-02-06|Celta|Osasuna,2026-02-06,LaLiga,Celta,Osasuna,0.6971337593059507,0.6207942262955634,v1-backfill,0.0
+EPL|2026-02-07|Burnley|West Ham,2026-02-07,EPL,Burnley,West Ham,0.3942264503119043,0.4608767712758559,v1-backfill,0.0
+EPL|2026-02-07|Wolves|Chelsea,2026-02-07,EPL,Wolves,Chelsea,0.2279043380484434,0.2987769005397306,v1-backfill,0.0
+EPL|2026-02-07|Fulham|Everton,2026-02-07,EPL,Fulham,Everton,0.6431791365138197,0.5635271050417856,v1-backfill,0.0
+EPL|2026-02-07|Arsenal|Sunderland,2026-02-07,EPL,Arsenal,Sunderland,0.9186164846841204,0.8247393489264995,v1-backfill,1.0
+EPL|2026-02-07|Man United|Tottenham,2026-02-07,EPL,Man United,Tottenham,0.7653371510629596,0.6752475873785224,v1-backfill,1.0
+Ligue1|2026-02-07|Lens|Rennes,2026-02-07,Ligue1,Lens,Rennes,0.7470308592533739,0.6909450010197165,v1-backfill,1.0
+EPL|2026-02-07|Newcastle|Brentford,2026-02-07,EPL,Newcastle,Brentford,0.6681827626123442,0.5954443859713823,v1-backfill,0.0
+Ligue1|2026-02-07|Brest|Lorient,2026-02-07,Ligue1,Brest,Lorient,0.5764106252606741,0.6638149081053576,v1-backfill,1.0
+SerieA|2026-02-07|Genoa|Napoli,2026-02-07,SerieA,Genoa,Napoli,0.2643403324632896,0.3236379821196248,v1-backfill,0.0
+Bundesliga|2026-02-07|Freiburg|Werder Bremen,2026-02-07,Bundesliga,Freiburg,Werder Bremen,0.6867266143374627,0.6382167985002094,v1-backfill,1.0
+LaLiga|2026-02-07|Barcelona|Mallorca,2026-02-07,LaLiga,Barcelona,Mallorca,0.962743192972225,0.8448577660878802,v1-backfill,1.0
+LaLiga|2026-02-07|Sociedad|Elche,2026-02-07,LaLiga,Sociedad,Elche,0.7975907117063232,0.7022497114902355,v1-backfill,1.0
+Bundesliga|2026-02-07|Heidenheim|Hamburg,2026-02-07,Bundesliga,Heidenheim,Hamburg,0.4390011767123537,0.5675127194453915,v1-backfill,0.0
+Bundesliga|2026-02-07|Mainz|Augsburg,2026-02-07,Bundesliga,Mainz,Augsburg,0.6145189968706237,0.5910710662879345,v1-backfill,1.0
+Bundesliga|2026-02-07|St Pauli|Stuttgart,2026-02-07,Bundesliga,St Pauli,Stuttgart,0.2375887036729754,0.3102367070475842,v1-backfill,1.0
+Bundesliga|2026-02-07|Wolfsburg|Dortmund,2026-02-07,Bundesliga,Wolfsburg,Dortmund,0.233137271520604,0.3127371683209288,v1-backfill,0.0
+Ligue1|2026-02-07|Nantes|Lyon,2026-02-07,Ligue1,Nantes,Lyon,0.2250593436762783,0.3256930083428645,v1-backfill,0.0
+SerieA|2026-02-08|Sassuolo|Inter,2026-02-08,SerieA,Sassuolo,Inter,0.1118455831801127,0.2131981365511699,v1-backfill,0.0
+SerieA|2026-02-08|Lecce|Udinese,2026-02-08,SerieA,Lecce,Udinese,0.4165578359284255,0.4604505972179195,v1-backfill,1.0
+SerieA|2026-02-08|Bologna|Parma,2026-02-08,SerieA,Bologna,Parma,0.7868676695840939,0.7023346506054672,v1-backfill,0.0
+EPL|2026-02-08|Liverpool|Man City,2026-02-08,EPL,Liverpool,Man City,0.5283537151050547,0.5320752222968178,v1-backfill,0.0
+EPL|2026-02-08|Brighton|Crystal Palace,2026-02-08,EPL,Brighton,Crystal Palace,0.6666595911365162,0.6081027748091573,v1-backfill,0.0
+Bundesliga|2026-02-08|Bayern Munich|Hoffenheim,2026-02-08,Bundesliga,Bayern Munich,Hoffenheim,0.9210535134630208,0.7721698888187694,v1-backfill,1.0
+LaLiga|2026-02-08|Valencia|Real Madrid,2026-02-08,LaLiga,Valencia,Real Madrid,0.1575196675323639,0.2599915088090425,v1-backfill,0.0
+LaLiga|2026-02-08|Ath Madrid|Betis,2026-02-08,LaLiga,Ath Madrid,Betis,0.7638315557005917,0.6747573750547627,v1-backfill,0.0
+LaLiga|2026-02-08|Ath Bilbao|Levante,2026-02-08,LaLiga,Ath Bilbao,Levante,0.8439101000035637,0.7420194172224949,v1-backfill,1.0
+LaLiga|2026-02-08|Alaves|Getafe,2026-02-08,LaLiga,Alaves,Getafe,0.6819456362891998,0.6039119809790209,v1-backfill,0.0
+Ligue1|2026-02-08|Le Havre|Strasbourg,2026-02-08,Ligue1,Le Havre,Strasbourg,0.4073623430833852,0.4342912483432267,v1-backfill,1.0
+Ligue1|2026-02-08|Angers|Toulouse,2026-02-08,Ligue1,Angers,Toulouse,0.3349579001380471,0.4828645609496108,v1-backfill,1.0
+Bundesliga|2026-02-08|FC Koln|RB Leipzig,2026-02-08,Bundesliga,FC Koln,RB Leipzig,0.3561586656978571,0.3411682538175015,v1-backfill,0.0
+Ligue1|2026-02-08|Paris SG|Marseille,2026-02-08,Ligue1,Paris SG,Marseille,0.7726810349085553,0.7277002206225738,v1-backfill,1.0
+SerieA|2026-02-09|Roma|Cagliari,2026-02-09,SerieA,Roma,Cagliari,0.811187953305889,0.751480809265823,v1-backfill,1.0
+LaLiga|2026-02-09|Villarreal|Espanol,2026-02-09,LaLiga,Villarreal,Espanol,0.7965165348201176,0.7479552861592994,v1-backfill,1.0
+SerieA|2026-02-09|Atalanta|Cremonese,2026-02-09,SerieA,Atalanta,Cremonese,0.8989702360836836,0.8010499139387678,v1-backfill,1.0
+EPL|2026-02-10|Everton|Bournemouth,2026-02-10,EPL,Everton,Bournemouth,0.5094954272843247,0.5793370460730173,v1-backfill,0.0
+EPL|2026-02-10|Tottenham|Newcastle,2026-02-10,EPL,Tottenham,Newcastle,0.4449473162945429,0.4727435580694949,v1-backfill,0.0
+EPL|2026-02-11|Sunderland|Liverpool,2026-02-11,EPL,Sunderland,Liverpool,0.196602247267521,0.3483323077391968,v1-backfill,0.0
+EPL|2026-02-11|Crystal Palace|Burnley,2026-02-11,EPL,Crystal Palace,Burnley,0.8898193151374673,0.7724971414620492,v1-backfill,0.0
+EPL|2026-02-11|Man City|Fulham,2026-02-11,EPL,Man City,Fulham,0.8703223219398721,0.762181386973938,v1-backfill,1.0
+EPL|2026-02-11|Aston Villa|Brighton,2026-02-11,EPL,Aston Villa,Brighton,0.5938143652617416,0.6829842958381851,v1-backfill,1.0
+Bundesliga|2026-02-13|Dortmund|Mainz,2026-02-13,Bundesliga,Dortmund,Mainz,0.8464275903241764,0.7611771263672054,v1-backfill,1.0
+SerieA|2026-02-13|Pisa|Milan,2026-02-13,SerieA,Pisa,Milan,0.1306617007034251,0.2186274383310307,v1-backfill,0.0
+Ligue1|2026-02-13|Rennes|Paris SG,2026-02-13,Ligue1,Rennes,Paris SG,0.1445250012071052,0.2845727370415389,v1-backfill,1.0
+Ligue1|2026-02-13|Monaco|Nantes,2026-02-13,Ligue1,Monaco,Nantes,0.812123893494117,0.7480739400809335,v1-backfill,1.0
+Bundesliga|2026-02-14|Hoffenheim|Freiburg,2026-02-14,Bundesliga,Hoffenheim,Freiburg,0.6538386756848907,0.5851149167876988,v1-backfill,1.0
+LaLiga|2026-02-14|Getafe|Villarreal,2026-02-14,LaLiga,Getafe,Villarreal,0.3957982700532502,0.3392203202389821,v1-backfill,1.0
+Bundesliga|2026-02-14|Leverkusen|St Pauli,2026-02-14,Bundesliga,Leverkusen,St Pauli,0.8683637193538509,0.8347743634714686,v1-backfill,1.0
+LaLiga|2026-02-14|Real Madrid|Sociedad,2026-02-14,LaLiga,Real Madrid,Sociedad,0.9096307066119484,0.8095583177991441,v1-backfill,1.0
+Ligue1|2026-02-14|Paris FC|Lens,2026-02-14,Ligue1,Paris FC,Lens,0.2497754916069141,0.2838062892415618,v1-backfill,0.0
+Bundesliga|2026-02-14|Werder Bremen|Bayern Munich,2026-02-14,Bundesliga,Werder Bremen,Bayern Munich,0.072667149198103,0.2517384011485251,v1-backfill,0.0
+SerieA|2026-02-14|Inter|Juventus,2026-02-14,SerieA,Inter,Juventus,0.7088303553024211,0.6733774135167044,v1-backfill,1.0
+SerieA|2026-02-14|Lazio|Atalanta,2026-02-14,SerieA,Lazio,Atalanta,0.4225190693418481,0.5178239900897486,v1-backfill,0.0
+SerieA|2026-02-14|Como|Fiorentina,2026-02-14,SerieA,Como,Fiorentina,0.7789614812723081,0.6323300393816886,v1-backfill,0.0
+Bundesliga|2026-02-14|Stuttgart|FC Koln,2026-02-14,Bundesliga,Stuttgart,FC Koln,0.8314350895343354,0.7776021548046643,v1-backfill,1.0
+Bundesliga|2026-02-14|Ein Frankfurt|M'gladbach,2026-02-14,Bundesliga,Ein Frankfurt,M'gladbach,0.7505954778236663,0.6668452454127579,v1-backfill,1.0
+Bundesliga|2026-02-14|Hamburg|Union Berlin,2026-02-14,Bundesliga,Hamburg,Union Berlin,0.5590856682853668,0.4706814254918979,v1-backfill,1.0
+LaLiga|2026-02-15|Levante|Valencia,2026-02-15,LaLiga,Levante,Valencia,0.4615683741054069,0.4496340548610779,v1-backfill,0.0
+LaLiga|2026-02-15|Vallecano|Ath Madrid,2026-02-15,LaLiga,Vallecano,Ath Madrid,0.3615405829561962,0.3508788090206585,v1-backfill,1.0
+LaLiga|2026-02-15|Oviedo|Ath Bilbao,2026-02-15,LaLiga,Oviedo,Ath Bilbao,0.2995476925097164,0.3597980000627242,v1-backfill,0.0
+SerieA|2026-02-15|Torino|Bologna,2026-02-15,SerieA,Torino,Bologna,0.4019278946173774,0.5056898091012793,v1-backfill,0.0
+Bundesliga|2026-02-15|Augsburg|Heidenheim,2026-02-15,Bundesliga,Augsburg,Heidenheim,0.7368130485956612,0.6707152709682588,v1-backfill,1.0
+SerieA|2026-02-15|Parma|Verona,2026-02-15,SerieA,Parma,Verona,0.6217104732426796,0.6407379144212647,v1-backfill,1.0
+Ligue1|2026-02-15|Lyon|Nice,2026-02-15,Ligue1,Lyon,Nice,0.7492760701384635,0.6715891451173122,v1-backfill,1.0
+Ligue1|2026-02-15|Metz|Auxerre,2026-02-15,Ligue1,Metz,Auxerre,0.4108660416436082,0.5000506059100244,v1-backfill,0.0
+Ligue1|2026-02-15|Lorient|Angers,2026-02-15,Ligue1,Lorient,Angers,0.6815609694071914,0.5423911895320997,v1-backfill,1.0
+Ligue1|2026-02-15|Le Havre|Toulouse,2026-02-15,Ligue1,Le Havre,Toulouse,0.4114719639676589,0.496519243442406,v1-backfill,1.0
+SerieA|2026-02-15|Udinese|Sassuolo,2026-02-15,SerieA,Udinese,Sassuolo,0.6733165433349569,0.6484542657584436,v1-backfill,0.0
+LaLiga|2026-02-15|Mallorca|Betis,2026-02-15,LaLiga,Mallorca,Betis,0.3532785897823118,0.4165522815139426,v1-backfill,0.0
+SerieA|2026-02-16|Cagliari|Lecce,2026-02-16,SerieA,Cagliari,Lecce,0.6252722091122117,0.623928657512017,v1-backfill,0.0
+LaLiga|2026-02-16|Girona|Barcelona,2026-02-16,LaLiga,Girona,Barcelona,0.1009462876309581,0.2554623628812472,v1-backfill,1.0
+LaLiga|2026-02-18|Levante|Villarreal,2026-02-18,LaLiga,Levante,Villarreal,0.3041910351430069,0.2686622848345911,v1-backfill,0.0
+Ligue1|2026-02-20|Brest|Marseille,2026-02-20,Ligue1,Brest,Marseille,0.3498839434029516,0.4657998989807899,v1-backfill,1.0
+LaLiga|2026-02-20|Ath Bilbao|Elche,2026-02-20,LaLiga,Ath Bilbao,Elche,0.8330982059680077,0.7394948228439268,v1-backfill,1.0
+SerieA|2026-02-20|Sassuolo|Verona,2026-02-20,SerieA,Sassuolo,Verona,0.659804212225841,0.6266772408163729,v1-backfill,1.0
+EPL|2026-02-21|Man City|Newcastle,2026-02-21,EPL,Man City,Newcastle,0.7980732842078911,0.7259200777499665,v1-backfill,1.0
+EPL|2026-02-21|Brentford|Brighton,2026-02-21,EPL,Brentford,Brighton,0.5521822397007207,0.5979073974816825,v1-backfill,0.0
+Ligue1|2026-02-21|Lens|Monaco,2026-02-21,Ligue1,Lens,Monaco,0.7198238703413715,0.6607541221284214,v1-backfill,0.0
+Ligue1|2026-02-21|Paris SG|Metz,2026-02-21,Ligue1,Paris SG,Metz,0.9766760809575304,0.9126472120722804,v1-backfill,1.0
+LaLiga|2026-02-21|Osasuna|Real Madrid,2026-02-21,LaLiga,Osasuna,Real Madrid,0.1731163392775953,0.2790341735823246,v1-backfill,1.0
+LaLiga|2026-02-21|Ath Madrid|Espanol,2026-02-21,LaLiga,Ath Madrid,Espanol,0.8520385983394773,0.7581008902684757,v1-backfill,1.0
+SerieA|2026-02-21|Lecce|Inter,2026-02-21,SerieA,Lecce,Inter,0.0878086141234721,0.2074806451016635,v1-backfill,0.0
+Bundesliga|2026-02-21|Bayern Munich|Ein Frankfurt,2026-02-21,Bundesliga,Bayern Munich,Ein Frankfurt,0.9423561830164998,0.7821569497827503,v1-backfill,1.0
+Bundesliga|2026-02-21|Union Berlin|Leverkusen,2026-02-21,Bundesliga,Union Berlin,Leverkusen,0.3090238806825662,0.3421814867910223,v1-backfill,1.0
+Bundesliga|2026-02-21|Wolfsburg|Augsburg,2026-02-21,Bundesliga,Wolfsburg,Augsburg,0.5425502137013808,0.5433979966902033,v1-backfill,0.0
+SerieA|2026-02-21|Juventus|Como,2026-02-21,SerieA,Juventus,Como,0.6420941071849543,0.6963704353102921,v1-backfill,0.0
+LaLiga|2026-02-22|Barcelona|Levante,2026-02-22,LaLiga,Barcelona,Levante,0.9755042818814122,0.8961487727253585,v1-backfill,1.0
+LaLiga|2026-02-22|Getafe|Sevilla,2026-02-22,LaLiga,Getafe,Sevilla,0.638154986153647,0.5932948827320644,v1-backfill,0.0
+SerieA|2026-02-22|Atalanta|Napoli,2026-02-22,SerieA,Atalanta,Napoli,0.5331093410913136,0.5085188089060365,v1-backfill,1.0
+Bundesliga|2026-02-22|St Pauli|Werder Bremen,2026-02-22,Bundesliga,St Pauli,Werder Bremen,0.5314472801474297,0.4733316821831762,v1-backfill,1.0
+SerieA|2026-02-22|Genoa|Torino,2026-02-22,SerieA,Genoa,Torino,0.5869752661336466,0.5566156359310455,v1-backfill,1.0
+Ligue1|2026-02-22|Strasbourg|Lyon,2026-02-22,Ligue1,Strasbourg,Lyon,0.4265252704805768,0.4705021985226437,v1-backfill,1.0
+Ligue1|2026-02-22|Nantes|Le Havre,2026-02-22,Ligue1,Nantes,Le Havre,0.4710472059771386,0.4953147942885159,v1-backfill,1.0
+Ligue1|2026-02-22|Angers|Lille,2026-02-22,Ligue1,Angers,Lille,0.2861003382011464,0.4053941783854118,v1-backfill,0.0
+Ligue1|2026-02-22|Auxerre|Rennes,2026-02-22,Ligue1,Auxerre,Rennes,0.392399331205696,0.4223613863796033,v1-backfill,0.0
+EPL|2026-02-22|Crystal Palace|Wolves,2026-02-22,EPL,Crystal Palace,Wolves,0.7893296138517752,0.7183943324000956,v1-backfill,1.0
+EPL|2026-02-22|Nott'm Forest|Liverpool,2026-02-22,EPL,Nott'm Forest,Liverpool,0.299077396313698,0.3783698466149224,v1-backfill,0.0
+Bundesliga|2026-02-22|Freiburg|M'gladbach,2026-02-22,Bundesliga,Freiburg,M'gladbach,0.7220719622524998,0.6578317826734555,v1-backfill,1.0
+EPL|2026-02-22|Tottenham|Arsenal,2026-02-22,EPL,Tottenham,Arsenal,0.1896158746944292,0.2803301743083565,v1-backfill,0.0
+EPL|2026-02-22|Sunderland|Fulham,2026-02-22,EPL,Sunderland,Fulham,0.4471264959869215,0.4957348467754523,v1-backfill,0.0
+LaLiga|2026-02-22|Villarreal|Valencia,2026-02-22,LaLiga,Villarreal,Valencia,0.7912579662566144,0.7367245048315514,v1-backfill,1.0
+SerieA|2026-02-22|Milan|Parma,2026-02-22,SerieA,Milan,Parma,0.8505250324258541,0.8009475603104048,v1-backfill,0.0
+SerieA|2026-02-22|Roma|Cremonese,2026-02-22,SerieA,Roma,Cremonese,0.9100499228116052,0.8182446140741304,v1-backfill,1.0
+LaLiga|2026-02-22|Celta|Mallorca,2026-02-22,LaLiga,Celta,Mallorca,0.7942942206901141,0.6550777717538637,v1-backfill,1.0
+SerieA|2026-02-23|Fiorentina|Pisa,2026-02-23,SerieA,Fiorentina,Pisa,0.8021439197845814,0.7394674261756153,v1-backfill,1.0
+SerieA|2026-02-23|Bologna|Udinese,2026-02-23,SerieA,Bologna,Udinese,0.7272066647895343,0.6602327355253355,v1-backfill,1.0
+EPL|2026-02-23|Everton|Man United,2026-02-23,EPL,Everton,Man United,0.3760159021444785,0.5254399838311683,v1-backfill,0.0
+EPL|2026-02-27|Wolves|Aston Villa,2026-02-27,EPL,Wolves,Aston Villa,0.2525504267725844,0.2729159048386969,v1-backfill,1.0
+Bundesliga|2026-02-27|Augsburg|FC Koln,2026-02-27,Bundesliga,Augsburg,FC Koln,0.6546372541744371,0.6752740170663782,v1-backfill,1.0
+LaLiga|2026-02-27|Levante|Alaves,2026-02-27,LaLiga,Levante,Alaves,0.4174176314434435,0.4580482253400738,v1-backfill,1.0
+SerieA|2026-02-28|Verona|Napoli,2026-02-28,SerieA,Verona,Napoli,0.1607865961702564,0.2370846306706166,v1-backfill,0.0
+LaLiga|2026-02-28|Barcelona|Villarreal,2026-02-28,LaLiga,Barcelona,Villarreal,0.8878145277881547,0.6903445934947143,v1-backfill,1.0
+SerieA|2026-02-28|Inter|Genoa,2026-02-28,SerieA,Inter,Genoa,0.9333154692573647,0.8463708984587611,v1-backfill,1.0
+Ligue1|2026-02-28|Le Havre|Paris SG,2026-02-28,Ligue1,Le Havre,Paris SG,0.0880792066162741,0.2261888421240428,v1-backfill,0.0
+Ligue1|2026-02-28|Monaco|Angers,2026-02-28,Ligue1,Monaco,Angers,0.8057173300867789,0.7259775743705223,v1-backfill,1.0
+Ligue1|2026-02-28|Rennes|Toulouse,2026-02-28,Ligue1,Rennes,Toulouse,0.5661785809474051,0.6274730382791162,v1-backfill,1.0
+EPL|2026-02-28|Burnley|Brentford,2026-02-28,EPL,Burnley,Brentford,0.2818902288411986,0.3520983140205677,v1-backfill,0.0
+EPL|2026-02-28|Liverpool|West Ham,2026-02-28,EPL,Liverpool,West Ham,0.8798111072746656,0.7849688652541013,v1-backfill,1.0
+EPL|2026-02-28|Newcastle|Everton,2026-02-28,EPL,Newcastle,Everton,0.6978765398740735,0.6084386089751073,v1-backfill,0.0
+EPL|2026-02-28|Leeds|Man City,2026-02-28,EPL,Leeds,Man City,0.2128262019986902,0.266933501631001,v1-backfill,0.0
+SerieA|2026-02-28|Como|Lecce,2026-02-28,SerieA,Como,Lecce,0.8626006567437792,0.7233177964352965,v1-backfill,1.0
+Bundesliga|2026-02-28|Hoffenheim|St Pauli,2026-02-28,Bundesliga,Hoffenheim,St Pauli,0.8064237931058932,0.7473926182187594,v1-backfill,0.0
+Bundesliga|2026-02-28|M'gladbach|Union Berlin,2026-02-28,Bundesliga,M'gladbach,Union Berlin,0.4589034074470494,0.533666570436176,v1-backfill,1.0
+LaLiga|2026-02-28|Oviedo|Ath Madrid,2026-02-28,LaLiga,Oviedo,Ath Madrid,0.1779602089489776,0.2478978221773671,v1-backfill,0.0
+LaLiga|2026-02-28|Mallorca|Sociedad,2026-02-28,LaLiga,Mallorca,Sociedad,0.4261521856134779,0.4948564926455154,v1-backfill,0.0
+Bundesliga|2026-02-28|Werder Bremen|Heidenheim,2026-02-28,Bundesliga,Werder Bremen,Heidenheim,0.7211625626374365,0.6688398577104565,v1-backfill,1.0
+Bundesliga|2026-02-28|Dortmund|Bayern Munich,2026-02-28,Bundesliga,Dortmund,Bayern Munich,0.2644409392339618,0.4658834472753785,v1-backfill,0.0
+LaLiga|2026-03-01|Valencia|Osasuna,2026-03-01,LaLiga,Valencia,Osasuna,0.5715362379729825,0.5190897774211819,v1-backfill,1.0
+LaLiga|2026-03-01|Girona|Celta,2026-03-01,LaLiga,Girona,Celta,0.4543738330585327,0.5223624167339955,v1-backfill,0.0
+EPL|2026-03-01|Brighton|Nott'm Forest,2026-03-01,EPL,Brighton,Nott'm Forest,0.6885968383601656,0.6441629333262994,v1-backfill,1.0
+EPL|2026-03-01|Fulham|Tottenham,2026-03-01,EPL,Fulham,Tottenham,0.6975055689216598,0.6476846087582814,v1-backfill,1.0
+EPL|2026-03-01|Man United|Crystal Palace,2026-03-01,EPL,Man United,Crystal Palace,0.7418788883613027,0.6404859401315406,v1-backfill,1.0
+EPL|2026-03-01|Arsenal|Chelsea,2026-03-01,EPL,Arsenal,Chelsea,0.7746107757235178,0.6953374087991193,v1-backfill,1.0
+Bundesliga|2026-03-01|Stuttgart|Wolfsburg,2026-03-01,Bundesliga,Stuttgart,Wolfsburg,0.8512275278554196,0.7372875690140804,v1-backfill,1.0
+Ligue1|2026-03-01|Metz|Brest,2026-03-01,Ligue1,Metz,Brest,0.2321793928387203,0.329852248874141,v1-backfill,0.0
+Ligue1|2026-03-01|Marseille|Lyon,2026-03-01,Ligue1,Marseille,Lyon,0.638558502393088,0.5582105744498992,v1-backfill,1.0
+SerieA|2026-03-01|Torino|Lazio,2026-03-01,SerieA,Torino,Lazio,0.3974335933235761,0.4515494380717953,v1-backfill,1.0
+SerieA|2026-03-01|Sassuolo|Atalanta,2026-03-01,SerieA,Sassuolo,Atalanta,0.2560283887349893,0.3303536986971733,v1-backfill,1.0
+SerieA|2026-03-01|Cremonese|Milan,2026-03-01,SerieA,Cremonese,Milan,0.1269416477267667,0.2515683940742709,v1-backfill,0.0
+Bundesliga|2026-03-01|Hamburg|RB Leipzig,2026-03-01,Bundesliga,Hamburg,RB Leipzig,0.3728149238324076,0.3578737143899496,v1-backfill,0.0
+Bundesliga|2026-03-01|Ein Frankfurt|Freiburg,2026-03-01,Bundesliga,Ein Frankfurt,Freiburg,0.6403038554601579,0.5836846163230279,v1-backfill,1.0
+Ligue1|2026-03-01|Paris FC|Nice,2026-03-01,Ligue1,Paris FC,Nice,0.4446745922646954,0.411155603750496,v1-backfill,1.0
+Ligue1|2026-03-01|Lille|Nantes,2026-03-01,Ligue1,Lille,Nantes,0.844546754909681,0.7699802087020586,v1-backfill,1.0
+SerieA|2026-03-02|Udinese|Fiorentina,2026-03-02,SerieA,Udinese,Fiorentina,0.4564110800295768,0.5078831159050247,v1-backfill,1.0
+SerieA|2026-03-02|Pisa|Bologna,2026-03-02,SerieA,Pisa,Bologna,0.2239124140457076,0.3321768870128446,v1-backfill,0.0
+LaLiga|2026-03-02|Real Madrid|Getafe,2026-03-02,LaLiga,Real Madrid,Getafe,0.9374480085295348,0.8519967209158987,v1-backfill,0.0
+EPL|2026-03-03|Leeds|Sunderland,2026-03-03,EPL,Leeds,Sunderland,0.6738169797317216,0.5606674085742182,v1-backfill,0.0
+EPL|2026-03-03|Wolves|Liverpool,2026-03-03,EPL,Wolves,Liverpool,0.1427978141235188,0.2641510475616436,v1-backfill,1.0
+EPL|2026-03-03|Everton|Burnley,2026-03-03,EPL,Everton,Burnley,0.8249388347684997,0.7634068909916474,v1-backfill,1.0
+EPL|2026-03-04|Aston Villa|Chelsea,2026-03-04,EPL,Aston Villa,Chelsea,0.4749786197728435,0.597711477282452,v1-backfill,0.0
+EPL|2026-03-04|Brighton|Arsenal,2026-03-04,EPL,Brighton,Arsenal,0.2768088340037173,0.3648528509304941,v1-backfill,0.0
+EPL|2026-03-04|Fulham|West Ham,2026-03-04,EPL,Fulham,West Ham,0.8027550309667563,0.6647297189835486,v1-backfill,0.0
+EPL|2026-03-04|Newcastle|Man United,2026-03-04,EPL,Newcastle,Man United,0.3961929590678117,0.5172024812319412,v1-backfill,1.0
+Bundesliga|2026-03-04|Hamburg|Leverkusen,2026-03-04,Bundesliga,Hamburg,Leverkusen,0.3633622397492456,0.2899582806731276,v1-backfill,0.0
+LaLiga|2026-03-04|Vallecano|Oviedo,2026-03-04,LaLiga,Vallecano,Oviedo,0.8341064393004171,0.7154302501212941,v1-backfill,1.0
+EPL|2026-03-05|Tottenham|Crystal Palace,2026-03-05,EPL,Tottenham,Crystal Palace,0.4816866308444599,0.4909228111338195,v1-backfill,0.0
+Ligue1|2026-03-06|Paris SG|Monaco,2026-03-06,Ligue1,Paris SG,Monaco,0.8771012852574026,0.7601445737560965,v1-backfill,0.0
+Bundesliga|2026-03-06|Bayern Munich|M'gladbach,2026-03-06,Bundesliga,Bayern Munich,M'gladbach,0.97145437186639,0.8578218020196663,v1-backfill,1.0
+LaLiga|2026-03-06|Celta|Real Madrid,2026-03-06,LaLiga,Celta,Real Madrid,0.2834222210560466,0.3481327863277715,v1-backfill,0.0
+SerieA|2026-03-06|Napoli|Torino,2026-03-06,SerieA,Napoli,Torino,0.8432522460741354,0.7805224058689233,v1-backfill,1.0
+Bundesliga|2026-03-07|FC Koln|Dortmund,2026-03-07,Bundesliga,FC Koln,Dortmund,0.2184443339850048,0.247999045445928,v1-backfill,0.0
+Bundesliga|2026-03-07|Wolfsburg|Hamburg,2026-03-07,Bundesliga,Wolfsburg,Hamburg,0.4490836773943449,0.6056294318950868,v1-backfill,0.0
+Bundesliga|2026-03-07|RB Leipzig|Augsburg,2026-03-07,Bundesliga,RB Leipzig,Augsburg,0.7816615604187174,0.699250195807139,v1-backfill,1.0
+Bundesliga|2026-03-07|Heidenheim|Hoffenheim,2026-03-07,Bundesliga,Heidenheim,Hoffenheim,0.2691905134874873,0.3570229174550611,v1-backfill,0.0
+SerieA|2026-03-07|Juventus|Pisa,2026-03-07,SerieA,Juventus,Pisa,0.9306035888927152,0.8508538378982863,v1-backfill,1.0
+SerieA|2026-03-07|Cagliari|Como,2026-03-07,SerieA,Cagliari,Como,0.2419213749510826,0.432395449659858,v1-backfill,0.0
+Ligue1|2026-03-07|Nantes|Angers,2026-03-07,Ligue1,Nantes,Angers,0.5578997552927704,0.5292261312825824,v1-backfill,0.0
+Ligue1|2026-03-07|Toulouse|Marseille,2026-03-07,Ligue1,Toulouse,Marseille,0.4178701215074283,0.4215857936187649,v1-backfill,0.0
+LaLiga|2026-03-07|Ath Madrid|Sociedad,2026-03-07,LaLiga,Ath Madrid,Sociedad,0.7925822104943495,0.7174275666838796,v1-backfill,1.0
+LaLiga|2026-03-07|Ath Bilbao|Barcelona,2026-03-07,LaLiga,Ath Bilbao,Barcelona,0.2223422510015555,0.3365111258271606,v1-backfill,0.0
+LaLiga|2026-03-08|Villarreal|Elche,2026-03-08,LaLiga,Villarreal,Elche,0.8516525702695297,0.8152387395969503,v1-backfill,1.0
+LaLiga|2026-03-08|Getafe|Betis,2026-03-08,LaLiga,Getafe,Betis,0.44021836318187,0.4179641061219963,v1-backfill,1.0
+SerieA|2026-03-08|Milan|Inter,2026-03-08,SerieA,Milan,Inter,0.3023471495221616,0.4580782044463299,v1-backfill,1.0
+SerieA|2026-03-08|Genoa|Roma,2026-03-08,SerieA,Genoa,Roma,0.2762004783920454,0.366841203897401,v1-backfill,1.0
+Bundesliga|2026-03-08|Union Berlin|Werder Bremen,2026-03-08,Bundesliga,Union Berlin,Werder Bremen,0.6172225864786657,0.5865981363930416,v1-backfill,0.0
+SerieA|2026-03-08|Bologna|Verona,2026-03-08,SerieA,Bologna,Verona,0.8471213694834332,0.7716381810911246,v1-backfill,0.0
+SerieA|2026-03-08|Lecce|Cremonese,2026-03-08,SerieA,Lecce,Cremonese,0.7038731133158074,0.6135601891435795,v1-backfill,1.0
+Ligue1|2026-03-08|Lens|Metz,2026-03-08,Ligue1,Lens,Metz,0.9318533608645688,0.8553887811123129,v1-backfill,1.0
+Ligue1|2026-03-08|Brest|Le Havre,2026-03-08,Ligue1,Brest,Le Havre,0.7066070813250084,0.6854282020233398,v1-backfill,1.0
+Ligue1|2026-03-08|Nice|Rennes,2026-03-08,Ligue1,Nice,Rennes,0.4445669490037073,0.5234497282188459,v1-backfill,0.0
+LaLiga|2026-03-08|Valencia|Alaves,2026-03-08,LaLiga,Valencia,Alaves,0.6499190374655287,0.6245405725498374,v1-backfill,1.0
+SerieA|2026-03-09|Lazio|Sassuolo,2026-03-09,SerieA,Lazio,Sassuolo,0.6965336476641345,0.6912391849476026,v1-backfill,1.0
+Ligue1|2026-03-13|Marseille|Auxerre,2026-03-13,Ligue1,Marseille,Auxerre,0.86063124265685,0.7893810952220983,v1-backfill,1.0
+Bundesliga|2026-03-13|M'gladbach|St Pauli,2026-03-13,Bundesliga,M'gladbach,St Pauli,0.5946760722364403,0.6269210075482213,v1-backfill,1.0
+SerieA|2026-03-13|Torino|Parma,2026-03-13,SerieA,Torino,Parma,0.5699524722692925,0.574029228120651,v1-backfill,1.0
+SerieA|2026-03-14|Napoli|Lecce,2026-03-14,SerieA,Napoli,Lecce,0.8796236641542339,0.8257314260057527,v1-backfill,1.0
+LaLiga|2026-03-14|Real Madrid|Elche,2026-03-14,LaLiga,Real Madrid,Elche,0.9548346636261076,0.8817971724167695,v1-backfill,1.0
+LaLiga|2026-03-14|Oviedo|Valencia,2026-03-14,LaLiga,Oviedo,Valencia,0.3670027185266353,0.4042781620905634,v1-backfill,1.0
+Ligue1|2026-03-14|Monaco|Brest,2026-03-14,Ligue1,Monaco,Brest,0.6868407820459206,0.6298680435149244,v1-backfill,1.0
+SerieA|2026-03-14|Udinese|Juventus,2026-03-14,SerieA,Udinese,Juventus,0.2241009017561218,0.3694739057011203,v1-backfill,0.0
+Bundesliga|2026-03-14|Ein Frankfurt|Heidenheim,2026-03-14,Bundesliga,Ein Frankfurt,Heidenheim,0.8432716098476624,0.7783756723973624,v1-backfill,1.0
+Ligue1|2026-03-14|Lorient|Lens,2026-03-14,Ligue1,Lorient,Lens,0.3066269106943093,0.346153033440465,v1-backfill,1.0
+EPL|2026-03-14|Sunderland|Brighton,2026-03-14,EPL,Sunderland,Brighton,0.3593184855919586,0.4619516885618887,v1-backfill,0.0
+EPL|2026-03-14|Arsenal|Everton,2026-03-14,EPL,Arsenal,Everton,0.878102424296552,0.7724608483407814,v1-backfill,1.0
+EPL|2026-03-14|Chelsea|Newcastle,2026-03-14,EPL,Chelsea,Newcastle,0.6877835534272776,0.6426047878391388,v1-backfill,0.0
+Bundesliga|2026-03-14|Dortmund|Augsburg,2026-03-14,Bundesliga,Dortmund,Augsburg,0.8463501162462964,0.7740582915095335,v1-backfill,1.0
+LaLiga|2026-03-14|Girona|Ath Bilbao,2026-03-14,LaLiga,Girona,Ath Bilbao,0.4270448787253644,0.4936946048498493,v1-backfill,1.0
+LaLiga|2026-03-14|Ath Madrid|Getafe,2026-03-14,LaLiga,Ath Madrid,Getafe,0.8490719843853596,0.7655536573488055,v1-backfill,1.0
+Ligue1|2026-03-14|Angers|Nice,2026-03-14,Ligue1,Angers,Nice,0.4873698963938603,0.5024288498869262,v1-backfill,0.0
+Ligue1|2026-03-15|Rennes|Lille,2026-03-15,Ligue1,Rennes,Lille,0.5253761482183273,0.5337473952686435,v1-backfill,0.0
+Bundesliga|2026-03-15|Werder Bremen|Mainz,2026-03-15,Bundesliga,Werder Bremen,Mainz,0.6027955042373029,0.5508757751841036,v1-backfill,0.0
+Bundesliga|2026-03-15|Freiburg|Union Berlin,2026-03-15,Bundesliga,Freiburg,Union Berlin,0.6615753594870404,0.6523034770107821,v1-backfill,0.0
+Bundesliga|2026-03-15|Stuttgart|RB Leipzig,2026-03-15,Bundesliga,Stuttgart,RB Leipzig,0.6136036158710738,0.5557685184826445,v1-backfill,1.0
+Ligue1|2026-03-15|Metz|Toulouse,2026-03-15,Ligue1,Metz,Toulouse,0.210015260427951,0.3830179598427456,v1-backfill,0.0
+SerieA|2026-03-15|Verona|Genoa,2026-03-15,SerieA,Verona,Genoa,0.396054359214697,0.4562662388262146,v1-backfill,0.0
+LaLiga|2026-03-15|Sociedad|Osasuna,2026-03-15,LaLiga,Sociedad,Osasuna,0.6624465998842581,0.5792895209417924,v1-backfill,1.0
+LaLiga|2026-03-15|Barcelona|Sevilla,2026-03-15,LaLiga,Barcelona,Sevilla,0.9486398125935344,0.8531761347586613,v1-backfill,1.0
+SerieA|2026-03-15|Lazio|Milan,2026-03-15,SerieA,Lazio,Milan,0.3470213902646359,0.4255433432245666,v1-backfill,1.0
+SerieA|2026-03-15|Como|Roma,2026-03-15,SerieA,Como,Roma,0.5914970063068782,0.5043773927283656,v1-backfill,1.0
+SerieA|2026-03-15|Sassuolo|Bologna,2026-03-15,SerieA,Sassuolo,Bologna,0.3539016110723639,0.4459967566213769,v1-backfill,0.0
+EPL|2026-03-15|Man United|Aston Villa,2026-03-15,EPL,Man United,Aston Villa,0.6816956851805888,0.5302124205546567,v1-backfill,1.0
+LaLiga|2026-03-15|Mallorca|Espanol,2026-03-15,LaLiga,Mallorca,Espanol,0.5381887623449796,0.5499826903791468,v1-backfill,1.0
+SerieA|2026-03-15|Pisa|Cagliari,2026-03-15,SerieA,Pisa,Cagliari,0.3967555185420306,0.4539038459266534,v1-backfill,1.0
+SerieA|2026-03-16|Cremonese|Fiorentina,2026-03-16,SerieA,Cremonese,Fiorentina,0.2714239346142528,0.409649652061531,v1-backfill,0.0
+Bundesliga|2026-03-20|RB Leipzig|Hoffenheim,2026-03-20,Bundesliga,RB Leipzig,Hoffenheim,0.6518251669109175,0.6269310902363121,v1-backfill,1.0
+LaLiga|2026-03-20|Villarreal|Sociedad,2026-03-20,LaLiga,Villarreal,Sociedad,0.7242862387799069,0.6956978535884475,v1-backfill,1.0
+SerieA|2026-03-20|Cagliari|Napoli,2026-03-20,SerieA,Cagliari,Napoli,0.211336184632828,0.2773637754451988,v1-backfill,0.0
+Ligue1|2026-03-20|Lens|Angers,2026-03-20,Ligue1,Lens,Angers,0.889784228004263,0.7693905546525464,v1-backfill,1.0
+SerieA|2026-03-20|Genoa|Udinese,2026-03-20,SerieA,Genoa,Udinese,0.6063231804226271,0.5916596389362949,v1-backfill,0.0
+EPL|2026-03-21|Everton|Chelsea,2026-03-21,EPL,Everton,Chelsea,0.3769385268298238,0.4909158099549673,v1-backfill,1.0
+Bundesliga|2026-03-21|Dortmund|Hamburg,2026-03-21,Bundesliga,Dortmund,Hamburg,0.8660458763321733,0.8303753494487731,v1-backfill,1.0
+Bundesliga|2026-03-21|Bayern Munich|Union Berlin,2026-03-21,Bundesliga,Bayern Munich,Union Berlin,0.9606979350961156,0.8494478316364489,v1-backfill,1.0
+EPL|2026-03-21|Brighton|Liverpool,2026-03-21,EPL,Brighton,Liverpool,0.421114484624961,0.463941670315727,v1-backfill,1.0
+EPL|2026-03-21|Fulham|Burnley,2026-03-21,EPL,Fulham,Burnley,0.8432967911247471,0.7476242295760293,v1-backfill,1.0
+Bundesliga|2026-03-21|Wolfsburg|Werder Bremen,2026-03-21,Bundesliga,Wolfsburg,Werder Bremen,0.4661067324453488,0.5205407115454828,v1-backfill,0.0
+Ligue1|2026-03-21|Toulouse|Lorient,2026-03-21,Ligue1,Toulouse,Lorient,0.6321805092449926,0.607055802150855,v1-backfill,1.0
+LaLiga|2026-03-21|Elche|Mallorca,2026-03-21,LaLiga,Elche,Mallorca,0.5983049588779443,0.489352735333636,v1-backfill,1.0
+LaLiga|2026-03-21|Levante|Oviedo,2026-03-21,LaLiga,Levante,Oviedo,0.6533090527313559,0.579833077376257,v1-backfill,1.0
+LaLiga|2026-03-21|Osasuna|Girona,2026-03-21,LaLiga,Osasuna,Girona,0.6542606092630705,0.5827019098754043,v1-backfill,1.0
+LaLiga|2026-03-21|Sevilla|Valencia,2026-03-21,LaLiga,Sevilla,Valencia,0.6165102595048789,0.5353144083559365,v1-backfill,0.0
+Ligue1|2026-03-21|Auxerre|Brest,2026-03-21,Ligue1,Auxerre,Brest,0.4154243114128833,0.4050997176585229,v1-backfill,1.0
+LaLiga|2026-03-21|Espanol|Getafe,2026-03-21,LaLiga,Espanol,Getafe,0.560367682161143,0.5487386606581979,v1-backfill,0.0
+SerieA|2026-03-21|Milan|Torino,2026-03-21,SerieA,Milan,Torino,0.8280223675576557,0.770903693557169,v1-backfill,1.0
+SerieA|2026-03-21|Parma|Cremonese,2026-03-21,SerieA,Parma,Cremonese,0.7536824575288854,0.6830938915888525,v1-backfill,0.0
+Ligue1|2026-03-21|Nice|Paris SG,2026-03-21,Ligue1,Nice,Paris SG,0.1186350646423228,0.2949110130835211,v1-backfill,0.0
+Ligue1|2026-03-22|Lyon|Monaco,2026-03-22,Ligue1,Lyon,Monaco,0.5449247620039125,0.5627580945582052,v1-backfill,0.0
+Bundesliga|2026-03-22|St Pauli|Freiburg,2026-03-22,Bundesliga,St Pauli,Freiburg,0.4788260310531652,0.4291936699102269,v1-backfill,0.0
+Bundesliga|2026-03-22|Mainz|Ein Frankfurt,2026-03-22,Bundesliga,Mainz,Ein Frankfurt,0.4933453189817635,0.4990978365069464,v1-backfill,1.0
+EPL|2026-03-22|Newcastle|Sunderland,2026-03-22,EPL,Newcastle,Sunderland,0.7925007677909325,0.704403135532852,v1-backfill,0.0
+Ligue1|2026-03-22|Marseille|Lille,2026-03-22,Ligue1,Marseille,Lille,0.6498093672688743,0.5981954571071718,v1-backfill,0.0
+Ligue1|2026-03-22|Paris FC|Le Havre,2026-03-22,Ligue1,Paris FC,Le Havre,0.593414037000258,0.5364234107449414,v1-backfill,1.0
+EPL|2026-03-22|Aston Villa|West Ham,2026-03-22,EPL,Aston Villa,West Ham,0.7720553897039305,0.7264569164930617,v1-backfill,1.0
+EPL|2026-03-22|Tottenham|Nott'm Forest,2026-03-22,EPL,Tottenham,Nott'm Forest,0.5079837780259162,0.5284597509709283,v1-backfill,0.0
+Bundesliga|2026-03-22|Augsburg|Stuttgart,2026-03-22,Bundesliga,Augsburg,Stuttgart,0.3295121562561428,0.4203365481570199,v1-backfill,0.0
+Ligue1|2026-03-22|Nantes|Strasbourg,2026-03-22,Ligue1,Nantes,Strasbourg,0.3562362572884847,0.3824679805699353,v1-backfill,0.0
+LaLiga|2026-03-22|Ath Bilbao|Betis,2026-03-22,LaLiga,Ath Bilbao,Betis,0.6085280592814933,0.5224282447493825,v1-backfill,1.0
+LaLiga|2026-03-22|Barcelona|Vallecano,2026-03-22,LaLiga,Barcelona,Vallecano,0.9329912998112164,0.8333304762922669,v1-backfill,1.0
+LaLiga|2026-03-22|Celta|Alaves,2026-03-22,LaLiga,Celta,Alaves,0.7513012912855244,0.6867304617364522,v1-backfill,0.0
+LaLiga|2026-03-22|Real Madrid|Ath Madrid,2026-03-22,LaLiga,Real Madrid,Ath Madrid,0.7842069339441802,0.6605184670679278,v1-backfill,1.0
+SerieA|2026-03-22|Como|Pisa,2026-03-22,SerieA,Como,Pisa,0.9179866855031292,0.8014632493182166,v1-backfill,1.0
+SerieA|2026-03-22|Atalanta|Verona,2026-03-22,SerieA,Atalanta,Verona,0.8924800869741802,0.8191101488696745,v1-backfill,1.0
+SerieA|2026-03-22|Bologna|Lazio,2026-03-22,SerieA,Bologna,Lazio,0.6270950685015666,0.5512448929687422,v1-backfill,0.0
+SerieA|2026-03-22|Roma|Lecce,2026-03-22,SerieA,Roma,Lecce,0.8442260718418629,0.7784909369672288,v1-backfill,1.0
+LaLiga|2026-04-03|Vallecano|Elche,2026-04-03,LaLiga,Vallecano,Elche,0.7879916506889849,0.6778280479007828,v1-backfill,1.0
+Ligue1|2026-04-03|Paris SG|Toulouse,2026-04-03,Ligue1,Paris SG,Toulouse,0.894811536101337,0.824641799430102,v1-backfill,1.0
+Ligue1|2026-04-04|Lille|Lens,2026-04-04,Ligue1,Lille,Lens,0.4646874957294141,0.5550702906476364,v1-backfill,1.0
+SerieA|2026-04-04|Sassuolo|Cagliari,2026-04-04,SerieA,Sassuolo,Cagliari,0.5831125335533033,0.5896278328653517,v1-backfill,1.0
+SerieA|2026-04-04|Verona|Fiorentina,2026-04-04,SerieA,Verona,Fiorentina,0.3107807152285209,0.3973569040857082,v1-backfill,0.0
+Ligue1|2026-04-04|Brest|Rennes,2026-04-04,Ligue1,Brest,Rennes,0.462396670195624,0.5553354775721633,v1-backfill,0.0
+Bundesliga|2026-04-04|Freiburg|Bayern Munich,2026-04-04,Bundesliga,Freiburg,Bayern Munich,0.0960856997587102,0.2874566319639198,v1-backfill,0.0
+Bundesliga|2026-04-04|Hoffenheim|Mainz,2026-04-04,Bundesliga,Hoffenheim,Mainz,0.6873690472537685,0.6062561265180271,v1-backfill,0.0
+Bundesliga|2026-04-04|Leverkusen|Wolfsburg,2026-04-04,Bundesliga,Leverkusen,Wolfsburg,0.8881518416242263,0.8089088118219722,v1-backfill,1.0
+Bundesliga|2026-04-04|Werder Bremen|RB Leipzig,2026-04-04,Bundesliga,Werder Bremen,RB Leipzig,0.3468489767228892,0.4160020122035019,v1-backfill,0.0
+Bundesliga|2026-04-04|Stuttgart|Dortmund,2026-04-04,Bundesliga,Stuttgart,Dortmund,0.5227190634248037,0.4837463959293649,v1-backfill,0.0
+Ligue1|2026-04-04|Strasbourg|Nice,2026-04-04,Ligue1,Strasbourg,Nice,0.6908428028247057,0.6281914359533874,v1-backfill,1.0
+LaLiga|2026-04-04|Sociedad|Levante,2026-04-04,LaLiga,Sociedad,Levante,0.7932334189690274,0.7215515171783122,v1-backfill,1.0
+LaLiga|2026-04-04|Mallorca|Real Madrid,2026-04-04,LaLiga,Mallorca,Real Madrid,0.1233434454874147,0.2308409813721119,v1-backfill,1.0
+LaLiga|2026-04-04|Ath Madrid|Barcelona,2026-04-04,LaLiga,Ath Madrid,Barcelona,0.339156897728107,0.442004878746775,v1-backfill,0.0
+LaLiga|2026-04-05|Oviedo|Sevilla,2026-04-05,LaLiga,Oviedo,Sevilla,0.4148550821886865,0.469787033948682,v1-backfill,1.0
+LaLiga|2026-04-05|Valencia|Celta,2026-04-05,LaLiga,Valencia,Celta,0.5614778677934082,0.5307448091606252,v1-backfill,0.0
+SerieA|2026-04-05|Cremonese|Bologna,2026-04-05,SerieA,Cremonese,Bologna,0.2241303773771717,0.3707358594597994,v1-backfill,0.0
+SerieA|2026-04-05|Pisa|Torino,2026-04-05,SerieA,Pisa,Torino,0.3481368912653039,0.4185416857822688,v1-backfill,0.0
+SerieA|2026-04-05|Inter|Roma,2026-04-05,SerieA,Inter,Roma,0.8040453796793497,0.7101201191364108,v1-backfill,1.0
+LaLiga|2026-04-05|Getafe|Ath Bilbao,2026-04-05,LaLiga,Getafe,Ath Bilbao,0.4821293686001717,0.4925642210258096,v1-backfill,1.0
+Ligue1|2026-04-05|Monaco|Marseille,2026-04-05,Ligue1,Monaco,Marseille,0.5238074637635989,0.5760722119466843,v1-backfill,1.0
+LaLiga|2026-04-06|Girona|Villarreal,2026-04-06,LaLiga,Girona,Villarreal,0.3806706110930296,0.3838369437171413,v1-backfill,1.0
+SerieA|2026-04-06|Lecce|Atalanta,2026-04-06,SerieA,Lecce,Atalanta,0.2232340609053373,0.317723746181442,v1-backfill,0.0
+SerieA|2026-04-06|Juventus|Genoa,2026-04-06,SerieA,Juventus,Genoa,0.8593326560715163,0.754442544632922,v1-backfill,1.0
+SerieA|2026-04-06|Napoli|Milan,2026-04-06,SerieA,Napoli,Milan,0.5892028728045609,0.5902037379185312,v1-backfill,1.0
+SerieA|2026-04-10|Roma|Pisa,2026-04-10,SerieA,Roma,Pisa,0.8985807186409351,0.8354861202192396,v1-backfill,1.0
+Ligue1|2026-04-10|Paris FC|Monaco,2026-04-10,Ligue1,Paris FC,Monaco,0.3157804959284683,0.3301521433613777,v1-backfill,1.0
+EPL|2026-04-10|West Ham|Wolves,2026-04-10,EPL,West Ham,Wolves,0.5757456528678716,0.6271714131676709,v1-backfill,1.0
+Ligue1|2026-04-10|Marseille|Metz,2026-04-10,Ligue1,Marseille,Metz,0.9217287206783278,0.8410992400503277,v1-backfill,1.0
+LaLiga|2026-04-11|Elche|Valencia,2026-04-11,LaLiga,Elche,Valencia,0.491193952180585,0.4544824329058443,v1-backfill,1.0
+LaLiga|2026-04-11|Barcelona|Espanol,2026-04-11,LaLiga,Barcelona,Espanol,0.9635435774101812,0.8676165414348652,v1-backfill,1.0
+SerieA|2026-04-11|Atalanta|Juventus,2026-04-11,SerieA,Atalanta,Juventus,0.4611232903299915,0.551381166214608,v1-backfill,0.0
+SerieA|2026-04-11|Milan|Udinese,2026-04-11,SerieA,Milan,Udinese,0.8024543035362248,0.765404906975397,v1-backfill,0.0
+SerieA|2026-04-11|Torino|Verona,2026-04-11,SerieA,Torino,Verona,0.7114005916528936,0.7042955501644369,v1-backfill,1.0
+Bundesliga|2026-04-11|St Pauli|Bayern Munich,2026-04-11,Bundesliga,St Pauli,Bayern Munich,0.0548543934392406,0.172003696659642,v1-backfill,0.0
+Bundesliga|2026-04-11|Dortmund|Leverkusen,2026-04-11,Bundesliga,Dortmund,Leverkusen,0.6530959408996677,0.6138262472065744,v1-backfill,0.0
+EPL|2026-04-11|Arsenal|Bournemouth,2026-04-11,EPL,Arsenal,Bournemouth,0.8546069979846085,0.7759142751103674,v1-backfill,0.0
+Bundesliga|2026-04-11|Wolfsburg|Ein Frankfurt,2026-04-11,Bundesliga,Wolfsburg,Ein Frankfurt,0.3407453269830426,0.4036940211287657,v1-backfill,0.0
+Bundesliga|2026-04-11|RB Leipzig|M'gladbach,2026-04-11,Bundesliga,RB Leipzig,M'gladbach,0.8486891670424085,0.7328265909473093,v1-backfill,1.0
+Bundesliga|2026-04-11|Heidenheim|Union Berlin,2026-04-11,Bundesliga,Heidenheim,Union Berlin,0.446841984937432,0.4404748098269338,v1-backfill,1.0
+EPL|2026-04-11|Burnley|Brighton,2026-04-11,EPL,Burnley,Brighton,0.1930858550374719,0.3175622273818351,v1-backfill,0.0
+EPL|2026-04-11|Liverpool|Fulham,2026-04-11,EPL,Liverpool,Fulham,0.758102193177852,0.6962614555779101,v1-backfill,1.0
+SerieA|2026-04-11|Cagliari|Cremonese,2026-04-11,SerieA,Cagliari,Cremonese,0.7037445311266759,0.6265876830953508,v1-backfill,1.0
+LaLiga|2026-04-11|Sevilla|Ath Madrid,2026-04-11,LaLiga,Sevilla,Ath Madrid,0.3229396420602011,0.3179825009722431,v1-backfill,1.0
+Ligue1|2026-04-11|Rennes|Angers,2026-04-11,Ligue1,Rennes,Angers,0.8283989360537916,0.7081944019219918,v1-backfill,1.0
+EPL|2026-04-12|Sunderland|Tottenham,2026-04-12,EPL,Sunderland,Tottenham,0.5897822326613327,0.599742376406125,v1-backfill,1.0
+EPL|2026-04-12|Crystal Palace|Newcastle,2026-04-12,EPL,Crystal Palace,Newcastle,0.5123289508284465,0.5350219066766415,v1-backfill,1.0
+LaLiga|2026-04-12|Celta|Oviedo,2026-04-12,LaLiga,Celta,Oviedo,0.8564036616269554,0.7514427004099682,v1-backfill,0.0
+Bundesliga|2026-04-12|Stuttgart|Hamburg,2026-04-12,Bundesliga,Stuttgart,Hamburg,0.8399714270435061,0.7724187761774612,v1-backfill,1.0
+Bundesliga|2026-04-12|Mainz|Freiburg,2026-04-12,Bundesliga,Mainz,Freiburg,0.6004988068759461,0.5685098358456762,v1-backfill,0.0
+LaLiga|2026-04-12|Mallorca|Vallecano,2026-04-12,LaLiga,Mallorca,Vallecano,0.4392368511046063,0.5273130368787217,v1-backfill,1.0
+EPL|2026-04-12|Chelsea|Man City,2026-04-12,EPL,Chelsea,Man City,0.3920892897980302,0.4392473267563024,v1-backfill,0.0
+LaLiga|2026-04-12|Ath Bilbao|Villarreal,2026-04-12,LaLiga,Ath Bilbao,Villarreal,0.5782525583085142,0.4598173621709135,v1-backfill,0.0
+Bundesliga|2026-04-12|FC Koln|Werder Bremen,2026-04-12,Bundesliga,FC Koln,Werder Bremen,0.5202286583508113,0.471658767646248,v1-backfill,1.0
+Ligue1|2026-04-12|Lyon|Lorient,2026-04-12,Ligue1,Lyon,Lorient,0.6952526506947484,0.7232601233584312,v1-backfill,1.0
+SerieA|2026-04-12|Genoa|Sassuolo,2026-04-12,SerieA,Genoa,Sassuolo,0.6347469115592222,0.6008640930190544,v1-backfill,1.0
+SerieA|2026-04-12|Bologna|Lecce,2026-04-12,SerieA,Bologna,Lecce,0.8128343064058889,0.7279191417015809,v1-backfill,1.0
+SerieA|2026-04-12|Como|Inter,2026-04-12,SerieA,Como,Inter,0.3521621418027935,0.3698283693426405,v1-backfill,0.0
+Ligue1|2026-04-12|Toulouse|Lille,2026-04-12,Ligue1,Toulouse,Lille,0.4207755026157231,0.4148494027493415,v1-backfill,0.0
+SerieA|2026-04-13|Fiorentina|Lazio,2026-04-13,SerieA,Fiorentina,Lazio,0.5430837474761232,0.5071313345179027,v1-backfill,1.0
+EPL|2026-04-13|Man United|Leeds,2026-04-13,EPL,Man United,Leeds,0.7925249339617105,0.7435507871942757,v1-backfill,0.0
+LaLiga|2026-04-13|Levante|Getafe,2026-04-13,LaLiga,Levante,Getafe,0.4366467431783292,0.4335088802513448,v1-backfill,1.0
+SerieA|2026-04-17|Sassuolo|Como,2026-04-17,SerieA,Sassuolo,Como,0.2076294636951104,0.4068482353308063,v1-backfill,1.0
+Ligue1|2026-04-17|Lens|Toulouse,2026-04-17,Ligue1,Lens,Toulouse,0.7943802831673629,0.7196032802966961,v1-backfill,1.0
+SerieA|2026-04-17|Inter|Cagliari,2026-04-17,SerieA,Inter,Cagliari,0.938417812373072,0.8722053844590395,v1-backfill,1.0
+EPL|2026-04-18|Leeds|Wolves,2026-04-18,EPL,Leeds,Wolves,0.7215176474559654,0.6180483807564817,v1-backfill,1.0
+EPL|2026-04-18|Newcastle|Bournemouth,2026-04-18,EPL,Newcastle,Bournemouth,0.556525885861852,0.5572889124068843,v1-backfill,0.0
+SerieA|2026-04-18|Udinese|Parma,2026-04-18,SerieA,Udinese,Parma,0.6867517806983963,0.6188860013482645,v1-backfill,0.0
+SerieA|2026-04-18|Napoli|Lazio,2026-04-18,SerieA,Napoli,Lazio,0.7715797249794301,0.7111290895780855,v1-backfill,0.0
+EPL|2026-04-18|Chelsea|Man United,2026-04-18,EPL,Chelsea,Man United,0.5314472083234084,0.5827543665648272,v1-backfill,0.0
+Ligue1|2026-04-18|Lorient|Marseille,2026-04-18,Ligue1,Lorient,Marseille,0.306273337522269,0.373472549638646,v1-backfill,1.0
+Bundesliga|2026-04-18|Werder Bremen|Hamburg,2026-04-18,Bundesliga,Werder Bremen,Hamburg,0.6570412140629819,0.6344048214549964,v1-backfill,1.0
+Bundesliga|2026-04-18|Hoffenheim|Dortmund,2026-04-18,Bundesliga,Hoffenheim,Dortmund,0.3699329947120295,0.3937177063718109,v1-backfill,1.0
+Bundesliga|2026-04-18|Leverkusen|Augsburg,2026-04-18,Bundesliga,Leverkusen,Augsburg,0.8458806465945189,0.7777219030299127,v1-backfill,0.0
+Bundesliga|2026-04-18|Union Berlin|Wolfsburg,2026-04-18,Bundesliga,Union Berlin,Wolfsburg,0.6858103101567123,0.6412613850699415,v1-backfill,0.0
+Bundesliga|2026-04-18|Ein Frankfurt|RB Leipzig,2026-04-18,Bundesliga,Ein Frankfurt,RB Leipzig,0.4278585980034569,0.4984674798258333,v1-backfill,0.0
+EPL|2026-04-19|Man City|Arsenal,2026-04-19,EPL,Man City,Arsenal,0.5545654985027608,0.557916238327999,v1-backfill,1.0
+Bundesliga|2026-04-19|Freiburg|Heidenheim,2026-04-19,Bundesliga,Freiburg,Heidenheim,0.784634194766738,0.7462298898855372,v1-backfill,1.0
+Bundesliga|2026-04-19|Bayern Munich|Stuttgart,2026-04-19,Bundesliga,Bayern Munich,Stuttgart,0.8880755204851754,0.7645109490108282,v1-backfill,1.0
+Ligue1|2026-04-19|Paris SG|Lyon,2026-04-19,Ligue1,Paris SG,Lyon,0.8917052719769795,0.7494013845513934,v1-backfill,0.0
+Ligue1|2026-04-19|Strasbourg|Rennes,2026-04-19,Ligue1,Strasbourg,Rennes,0.5458130406140793,0.5712162565833896,v1-backfill,0.0
+SerieA|2026-04-19|Verona|Milan,2026-04-19,SerieA,Verona,Milan,0.2006892340179076,0.242240222603319,v1-backfill,0.0
+SerieA|2026-04-19|Pisa|Genoa,2026-04-19,SerieA,Pisa,Genoa,0.3198488402469632,0.4010331252078333,v1-backfill,0.0
+SerieA|2026-04-19|Juventus|Bologna,2026-04-19,SerieA,Juventus,Bologna,0.7651823454841677,0.6919929030949261,v1-backfill,1.0
+Ligue1|2026-04-19|Metz|Paris FC,2026-04-19,Ligue1,Metz,Paris FC,0.3227059264941957,0.4332186398429563,v1-backfill,0.0
+EPL|2026-04-19|Nott'm Forest|Burnley,2026-04-19,EPL,Nott'm Forest,Burnley,0.8389056983074139,0.7352304739163543,v1-backfill,1.0
+EPL|2026-04-19|Everton|Liverpool,2026-04-19,EPL,Everton,Liverpool,0.3553845077516629,0.460591015314235,v1-backfill,0.0
+EPL|2026-04-19|Aston Villa|Sunderland,2026-04-19,EPL,Aston Villa,Sunderland,0.7633523601355002,0.7270156340969853,v1-backfill,1.0
+LaLiga|2026-04-21|Real Madrid|Alaves,2026-04-21,LaLiga,Real Madrid,Alaves,0.9256581257329354,0.834563292695537,v1-backfill,1.0
+LaLiga|2026-04-21|Girona|Betis,2026-04-21,LaLiga,Girona,Betis,0.4603235843449647,0.4949781826327349,v1-backfill,0.0
+LaLiga|2026-04-21|Ath Bilbao|Osasuna,2026-04-21,LaLiga,Ath Bilbao,Osasuna,0.7066088847133112,0.5934798880155586,v1-backfill,1.0
+EPL|2026-04-21|Brighton|Chelsea,2026-04-21,EPL,Brighton,Chelsea,0.565987018643662,0.5652876823647445,v1-backfill,1.0
+LaLiga|2026-04-22|Barcelona|Celta,2026-04-22,LaLiga,Barcelona,Celta,0.9401628455816023,0.8198064212183461,v1-backfill,1.0
+Ligue1|2026-04-22|Paris SG|Nantes,2026-04-22,Ligue1,Paris SG,Nantes,0.9578352250337836,0.8839512581607906,v1-backfill,1.0
+EPL|2026-04-22|Burnley|Man City,2026-04-22,EPL,Burnley,Man City,0.0686228960814226,0.1720449899540694,v1-backfill,0.0
+LaLiga|2026-04-22|Sociedad|Getafe,2026-04-22,LaLiga,Sociedad,Getafe,0.6958487817075039,0.6191586587821004,v1-backfill,0.0
+LaLiga|2026-04-22|Elche|Ath Madrid,2026-04-22,LaLiga,Elche,Ath Madrid,0.2612061066326184,0.2941094537215694,v1-backfill,1.0
+LaLiga|2026-04-23|Levante|Sevilla,2026-04-23,LaLiga,Levante,Sevilla,0.51635698479752,0.5008028456618401,v1-backfill,1.0
+LaLiga|2026-04-23|Vallecano|Espanol,2026-04-23,LaLiga,Vallecano,Espanol,0.7637405296734282,0.619015388129597,v1-backfill,1.0
+EPL|2026-04-24|Sunderland|Nott'm Forest,2026-04-24,EPL,Sunderland,Nott'm Forest,0.4524182470822635,0.5284259840568135,v1-backfill,0.0
+Bundesliga|2026-04-24|RB Leipzig|Union Berlin,2026-04-24,Bundesliga,RB Leipzig,Union Berlin,0.8544651400153844,0.7587817985350448,v1-backfill,1.0
+SerieA|2026-04-24|Napoli|Cremonese,2026-04-24,SerieA,Napoli,Cremonese,0.9205309584582988,0.8619324679694448,v1-backfill,1.0
+LaLiga|2026-04-25|Alaves|Mallorca,2026-04-25,LaLiga,Alaves,Mallorca,0.6699526200812225,0.556138228855347,v1-backfill,1.0
+LaLiga|2026-04-25|Getafe|Barcelona,2026-04-25,LaLiga,Getafe,Barcelona,0.1349901980110427,0.2482683164477722,v1-backfill,0.0
+LaLiga|2026-04-25|Valencia|Girona,2026-04-25,LaLiga,Valencia,Girona,0.6631485595648674,0.5494674523751472,v1-backfill,1.0
+LaLiga|2026-04-25|Ath Madrid|Ath Bilbao,2026-04-25,LaLiga,Ath Madrid,Ath Bilbao,0.7612071614532766,0.6704645371779988,v1-backfill,1.0
+SerieA|2026-04-25|Parma|Pisa,2026-04-25,SerieA,Parma,Pisa,0.7382170978437641,0.7232979539155143,v1-backfill,1.0
+SerieA|2026-04-25|Bologna|Roma,2026-04-25,SerieA,Bologna,Roma,0.4844114945094909,0.4897624909945042,v1-backfill,0.0
+EPL|2026-04-25|West Ham|Everton,2026-04-25,EPL,West Ham,Everton,0.4506259556023967,0.4871049807853697,v1-backfill,1.0
+Ligue1|2026-04-25|Angers|Paris SG,2026-04-25,Ligue1,Angers,Paris SG,0.0565177853214533,0.2191705186336575,v1-backfill,0.0
+Bundesliga|2026-04-25|Hamburg|Hoffenheim,2026-04-25,Bundesliga,Hamburg,Hoffenheim,0.3618906799464278,0.3958595329954598,v1-backfill,0.0
+Bundesliga|2026-04-25|Mainz|Bayern Munich,2026-04-25,Bundesliga,Mainz,Bayern Munich,0.0883259299411087,0.2568915603473923,v1-backfill,0.0
+Bundesliga|2026-04-25|Heidenheim|St Pauli,2026-04-25,Bundesliga,Heidenheim,St Pauli,0.5373630067438828,0.5398095829241314,v1-backfill,1.0
+Bundesliga|2026-04-25|FC Koln|Leverkusen,2026-04-25,Bundesliga,FC Koln,Leverkusen,0.2776676410133152,0.278417657914295,v1-backfill,0.0
+Ligue1|2026-04-25|Lyon|Auxerre,2026-04-25,Ligue1,Lyon,Auxerre,0.7796583874818647,0.7667695635310354,v1-backfill,1.0
+EPL|2026-04-25|Liverpool|Crystal Palace,2026-04-25,EPL,Liverpool,Crystal Palace,0.7887782109272766,0.704553906830301,v1-backfill,1.0
+EPL|2026-04-25|Arsenal|Newcastle,2026-04-25,EPL,Arsenal,Newcastle,0.840615519127319,0.7626660767723036,v1-backfill,1.0
+EPL|2026-04-25|Wolves|Tottenham,2026-04-25,EPL,Wolves,Tottenham,0.4860200946275411,0.5315208234754223,v1-backfill,0.0
+EPL|2026-04-25|Fulham|Aston Villa,2026-04-25,EPL,Fulham,Aston Villa,0.5070426820711509,0.4545552813125742,v1-backfill,1.0
+LaLiga|2026-04-26|Villarreal|Celta,2026-04-26,LaLiga,Villarreal,Celta,0.7732351602890039,0.6990233875938259,v1-backfill,1.0
+LaLiga|2026-04-26|Osasuna|Sevilla,2026-04-26,LaLiga,Osasuna,Sevilla,0.6392307758827894,0.647060135168731,v1-backfill,1.0
+LaLiga|2026-04-26|Oviedo|Elche,2026-04-26,LaLiga,Oviedo,Elche,0.6365128658874578,0.5440137776433033,v1-backfill,0.0
+Bundesliga|2026-04-26|Dortmund|Freiburg,2026-04-26,Bundesliga,Dortmund,Freiburg,0.8068650880640967,0.7099945878225301,v1-backfill,1.0
+SerieA|2026-04-26|Genoa|Como,2026-04-26,SerieA,Genoa,Como,0.2961778274276661,0.4773467589744865,v1-backfill,0.0
+Ligue1|2026-04-26|Lorient|Strasbourg,2026-04-26,Ligue1,Lorient,Strasbourg,0.5297719759527679,0.4565490780884549,v1-backfill,0.0
+Ligue1|2026-04-26|Paris FC|Lille,2026-04-26,Ligue1,Paris FC,Lille,0.2938503770301212,0.3527395921083364,v1-backfill,0.0
+Ligue1|2026-04-26|Rennes|Nantes,2026-04-26,Ligue1,Rennes,Nantes,0.8522591106719342,0.7693526994055796,v1-backfill,1.0
+EPL|2026-04-27|Man United|Brentford,2026-04-27,EPL,Man United,Brentford,0.7431638989119814,0.6208071283925312,v1-backfill,1.0
+SerieA|2026-04-27|Cagliari|Atalanta,2026-04-27,SerieA,Cagliari,Atalanta,0.2406239447943871,0.3286377079809678,v1-backfill,1.0
+LaLiga|2026-05-01|Girona|Mallorca,2026-05-01,LaLiga,Girona,Mallorca,0.6587092573848126,0.6053071592926244,v1-backfill,0.0
+EPL|2026-05-01|Leeds|Burnley,2026-05-01,EPL,Leeds,Burnley,0.8536023623568383,0.7061234774764983,v1-backfill,1.0
+SerieA|2026-05-01|Pisa|Lecce,2026-05-01,SerieA,Pisa,Lecce,0.4394767958603062,0.4754137000409427,v1-backfill,0.0
+LaLiga|2026-05-02|Osasuna|Barcelona,2026-05-02,LaLiga,Osasuna,Barcelona,0.1448296721631088,0.2593549856624577,v1-backfill,0.0
+Bundesliga|2026-05-02|Ein Frankfurt|Hamburg,2026-05-02,Bundesliga,Ein Frankfurt,Hamburg,0.7751037666442568,0.7422558734499175,v1-backfill,0.0
+Bundesliga|2026-05-02|Werder Bremen|Augsburg,2026-05-02,Bundesliga,Werder Bremen,Augsburg,0.6121686056020906,0.5546313713208307,v1-backfill,0.0
+Bundesliga|2026-05-02|Leverkusen|RB Leipzig,2026-05-02,Bundesliga,Leverkusen,RB Leipzig,0.5789339829500509,0.6014478263609785,v1-backfill,1.0
+LaLiga|2026-05-02|Alaves|Ath Bilbao,2026-05-02,LaLiga,Alaves,Ath Bilbao,0.5089318925604739,0.486343842578846,v1-backfill,0.0
+LaLiga|2026-05-02|Villarreal|Levante,2026-05-02,LaLiga,Villarreal,Levante,0.8439539501506534,0.811064584533006,v1-backfill,1.0
+Ligue1|2026-05-02|Nantes|Marseille,2026-05-02,Ligue1,Nantes,Marseille,0.2177944983948163,0.3197364045410872,v1-backfill,1.0
+Ligue1|2026-05-02|Metz|Monaco,2026-05-02,Ligue1,Metz,Monaco,0.1786512095365044,0.2444791610175669,v1-backfill,0.0
+EPL|2026-05-02|Arsenal|Fulham,2026-05-02,EPL,Arsenal,Fulham,0.844574068175647,0.7706494489043983,v1-backfill,1.0
+SerieA|2026-05-02|Udinese|Torino,2026-05-02,SerieA,Udinese,Torino,0.6007711751475021,0.5678213603531157,v1-backfill,1.0
+EPL|2026-05-02|Newcastle|Brighton,2026-05-02,EPL,Newcastle,Brighton,0.4757632551101996,0.5131449385291577,v1-backfill,1.0
+EPL|2026-05-02|Brentford|West Ham,2026-05-02,EPL,Brentford,West Ham,0.6820779768354118,0.6394318879114925,v1-backfill,1.0
+LaLiga|2026-05-02|Valencia|Ath Madrid,2026-05-02,LaLiga,Valencia,Ath Madrid,0.420619795798443,0.3956185109971979,v1-backfill,0.0
+EPL|2026-05-03|Aston Villa|Tottenham,2026-05-03,EPL,Aston Villa,Tottenham,0.7521872391522726,0.7477387013743967,v1-backfill,0.0
+EPL|2026-05-03|Man United|Liverpool,2026-05-03,EPL,Man United,Liverpool,0.5128028164709317,0.4994709727737664,v1-backfill,1.0
+EPL|2026-05-03|Bournemouth|Crystal Palace,2026-05-03,EPL,Bournemouth,Crystal Palace,0.676137234993214,0.6179731542838167,v1-backfill,1.0
+SerieA|2026-05-03|Sassuolo|Milan,2026-05-03,SerieA,Sassuolo,Milan,0.2753419802570025,0.3328987823481459,v1-backfill,1.0
+LaLiga|2026-05-03|Getafe|Vallecano,2026-05-03,LaLiga,Getafe,Vallecano,0.5464895407009823,0.5681718482345305,v1-backfill,0.0
+Bundesliga|2026-05-03|M'gladbach|Dortmund,2026-05-03,Bundesliga,M'gladbach,Dortmund,0.2151810367564617,0.3202545706000727,v1-backfill,1.0
+Ligue1|2026-05-03|Auxerre|Angers,2026-05-03,Ligue1,Auxerre,Angers,0.6702438923679863,0.5651964629822901,v1-backfill,1.0
+Ligue1|2026-05-03|Paris FC|Brest,2026-05-03,Ligue1,Paris FC,Brest,0.5478880926147789,0.468530080932289,v1-backfill,1.0
+Ligue1|2026-05-03|Strasbourg|Toulouse,2026-05-03,Ligue1,Strasbourg,Toulouse,0.624393649930463,0.6608604684742324,v1-backfill,0.0
+LaLiga|2026-05-03|Celta|Elche,2026-05-03,LaLiga,Celta,Elche,0.7552981966854516,0.6773860786668966,v1-backfill,1.0
+LaLiga|2026-05-03|Betis|Oviedo,2026-05-03,LaLiga,Betis,Oviedo,0.8654328087183927,0.7788311914584892,v1-backfill,1.0
+LaLiga|2026-05-03|Espanol|Real Madrid,2026-05-03,LaLiga,Espanol,Real Madrid,0.1424547939262374,0.2411246039143426,v1-backfill,0.0
+Ligue1|2026-05-03|Lyon|Rennes,2026-05-03,Ligue1,Lyon,Rennes,0.5564380281655663,0.6118100603853388,v1-backfill,1.0
+Bundesliga|2026-05-03|St Pauli|Mainz,2026-05-03,Bundesliga,St Pauli,Mainz,0.4082463430122974,0.4254324905286221,v1-backfill,0.0
+SerieA|2026-05-03|Inter|Parma,2026-05-03,SerieA,Inter,Parma,0.9316690643285332,0.8407583431632211,v1-backfill,1.0
+LaLiga|2026-05-04|Sevilla|Sociedad,2026-05-04,LaLiga,Sevilla,Sociedad,0.5199825073949986,0.474331820620361,v1-backfill,1.0
+SerieA|2026-05-04|Cremonese|Lazio,2026-05-04,SerieA,Cremonese,Lazio,0.2240626095220378,0.316510217648442,v1-backfill,0.0
+SerieA|2026-05-04|Roma|Fiorentina,2026-05-04,SerieA,Roma,Fiorentina,0.7200853324290665,0.6826433817905067,v1-backfill,1.0
+EPL|2026-05-04|Chelsea|Nott'm Forest,2026-05-04,EPL,Chelsea,Nott'm Forest,0.6461783341496264,0.6384223878537743,v1-backfill,0.0
+SerieA|2026-05-08|Torino|Sassuolo,2026-05-08,SerieA,Torino,Sassuolo,0.5753517078941773,0.5922206113772573,v1-backfill,1.0
+Bundesliga|2026-05-08|Dortmund|Ein Frankfurt,2026-05-08,Bundesliga,Dortmund,Ein Frankfurt,0.7924569734837684,0.7120315477930204,v1-backfill,1.0
+Ligue1|2026-05-08|Lens|Nantes,2026-05-08,Ligue1,Lens,Nantes,0.881595465840707,0.8032057940579719,v1-backfill,1.0
+LaLiga|2026-05-08|Levante|Osasuna,2026-05-08,LaLiga,Levante,Osasuna,0.4619822030156513,0.4406839874958206,v1-backfill,1.0
+EPL|2026-05-09|Fulham|Bournemouth,2026-05-09,EPL,Fulham,Bournemouth,0.4789514241714092,0.5167037384130734,v1-backfill,0.0
+EPL|2026-05-09|Man City|Brentford,2026-05-09,EPL,Man City,Brentford,0.8563725845413721,0.7580918182637322,v1-backfill,1.0
+Bundesliga|2026-05-09|Wolfsburg|Bayern Munich,2026-05-09,Bundesliga,Wolfsburg,Bayern Munich,0.0552930933298239,0.1802021435383667,v1-backfill,0.0
+Bundesliga|2026-05-09|Stuttgart|Leverkusen,2026-05-09,Bundesliga,Stuttgart,Leverkusen,0.5335311681528176,0.4886859359276762,v1-backfill,1.0
+Bundesliga|2026-05-09|RB Leipzig|St Pauli,2026-05-09,Bundesliga,RB Leipzig,St Pauli,0.8942426748607422,0.8135347870864104,v1-backfill,1.0
+Bundesliga|2026-05-09|Hoffenheim|Werder Bremen,2026-05-09,Bundesliga,Hoffenheim,Werder Bremen,0.7393959116472324,0.675558464307507,v1-backfill,1.0
+Bundesliga|2026-05-09|Augsburg|M'gladbach,2026-05-09,Bundesliga,Augsburg,M'gladbach,0.6577776064470804,0.596516744267169,v1-backfill,1.0
+EPL|2026-05-09|Brighton|Wolves,2026-05-09,EPL,Brighton,Wolves,0.8391178118207049,0.7626115165909798,v1-backfill,1.0
+SerieA|2026-05-09|Lazio|Inter,2026-05-09,SerieA,Lazio,Inter,0.2084582198177841,0.3621099690491585,v1-backfill,0.0
+SerieA|2026-05-09|Lecce|Juventus,2026-05-09,SerieA,Lecce,Juventus,0.1448527644768809,0.283378078414409,v1-backfill,0.0
+SerieA|2026-05-09|Cagliari|Udinese,2026-05-09,SerieA,Cagliari,Udinese,0.4370039196716393,0.498812427802758,v1-backfill,0.0
+LaLiga|2026-05-09|Sevilla|Espanol,2026-05-09,LaLiga,Sevilla,Espanol,0.6962997283870043,0.5841703328657593,v1-backfill,1.0
+LaLiga|2026-05-09|Ath Madrid|Celta,2026-05-09,LaLiga,Ath Madrid,Celta,0.7815742107620189,0.701433306539592,v1-backfill,0.0
+EPL|2026-05-10|West Ham|Arsenal,2026-05-10,EPL,West Ham,Arsenal,0.1431725916766435,0.2822220796982084,v1-backfill,0.0
+SerieA|2026-05-10|Milan|Atalanta,2026-05-10,SerieA,Milan,Atalanta,0.535187723895508,0.6106168955143739,v1-backfill,0.0
+Ligue1|2026-05-10|Toulouse|Lyon,2026-05-10,Ligue1,Toulouse,Lyon,0.4312642598848399,0.4209442162547141,v1-backfill,1.0
+LaLiga|2026-05-10|Ath Bilbao|Valencia,2026-05-10,LaLiga,Ath Bilbao,Valencia,0.7537650794848478,0.6450765464870354,v1-backfill,0.0
+Bundesliga|2026-05-10|Mainz|Union Berlin,2026-05-10,Bundesliga,Mainz,Union Berlin,0.7131610117844918,0.6564552139903855,v1-backfill,0.0
+Bundesliga|2026-05-10|FC Koln|Heidenheim,2026-05-10,Bundesliga,FC Koln,Heidenheim,0.7101276360342668,0.579572707488365,v1-backfill,0.0
+Bundesliga|2026-05-10|Hamburg|Freiburg,2026-05-10,Bundesliga,Hamburg,Freiburg,0.4717034532405783,0.414529641440269,v1-backfill,1.0
+LaLiga|2026-05-10|Barcelona|Real Madrid,2026-05-10,LaLiga,Barcelona,Real Madrid,0.7511039977723116,0.6357822045489826,v1-backfill,1.0
+Ligue1|2026-05-10|Metz|Lorient,2026-05-10,Ligue1,Metz,Lorient,0.2901559058778099,0.3997550160195305,v1-backfill,0.0
+SerieA|2026-05-10|Cremonese|Pisa,2026-05-10,SerieA,Cremonese,Pisa,0.5593773007916272,0.6168829565148471,v1-backfill,1.0
+Ligue1|2026-05-10|Auxerre|Nice,2026-05-10,Ligue1,Auxerre,Nice,0.5576015053255552,0.47497431065453,v1-backfill,1.0
+Ligue1|2026-05-10|Le Havre|Marseille,2026-05-10,Ligue1,Le Havre,Marseille,0.2701242241724671,0.3958215129197239,v1-backfill,0.0
+SerieA|2026-05-10|Parma|Roma,2026-05-10,SerieA,Parma,Roma,0.2503204893016607,0.377253250305157,v1-backfill,0.0
+Ligue1|2026-05-10|Rennes|Paris FC,2026-05-10,Ligue1,Rennes,Paris FC,0.7163544985493177,0.7087051736995262,v1-backfill,1.0
+Ligue1|2026-05-10|Paris SG|Brest,2026-05-10,Ligue1,Paris SG,Brest,0.9417677845358388,0.8057058202911842,v1-backfill,1.0
+SerieA|2026-05-10|Verona|Como,2026-05-10,SerieA,Verona,Como,0.1692133302253237,0.3198137847738413,v1-backfill,0.0
+Ligue1|2026-05-10|Monaco|Lille,2026-05-10,Ligue1,Monaco,Lille,0.4606971933586858,0.5517628864077133,v1-backfill,0.0
+SerieA|2026-05-11|Napoli|Bologna,2026-05-11,SerieA,Napoli,Bologna,0.737564445326111,0.7296149106800646,v1-backfill,0.0
+LaLiga|2026-05-12|Osasuna|Ath Madrid,2026-05-12,LaLiga,Osasuna,Ath Madrid,0.3391636261378528,0.4145587102944383,v1-backfill,0.0
+LaLiga|2026-05-12|Betis|Elche,2026-05-12,LaLiga,Betis,Elche,0.8311009820069901,0.7498194490856873,v1-backfill,1.0
+LaLiga|2026-05-12|Celta|Levante,2026-05-12,LaLiga,Celta,Levante,0.7965953897135746,0.712360660359829,v1-backfill,0.0
+LaLiga|2026-05-13|Espanol|Ath Bilbao,2026-05-13,LaLiga,Espanol,Ath Bilbao,0.3306523940620108,0.4438777689319766,v1-backfill,1.0
+LaLiga|2026-05-13|Villarreal|Sevilla,2026-05-13,LaLiga,Villarreal,Sevilla,0.8323956454738325,0.7730289291555321,v1-backfill,0.0
+LaLiga|2026-05-13|Alaves|Barcelona,2026-05-13,LaLiga,Alaves,Barcelona,0.0956803090684851,0.199600160076523,v1-backfill,1.0
+Ligue1|2026-05-13|Brest|Strasbourg,2026-05-13,Ligue1,Brest,Strasbourg,0.4616446476641205,0.5258078585318043,v1-backfill,0.0
+Ligue1|2026-05-13|Lens|Paris SG,2026-05-13,Ligue1,Lens,Paris SG,0.2776864313246444,0.4247159757660079,v1-backfill,0.0
+EPL|2026-05-13|Man City|Crystal Palace,2026-05-13,EPL,Man City,Crystal Palace,0.8589138295896278,0.7872486160643334,v1-backfill,1.0
+LaLiga|2026-05-13|Getafe|Mallorca,2026-05-13,LaLiga,Getafe,Mallorca,0.6637876938071972,0.5786139151694654,v1-backfill,1.0
+LaLiga|2026-05-14|Real Madrid|Oviedo,2026-05-14,LaLiga,Real Madrid,Oviedo,0.9520893784075528,0.8808804654680492,v1-backfill,1.0
+EPL|2026-05-15|Aston Villa|Liverpool,2026-05-15,EPL,Aston Villa,Liverpool,0.4108937307035659,0.5056151968776214,v1-backfill,1.0
+Bundesliga|2026-05-16|Heidenheim|Mainz,2026-05-16,Bundesliga,Heidenheim,Mainz,0.4370685726094488,0.4423717173035029,v1-backfill,0.0
+Bundesliga|2026-05-16|Freiburg|RB Leipzig,2026-05-16,Bundesliga,Freiburg,RB Leipzig,0.33483241520941,0.4443227442457422,v1-backfill,1.0
+Bundesliga|2026-05-16|M'gladbach|Hoffenheim,2026-05-16,Bundesliga,M'gladbach,Hoffenheim,0.3748634348003204,0.4607327833100331,v1-backfill,1.0
+Bundesliga|2026-05-16|St Pauli|Wolfsburg,2026-05-16,Bundesliga,St Pauli,Wolfsburg,0.5636583796638207,0.5257235156326477,v1-backfill,0.0
+Bundesliga|2026-05-16|Union Berlin|Augsburg,2026-05-16,Bundesliga,Union Berlin,Augsburg,0.5292947362016669,0.5169148367601659,v1-backfill,1.0
+Bundesliga|2026-05-16|Werder Bremen|Dortmund,2026-05-16,Bundesliga,Werder Bremen,Dortmund,0.271012690289045,0.3205527170979215,v1-backfill,0.0
+Bundesliga|2026-05-16|Bayern Munich|FC Koln,2026-05-16,Bundesliga,Bayern Munich,FC Koln,0.9608857553059073,0.907053139976159,v1-backfill,1.0
+Ligue1|2026-05-17|Lille|Auxerre,2026-05-17,Ligue1,Lille,Auxerre,0.8374725291973153,0.7818179690341354,v1-backfill,0.0
+Ligue1|2026-05-17|Lorient|Le Havre,2026-05-17,Ligue1,Lorient,Le Havre,0.70439517435242,0.6111157674696343,v1-backfill,0.0
+Ligue1|2026-05-17|Lyon|Lens,2026-05-17,Ligue1,Lyon,Lens,0.4514190892001762,0.55882128950371,v1-backfill,0.0
+Ligue1|2026-05-17|Marseille|Rennes,2026-05-17,Ligue1,Marseille,Rennes,0.6236614982276864,0.5875951144034541,v1-backfill,1.0
+Ligue1|2026-05-17|Strasbourg|Monaco,2026-05-17,Ligue1,Strasbourg,Monaco,0.4776815478975698,0.5161891526988163,v1-backfill,1.0
+EPL|2026-05-17|Man United|Nott'm Forest,2026-05-17,EPL,Man United,Nott'm Forest,0.7189914560984235,0.6651572857758584,v1-backfill,1.0
+SerieA|2026-05-17|Sassuolo|Lecce,2026-05-17,SerieA,Sassuolo,Lecce,0.658729040265591,0.6304577739108397,v1-backfill,0.0
+SerieA|2026-05-17|Cagliari|Torino,2026-05-17,SerieA,Cagliari,Torino,0.5018642782811215,0.4941263860515714,v1-backfill,1.0
+SerieA|2026-05-17|Atalanta|Bologna,2026-05-17,SerieA,Atalanta,Bologna,0.669791580857831,0.6525331291099026,v1-backfill,0.0
+SerieA|2026-05-17|Roma|Lazio,2026-05-17,SerieA,Roma,Lazio,0.7254649623869294,0.6441945821044408,v1-backfill,1.0
+SerieA|2026-05-17|Pisa|Napoli,2026-05-17,SerieA,Pisa,Napoli,0.1154371369763909,0.1882567903865663,v1-backfill,0.0
+SerieA|2026-05-17|Juventus|Fiorentina,2026-05-17,SerieA,Juventus,Fiorentina,0.8447395785028005,0.7327607908308305,v1-backfill,0.0
+SerieA|2026-05-17|Genoa|Milan,2026-05-17,SerieA,Genoa,Milan,0.3617735204917868,0.3945702859557743,v1-backfill,0.0
+SerieA|2026-05-17|Como|Parma,2026-05-17,SerieA,Como,Parma,0.8609971608448587,0.7024661443090898,v1-backfill,1.0
+LaLiga|2026-05-17|Ath Madrid|Girona,2026-05-17,LaLiga,Ath Madrid,Girona,0.8020018555299218,0.7413353055758798,v1-backfill,1.0
+LaLiga|2026-05-17|Elche|Getafe,2026-05-17,LaLiga,Elche,Getafe,0.5272383507945078,0.4818452323498229,v1-backfill,1.0
+LaLiga|2026-05-17|Levante|Mallorca,2026-05-17,LaLiga,Levante,Mallorca,0.6373223573892909,0.5211055082483895,v1-backfill,1.0
+LaLiga|2026-05-17|Osasuna|Espanol,2026-05-17,LaLiga,Osasuna,Espanol,0.7208245440002616,0.6337474282825606,v1-backfill,0.0
+LaLiga|2026-05-17|Oviedo|Alaves,2026-05-17,LaLiga,Oviedo,Alaves,0.4973002410859087,0.4577030881109151,v1-backfill,0.0
+LaLiga|2026-05-17|Sevilla|Real Madrid,2026-05-17,LaLiga,Sevilla,Real Madrid,0.1899656795532581,0.2676115594110315,v1-backfill,0.0
+LaLiga|2026-05-17|Sociedad|Valencia,2026-05-17,LaLiga,Sociedad,Valencia,0.6423325110775686,0.5892802587823021,v1-backfill,0.0
+LaLiga|2026-05-17|Vallecano|Villarreal,2026-05-17,LaLiga,Vallecano,Villarreal,0.617676446874849,0.4194963280297173,v1-backfill,1.0
+EPL|2026-05-17|Newcastle|West Ham,2026-05-17,EPL,Newcastle,West Ham,0.758898558293337,0.6547980635465983,v1-backfill,1.0
+EPL|2026-05-17|Leeds|Brighton,2026-05-17,EPL,Leeds,Brighton,0.4447979468209511,0.4378695218374844,v1-backfill,1.0
+EPL|2026-05-17|Everton|Sunderland,2026-05-17,EPL,Everton,Sunderland,0.7015005933477708,0.6616465497642212,v1-backfill,0.0
+LaLiga|2026-05-17|Barcelona|Betis,2026-05-17,LaLiga,Barcelona,Betis,0.8913366372967683,0.7748638312655374,v1-backfill,1.0
+SerieA|2026-05-17|Udinese|Cremonese,2026-05-17,SerieA,Udinese,Cremonese,0.8023059594225617,0.7294208372114966,v1-backfill,0.0
+Ligue1|2026-05-17|Paris FC|Paris SG,2026-05-17,Ligue1,Paris FC,Paris SG,0.1278181254244188,0.2233048149529737,v1-backfill,1.0
+EPL|2026-05-18|Arsenal|Burnley,2026-05-18,EPL,Arsenal,Burnley,0.967423280688095,0.9012673364898028,v1-backfill,1.0
+EPL|2026-05-19|Chelsea|Tottenham,2026-05-19,EPL,Chelsea,Tottenham,0.7372189860652968,0.6883597057657347,v1-backfill,1.0
+SerieA|2026-05-23|Lazio|Pisa,2026-05-23,SerieA,Lazio,Pisa,0.8598408698119421,0.8290379669088963,v1-backfill,1.0
+LaLiga|2026-05-23|Real Madrid|Ath Bilbao,2026-05-23,LaLiga,Real Madrid,Ath Bilbao,0.8583442136055369,0.7943079386017508,v1-backfill,1.0
+LaLiga|2026-05-23|Mallorca|Oviedo,2026-05-23,LaLiga,Mallorca,Oviedo,0.7254371174123825,0.6730441269647504,v1-backfill,1.0
+LaLiga|2026-05-23|Getafe|Osasuna,2026-05-23,LaLiga,Getafe,Osasuna,0.6074748770341039,0.571829338869291,v1-backfill,1.0
+LaLiga|2026-05-23|Celta|Sevilla,2026-05-23,LaLiga,Celta,Sevilla,0.6391909974724328,0.6454098383448394,v1-backfill,1.0
+LaLiga|2026-05-23|Betis|Levante,2026-05-23,LaLiga,Betis,Levante,0.7869143273171947,0.7366546098316974,v1-backfill,1.0
+LaLiga|2026-05-23|Alaves|Vallecano,2026-05-23,LaLiga,Alaves,Vallecano,0.5308968475622884,0.5277224137595886,v1-backfill,0.0
+LaLiga|2026-05-23|Valencia|Barcelona,2026-05-23,LaLiga,Valencia,Barcelona,0.1516873453515937,0.248298873037688,v1-backfill,1.0
+SerieA|2026-05-24|Parma|Sassuolo,2026-05-24,SerieA,Parma,Sassuolo,0.5271392763070739,0.5848724341205493,v1-backfill,1.0
+SerieA|2026-05-24|Napoli|Udinese,2026-05-24,SerieA,Napoli,Udinese,0.7980756474222711,0.7610770007201341,v1-backfill,1.0
+SerieA|2026-05-24|Cremonese|Como,2026-05-24,SerieA,Cremonese,Como,0.1490211405705477,0.3233882348919917,v1-backfill,0.0
+SerieA|2026-05-24|Lecce|Genoa,2026-05-24,SerieA,Lecce,Genoa,0.4632302473364066,0.5026195207137316,v1-backfill,1.0
+SerieA|2026-05-24|Milan|Cagliari,2026-05-24,SerieA,Milan,Cagliari,0.8086251686002162,0.7807093157256217,v1-backfill,0.0
+SerieA|2026-05-24|Verona|Roma,2026-05-24,SerieA,Verona,Roma,0.1828988747394174,0.2504882404105872,v1-backfill,0.0
+EPL|2026-05-24|West Ham|Leeds,2026-05-24,EPL,West Ham,Leeds,0.437735775421523,0.556439734301562,v1-backfill,1.0
+LaLiga|2026-05-24|Villarreal|Ath Madrid,2026-05-24,LaLiga,Villarreal,Ath Madrid,0.5489470479929517,0.546027705974604,v1-backfill,1.0
+EPL|2026-05-24|Brighton|Man United,2026-05-24,EPL,Brighton,Man United,0.5111458517006112,0.5162737968572373,v1-backfill,0.0
+EPL|2026-05-24|Crystal Palace|Arsenal,2026-05-24,EPL,Crystal Palace,Arsenal,0.2125090541411616,0.3163025963946342,v1-backfill,0.0
+EPL|2026-05-24|Tottenham|Everton,2026-05-24,EPL,Tottenham,Everton,0.5255786031780826,0.4831148950098372,v1-backfill,1.0
+EPL|2026-05-24|Man City|Aston Villa,2026-05-24,EPL,Man City,Aston Villa,0.838614405644917,0.7159484253352759,v1-backfill,0.0
+EPL|2026-05-24|Sunderland|Chelsea,2026-05-24,EPL,Sunderland,Chelsea,0.3765585869410114,0.4551781061179769,v1-backfill,1.0
+EPL|2026-05-24|Fulham|Newcastle,2026-05-24,EPL,Fulham,Newcastle,0.5143447897520019,0.5321779694641646,v1-backfill,1.0
