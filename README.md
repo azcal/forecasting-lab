@@ -10,4 +10,4 @@ Frozen-holdout log loss (model vs Elo floor): Soccer 0.575/0.590 · NCAAF 0.545/
 · WNBA 0.633/0.655 · NHL 0.673/0.678 · MLB F5 0.691/0.692. Two candidate targets failed
 validation and never shipped; one live target is flagged and paused by the skill monitor.
 
-Live app: (Streamlit Cloud link goes here after deploy)
+Live app: https://mustbemoose-forecasting-lab.streamlit.app/ 
