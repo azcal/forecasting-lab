@@ -135,7 +135,7 @@ st.title("MustBeMoose Forecasting Lab")
 st.caption("Eight automated sports-forecasting pipelines. Frozen models, walk-forward "
            "validation, daily grading against market-free baselines via GitHub Actions. "
            "All results below are out-of-sample.")
-st.markdown("Built by Mark Parsons, CPHR · [Code & methodology](https://github.com/YOURUSERNAME/forecasting-lab)")
+st.markdown("Built by Mark Parsons, CPHR · [Code & methodology](https://github.com/azcal/forecasting-lab)")
 
 boards = list(SOURCES)
 tabs = st.tabs(["Overview"] + boards)
