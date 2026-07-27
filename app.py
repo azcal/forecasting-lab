@@ -27,6 +27,9 @@ STATUS = {
     "NHL": "pre-season (Oct)", "NBA": "pre-season (Oct)",
 }
 
+# which side the base-rate strategy always backs, per board listing convention
+BASE_SIDE = {"CS2": "team 1"}
+
 RATING = [(0.15, "elite"), (0.08, "strong"), (0.04, "solid"),
           (0.015, "thin"), (-99.0, "no measurable edge")]
 
@@ -81,8 +84,18 @@ confident and right is rewarded; being confident and wrong is punished hard. Tha
 deliberate, because a forecast that hedges everything is useless.
 
 **Extra calls right per 100** is the plain-language version: how many more games the model gets
-on the right side of than someone who simply backs the more likely side every single time. It
-ignores confidence entirely, which is why it is the easy number rather than the real one.
+on the right side of than someone who backs the home side (team 1 on the CS2 board) every single
+time, without ever looking at who is playing. It ignores confidence entirely, which is why it is
+the easy number rather than the real one.
+
+That comparison only means something if the model actually disagrees with the home side
+sometimes, so each board reports how often it does and how it fares when it does. Across these
+boards it backs against the home side on roughly a third of games and wins around 60% of them.
+
+**It is not a comparison against a bookmaker.** No odds, lines or market prices enter any model
+here or any number on this page. Everything is built from league APIs and open data and graded
+against a base rate and an Elo floor. Nothing on this dashboard claims to beat a book, because
+nothing here has ever seen one.
 
 **The two floors.** *Base rate* is what you would score knowing nothing except how often the
 home side wins in this league. Any model has to beat it to be worth anything. *Elo baseline*
@@ -111,7 +124,7 @@ right 90% of the time gets punished by log loss and looks fine on a simple count
 first-five-innings is the live example on this dashboard: fractionally positive on log loss and
 fractionally negative on raw calls, which is a board with no real edge in either direction.
 
-**One caution.** These do not compare between sports the way they look. First-five-innings
+**One caution.** The skill scores do not compare between sports the way they look. First-five-innings
 baseball is close to a coin flip no matter who is modelling it, so there is far less to
 predict there than in college football. A small number on a hard board is not a bad model.
 """
@@ -269,6 +282,10 @@ def board_stats(gg):
     # the plain-count lens: always backing the more likely side gets you max(base, 1-base)
     s["base_hit"] = max(base, 1 - base)
     s["extra"] = s["hit"] - s["base_hit"]
+    # how often the model overrules that strategy, and how it does when it does
+    contra = pm < 0.5
+    s["contra_share"] = float(contra.mean())
+    s["contra_hit"] = float(np.mean(y[contra] == 0)) if contra.sum() else float("nan")
     if np.isfinite(pf).all():
         s["ll_floor"] = ll(y, pf)
         s["elo_edge"] = s["ll_base"] - s["ll_floor"]
@@ -283,9 +300,10 @@ def board_stats(gg):
 
 
 def verdict(board, s):
+    side = BASE_SIDE.get(board, "the home side")
     bits = [f"Across **{s['n']:,}** graded forecasts this board calls "
-            f"**{s['extra']*100:+.1f} games per 100** right that someone always backing the "
-            f"more likely side would get wrong, and removes **{s['skill']:.1%}** of the error a "
+            f"**{s['extra']*100:+.1f} games per 100** right that someone backing {side} every "
+            f"single time would get wrong, and removes **{s['skill']:.1%}** of the error a "
             f"no-information guess would make, which reads as *{s['rating']}*."]
     if s["ll_floor"] is not None:
         share = s["layer_edge"] / max(s["elo_edge"] + s["layer_edge"], 1e-9)
@@ -305,8 +323,9 @@ def metrics_block(board, gg):
     cols = st.columns(5)
     cols[0].metric("Graded forecasts", f"{s['n']:,}")
     cols[1].metric("Skill score", f"{s['skill']:.1%}", s["rating"], delta_color="off")
+    side = BASE_SIDE.get(board, "the home side")
     cols[2].metric("Extra calls right per 100", f"{s['extra']*100:+.1f}",
-                   "vs always backing the favourite", delta_color="off")
+                   f"vs always backing {side}", delta_color="off")
     cols[3].metric("Hit rate", f"{s['hit']:.1%}")
     if s["ll_floor"] is not None:
         tt = "" if math.isnan(s["layer_t"]) else f"t = {s['layer_t']:.1f}"
@@ -319,6 +338,10 @@ def metrics_block(board, gg):
         st.caption(f"Log loss: model {s['ll_model']:.4f} · base rate {s['ll_base']:.4f}. "
                    f"Lower is better and a coin flip is 0.6931.")
     st.markdown(verdict(board, s))
+    if not math.isnan(s["contra_hit"]):
+        st.caption(f"It overrules that strategy on **{s['contra_share']:.0%}** of games, backing "
+                   f"against {side}, and wins **{s['contra_hit']:.0%}** of those. Without that, "
+                   f"the number above would only be measuring the head start {side} gets.")
 
     w = gg.tail(300)
     if len(w) >= 100:
