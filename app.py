@@ -228,32 +228,37 @@ def load_board(name):
     if name == "WNBA":
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date, format="%Y%m%d"),
             "matchup": d.away + " @ " + d.home, "p_model": d.p_home,
-            "p_floor": d.p_home_elo, "y": d.get("result"), "head": "game winner"}))
+            "p_floor": d.p_home_elo, "y": d.get("result"), "head": "game winner",
+            "p_team": d.home, "opp_team": d.away}))
     elif name == "MLB F5":
         y = d.get("result")
         y = y.where(y.isin([0.0, 1.0]))          # ties are pushes
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date, format="%Y%m%d"),
             "matchup": d.away + " @ " + d.home, "p_model": d.p_home,
-            "p_floor": d.p_home_elo, "y": y, "head": "first-5-innings winner"}))
+            "p_floor": d.p_home_elo, "y": y, "head": "first-5-innings winner",
+            "p_team": d.home, "opp_team": d.away}))
     elif name == "CS2":
         # Series-length head retired 2026-07-26; see the Retired tab. Historical
         # p_3maps / maps3 columns may still be present in the log and are ignored.
         out.append(pd.DataFrame({"date": pd.to_datetime(d.ts).dt.tz_localize(None),
             "matchup": d.team1 + " vs " + d.team2, "p_model": d.p_team1,
-            "p_floor": d.p_elo, "y": d.get("y"), "head": "series winner"}))
+            "p_floor": d.p_elo, "y": d.get("y"), "head": "series winner",
+            "p_team": d.team1, "opp_team": d.team2}))
     elif name == "Soccer":
         y = d.get("result"); y = y.where(y.isin([0.0, 1.0]))
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date),
             "matchup": d.home + " vs " + d.away + " (" + d.league + ")",
             "p_model": d.p_home, "p_floor": d.p_elo, "y": y,
-            "head": "match winner (draws excluded)"}))
+            "head": "match winner (draws excluded)",
+            "p_team": d.home, "opp_team": d.away}))
     else:
         heads = {"NFL": "game winner (ties push)", "NCAAF": "game winner (FBS vs FBS)",
                  "NHL": "game winner (incl OT/SO)", "NBA": "game winner"}
         y = d.get("result"); y = y.where(y.isin([0.0, 1.0]))
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date),
             "matchup": d.away + " @ " + d.home, "p_model": d.p_home,
-            "p_floor": d.p_elo, "y": y, "head": heads[name]}))
+            "p_floor": d.p_elo, "y": y, "head": heads[name],
+            "p_team": d.home, "opp_team": d.away}))
     f = pd.concat(out, ignore_index=True).sort_values("date").reset_index(drop=True)
     f["board"] = name
     return f
@@ -474,12 +479,20 @@ for i, b in enumerate(boards, start=1):
             with c2:
                 calibration_chart(gg)
                 up = g[g.y.isna()].tail(8)
+                sh = (up if len(up) else g.tail(8)).copy()
+                pm_ = sh.p_model.values.astype(float)
+                fav = np.where(pm_ >= 0.5, sh.p_team.values, sh.opp_team.values)
+                pct = np.where(pm_ >= 0.5, pm_, 1 - pm_)
                 st.markdown("**Latest forecasts**")
-                st.caption("Probability the home side, or team 1, wins.")
-                show = (up if len(up) else g.tail(8))[["date", "matchup", "p_model"]]
-                show = show.assign(date=pd.to_datetime(show.date).dt.strftime("%Y-%m-%d"),
-                                   p_model=show.p_model.round(3))
+                show = pd.DataFrame({
+                    "date": pd.to_datetime(sh.date).dt.strftime("%Y-%m-%d").values,
+                    "matchup": sh.matchup.values,
+                    "model favours": [f"{t} {p:.0%}" for t, p in zip(fav, pct)]})
                 st.dataframe(show, use_container_width=True, hide_index=True)
+                st.caption("The percentage is that named side's own chance of winning, so 50% "
+                           "means the model sees a coin flip. Home teams are listed second on "
+                           "the @ boards and first on the soccer board, which is why the side "
+                           "is named rather than left implied.")
 
 with tabs[-1]:
     st.markdown(RETIRED_MD)
