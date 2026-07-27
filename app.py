@@ -55,23 +55,6 @@ def skill(y, p, base):
     return 0.0 if b <= 0 else 1 - ll(y, p) / b
 
 
-def equiv_call(L):
-    """The single confidence level q whose log loss equals L. A model scoring L is doing
-    exactly as well as someone who calls every game q-to-(1-q) and is right that often.
-    Bisection rather than scipy so the app keeps a four-package requirements file."""
-    if L >= 0.6931:
-        return 0.5
-    lo, hi = 0.5 + 1e-9, 1 - 1e-9
-    H = lambda q: -(q * math.log(q) + (1 - q) * math.log(1 - q))
-    for _ in range(60):
-        mid = (lo + hi) / 2
-        if H(mid) > L:
-            lo = mid
-        else:
-            hi = mid
-    return (lo + hi) / 2
-
-
 def paired_t(y, p_model, p_ref):
     """t-statistic and one-sided p for the per-game log loss difference. Normal
     approximation on the p value, which is fine at n in the hundreds."""
@@ -97,9 +80,9 @@ it right, and how confident was it. Saying "50/50" to everything scores 0.693. B
 confident and right is rewarded; being confident and wrong is punished hard. That is
 deliberate, because a forecast that hedges everything is useless.
 
-**A log loss is easier to read as a coin.** A model scoring 0.545 is doing exactly as well as
-someone who calls every single game a 77/23 shot and is right that often. One scoring 0.691
-is calling them 53/47, which is barely off a coin flip. Each board shows its own equivalent.
+**Extra calls right per 100** is the plain-language version: how many more games the model gets
+on the right side of than someone who simply backs the more likely side every single time. It
+ignores confidence entirely, which is why it is the easy number rather than the real one.
 
 **The two floors.** *Base rate* is what you would score knowing nothing except how often the
 home side wins in this league. Any model has to beat it to be worth anything. *Elo baseline*
@@ -109,16 +92,24 @@ build, and it is the number to look at hardest.
 
 **Skill score** is the share of the base rate's error the model removes.
 
-| skill score | reading | same as calling every game |
-|---|---|---|
-| 15% or more | elite | 72 / 28 |
-| 8% to 15% | strong | 67 / 33 |
-| 4% to 8% | solid | 62 / 38 |
-| 1.5% to 4% | thin | 57 / 43 |
-| under 1.5% | no measurable edge | 50 / 50 |
+| skill score | reading |
+|---|---|
+| 15% or more | elite |
+| 8% to 15% | strong |
+| 4% to 8% | solid |
+| 1.5% to 4% | thin |
+| under 1.5% | no measurable edge |
 
-Those cutoffs are mine, not an industry standard, and the right-hand column assumes an evenly
-matched league. There is no published scale for cross-sport forecast skill.
+Those cutoffs are mine, not an industry standard. There is no published scale for cross-sport
+forecast skill. For a feel: every board here reading *strong* or better calls between 8 and 13
+more games right per 100 than always backing the favourite, the one reading *thin* calls about
+2 more, and the one with no measurable edge calls slightly fewer.
+
+**The two numbers can disagree, and that is the point.** Extra calls counts direction only. Log
+loss also scores confidence, so a model that is right 60% of the time while insisting it is
+right 90% of the time gets punished by log loss and looks fine on a simple count. MLB
+first-five-innings is the live example on this dashboard: fractionally positive on log loss and
+fractionally negative on raw calls, which is a board with no real edge in either direction.
 
 **One caution.** These do not compare between sports the way they look. First-five-innings
 baseball is close to a coin flip no matter who is modelling it, so there is far less to
@@ -275,7 +266,9 @@ def board_stats(gg):
          "hit": float(np.mean((pm > .5) == (y == 1)))}
     s["skill"] = 1 - s["ll_model"] / s["ll_base"] if s["ll_base"] > 0 else 0.0
     s["rating"] = rate(round(s["skill"], 3))
-    s["call"] = equiv_call(s["ll_model"])
+    # the plain-count lens: always backing the more likely side gets you max(base, 1-base)
+    s["base_hit"] = max(base, 1 - base)
+    s["extra"] = s["hit"] - s["base_hit"]
     if np.isfinite(pf).all():
         s["ll_floor"] = ll(y, pf)
         s["elo_edge"] = s["ll_base"] - s["ll_floor"]
@@ -290,11 +283,10 @@ def board_stats(gg):
 
 
 def verdict(board, s):
-    q = s["call"] * 100
-    bits = [f"Across **{s['n']:,}** graded forecasts this board removes **{s['skill']:.1%}** of "
-            f"the error a no-information guess would make, which reads as *{s['rating']}*. "
-            f"That is the same as calling every game a **{q:.0f}/{100-q:.0f}** shot and being "
-            f"right that often."]
+    bits = [f"Across **{s['n']:,}** graded forecasts this board calls "
+            f"**{s['extra']*100:+.1f} games per 100** right that someone always backing the "
+            f"more likely side would get wrong, and removes **{s['skill']:.1%}** of the error a "
+            f"no-information guess would make, which reads as *{s['rating']}*."]
     if s["ll_floor"] is not None:
         share = s["layer_edge"] / max(s["elo_edge"] + s["layer_edge"], 1e-9)
         if not math.isnan(s["layer_t"]) and s["layer_t"] >= 2:
@@ -310,11 +302,11 @@ def verdict(board, s):
 
 def metrics_block(board, gg):
     s = board_stats(gg)
-    q = s["call"] * 100
     cols = st.columns(5)
     cols[0].metric("Graded forecasts", f"{s['n']:,}")
     cols[1].metric("Skill score", f"{s['skill']:.1%}", s["rating"], delta_color="off")
-    cols[2].metric("Same as calling every game", f"{q:.0f} / {100-q:.0f}")
+    cols[2].metric("Extra calls right per 100", f"{s['extra']*100:+.1f}",
+                   "vs always backing the favourite", delta_color="off")
     cols[3].metric("Hit rate", f"{s['hit']:.1%}")
     if s["ll_floor"] is not None:
         tt = "" if math.isnan(s["layer_t"]) else f"t = {s['layer_t']:.1f}"
@@ -445,10 +437,10 @@ with tabs[0]:
             if len(gg) < 30:
                 continue
             s = board_stats(gg)
-            q = s["call"] * 100
             rows.append({"board": b, "status": STATUS.get(b, "live"), "target": h,
                          "graded n": s["n"], "skill score": f"{s['skill']:.1%}",
-                         "reading": s["rating"], "same as calling": f"{q:.0f}/{100-q:.0f}",
+                         "reading": s["rating"],
+                         "extra calls per 100": f"{s['extra']*100:+.1f}",
                          "hit rate": f"{s['hit']:.1%}", "log loss": round(s["ll_model"], 4),
                          "base-rate LL": round(s["ll_base"], 4)})
             chart_rows.append(dict(s, label=b if b != "CS2" else "CS2 winner"))
