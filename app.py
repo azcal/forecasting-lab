@@ -48,6 +48,17 @@ BOARD_NOTES = {
         "such in the pipeline log, so the rolling chart below mixes both until v2 fills a "
         "full window. The series-length head was retired the same day; see the Retired tab."
     ),
+    "NHL": (
+        "**v2 shipped 2026-07-26.** About 22% of NHL games go past sixty minutes, home "
+        "teams win those at almost exactly 50%, and whether a game gets there is not "
+        "predictable from team strength (AUC 0.4877 on the dev season). The winner head "
+        "is now fit as a three-way regulation/OT decomposition and recombined as "
+        "P(home) = P(home regulation win) + P(past regulation) × 0.50, which models the "
+        "coin flip explicitly instead of letting a direct binary absorb it. Worth +0.0007 "
+        "to +0.0014 log loss across the dev season and both frozen holdouts, moving them "
+        "to 0.6613 and 0.6821. That roughly quarter of the slate carries an irreducible "
+        "log loss near 0.693, which caps what this board can ever score."
+    ),
 }
 
 RETIRED_MD = """
@@ -79,8 +90,12 @@ is a resolution failure, and post-hoc calibration cannot repair it. Retired rath
 left paused indefinitely.
 
 #### NHL: totals
-*Failed validation, never shipped.* Did not beat its base rate out-of-sample without a
-shot-quality input the pipeline does not currently carry.
+*Failed validation, never shipped.* Reference goals total came in at MAE 1.881 and 1.831
+across the two holdouts against a constant's 1.883 and 1.833, so the model was worth about
+two thousandths of a goal. It was benched pending a shot-quality input. That input was
+tested on 2026-07-26 using MoneyPuck expected goals, joined to all 11,870 games. xG added
+roughly +0.0007 log loss to the winner head and did not come close to rescuing totals, so
+the board stays retired and the pipeline stays free of a licensed dependency.
 
 #### NCAAF: lineup layer
 *Failed validation, never shipped.* Player-availability features did not improve on the
