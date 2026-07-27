@@ -26,6 +26,43 @@ STATUS = {
     "NHL": "pre-season (Oct)", "NBA": "pre-season (Oct)",
 }
 
+# skill score thresholds, high to low
+RATING = [(0.15, "elite"), (0.08, "strong"), (0.04, "solid"),
+          (0.015, "thin"), (-99.0, "no measurable edge")]
+
+def rate(s):
+    for thr, word in RATING:
+        if s >= thr:
+            return word
+    return "no measurable edge"
+
+HOW_TO_READ = """
+**Log loss** scores a forecast on two things at once: was it right, and how confident was it.
+Lower is better. A model that says "50/50" to everything scores 0.693. Being confident and right
+is rewarded; being confident and wrong is punished hard. That is deliberate, because a forecast
+that hedges everything is useless.
+
+**The two floors.** *Base rate* is what you would score knowing nothing except how often the home
+side wins in this league. That is the number any model has to beat to be worth anything.
+*Elo baseline* is a simple power rating built from wins and losses alone. The gap between the Elo
+line and the model line is the part the feature model adds on top of a rating anyone could build.
+
+**Skill score** is the share of the base rate's error the model removes. 0% means no better than
+guessing the league average.
+
+| skill score | reading |
+|---|---|
+| 15% or more | elite |
+| 8% to 15% | strong |
+| 4% to 8% | solid |
+| 1.5% to 4% | thin |
+| under 1.5% | no measurable edge |
+
+One caution: these do not compare between sports the way they look. First-five-innings baseball is
+close to a coin flip no matter who is modelling it, so there is far less to predict there than in
+college football. A small number on a hard board is not the same as a bad model.
+"""
+
 # Shown under the metric cards on each board tab.
 BOARD_NOTES = {
     "MLB F5": (
@@ -169,21 +206,36 @@ def ll(y, p):
     return float(-np.mean(y*np.log(p) + (1-y)*np.log(1-p)))
 
 
+def skill(y, p, base):
+    """Share of the base-rate model's error that this model removes."""
+    b = ll(y, np.full(len(y), base))
+    return 0.0 if b <= 0 else 1 - ll(y, p)/b
+
+
 def metrics_block(g):
     y, pm, pf = g.y.values, g.p_model.values, g.p_floor.values
     base = float(np.mean(y))
+    ll_m, ll_b = ll(y, pm), ll(y, np.full_like(y, base))
+    ss = skill(y, pm, base)
+    fl = ll(y, pf) if np.isfinite(pf).all() else None
+
     cols = st.columns(5)
     cols[0].metric("Graded forecasts", f"{len(g):,}")
-    cols[1].metric("Log loss (model)", f"{ll(y, pm):.4f}")
-    fl = ll(y, pf) if np.isfinite(pf).all() else None
-    cols[2].metric("Log loss (Elo baseline)", f"{fl:.4f}" if fl else "n/a")
-    cols[3].metric("Log loss (base rate)", f"{ll(y, np.full_like(y, base)):.4f}")
-    cols[4].metric("Hit rate", f"{np.mean((pm > .5) == (y == 1)):.1%}")
+    cols[1].metric("Skill score", f"{ss:.1%}", rate(round(ss, 3)), delta_color="off")
+    cols[2].metric("Hit rate", f"{np.mean((pm > .5) == (y == 1)):.1%}")
+    cols[3].metric("Log loss (model)", f"{ll_m:.4f}", f"{ll_b - ll_m:+.4f} vs base rate",
+                   delta_color="off")
+    cols[4].metric("Log loss (Elo floor)", f"{fl:.4f}" if fl else "n/a",
+                   (f"{fl - ll_m:+.4f} added by the model" if fl else None), delta_color="off")
+
+    st.caption(f"Lower is better. The base rate for this board is {ll_b:.4f}, and a pure coin "
+               f"flip is 0.6931. Anything above the base rate would be worse than knowing nothing.")
+
     w = g.tail(300)
     if len(w) >= 100:
         edge = ll(w.y, np.full(len(w), base)) - ll(w.y, w.p_model)
         ok = edge > 0
-        st.markdown(("🟢 **Model health: OK** " if ok else "🔴 **Model health: under review** ")
+        st.markdown(("\U0001F7E2 **Model health: OK** " if ok else "\U0001F534 **Model health: under review** ")
                     + f"(rolling skill vs base rate: {edge:+.4f} log loss over last {len(w)} forecasts)")
 
 
@@ -200,9 +252,11 @@ def rolling_chart(g):
     fig = go.Figure()
     for c, col in (("model", "#2563eb"), ("Elo baseline", "#9ca3af"), ("base rate", "#d1d5db")):
         fig.add_scatter(x=frame.index, y=frame[c], name=c, line=dict(color=col))
-    fig.update_layout(title=f"Rolling {n}-forecast log loss (lower = better)",
+    fig.update_layout(title=f"Recent form: rolling {n}-forecast log loss (lower = better)",
                       height=340, margin=dict(t=40, b=10), legend=dict(orientation="h"))
     st.plotly_chart(fig, use_container_width=True)
+    st.caption("The blue line is the model. It should sit below both grey lines. Anywhere it "
+               "crosses above them, the model was doing worse than guessing.")
 
 
 def calibration_chart(g):
@@ -214,10 +268,13 @@ def calibration_chart(g):
                     line=dict(dash="dash", color="#d1d5db"))
     fig.add_scatter(x=cal.pred, y=cal.act, mode="markers+lines", name="model",
                     marker=dict(size=np.clip(cal.n/8, 6, 26), color="#2563eb"))
-    fig.update_layout(title="Calibration: forecast probability vs observed frequency",
-                      xaxis_title="forecast", yaxis_title="observed", height=340,
+    fig.update_layout(title="Honesty check: does a 70% forecast win 70% of the time?",
+                      xaxis_title="what the model said", yaxis_title="what actually happened", height=340,
                       margin=dict(t=40, b=10))
     st.plotly_chart(fig, use_container_width=True)
+    st.caption("Dots on the dashed line mean the stated confidence is accurate. Above the line "
+               "the model is underselling itself, below it the model is overconfident. Bigger "
+               "dots cover more forecasts.")
 
 
 def skill_chart(g):
@@ -226,12 +283,15 @@ def skill_chart(g):
     pb = np.full_like(y, base, dtype=float)
     per = (-(y*np.log(pb) + (1-y)*np.log(1-pb))) - (-(y*np.log(pm) + (1-y)*np.log(1-pm)))
     fig = go.Figure()
-    fig.add_scatter(x=g.date, y=np.cumsum(per), name="cumulative skill",
+    fig.add_scatter(x=g.date, y=np.cumsum(per), name="running total",
                     line=dict(color="#16a34a"))
     fig.add_hline(y=0, line=dict(color="#d1d5db", dash="dash"))
-    fig.update_layout(title="Cumulative skill vs base-rate baseline (rising = sustained signal)",
+    fig.update_layout(title="Running total: how far ahead of a no-information guess",
                       height=340, margin=dict(t=40, b=10))
     st.plotly_chart(fig, use_container_width=True)
+    st.caption("Every forecast nudges this line up if the model beat the base rate on that game "
+               "and down if it did not. A steady climb is what real signal looks like. A line "
+               "that wanders sideways or falls is luck, and the tripwire above watches for it.")
 
 
 st.title("MustBeMoose Forecasting Lab")
@@ -254,11 +314,15 @@ with tabs[0]:
             if len(gg) < 30:
                 continue
             base = float(gg.y.mean())
+            ss = skill(gg.y.values, gg.p_model.values, base)
             rows.append({"board": b, "status": STATUS.get(b, "live"), "target": h, "graded n": len(gg),
+                         "skill score": f"{ss:.1%}", "reading": rate(round(ss, 3)),
                          "log loss": round(ll(gg.y, gg.p_model), 4),
                          "base-rate LL": round(ll(gg.y, np.full(len(gg), base)), 4),
                          "hit rate": f"{np.mean((gg.p_model > .5) == (gg.y == 1)):.1%}"})
     st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    with st.expander("How to read these numbers", expanded=True):
+        st.markdown(HOW_TO_READ)
     st.markdown("Three further targets were built and shut off. They are listed under the "
                 "**Retired** tab with the test that killed each one.")
     st.markdown(METHOD_MD)
@@ -273,6 +337,8 @@ for i, b in enumerate(boards, start=1):
                 st.info("Awaiting graded forecasts.")
                 continue
             metrics_block(gg)
+            with st.expander("How to read these numbers"):
+                st.markdown(HOW_TO_READ)
             if b in BOARD_NOTES:
                 st.info(BOARD_NOTES[b])
             c1, c2 = st.columns(2)
@@ -283,6 +349,7 @@ for i, b in enumerate(boards, start=1):
                 calibration_chart(gg)
                 up = g[g.y.isna()].tail(8)
                 st.markdown("**Latest forecasts**")
+                st.caption("Probability the home side (or team 1) wins.")
                 show = (up if len(up) else g.tail(8))[["date", "matchup", "p_model"]]
                 show = show.assign(date=pd.to_datetime(show.date).dt.strftime("%Y-%m-%d"),
                                    p_model=show.p_model.round(3))
