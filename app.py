@@ -11,7 +11,6 @@ st.set_page_config(page_title="MustBeMoose Forecasting Lab", layout="wide")
 # When the pipeline repos are public, set raw URLs here and the app goes fully live.
 SOURCES = {
     "WNBA":   {"file": "data/wnba.csv",   "url": ""},
-    "MLB F5": {"file": "data/mlb.csv",    "url": ""},
     "CS2":    {"file": "data/cs2.csv",    "url": ""},
     "Soccer": {"file": "data/soccer.csv", "url": ""},
     "NFL":    {"file": "data/nfl.csv",    "url": ""},
@@ -21,7 +20,7 @@ SOURCES = {
 }
 
 STATUS = {
-    "WNBA": "live", "MLB F5": "live (under review)", "CS2": "live",
+    "WNBA": "live", "CS2": "live",
     "Soccer": "live (season opens mid-Aug)",
     "NFL": "pre-season (Sept)", "NCAAF": "pre-season (late Aug)",
     "NHL": "pre-season (Oct)", "NBA": "pre-season (Oct)",
@@ -120,9 +119,10 @@ more games right per 100 than always backing the favourite, the one reading *thi
 
 **The two numbers can disagree, and that is the point.** Extra calls counts direction only. Log
 loss also scores confidence, so a model that is right 60% of the time while insisting it is
-right 90% of the time gets punished by log loss and looks fine on a simple count. MLB
-first-five-innings is the live example on this dashboard: fractionally positive on log loss and
-fractionally negative on raw calls, which is a board with no real edge in either direction.
+right 90% of the time gets punished by log loss and looks fine on a simple count. The clearest
+example on this dashboard is the retired MLB first-five-innings board: fractionally positive on
+log loss and fractionally negative on raw calls, which is what a board with no edge in either
+direction looks like. It is on the Retired tab with the full workings.
 
 **One caution.** The skill scores do not compare between sports the way they look. First-five-innings
 baseball is close to a coin flip no matter who is modelling it, so there is far less to
@@ -130,17 +130,6 @@ predict there than in college football. A small number on a hard board is not a 
 """
 
 BOARD_NOTES = {
-    "MLB F5": (
-        "**Under review.** This board clears its base rate by roughly +0.0006 log loss across "
-        "1,300 live forecasts (t = 0.13, p = 0.45), which is not distinguishable from zero. Its "
-        "Elo floor sits *above* the base rate, meaning team strength carries no information "
-        "about who leads after five innings. A temperature calibration layer was added "
-        "2026-07-26 after the raw head measured as overconfident by a factor of about 1.7 on "
-        "two out-of-sample splits. A retirement bar was pre-registered the same day and is "
-        "checked on every pipeline run: at the end of the 2026 regular season the calibrated "
-        "edge over base rate must reach +0.010 with p < 0.01 on the full live sample, or the "
-        "board is retired and written up."
-    ),
     "CS2": (
         "**v2 shipped 2026-07-26.** The rating now updates on per-map round margin rather than "
         "map counts. On the frozen 2026 holdout this moved log loss from 0.6255 to 0.6220 and "
@@ -166,7 +155,7 @@ BOARD_NOTES = {
 RETIRED_MD = """
 ### Retired boards
 
-Three targets were built, evaluated, and shut off. Each was tested once on a frozen holdout
+Four targets were built, evaluated, and shut off. Each was tested once on a frozen holdout
 and retired against a stated bar rather than on judgement after the fact. They are published
 here because a model that beats nothing is worth more as a documented negative than as a
 green light.
@@ -188,6 +177,38 @@ better than a coin flip. The structural problem is worse than the headline: pred
 0.231 to 0.469 with a standard deviation of 0.042, against a base rate of 0.4334. The model's
 ceiling sits below its own base rate, so it can never call a long series. That is a resolution
 failure, and post-hoc calibration cannot repair it. Retired rather than left paused.
+
+#### MLB F5: first-five-innings winner
+*Retired 2026-07-27.* The board never separated itself from a constant. Final live sample,
+n = 1,300.
+
+| metric | value |
+|---|---|
+| log loss | 0.6911 |
+| base-rate log loss | 0.6917 |
+| edge over base rate | +0.0006 |
+| paired test, one-sided | t = 0.13, p = 0.45 |
+| 95% interval on the edge | −0.0084 to +0.0096 |
+| Elo floor | 0.6918, i.e. *above* the base rate |
+| AUC | 0.5437 |
+| hit rate | 52.8% |
+
+Team strength carries no information about who leads after five innings: the Elo floor scored
+worse than a constant. Two fixes were built and measured before the decision. A temperature
+layer corrected a raw head that was overconfident by a factor of about 1.7 and was worth
+roughly +0.003. A lineup layer using confirmed batting orders, prior-season batting lines and
+platoon handedness, joined to all 19,474 games, was worth +0.0013 pooled across both holdouts
+(t = 1.61) with the platoon component measuring actively negative and excluded.
+
+Best achievable was roughly +0.006 against a bar of +0.010 with p < 0.01, pre-registered on
+2026-07-26 before either fix was tested. The bar was not met and the board was retired the
+following day.
+
+Worth recording why the lineup layer was so much smaller here than on the basketball boards,
+where the same feature construction is worth +0.017: MLB lineups churn plenty, a mean of 2.35
+regulars missing and 3 or more absent in 42.7% of games. The limit is that one hitter is a
+ninth of a lineup and gets about two plate appearances in five innings, where an NBA starter is
+a quarter of the offence and plays three quarters of the game.
 
 #### NHL: totals
 *Failed validation, never shipped.* Reference goals total came in at MAE 1.881 and 1.831 across
@@ -214,9 +235,10 @@ trains on a frozen historical window. Later seasons are untouched holdouts, eval
 Live, every forecast on the full slate is graded on log loss against two floors: the base-rate
 constant and an Elo baseline. A rolling skill monitor flags any target whose recent performance
 drops below the base rate. Two candidate targets failed validation and never shipped (NHL
-totals, an NCAAF lineup layer), and one live target was retired after its holdout read came
-back indistinguishable from the base rate (CS2 series length). One live target carries a
-pre-registered retirement bar with a dated decision point (MLB F5). Early-season forecasts on
+totals, an NCAAF lineup layer), and two live targets were retired after their reads came back
+indistinguishable from the base rate (CS2 series length, MLB first-five-innings). The second was
+retired against a bar committed to the repository before its candidate fixes were tested, which
+is the point of registering one in advance. Early-season forecasts on
 every board carry a calibration gate: predictions publish from day one, but the board withholds
 actionability guidance until each league passes a games-played threshold (NFL Week 5, NHL and
 NBA every team at 9 and 8 games played).
@@ -233,13 +255,6 @@ def load_board(name):
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date, format="%Y%m%d"),
             "matchup": d.away + " @ " + d.home, "p_model": d.p_home,
             "p_floor": d.p_home_elo, "y": d.get("result"), "head": "game winner",
-            "p_team": d.home, "opp_team": d.away}))
-    elif name == "MLB F5":
-        y = d.get("result")
-        y = y.where(y.isin([0.0, 1.0]))          # ties are pushes
-        out.append(pd.DataFrame({"date": pd.to_datetime(d.date, format="%Y%m%d"),
-            "matchup": d.away + " @ " + d.home, "p_model": d.p_home,
-            "p_floor": d.p_home_elo, "y": y, "head": "first-5-innings winner",
             "p_team": d.home, "opp_team": d.away}))
     elif name == "CS2":
         # Series-length head retired 2026-07-26; see the Retired tab. Historical
@@ -472,7 +487,7 @@ with tabs[0]:
         st.markdown(HOW_TO_READ)
     if chart_rows:
         contribution_chart(chart_rows)
-    st.markdown("Three further targets were built and shut off. They are listed under the "
+    st.markdown("Four further targets were built and shut off. They are listed under the "
                 "**Retired** tab with the test that killed each one.")
     st.markdown(METHOD_MD)
 
