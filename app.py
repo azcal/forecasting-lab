@@ -355,12 +355,15 @@ def contribution_chart(stats):
         lab = "t n/a" if math.isnan(r["layer_t"]) else f"t = {r['layer_t']:.1f}"
         fig.add_annotation(x=tot, y=r["label"], text=lab, showarrow=False,
                            xanchor="left", xshift=8, font=dict(size=11, color="#898781"))
-    fig.update_layout(barmode="stack", height=max(360, 42 * len(rows) + 90),
-                      margin=dict(t=44, b=10, r=90),
-                      title="Where each board's edge comes from",
+    # Heading lives in Streamlit rather than the plotly title: a horizontal legend sits in
+    # the top margin and the two collide there.
+    fig.update_layout(barmode="stack", height=max(360, 42 * len(rows) + 80),
+                      margin=dict(t=40, b=10, r=90),
                       xaxis_title="log loss removed from a no-information guess",
                       yaxis=dict(autorange="reversed"),
-                      legend=dict(orientation="h", y=1.12, x=0))
+                      legend=dict(orientation="h", y=1.04, yanchor="bottom",
+                                  x=0, xanchor="left"))
+    st.markdown("**Where each board's edge comes from**")
     st.plotly_chart(fig, use_container_width=True)
     st.caption("Grey is what a simple win-loss power rating gets you. Blue is what the model "
                "adds on top, and it is the only part that is modelling rather than bookkeeping. "
