@@ -338,10 +338,12 @@ def board_stats(gg):
         s["layer_edge"] = s["ll_floor"] - s["ll_model"]
         s["layer_t"], s["layer_p"] = paired_t(y, pm, pf)
     else:
+        # No rating floor exists for this market, so the whole edge is the model and the
+        # meaningful test is against the base rate rather than against a floor.
         s["ll_floor"] = None
         s["elo_edge"] = 0.0
         s["layer_edge"] = s["ll_base"] - s["ll_model"]
-        s["layer_t"], s["layer_p"] = float("nan"), float("nan")
+        s["layer_t"], s["layer_p"] = paired_t(y, pm, np.full(len(y), base))
     return s
 
 
@@ -413,7 +415,7 @@ def contribution_chart(stats):
                 hovertemplate="model layer: %{x:+.4f}<extra></extra>")
     for r in rows:
         tot = r["elo_edge"] + r["layer_edge"]
-        lab = "t n/a" if math.isnan(r["layer_t"]) else f"t = {r['layer_t']:.1f}"
+        lab = "" if math.isnan(r["layer_t"]) else f"t = {r['layer_t']:.1f}"
         fig.add_annotation(x=tot, y=r["label"], text=lab, showarrow=False,
                            xanchor="left", xshift=8, font=dict(size=11, color="#898781"))
     # Heading lives in Streamlit rather than the plotly title: a horizontal legend sits in
@@ -429,7 +431,9 @@ def contribution_chart(stats):
     st.caption("Grey is what a simple win-loss power rating gets you. Blue is what the model "
                "adds on top, and it is the only part that is modelling rather than bookkeeping. "
                "The t value next to each bar says whether that blue segment could be luck: "
-               "above 2 means roughly a 1-in-40 chance it is, above 4 and luck is ruled out.")
+               "above 2 means roughly a 1-in-40 chance it is, above 4 and luck is ruled out. "
+               "Markets with no rating floor, such as goes-the-distance, are all blue by "
+               "definition and their t is measured against the base rate instead.")
 
 
 def rolling_chart(g):
@@ -494,9 +498,22 @@ st.caption("Eight automated sports-forecasting pipelines. Frozen models, walk-fo
            "live ones.")
 st.markdown("Built by Mark Parsons, CPHR · [Code & methodology](https://github.com/azcal/forecasting-lab)")
 
-boards = list(SOURCES)
+frames = {b: load_board(b) for b in SOURCES}
+
+
+def board_rank(b):
+    """Rank a board by its strongest market so the tabs lead with the best work."""
+    best = -9.0
+    for _, g in frames[b].groupby("head"):
+        gg = g.dropna(subset=["y"])
+        if len(gg) < 30:
+            continue
+        best = max(best, skill(gg.y.values, gg.p_model.values, float(gg.y.mean())))
+    return best
+
+
+boards = sorted(SOURCES, key=board_rank, reverse=True)
 tabs = st.tabs(["Overview"] + boards + ["Retired"])
-frames = {b: load_board(b) for b in boards}
 
 with tabs[0]:
     rows, chart_rows = [], []
@@ -512,7 +529,8 @@ with tabs[0]:
                          "extra calls per 100": f"{s['extra']*100:+.1f}",
                          "hit rate": f"{s['hit']:.1%}", "log loss": round(s["ll_model"], 4),
                          "base-rate LL": round(s["ll_base"], 4)})
-            chart_rows.append(dict(s, label=b if b != "CS2" else "CS2 winner"))
+            multi = f["head"].nunique() > 1
+            chart_rows.append(dict(s, label=f"{b}: {h}" if multi else b, board=b, head=h))
     st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
     with st.expander("How to read these numbers", expanded=True):
         st.markdown(HOW_TO_READ)
