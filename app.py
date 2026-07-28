@@ -268,6 +268,25 @@ NBA every team at 9 and 8 games played).
 """
 
 
+def outcome(sr):
+    """Normalise a logged result to 0/1 with pushes and unplayed games as NaN.
+
+    Pipelines write one of three conventions and the dashboard has to read all of them:
+      0/1            already binary (CS2, WNBA, NHL, NBA, MMA)
+      0/1/-1         binary with -1 marking a push (MLB, Soccer)
+      signed margin  home score minus away score (NFL, NCAAF)
+    Assuming binary silently discarded every margin that was not 0 or 1, which is why the
+    NFL and NCAAF boards went blank the moment the dashboard started reading their real
+    logs instead of hand-made snapshots.
+    """
+    v = pd.to_numeric(sr, errors="coerce")
+    seen = set(v.dropna().unique())
+    if seen <= {0.0, 1.0, -1.0}:
+        return v.where(v.isin([0.0, 1.0]))
+    return pd.Series(np.where(v > 0, 1.0, np.where(v < 0, 0.0, np.nan)),
+                     index=v.index if hasattr(v, "index") else None)
+
+
 @st.cache_data(ttl=3600)
 def load_board(name):
     cfg = SOURCES[name]
@@ -284,7 +303,7 @@ def load_board(name):
         # p_3maps / maps3 columns may still be present in the log and are ignored.
         out.append(pd.DataFrame({"date": pd.to_datetime(d.ts).dt.tz_localize(None),
             "matchup": d.team1 + " vs " + d.team2, "p_model": d.p_team1,
-            "p_floor": d.p_elo, "y": d.get("y"), "head": "series winner",
+            "p_floor": d.p_elo, "y": outcome(d.get("y")), "head": "series winner",
             "p_team": d.team1, "opp_team": d.team2}))
     elif name == "MMA":
         base = pd.DataFrame({"date": pd.to_datetime(d.date),
@@ -292,13 +311,13 @@ def load_board(name):
         # Rows logged before the runner recorded the Elo floor have no p_elo. Fall back to
         # NaN rather than raising, which turns the floor line off instead of the board.
         floor = d["p_elo"] if "p_elo" in d.columns else np.nan
-        out.append(base.assign(p_model=d.p_win_a, p_floor=floor, y=d.get("result"),
+        out.append(base.assign(p_model=d.p_win_a, p_floor=floor, y=outcome(d.get("result")),
                                head="fight winner", p_team=d.A, opp_team=d.B))
-        out.append(base.assign(p_model=d.p_distance, p_floor=np.nan, y=d.get("went_dist"),
+        out.append(base.assign(p_model=d.p_distance, p_floor=np.nan, y=outcome(d.get("went_dist")),
                                head="goes the distance",
                                p_team="the distance", opp_team="a finish"))
     elif name == "Soccer":
-        y = d.get("result"); y = y.where(y.isin([0.0, 1.0]))
+        y = outcome(d.get("result"))
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date),
             "matchup": d.home + " vs " + d.away + " (" + d.league + ")",
             "p_model": d.p_home, "p_floor": d.p_elo, "y": y,
@@ -307,7 +326,7 @@ def load_board(name):
     else:
         heads = {"NFL": "game winner (ties push)", "NCAAF": "game winner (FBS vs FBS)",
                  "NHL": "game winner (incl OT/SO)", "NBA": "game winner"}
-        y = d.get("result"); y = y.where(y.isin([0.0, 1.0]))
+        y = outcome(d.get("result"))
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date),
             "matchup": d.away + " @ " + d.home, "p_model": d.p_home,
             "p_floor": d.p_elo, "y": y, "head": heads[name],
