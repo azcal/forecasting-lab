@@ -289,7 +289,10 @@ def load_board(name):
     elif name == "MMA":
         base = pd.DataFrame({"date": pd.to_datetime(d.date),
                              "matchup": d.A + " vs " + d.B})
-        out.append(base.assign(p_model=d.p_win_a, p_floor=d.p_elo, y=d.get("result"),
+        # Rows logged before the runner recorded the Elo floor have no p_elo. Fall back to
+        # NaN rather than raising, which turns the floor line off instead of the board.
+        floor = d["p_elo"] if "p_elo" in d.columns else np.nan
+        out.append(base.assign(p_model=d.p_win_a, p_floor=floor, y=d.get("result"),
                                head="fight winner", p_team=d.A, opp_team=d.B))
         out.append(base.assign(p_model=d.p_distance, p_floor=np.nan, y=d.get("went_dist"),
                                head="goes the distance",
