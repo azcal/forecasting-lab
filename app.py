@@ -517,12 +517,17 @@ tabs = st.tabs(["Overview"] + boards + ["Retired"])
 
 with tabs[0]:
     rows, chart_rows = [], []
-    for b, f in frames.items():
+    # Walk the boards in tab order, and within a board put its strongest market first,
+    # so the table, the tabs and the chart below all read the same way.
+    for b in boards:
+        f = frames[b]
+        graded = []
         for h, g in f.groupby("head"):
             gg = g.dropna(subset=["y"])
             if len(gg) < 30:
                 continue
-            s = board_stats(gg)
+            graded.append((h, gg, board_stats(gg)))
+        for h, gg, s in sorted(graded, key=lambda x: -x[2]["skill"]):
             rows.append({"board": b, "status": STATUS.get(b, "live"), "target": h,
                          "graded n": s["n"], "skill score": f"{s['skill']:.1%}",
                          "reading": s["rating"],
