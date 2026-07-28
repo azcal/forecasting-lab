@@ -437,23 +437,43 @@ def contribution_chart(stats):
 
 
 def rolling_chart(g):
-    n = min(150, max(50, len(g) // 6))
+    """Fixed 150-fight window with a noise band.
+
+    The old rule, min(150, max(50, n//6)), gave the smallest window to the boards with the
+    least data, which are exactly the ones that need the most smoothing. At a 50-game
+    window the standard error of a rolling log loss estimate runs 65-87% of a typical
+    board's whole edge, so the line crossing its floor means nothing. Fixed at 150 for
+    comparability, with the band drawn so a reader can see which wiggles are real."""
+    n = 150
+    if len(g) < n + 30:
+        st.info(f"Rolling form needs about {n + 30} graded forecasts and this board has "
+                f"{len(g)}. The running total below is the better read until then.")
+        return
     y = g.y.values
     base = float(np.mean(y))
+    idx = range(n, len(g) + 1)
     frame = pd.DataFrame({
-        "model": [ll(y[max(0, i-n):i], g.p_model.values[max(0, i-n):i]) for i in range(n, len(g)+1)],
-        "Elo baseline": [ll(y[max(0, i-n):i], g.p_floor.values[max(0, i-n):i])
-                         if np.isfinite(g.p_floor.values).all() else np.nan for i in range(n, len(g)+1)],
-        "base rate": [ll(y[max(0, i-n):i], np.full(min(n, i), base)) for i in range(n, len(g)+1)]},
+        "model": [ll(y[i-n:i], g.p_model.values[i-n:i]) for i in idx],
+        "Elo baseline": [ll(y[i-n:i], g.p_floor.values[i-n:i])
+                         if np.isfinite(g.p_floor.values).all() else np.nan for i in idx],
+        "base rate": [ll(y[i-n:i], np.full(n, base)) for i in idx]},
         index=g.date.values[n-1:])
+    # 95% band around the base rate: anything inside it is indistinguishable from noise
+    se = float(np.std(ll_vec(y, np.full(len(y), base)), ddof=1)) / math.sqrt(n)
     fig = go.Figure()
+    fig.add_scatter(x=list(frame.index) + list(frame.index)[::-1],
+                    y=list(frame["base rate"] - 1.96*se) + list(frame["base rate"] + 1.96*se)[::-1],
+                    fill="toself", fillcolor="rgba(209,213,219,0.25)",
+                    line=dict(width=0), hoverinfo="skip", name="noise band")
     for c, col in (("model", "#2563eb"), ("Elo baseline", "#9ca3af"), ("base rate", "#d1d5db")):
         fig.add_scatter(x=frame.index, y=frame[c], name=c, line=dict(color=col))
     fig.update_layout(title=f"Recent form: rolling {n}-forecast log loss (lower is better)",
                       height=340, margin=dict(t=40, b=10), legend=dict(orientation="h"))
     st.plotly_chart(fig, use_container_width=True)
-    st.caption("The blue line is the model and it should sit below both grey lines. Anywhere it "
-               "crosses above them, the model was doing worse than guessing over that stretch.")
+    st.caption("The blue line is the model and it should sit below both grey lines. The "
+               "shaded band is where a model with no edge at all would wander by chance, so "
+               "blue inside the band is not evidence of anything either way. Only sustained "
+               "separation below it counts.")
 
 
 def calibration_chart(g):
