@@ -17,17 +17,25 @@ SOURCES = {
     "NCAAF":  {"file": "data/ncaaf.csv",  "url": ""},
     "NHL":    {"file": "data/nhl.csv",    "url": ""},
     "NBA":    {"file": "data/nba.csv",    "url": ""},
+    "MMA":    {"file": "data/mma.csv",    "url": ""},
 }
 
 STATUS = {
     "WNBA": "live", "CS2": "live",
     "Soccer": "live (season opens mid-Aug)",
     "NFL": "pre-season (Sept)", "NCAAF": "pre-season (late Aug)",
-    "NHL": "pre-season (Oct)", "NBA": "pre-season (Oct)",
+    "NHL": "pre-season (Oct)", "NBA": "pre-season (Oct)", "MMA": "live",
 }
 
 # which side the base-rate strategy always backs, per board listing convention
-BASE_SIDE = {"CS2": "team 1"}
+# Which side the base-rate strategy always backs. Keyed by board, or by (board, head)
+# where a board runs more than one market and they have different baselines.
+BASE_SIDE = {"CS2": "team 1", "MMA": "the alphabetically first fighter",
+             ("MMA", "goes the distance"): "the distance"}
+
+
+def base_side(board, head=None):
+    return (BASE_SIDE.get((board, head)) or BASE_SIDE.get(board) or "the home side")
 
 RATING = [(0.15, "elite"), (0.08, "strong"), (0.04, "solid"),
           (0.015, "thin"), (-99.0, "no measurable edge")]
@@ -139,6 +147,21 @@ BOARD_NOTES = {
         "Forecasts logged before that date came from v1 and are tagged as such, so the rolling "
         "chart mixes both until v2 fills a full window. The series-length head was retired the "
         "same day; see the Retired tab."
+    ),
+    "MMA": (
+        "**New board, shipped 2026-07-28.** Built from Wikipedia bout templates across UFC, "
+        "Bellator, PFL and ONE: 10,216 decided fights with method, round and finish time. "
+        "Non-UFC bouts update fighter ratings but are never graded, since cross-promotion "
+        "fights are rare enough that a shared rating scale across four organisations would "
+        "rest on weakly connected pools. Fighters are ordered alphabetically, so the base "
+        "rate is 0.500 and nothing is inherited from a listing convention. A third market, "
+        "winner by method, is boarded but not shown here: it is a three-way outcome and this "
+        "page grades binary markets. Distance is derived from the method model rather than "
+        "fitted separately, so the two can never contradict each other. Why it reads thinner "
+        "than the team sports: the Elo floor is worth +0.008 here against +0.113 in NCAAF, "
+        "because across 10,216 bouts there are 4,534 distinct fighters, the average fighter "
+        "appears about four and a half times in the whole dataset, and any fight can end "
+        "with one punch."
     ),
     "NHL": (
         "**v2 shipped 2026-07-26.** About 22% of NHL games go past sixty minutes, home teams win "
@@ -263,6 +286,14 @@ def load_board(name):
             "matchup": d.team1 + " vs " + d.team2, "p_model": d.p_team1,
             "p_floor": d.p_elo, "y": d.get("y"), "head": "series winner",
             "p_team": d.team1, "opp_team": d.team2}))
+    elif name == "MMA":
+        base = pd.DataFrame({"date": pd.to_datetime(d.date),
+                             "matchup": d.A + " vs " + d.B})
+        out.append(base.assign(p_model=d.p_win_a, p_floor=d.p_elo, y=d.get("result"),
+                               head="fight winner", p_team=d.A, opp_team=d.B))
+        out.append(base.assign(p_model=d.p_distance, p_floor=np.nan, y=d.get("went_dist"),
+                               head="goes the distance",
+                               p_team="the distance", opp_team="a finish"))
     elif name == "Soccer":
         y = d.get("result"); y = y.where(y.isin([0.0, 1.0]))
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date),
@@ -314,8 +345,8 @@ def board_stats(gg):
     return s
 
 
-def verdict(board, s):
-    side = BASE_SIDE.get(board, "the home side")
+def verdict(board, s, head=None):
+    side = base_side(board, head)
     bits = [f"Across **{s['n']:,}** graded forecasts this board calls "
             f"**{s['extra']*100:+.1f} games per 100** right that someone backing {side} every "
             f"single time would get wrong, and removes **{s['skill']:.1%}** of the error a "
@@ -333,12 +364,12 @@ def verdict(board, s):
     return " ".join(bits)
 
 
-def metrics_block(board, gg):
+def metrics_block(board, gg, head=None):
     s = board_stats(gg)
     cols = st.columns(5)
     cols[0].metric("Graded forecasts", f"{s['n']:,}")
     cols[1].metric("Skill score", f"{s['skill']:.1%}", s["rating"], delta_color="off")
-    side = BASE_SIDE.get(board, "the home side")
+    side = base_side(board, head)
     cols[2].metric("Extra calls right per 100", f"{s['extra']*100:+.1f}",
                    f"vs always backing {side}", delta_color="off")
     cols[3].metric("Hit rate", f"{s['hit']:.1%}")
@@ -352,7 +383,7 @@ def metrics_block(board, gg):
         cols[4].metric("Model adds over a plain rating", "n/a")
         st.caption(f"Log loss: model {s['ll_model']:.4f} · base rate {s['ll_base']:.4f}. "
                    f"Lower is better and a coin flip is 0.6931.")
-    st.markdown(verdict(board, s))
+    st.markdown(verdict(board, s, head))
     if not math.isnan(s["contra_hit"]):
         st.caption(f"It overrules that strategy on **{s['contra_share']:.0%}** of games, backing "
                    f"against {side}, and wins **{s['contra_hit']:.0%}** of those. Without that, "
@@ -500,7 +531,7 @@ for i, b in enumerate(boards, start=1):
             if len(gg) < 30:
                 st.info("Awaiting graded forecasts.")
                 continue
-            metrics_block(b, gg)
+            metrics_block(b, gg, h)
             with st.expander("How to read these numbers"):
                 st.markdown(HOW_TO_READ)
             if b in BOARD_NOTES:
