@@ -587,7 +587,12 @@ st.caption("Eight automated sports-forecasting pipelines. Frozen models, walk-fo
            "validation, daily grading against market-free baselines via GitHub Actions. "
            "All results are out-of-sample, and retired boards are published alongside the "
            "live ones.")
-st.markdown("Built by Mark Parsons, CPHR · [Code & methodology](https://github.com/azcal/forecasting-lab)")
+st.markdown("Built by Mark Parsons, CPHR · "
+            "[Code & methodology](https://github.com/azcal/forecasting-lab)")
+# Build marker. If this string is not what you just uploaded, Streamlit is serving cached
+# code and no amount of editing app.py will change anything on screen. Manage app > Reboot.
+st.caption(f"build 2026-07-28c · spread head anchored, median line, Elo trace suppressed "
+           f"where no floor exists")
 
 frames = {b: load_board(b) for b in SOURCES}
 
