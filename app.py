@@ -32,8 +32,8 @@ STATUS = {
 # where a board runs more than one market and they have different baselines.
 BASE_SIDE = {"CS2": "team 1", "MMA": "the alphabetically first fighter",
              ("MMA", "goes the distance"): "the distance",
-             ("NFL", "spread (home -3.5)"): "the home side",
-             ("NBA", "spread (home -3.5)"): "the home side"}
+             ("NFL", "spread, home -3.5"): "the away side at +3.5",
+             ("NBA", "spread, home -3.5"): "the away side at +3.5"}
 
 
 def base_side(board, head=None):
@@ -270,6 +270,18 @@ NBA every team at 9 and 8 games played).
 """
 
 
+def _spread_line(d):
+    """The model's own spread, e.g. 'PIT -6.5'. Negative margin means the road side lays."""
+    if "sp_margin" not in d.columns:
+        return pd.Series([""] * len(d), index=d.index)
+    m = pd.to_numeric(d.sp_margin, errors="coerce")
+    half = (m.abs() * 2).round() / 2
+    half = half.where(half % 1 != 0, half + 0.5)      # never quote a whole number
+    lays = np.where(m >= 0, d.home, d.away)
+    return pd.Series([f"{t} -{h:.1f}" if h == h else "" for t, h in zip(lays, half)],
+                     index=d.index)
+
+
 def outcome(sr):
     """Normalise a logged result to 0/1 with pushes and unplayed games as NaN.
 
@@ -348,8 +360,12 @@ def load_board(name):
                     "matchup": d.away + " @ " + d.home,
                     "p_model": d.p_sp_p35, "p_floor": np.nan,
                     "y": np.where(marg.isna(), np.nan, (marg > 3.5).astype(float)),
-                    "head": "spread (home -3.5)",
-                    "p_team": "the home side", "opp_team": "the away side"}))
+                    "head": "spread, home -3.5",
+                    "p_team": d.home + " -3.5", "opp_team": d.away + " +3.5",
+                    # The graded series is a fixed line, because a ladder cannot be scored
+                    # as one number. What gets displayed is the model's own line, rounded
+                    # to the nearest half point, which is the thing you actually shop.
+                    "line_txt": _spread_line(d)}))
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date),
             "matchup": d.away + " @ " + d.home, "p_model": d.p_home,
             "p_floor": d.p_elo, "y": y, "head": heads[name],
@@ -636,10 +652,14 @@ for i, b in enumerate(boards, start=1):
                 fav = np.where(pm_ >= 0.5, sh.p_team.values, sh.opp_team.values)
                 pct = np.where(pm_ >= 0.5, pm_, 1 - pm_)
                 st.markdown("**Latest forecasts**")
+                col = [f"{t} {p:.0%}" for t, p in zip(fav, pct)]
+                label = "model favours"
+                if "line_txt" in sh.columns and sh.line_txt.astype(str).str.len().gt(0).any():
+                    col = list(sh.line_txt.values)
+                    label = "model's line"
                 show = pd.DataFrame({
                     "date": pd.to_datetime(sh.date).dt.strftime("%Y-%m-%d").values,
-                    "matchup": sh.matchup.values,
-                    "model favours": [f"{t} {p:.0%}" for t, p in zip(fav, pct)]})
+                    "matchup": sh.matchup.values, label: col})
                 st.dataframe(show, use_container_width=True, hide_index=True)
                 st.caption("The percentage is that named side's own chance of winning, so 50% "
                            "means the model sees a coin flip. Home teams are listed second on "
