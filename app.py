@@ -39,6 +39,15 @@ BASE_SIDE = {"CS2": "team 1", "MMA": "the alphabetically first fighter",
 def base_side(board, head=None):
     return (BASE_SIDE.get((board, head)) or BASE_SIDE.get(board) or "the home side")
 
+# One market per board. Where a board runs more than one, this is the one that renders.
+# NBA and NFL show the spread because that is the market actually being bet; the moneyline
+# is still logged, still in the Telegram board, and still inside the spread head at k=0.
+# MMA shows the fight winner, which removes +0.0263 of error against distance's +0.0171 on
+# 3,902 forecasts, a gap wide enough to decide on.
+PRIMARY_HEAD = {"NBA": "spread, home -3.5",
+                "NFL": "spread, home -3.5",
+                "MMA": "fight winner"}
+
 RATING = [(0.15, "elite"), (0.08, "strong"), (0.04, "solid"),
           (0.015, "thin"), (-99.0, "no measurable edge")]
 
@@ -379,6 +388,9 @@ def load_board(name):
             "p_team": d.home, "opp_team": d.away}))
     f = pd.concat(out, ignore_index=True).sort_values("date").reset_index(drop=True)
     f["board"] = name
+    keep = PRIMARY_HEAD.get(name)
+    if keep and (f["head"] == keep).any():
+        f = f[f["head"] == keep].reset_index(drop=True)
     return f
 
 
@@ -592,7 +604,7 @@ st.markdown("Built by Mark Parsons, CPHR · "
             "[Code & methodology](https://github.com/azcal/forecasting-lab)")
 # Build marker. If this string is not what you just uploaded, Streamlit is serving cached
 # code and no amount of editing app.py will change anything on screen. Manage app > Reboot.
-st.caption(f"build 2026-07-28d · spread head anchored, median line, Elo floor on spreads")
+st.caption(f"build 2026-07-28e · one market per board")
 
 frames = {b: load_board(b) for b in SOURCES}
 
