@@ -271,10 +271,16 @@ NBA every team at 9 and 8 games played).
 
 
 def _spread_line(d):
-    """The model's own spread, e.g. 'PIT -6.5'. Negative margin means the road side lays."""
-    if "sp_margin" not in d.columns:
+    """The model's own spread, e.g. 'PIT -6.5'.
+
+    Uses sp_line, the 50/50 crossing point, which is what a spread line is. sp_margin is
+    the mean and lands on the other side of zero on skewed games, which makes the spread
+    look like it disagrees with the moneyline when it does not.
+    """
+    col = "sp_line" if "sp_line" in d.columns else "sp_margin"
+    if col not in d.columns:
         return pd.Series([""] * len(d), index=d.index)
-    m = pd.to_numeric(d.sp_margin, errors="coerce")
+    m = pd.to_numeric(d[col], errors="coerce")
     half = (m.abs() * 2).round() / 2
     half = half.where(half % 1 != 0, half + 0.5)      # never quote a whole number
     lays = np.where(m >= 0, d.home, d.away)
@@ -527,11 +533,15 @@ def rolling_chart(g):
                     fill="toself", fillcolor="rgba(209,213,219,0.25)",
                     line=dict(width=0), hoverinfo="skip", name="noise band")
     for c, col in (("model", "#2563eb"), ("Elo baseline", "#9ca3af"), ("base rate", "#d1d5db")):
+        # Spread and distance markets have no rating floor. Showing an empty legend entry
+        # reads as a missing line rather than a market that never had one.
+        if frame[c].isna().all():
+            continue
         fig.add_scatter(x=frame.index, y=frame[c], name=c, line=dict(color=col))
     fig.update_layout(title=f"Recent form: rolling {n}-forecast log loss (lower is better)",
                       height=340, margin=dict(t=40, b=10), legend=dict(orientation="h"))
     st.plotly_chart(fig, use_container_width=True)
-    st.caption("The blue line is the model and it should sit below both grey lines. The "
+    st.caption("The blue line is the model and it should sit below the grey ones. The "
                "shaded band is where a model with no edge at all would wander by chance, so "
                "blue inside the band is not evidence of anything either way. Only sustained "
                "separation below it counts.")
