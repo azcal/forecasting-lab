@@ -334,10 +334,15 @@ def load_board(name):
         # threshold is shown: near zero it duplicates the moneyline, and the other logged
         # thresholds are there for analysis rather than the page.
         if "p_sp_p35" in d.columns and d.p_sp_p35.notna().any():
-            marg = pd.to_numeric(d.get("result"), errors="coerce")
-            if set(marg.dropna().unique()) <= {0.0, 1.0, -1.0}:
-                marg = None                      # binary log, no margin to grade a spread on
-            if marg is not None:
+            # Grade against the logged final margin. Falling back to `result` only works
+            # on boards that happen to log a margin there, which is why NBA came up blank.
+            if "final_margin" in d.columns:
+                marg = pd.to_numeric(d.final_margin, errors="coerce")
+            else:
+                marg = pd.to_numeric(d.get("result"), errors="coerce")
+                if set(marg.dropna().unique()) <= {0.0, 1.0, -1.0}:
+                    marg = None
+            if marg is not None and marg.notna().any():
                 out.append(pd.DataFrame({
                     "date": pd.to_datetime(d.date),
                     "matchup": d.away + " @ " + d.home,
