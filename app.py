@@ -4,6 +4,7 @@ market-free baselines. Data auto-commits daily from GitHub Actions pipelines.
 """
 import math
 import numpy as np, pandas as pd, streamlit as st
+import board_format as BF
 import plotly.graph_objects as go
 
 st.set_page_config(page_title="MustBeMoose Forecasting Lab", layout="wide")
@@ -604,7 +605,7 @@ st.markdown("Built by Mark Parsons, CPHR · "
             "[Code & methodology](https://github.com/azcal/forecasting-lab)")
 # Build marker. If this string is not what you just uploaded, Streamlit is serving cached
 # code and no amount of editing app.py will change anything on screen. Manage app > Reboot.
-st.caption(f"build 2026-07-28e · one market per board")
+st.caption(f"build 2026-07-28g · shared board format, price column, floor -400")
 
 frames = {b: load_board(b) for b in SOURCES}
 
@@ -674,20 +675,32 @@ for i, b in enumerate(boards, start=1):
             with c2:
                 calibration_chart(gg)
                 up = g[g.y.isna()].tail(8)
-                sh = (up if len(up) else g.tail(8)).copy()
+                # Out of season a board has no ungraded rows, so this falls back to
+                # completed games. Calling those "latest forecasts" reads as stale data.
+                upcoming = len(up) > 0
+                sh = (up if upcoming else g.tail(8)).copy()
                 pm_ = sh.p_model.values.astype(float)
                 fav = np.where(pm_ >= 0.5, sh.p_team.values, sh.opp_team.values)
                 pct = np.where(pm_ >= 0.5, pm_, 1 - pm_)
-                st.markdown("**Latest forecasts**")
+                st.markdown("**Latest forecasts**" if upcoming
+                            else "**Most recent graded forecasts**")
                 col = [f"{t} {p:.0%}" for t, p in zip(fav, pct)]
                 label = "model favours"
+                # Same price column the Telegram board prints, so a row reads identically
+                # in both places.
+                find = [BF.price(p) if BF.min_odds(p) >= BF.PRICE_FLOOR else "no price"
+                        for p in pct]
                 if "line_txt" in sh.columns and sh.line_txt.astype(str).str.len().gt(0).any():
                     col = list(sh.line_txt.values)
                     label = "model's line"
                 show = pd.DataFrame({
                     "date": pd.to_datetime(sh.date).dt.strftime("%Y-%m-%d").values,
-                    "matchup": sh.matchup.values, label: col})
+                    "matchup": sh.matchup.values, label: col,
+                    "find at or better": find})
                 st.dataframe(show, use_container_width=True, hide_index=True)
+                if not upcoming:
+                    st.caption("No games scheduled in this board's window, so these are the "
+                               "last forecasts it made rather than upcoming ones.")
                 st.caption("The percentage is that named side's own chance of winning, so 50% "
                            "means the model sees a coin flip. Home teams are listed second on "
                            "the @ boards and first on the soccer board, which is why the side "
