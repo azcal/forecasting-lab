@@ -364,7 +364,8 @@ def load_board(name):
                 out.append(pd.DataFrame({
                     "date": pd.to_datetime(d.date),
                     "matchup": d.away + " @ " + d.home,
-                    "p_model": d.p_sp_p35, "p_floor": np.nan,
+                    "p_model": d.p_sp_p35,
+                    "p_floor": d.p_sp_elo if "p_sp_elo" in d.columns else np.nan,
                     "y": np.where(marg.isna(), np.nan, (marg > 3.5).astype(float)),
                     "head": "spread, home -3.5",
                     "p_team": d.home + " -3.5", "opp_team": d.away + " +3.5",
@@ -591,8 +592,7 @@ st.markdown("Built by Mark Parsons, CPHR · "
             "[Code & methodology](https://github.com/azcal/forecasting-lab)")
 # Build marker. If this string is not what you just uploaded, Streamlit is serving cached
 # code and no amount of editing app.py will change anything on screen. Manage app > Reboot.
-st.caption(f"build 2026-07-28c · spread head anchored, median line, Elo trace suppressed "
-           f"where no floor exists")
+st.caption(f"build 2026-07-28d · spread head anchored, median line, Elo floor on spreads")
 
 frames = {b: load_board(b) for b in SOURCES}
 
