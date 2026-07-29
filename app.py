@@ -31,7 +31,9 @@ STATUS = {
 # Which side the base-rate strategy always backs. Keyed by board, or by (board, head)
 # where a board runs more than one market and they have different baselines.
 BASE_SIDE = {"CS2": "team 1", "MMA": "the alphabetically first fighter",
-             ("MMA", "goes the distance"): "the distance"}
+             ("MMA", "goes the distance"): "the distance",
+             ("NFL", "spread (home -3.5)"): "the home side",
+             ("NBA", "spread (home -3.5)"): "the home side"}
 
 
 def base_side(board, head=None):
@@ -327,6 +329,22 @@ def load_board(name):
         heads = {"NFL": "game winner (ties push)", "NCAAF": "game winner (FBS vs FBS)",
                  "NHL": "game winner (incl OT/SO)", "NBA": "game winner"}
         y = outcome(d.get("result"))
+        # Spread head. The runners log P(home covers) at fixed margin thresholds, so it
+        # grades without needing to know what line a book actually posted. Only the +3.5
+        # threshold is shown: near zero it duplicates the moneyline, and the other logged
+        # thresholds are there for analysis rather than the page.
+        if "p_sp_p35" in d.columns and d.p_sp_p35.notna().any():
+            marg = pd.to_numeric(d.get("result"), errors="coerce")
+            if set(marg.dropna().unique()) <= {0.0, 1.0, -1.0}:
+                marg = None                      # binary log, no margin to grade a spread on
+            if marg is not None:
+                out.append(pd.DataFrame({
+                    "date": pd.to_datetime(d.date),
+                    "matchup": d.away + " @ " + d.home,
+                    "p_model": d.p_sp_p35, "p_floor": np.nan,
+                    "y": np.where(marg.isna(), np.nan, (marg > 3.5).astype(float)),
+                    "head": "spread (home -3.5)",
+                    "p_team": "the home side", "opp_team": "the away side"}))
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date),
             "matchup": d.away + " @ " + d.home, "p_model": d.p_home,
             "p_floor": d.p_elo, "y": y, "head": heads[name],
