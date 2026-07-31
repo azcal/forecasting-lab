@@ -99,3 +99,80 @@ def build_board(rows, floor=PRICE_FLOOR, edge=MIN_EDGE):
         out.append(f"({skipped} game{'s' if skipped != 1 else ''} skipped, "
                    f"price floor {floor:.2f} / {american(floor)})")
     return out, skipped
+
+
+# ---------------------------------------------------------------- combinations
+def mma_board(p_a_ko, p_a_sub, p_a_dec, p_b_ko, p_b_sub, p_b_dec, a, b,
+              floor=PRICE_FLOOR, edge=MIN_EDGE):
+    """Three lines for a fight: the moneyline lean, the distance lean, and the two combined.
+
+    Decision is the distance. KO/TKO and submission are both finishes. Books post the
+    distance leg as a yes/no market and will parlay it with the moneyline in one ticket,
+    which is the number the third line prices.
+
+    The combined leg is where a book pricing legs independently goes wrong: a fighter who
+    wins tends to win the way he always wins, so the moneyline and the distance move
+    together. The bracket shows what independence implies so the gap is visible.
+    """
+    pA = p_a_ko + p_a_sub + p_a_dec
+    pB = p_b_ko + p_b_sub + p_b_dec
+    dist = p_a_dec + p_b_dec
+    fin = p_a_ko + p_a_sub + p_b_ko + p_b_sub
+
+    win_name, win_p = (a, pA) if pA >= pB else (b, pB)
+    if dist >= fin:
+        way_name, way_p = "goes the distance", dist
+        both = p_a_dec if win_name == a else p_b_dec
+    else:
+        way_name, way_p = "ends inside", fin
+        both = (p_a_ko + p_a_sub) if win_name == a else (p_b_ko + p_b_sub)
+    naive = win_p * way_p
+
+    rows = [(win_name, win_p, None), (way_name, way_p, None), ("both", both, naive)]
+    out, w = [], max(len(r[0]) for r in rows)
+    for label, p, nv in rows:
+        if min_odds(p, edge) < floor:
+            continue
+        ln = f"  {label:<{w}} {p:>5.1%}  find {price(p, edge)} or better"
+        if nv and abs(p / nv - 1) >= 0.015:
+            ln += f"   [indep {1/nv:.2f}, {p/nv - 1:+.0%}]"
+        out.append(ln)
+    return out
+
+
+# ---------------------------------------------------------------- live entry
+# Windows measured from each board's own walk-forward pregame probability, not a stand-in
+# rating. That matters: the production models pick more resilient short favourites than a
+# bare Elo does, because they can see availability and rest. Measured on the same games a
+# bare Elo flagged, down 3-7 after Q1 read 58.9%; measured on the games these models flag,
+# it reads 63.1%.
+#
+# Ceiling is a fixed 10-point tolerance below the historical rate, not a confidence
+# interval. It answers "has this price drifted far enough to be telling me something the
+# scoreboard is not", which does not depend on how many games happened to be in the cell.
+#
+#   sport -> checkpoint, [(deficit_low, deficit_high, take_from, take_to), ...]
+LIVE_MAX = 1.50
+TRAP_DROP = 0.10
+LIVE_WINDOWS = {
+    "NBA": ("Q1", [(-11, -7, 1.72, 1.96), (-7, -3, 1.67, 1.88), (-3, 0, 1.46, 1.61)]),
+    "NFL": ("Q1", [(-10, -7, 2.00, 2.35), (-7, -3, 1.66, 1.87), (-3, 0, 1.36, 1.49)]),
+}
+
+
+def live_note(sport, p_pre, indent="      "):
+    """Live-entry addendum for a pregame board line.
+
+    Only for favourites already too short to take at the open, which is the premise: you are
+    not betting the opener, you are waiting for a price the scoreboard creates. Returns []
+    where the sport has no measured window or the pregame price is long enough to just take.
+
+    WNBA and NHL are absent deliberately. NHL collapsed to a single one-goal window under
+    the 50% floor, and WNBA has not been rebuilt from its production model yet.
+    """
+    if sport not in LIVE_WINDOWS or min_odds(p_pre) >= LIVE_MAX:
+        return []
+    cp, rows = LIVE_WINDOWS[sport]
+    return [f"{indent}or live {a:.2f}-{b:.2f} ({american(a)} to {american(b)}) "
+            f"after {cp} if down {abs(hi) if hi else 0}-{abs(lo)}"
+            for lo, hi, a, b in rows]
