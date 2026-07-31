@@ -1,0 +1,84 @@
+name: refresh-dashboard-data
+# Pulls each pipeline's logs/predictions.csv into data/ once a day.
+#
+# Pull rather than push: eight pipelines pushing here would mean sixteen commits a day and
+# sixteen Streamlit redeploys, and a visitor would keep landing on a restarting app. One
+# scheduled pull is one commit and one redeploy.
+#
+# Side benefit: Streamlit Community Cloud treats a commit to the app's repo as activity, so
+# a daily commit also keeps the app from going to sleep.
+#
+# Setup:
+#   1. Create a fine-grained personal access token with Contents: Read on the eight
+#      pipeline repos (Settings > Developer settings > Personal access tokens).
+#   2. Add it to THIS repo as a secret named PIPE_TOKEN.
+#   3. Edit OWNER below, and the repo names in the loop if yours differ.
+on:
+  schedule:
+    - cron: "0 13 * * *"      # 7am MDT / 6am MST, after the overnight pipeline runs
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      OWNER: azcal
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: pull each pipeline log
+        env:
+          PIPE_TOKEN: ${{ secrets.PIPE_TOKEN }}
+        run: |
+          mkdir -p data
+          if [ -z "$PIPE_TOKEN" ]; then
+            echo "PIPE_TOKEN not set. Add it as a repository secret, then rerun."
+            exit 1
+          fi
+          ok=0; skip=0
+          for pair in \
+            "wnba:mbm-wnba" \
+            "cs2:mbm-cs2" \
+            "soccer:mbm-soccer" \
+            "nfl:mbm-nfl" \
+            "ncaaf:mbm-ncaaf" \
+            "nhl:mbm-nhl" \
+            "nba:mbm-nba" \
+            "mma:mbm-mma" \
+            "props:mbm-props" ; do
+            sport="${pair%%:*}"; repo="${pair##*:}"
+            url="https://api.github.com/repos/$OWNER/$repo/contents/logs/predictions.csv"
+            if curl -sfL --max-time 60 \
+                 -H "Authorization: Bearer $PIPE_TOKEN" \
+                 -H "Accept: application/vnd.github.raw" \
+                 -H "X-GitHub-Api-Version: 2022-11-28" \
+                 "$url" -o "data/$sport.csv.tmp"; then
+              # only replace the live file if the download is a plausible CSV
+              if [ -s "data/$sport.csv.tmp" ] && head -1 "data/$sport.csv.tmp" | grep -q ","; then
+                mv "data/$sport.csv.tmp" "data/$sport.csv"
+                echo "  $sport  ok  ($(wc -l < data/$sport.csv) lines)"
+                ok=$((ok+1))
+              else
+                rm -f "data/$sport.csv.tmp"
+                echo "  $sport  skipped, response was not a CSV"
+                skip=$((skip+1))
+              fi
+            else
+              rm -f "data/$sport.csv.tmp"
+              echo "  $sport  skipped, could not fetch (repo renamed, no log yet, or token scope)"
+              skip=$((skip+1))
+            fi
+          done
+          echo "refreshed $ok, skipped $skip"
+          if [ "$ok" -eq 0 ]; then
+            echo "nothing refreshed, failing so this does not pass silently"
+            exit 1
+          fi
+
+      - name: commit
+        run: |
+          git config user.name mbm-bot && git config user.email bot@mbm
+          git add data/
+          git diff --cached --quiet || git commit -m "dashboard data $(date +%F)"
+          git push

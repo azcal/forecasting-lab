@@ -2,7 +2,7 @@
 Eight sports-forecasting pipelines, evaluated on log loss and calibration against
 market-free baselines. Data auto-commits daily from GitHub Actions pipelines.
 """
-import math
+import math, os
 import numpy as np, pandas as pd, streamlit as st
 import board_format as BF
 import plotly.graph_objects as go
@@ -34,7 +34,9 @@ STATUS = {
 BASE_SIDE = {"CS2": "team 1", "MMA": "the alphabetically first fighter",
              ("MMA", "goes the distance"): "the distance",
              ("NFL", "spread, home -3.5"): "the away side at +3.5",
-             ("NBA", "spread, home -3.5"): "the away side at +3.5"}
+             ("NBA", "spread, home -3.5"): "the away side at +3.5",
+             ("NBA", "player PRA, forecast +2.5"): "the under",
+             ("WNBA", "player PRA, forecast +2.5"): "the under"}
 
 
 def base_side(board, head=None):
@@ -45,9 +47,13 @@ def base_side(board, head=None):
 # is still logged, still in the Telegram board, and still inside the spread head at k=0.
 # MMA shows the fight winner, which removes +0.0263 of error against distance's +0.0171 on
 # 3,902 forecasts, a gap wide enough to decide on.
-PRIMARY_HEAD = {"NBA": "spread, home -3.5",
-                "NFL": "spread, home -3.5",
-                "MMA": "fight winner"}
+# Which markets render per board. A board absent from here shows everything it logs.
+PRIMARY_HEAD = {"NFL": ["spread, home -3.5"],
+                "NBA": ["spread, home -3.5", "player PRA, forecast +2.5"]}
+
+# Player props live in their own repo and their own log, split by league here so each shows
+# under its own tab rather than as a ninth board.
+PROPS_FILE = "data/props.csv"
 
 RATING = [(0.15, "elite"), (0.08, "strong"), (0.04, "solid"),
           (0.015, "thin"), (-99.0, "no measurable edge")]
@@ -317,6 +323,26 @@ def outcome(sr):
                      index=v.index if hasattr(v, "index") else None)
 
 
+def _props_head(name):
+    """The PRA board for one league, read from the shared props log."""
+    if name not in ("NBA", "WNBA") or not os.path.exists(PROPS_FILE):
+        return None
+    try:
+        d = pd.read_csv(PROPS_FILE)
+    except Exception:
+        return None
+    d = d[d.league == name]
+    if len(d) < 30 or "p_grade" not in d.columns:
+        return None
+    y = np.where(d.actual.isna(), np.nan, (d.actual > d.grade_line).astype(float))
+    return pd.DataFrame({
+        "date": pd.to_datetime(d.date), "matchup": d.player + " (" + d.matchup + ")",
+        "p_model": d.p_grade, "p_floor": np.nan, "y": y,
+        "head": "player PRA, forecast +2.5",
+        "p_team": "the over", "opp_team": "the under",
+        "line_txt": d.player.astype(str) + " " + d["median"].astype(float).round(0).astype(int).astype(str)})
+
+
 @st.cache_data(ttl=3600)
 def load_board(name):
     cfg = SOURCES[name]
@@ -387,11 +413,16 @@ def load_board(name):
             "matchup": d.away + " @ " + d.home, "p_model": d.p_home,
             "p_floor": d.p_elo, "y": y, "head": heads[name],
             "p_team": d.home, "opp_team": d.away}))
+    ph = _props_head(name)
+    if ph is not None:
+        out.append(ph)
     f = pd.concat(out, ignore_index=True).sort_values("date").reset_index(drop=True)
     f["board"] = name
     keep = PRIMARY_HEAD.get(name)
-    if keep and (f["head"] == keep).any():
-        f = f[f["head"] == keep].reset_index(drop=True)
+    if keep:
+        sel = f["head"].isin(keep)
+        if sel.any():
+            f = f[sel].reset_index(drop=True)
     return f
 
 
@@ -605,7 +636,7 @@ st.markdown("Built by Mark Parsons, CPHR · "
             "[Code & methodology](https://github.com/azcal/forecasting-lab)")
 # Build marker. If this string is not what you just uploaded, Streamlit is serving cached
 # code and no amount of editing app.py will change anything on screen. Manage app > Reboot.
-st.caption(f"build 2026-07-28g · shared board format, price column, floor -400")
+st.caption(f"build 2026-07-28j · player props under NBA and WNBA")
 
 frames = {b: load_board(b) for b in SOURCES}
 
