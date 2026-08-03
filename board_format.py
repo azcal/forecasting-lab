@@ -1,5 +1,5 @@
 """
-One board line, one format, every sport, Telegram and dashboard.
+One board line, one format, every sport, Discord and dashboard.
 
     2026-09-14  KC @ LAC        LAC +2.5        find 1.91 / -110 or better
 
@@ -8,6 +8,10 @@ is the same min_odds rule every board already uses, shown in decimal and America
 be compared to whatever a book displays without conversion.
 """
 import math
+
+# Bumped whenever this file changes. Every runner asserts on it at import, so a repo
+# holding an old copy fails in the workflow's import guard instead of rendering wrong.
+VERSION = "2026-08-03"
 
 MIN_EDGE = 0.05
 
@@ -41,7 +45,11 @@ def price(p, edge=MIN_EDGE):
 def line(date, game, pick, p, edge=MIN_EDGE, w_game=26, w_pick=16):
     """A single board row. `pick` is the outcome in the reader's language: a team for a
     moneyline, a team plus handicap for a spread, a fighter for MMA."""
-    return (f"{date}  {game:<{w_game}} {pick:<{w_pick}} "
+    # Two spaces between fields, not one. The column padding is sized to the widest
+    # entry on the slate, so that row gets zero padding; with single-space separators it
+    # ends up one space from the next field and notify.BOARD, which needs two or more,
+    # fails to match. The row then falls through and renders as an unstyled run-on line.
+    return (f"{date}  {game:<{w_game}}  {pick:<{w_pick}}  "
             f"find {price(p, edge)} or better")
 
 
@@ -74,7 +82,7 @@ def spread_pick(home, away, line_margin):
 
 
 def widths(games, picks):
-    """Column widths that fit the slate, so a board never ragged-wraps in Telegram."""
+    """Column widths that fit the slate, so a board never ragged-wraps."""
     return (max([len(g) for g in games] + [10]),
             max([len(p) for p in picks] + [8]))
 
@@ -104,15 +112,16 @@ def build_board(rows, floor=PRICE_FLOOR, edge=MIN_EDGE):
 # ---------------------------------------------------------------- combinations
 def mma_board(p_a_ko, p_a_sub, p_a_dec, p_b_ko, p_b_sub, p_b_dec, a, b,
               floor=PRICE_FLOOR, edge=MIN_EDGE):
-    """Three lines for a fight: the moneyline lean, the distance lean, and the two combined.
+    """Two lines for a fight: the moneyline lean and the distance lean.
 
-    Decision is the distance. KO/TKO and submission are both finishes. Books post the
-    distance leg as a yes/no market and will parlay it with the moneyline in one ticket,
-    which is the number the third line prices.
+    Decision is the distance. KO/TKO and submission are both finishes, so whichever side
+    of that is likelier becomes the second line, quoted as the yes/no market books post
+    alongside the winner.
 
-    The combined leg is where a book pricing legs independently goes wrong: a fighter who
-    wins tends to win the way he always wins, so the moneyline and the distance move
-    together. The bracket shows what independence implies so the gap is visible.
+    The two legs were previously also offered combined, as the same-game parlay a book
+    posts on one ticket, with a bracket showing what independent pricing implied. That
+    row is gone. It was the only place a bracket appeared, so `ROW`'s optional note group
+    in notify.py now has no producer; it is left in place for other boards to use.
     """
     pA = p_a_ko + p_a_sub + p_a_dec
     pB = p_b_ko + p_b_sub + p_b_dec
@@ -120,23 +129,14 @@ def mma_board(p_a_ko, p_a_sub, p_a_dec, p_b_ko, p_b_sub, p_b_dec, a, b,
     fin = p_a_ko + p_a_sub + p_b_ko + p_b_sub
 
     win_name, win_p = (a, pA) if pA >= pB else (b, pB)
-    if dist >= fin:
-        way_name, way_p = "goes the distance", dist
-        both = p_a_dec if win_name == a else p_b_dec
-    else:
-        way_name, way_p = "ends inside", fin
-        both = (p_a_ko + p_a_sub) if win_name == a else (p_b_ko + p_b_sub)
-    naive = win_p * way_p
+    way_name, way_p = ("goes the distance", dist) if dist >= fin else ("ends inside", fin)
 
-    rows = [(win_name, win_p, None), (way_name, way_p, None), ("both", both, naive)]
+    rows = [(win_name, win_p), (way_name, way_p)]
     out, w = [], max(len(r[0]) for r in rows)
-    for label, p, nv in rows:
+    for label, p in rows:
         if min_odds(p, edge) < floor:
             continue
-        ln = f"  {label:<{w}} {p:>5.1%}  find {price(p, edge)} or better"
-        if nv and abs(p / nv - 1) >= 0.015:
-            ln += f"   [indep {1/nv:.2f}, {p/nv - 1:+.0%}]"
-        out.append(ln)
+        out.append(f"  {label:<{w}} {p:>5.1%}  find {price(p, edge)} or better")
     return out
 
 
@@ -155,9 +155,23 @@ def mma_board(p_a_ko, p_a_sub, p_a_dec, p_b_ko, p_b_sub, p_b_dec, a, b,
 LIVE_MAX = 1.50
 TRAP_DROP = 0.10
 LIVE_WINDOWS = {
-    "NBA": ("Q1", [(-11, -7, 1.72, 1.96), (-7, -3, 1.67, 1.88), (-3, 0, 1.46, 1.61)]),
-    "NFL": ("Q1", [(-10, -7, 2.00, 2.35), (-7, -3, 1.66, 1.87), (-3, 0, 1.36, 1.49)]),
+    "NBA":   ("Q1", [(-11, -7, 1.72, 1.96), (-7, -3, 1.67, 1.88), (-3, 0, 1.46, 1.61)]),
+    "NFL":   ("Q1", [(-10, -7, 2.00, 2.35), (-7, -3, 1.66, 1.87), (-3, 0, 1.36, 1.49)]),
+    "NCAAF": ("Q1", [(-14, -7, 1.96, 2.29), (-7, -3, 1.49, 1.65), (-3, 0, 1.36, 1.48)]),
+    "WNBA":  ("Q1", [(-9, -5, 1.69, 1.91), (-5, 0, 1.65, 1.86)]),
 }
+
+# Measured and rejected. These are findings about the sports, not gaps in the build.
+#
+#   NHL     down two after one period: 46.1%. Down three: 31.6%. Only the one-goal row
+#           cleared 50% and its window was two cents wide.
+#   Soccer  down one at half: 35.9%. Down two: 12.0%. Only level-at-half survived.
+#   CS2     favourite losing map one wins the series 38.9% across 558 best-of-threes.
+#           A Bo3 turns map one into a near-elimination.
+#   MMA     no scoreboard between rounds. Judging is not observable mid-fight.
+#
+# The pattern: comebacks are live where scoring is frequent and continuous, and dead where
+# it is rare (hockey, soccer) or where the format segments into must-wins (CS2).
 
 
 def live_note(sport, p_pre, indent="      "):
@@ -167,8 +181,8 @@ def live_note(sport, p_pre, indent="      "):
     not betting the opener, you are waiting for a price the scoreboard creates. Returns []
     where the sport has no measured window or the pregame price is long enough to just take.
 
-    WNBA and NHL are absent deliberately. NHL collapsed to a single one-goal window under
-    the 50% floor, and WNBA has not been rebuilt from its production model yet.
+    NHL, Soccer, CS2 and MMA are absent because they were measured and did not qualify.
+    See the note above LIVE_WINDOWS.
     """
     if sport not in LIVE_WINDOWS or min_odds(p_pre) >= LIVE_MAX:
         return []
