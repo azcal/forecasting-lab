@@ -1,16 +1,28 @@
 name: refresh-dashboard-data
-# Pulls each pipeline's logs/predictions.csv into data/ once a day.
+# Pulls each pipeline's logs/predictions.csv into data/ once a day and MERGES it into
+# what is already there.
 #
-# Pull rather than push: eight pipelines pushing here would mean sixteen commits a day and
-# sixteen Streamlit redeploys, and a visitor would keep landing on a restarting app. One
+# It used to overwrite. That is fine while a pipeline log only ever grows, and wrong the
+# moment one does not: a repo reset, a rotated log, a runner rewriting its frame with a
+# narrower column set, a board retired and its schedule switched off. Any of those would
+# have quietly shortened the dashboard's history with no second copy anywhere. merge_logs.py
+# keeps every row it has ever seen, takes the freshly pulled version where a row appears in
+# both (that is the copy where `result` may have been filled in since), and unions columns.
+#
+# A pipeline that cannot be reached is skipped, not emptied. That is what keeps mlb.csv on
+# the dashboard now that mbm-mlb is retired and its schedule is off: nothing pulls it, and
+# the record stays.
+#
+# Pull rather than push: nine pipelines pushing here would mean many commits a day and as
+# many Streamlit redeploys, and a visitor would keep landing on a restarting app. One
 # scheduled pull is one commit and one redeploy.
 #
 # Side benefit: Streamlit Community Cloud treats a commit to the app's repo as activity, so
 # a daily commit also keeps the app from going to sleep.
 #
 # Setup:
-#   1. Create a fine-grained personal access token with Contents: Read on the eight
-#      pipeline repos (Settings > Developer settings > Personal access tokens).
+#   1. Create a fine-grained personal access token with Contents: Read on the pipeline
+#      repos (Settings > Developer settings > Personal access tokens).
 #   2. Add it to THIS repo as a secret named PIPE_TOKEN.
 #   3. Edit OWNER below, and the repo names in the loop if yours differ.
 on:
@@ -26,6 +38,10 @@ jobs:
       OWNER: azcal
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install pandas
 
       - name: pull each pipeline log
         env:
@@ -45,7 +61,8 @@ jobs:
             "ncaaf:mbm-ncaaf" \
             "nhl:mbm-nhl" \
             "nba:mbm-nba" \
-            "mma:mbm-mma" ; do
+            "mma:mbm-mma" \
+            "props:mbm-props" ; do
             sport="${pair%%:*}"; repo="${pair##*:}"
             url="https://api.github.com/repos/$OWNER/$repo/contents/logs/predictions.csv"
             if curl -sfL --max-time 60 \
@@ -53,25 +70,30 @@ jobs:
                  -H "Accept: application/vnd.github.raw" \
                  -H "X-GitHub-Api-Version: 2022-11-28" \
                  "$url" -o "data/$sport.csv.tmp"; then
-              # only replace the live file if the download is a plausible CSV
+              # only merge if the download is a plausible CSV
               if [ -s "data/$sport.csv.tmp" ] && head -1 "data/$sport.csv.tmp" | grep -q ","; then
-                mv "data/$sport.csv.tmp" "data/$sport.csv"
-                echo "  $sport  ok  ($(wc -l < data/$sport.csv) lines)"
-                ok=$((ok+1))
+                # merge_logs.py exits non-zero on a schema change rather than guessing at
+                # the key, so a bad merge fails the run instead of eating history.
+                if python merge_logs.py "$sport" "data/$sport.csv.tmp" "data/$sport.csv"; then
+                  ok=$((ok+1))
+                else
+                  echo "  $sport  MERGE FAILED, existing data/$sport.csv left untouched"
+                  skip=$((skip+1))
+                fi
               else
-                rm -f "data/$sport.csv.tmp"
                 echo "  $sport  skipped, response was not a CSV"
                 skip=$((skip+1))
               fi
+              rm -f "data/$sport.csv.tmp"
             else
               rm -f "data/$sport.csv.tmp"
               echo "  $sport  skipped, could not fetch (repo renamed, no log yet, or token scope)"
               skip=$((skip+1))
             fi
           done
-          echo "refreshed $ok, skipped $skip"
+          echo "merged $ok, skipped $skip"
           if [ "$ok" -eq 0 ]; then
-            echo "nothing refreshed, failing so this does not pass silently"
+            echo "nothing merged, failing so this does not pass silently"
             exit 1
           fi
 
