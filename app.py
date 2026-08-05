@@ -399,7 +399,18 @@ def _props_head(name):
 def load_board(name):
     cfg = SOURCES[name]
     src = cfg["url"] or cfg["file"]
-    d = pd.read_csv(src)
+    if not (cfg["url"] or os.path.exists(src)):
+        # A board whose log has not arrived yet, most often a new one whose pipeline has
+        # not run. Returning empty lets the page drop that tab; raising took the whole app
+        # down, which is how one absent CSV blanked every board.
+        return pd.DataFrame(columns=["date", "matchup", "p_model", "p_floor", "y",
+                                     "head", "phase", "board"])
+    try:
+        d = pd.read_csv(src)
+    except Exception as ex:
+        print(f"load_board({name}): {src} unreadable, {type(ex).__name__}")
+        return pd.DataFrame(columns=["date", "matchup", "p_model", "p_floor", "y",
+                                     "head", "phase", "board"])
     out = []
     if name == "WNBA":
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date, format="%Y%m%d"),
@@ -811,9 +822,18 @@ st.markdown("Built by Mark Parsons, CPHR · "
             "[Code & methodology](https://github.com/azcal/forecasting-lab)")
 # Build marker. If this string is not what you just uploaded, Streamlit is serving cached
 # code and no amount of editing app.py will change anything on screen. Manage app > Reboot.
-st.caption(f"build 2026-07-28j · player props under NBA and WNBA")
+st.caption("build 2026-08-05 · Americas soccer, backtest/live split, reliability")
 
-frames = {b: load_board(b) for b in SOURCES}
+_loaded = {b: load_board(b) for b in SOURCES}
+missing = [b for b, f in _loaded.items() if not len(f)]
+frames = {b: f for b, f in _loaded.items() if len(f)}
+if missing:
+    st.caption("Waiting on first data: " + ", ".join(missing) +
+               ". These appear once their pipeline has logged and the refresh has run.")
+if not frames:
+    st.error("No board data found in data/. Run the refresh workflow, or check that the "
+             "CSVs are committed.")
+    st.stop()
 
 
 def board_rank(b):
@@ -827,7 +847,7 @@ def board_rank(b):
     return best
 
 
-boards = sorted(SOURCES, key=board_rank, reverse=True)
+boards = sorted(frames, key=board_rank, reverse=True)
 tabs = st.tabs(["Overview"] + boards + ["Retired"])
 
 def _phase_cols(gg):
