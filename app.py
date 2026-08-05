@@ -395,8 +395,28 @@ def _props_head(name):
         "line_txt": d.player.astype(str) + " " + d["median"].astype(float).round(0).astype(int).astype(str)})
 
 
-@st.cache_data(ttl=3600)
+def _stamp(path):
+    """Modification time of a data file, or 0 if it is not there.
+
+    Part of the cache key, for two reasons. A file that was missing when the page first
+    loaded got its empty frame cached for an hour, so uploading it changed nothing until
+    the cache expired or the app was rebooted. And the daily refresh commits new rows,
+    which used to take up to an hour to appear for the same reason. Both are fixed by
+    keying on the file rather than only on the board name.
+    """
+    try:
+        return os.path.getmtime(path)
+    except OSError:
+        return 0.0
+
+
 def load_board(name):
+    cfg = SOURCES[name]
+    return _load_board(name, _stamp(cfg["file"]))
+
+
+@st.cache_data(ttl=3600)
+def _load_board(name, _file_stamp):
     cfg = SOURCES[name]
     src = cfg["url"] or cfg["file"]
     if not (cfg["url"] or os.path.exists(src)):
