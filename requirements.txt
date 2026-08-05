@@ -1,3 +1,16 @@
+# Streamlit Cloud reinstalls from this file on every reboot, so an unpinned dependency can
+# break a working app without a single line of your code changing.
+#
+# starlette<1.4 is not optional. Starlette 1.4.0 added a required keyword-only argument
+# `thread_minimum_size` to GZipResponder.__init__. Streamlit subclasses that responder and
+# does not pass it, so the ASGI middleware stack raises before app.py is ever imported:
+# health checks 500, and the UI shows "Oh no. Error running app" with nothing pointing at
+# your code. Verified 2026-08-05: 1.3.1 does not have the argument, 1.4.0 does, and even
+# streamlit 1.61.0 still does not pass it while declaring `starlette<2,>=0.46.0`, which
+# installs the broken version. Upgrading streamlit does not fix this. Remove the pin only
+# once streamlit's starlette_gzip_middleware.py passes thread_minimum_size.
+starlette<1.4
+
 streamlit
 pandas
 numpy
