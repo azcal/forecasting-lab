@@ -53,18 +53,23 @@ jobs:
             exit 1
           fi
           ok=0; skip=0
+          # sport:repo:logfile. Soccer publishes two logs from one repo: Big 5 and the
+          # Americas leagues, which are separate models with separate frozen specs and
+          # must not be averaged into one rolling metric.
           for pair in \
-            "wnba:mbm-wnba" \
-            "cs2:mbm-cs2" \
-            "soccer:mbm-soccer" \
-            "nfl:mbm-nfl" \
-            "ncaaf:mbm-ncaaf" \
-            "nhl:mbm-nhl" \
-            "nba:mbm-nba" \
-            "mma:mbm-mma" \
-            "props:mbm-props" ; do
-            sport="${pair%%:*}"; repo="${pair##*:}"
-            url="https://api.github.com/repos/$OWNER/$repo/contents/logs/predictions.csv"
+            "wnba:mbm-wnba:predictions.csv" \
+            "cs2:mbm-cs2:predictions.csv" \
+            "soccer:mbm-soccer:predictions.csv" \
+            "soccer_americas:mbm-soccer:americas_predictions.csv" \
+            "nfl:mbm-nfl:predictions.csv" \
+            "ncaaf:mbm-ncaaf:predictions.csv" \
+            "nhl:mbm-nhl:predictions.csv" \
+            "nba:mbm-nba:predictions.csv" \
+            "mma:mbm-mma:predictions.csv" \
+            "props:mbm-props:predictions.csv" ; do
+            sport="${pair%%:*}"; rest="${pair#*:}"
+            repo="${rest%%:*}"; logfile="${rest##*:}"
+            url="https://api.github.com/repos/$OWNER/$repo/contents/logs/$logfile"
             if curl -sfL --max-time 60 \
                  -H "Authorization: Bearer $PIPE_TOKEN" \
                  -H "Accept: application/vnd.github.raw" \
