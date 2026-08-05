@@ -14,6 +14,9 @@ SOURCES = {
     "WNBA":   {"file": "data/wnba.csv",   "url": ""},
     "CS2":    {"file": "data/cs2.csv",    "url": ""},
     "Soccer": {"file": "data/soccer.csv", "url": ""},
+    # Separate model, separate frozen spec, separate holdout. Shares the soccer repo but
+    # not the head: Big 5 keeps its shot features, these leagues have none.
+    "Soccer (Americas)": {"file": "data/soccer_americas.csv", "url": ""},
     "NFL":    {"file": "data/nfl.csv",    "url": ""},
     "NCAAF":  {"file": "data/ncaaf.csv",  "url": ""},
     "NHL":    {"file": "data/nhl.csv",    "url": ""},
@@ -24,6 +27,7 @@ SOURCES = {
 STATUS = {
     "WNBA": "live", "CS2": "live",
     "Soccer": "live (season opens mid-Aug)",
+    "Soccer (Americas)": "live",
     "NFL": "pre-season (Sept)", "NCAAF": "pre-season (late Aug)",
     "NHL": "pre-season (Oct)", "NBA": "pre-season (Oct)", "MMA": "live",
 }
@@ -31,7 +35,7 @@ STATUS = {
 # which side the base-rate strategy always backs, per board listing convention
 # Which side the base-rate strategy always backs. Keyed by board, or by (board, head)
 # where a board runs more than one market and they have different baselines.
-BASE_SIDE = {"CS2": "team 1", "MMA": "the alphabetically first fighter",
+BASE_SIDE = {"CS2": "team 1", "Soccer (Americas)": "the home side", "MMA": "the alphabetically first fighter",
              ("MMA", "goes the distance"): "the distance",
              ("NFL", "spread, home -3.5"): "the away side at +3.5",
              ("NBA", "spread, home -3.5"): "the away side at +3.5",
@@ -155,6 +159,20 @@ baseball is close to a coin flip no matter who is modelling it, so there is far 
 predict there than in college football. A small number on a hard board is not a bad model.
 """
 
+HEAD_NOTES = {
+    "player PRA, forecast +2.5": (
+        "**This board is the outlier on this page, and the skill score above understates "
+        "it.** Every other board forecasts a binary that a book prices directly, so log "
+        "loss against a base rate is the right lens. This one forecasts a *number*, points "
+        "plus rebounds plus assists, and the binary shown here is an artificial line placed "
+        "2.5 above the forecast purely so the board is gradeable without knowing what a "
+        "book actually posted. On that line the model scores 0.6702 against a 0.6707 base "
+        "rate, an edge of +0.0005, which reads as worthless and is not what the board does. "
+        "Judge it on projection error instead, shown below: that is what it was tuned and "
+        "frozen against, and what moves if it needs recalibrating."
+    ),
+}
+
 BOARD_NOTES = {
     "CS2": (
         "**v2 shipped 2026-07-26.** The rating now updates on per-map round margin rather than "
@@ -196,7 +214,7 @@ BOARD_NOTES = {
 RETIRED_MD = """
 ### Retired boards
 
-Four targets were built, evaluated, and shut off. Each was tested once on a frozen holdout
+Five targets were built, evaluated, and shut off. Each was tested once on a frozen holdout
 and retired against a stated bar rather than on judgement after the fact. They are published
 here because a model that beats nothing is worth more as a documented negative than as a
 green light.
@@ -218,6 +236,25 @@ better than a coin flip. The structural problem is worse than the headline: pred
 0.231 to 0.469 with a standard deviation of 0.042, against a base rate of 0.4334. The model's
 ceiling sits below its own base rate, so it can never call a long series. That is a resolution
 failure, and post-hoc calibration cannot repair it. Retired rather than left paused.
+
+#### MLS: match winner, draw no bet
+*Retired 2026-08-03, before it ever boarded.* Built alongside Brasileirao and Liga MX on the
+same engine and the same frozen spec, tuned on calendar 2024 and opened once on 2025.
+n = 405 decided.
+
+| metric | value |
+|---|---|
+| log loss | 0.6556 |
+| own Elo floor | 0.6568 |
+| edge over Elo | +0.0012 |
+| paired test | t = 0.19, p = 0.85 |
+| edge over its own base rate | +0.0213, p = 0.14 |
+
+The feature layer contributes nothing over the rating it sits on, the same signature that
+retired the CS2 series-length head. MLS is also the hardest of the three in absolute terms,
+0.6556 against roughly 0.56 for Brasileirao and Liga MX, which is what engineered parity
+looks like in the numbers. Predictions are still generated, logged and graded on every run
+so the decision stays under measurement, but nothing is published.
 
 #### MLB F5: first-five-innings winner
 *Retired 2026-07-27.* The board never separated itself from a constant. Final live sample,
@@ -323,6 +360,18 @@ def outcome(sr):
                      index=v.index if hasattr(v, "index") else None)
 
 
+def phase_of(d):
+    """backtest or live, per row.
+
+    Every runner tags its seeded holdout rows `*-backfill` and its live forecasts without
+    it. That distinction has been in every log from the start and this dashboard was
+    pooling the two, which hides the one thing that matters for recalibration: whether the
+    live period is drifting away from the frozen result.
+    """
+    m = d["model"].astype(str) if "model" in d.columns else pd.Series("", index=d.index)
+    return np.where(m.str.contains("backfill", case=False), "backtest", "live")
+
+
 def _props_head(name):
     """The PRA board for one league, read from the shared props log."""
     if name not in ("NBA", "WNBA") or not os.path.exists(PROPS_FILE):
@@ -338,8 +387,11 @@ def _props_head(name):
     return pd.DataFrame({
         "date": pd.to_datetime(d.date), "matchup": d.player + " (" + d.matchup + ")",
         "p_model": d.p_grade, "p_floor": np.nan, "y": y,
-        "head": "player PRA, forecast +2.5",
+        "head": "player PRA, forecast +2.5", "phase": phase_of(d),
         "p_team": "the over", "opp_team": "the under",
+        # Carried so the board can be scored on projection error, which is the measure it
+        # was built and frozen against. See props_error_block.
+        "proj": d.proj, "l10": d.l10, "actual": d.actual,
         "line_txt": d.player.astype(str) + " " + d["median"].astype(float).round(0).astype(int).astype(str)})
 
 
@@ -373,6 +425,17 @@ def load_board(name):
                                head="goes the distance",
                                p_team="the distance", opp_team="a finish"))
     elif name == "Soccer":
+        y = outcome(d.get("result"))
+        out.append(pd.DataFrame({"date": pd.to_datetime(d.date),
+            "matchup": d.home + " vs " + d.away + " (" + d.league + ")",
+            "p_model": d.p_home, "p_floor": d.p_elo, "y": y,
+            "head": "match winner (draws excluded)",
+            "p_team": d.home, "opp_team": d.away}))
+    elif name == "Soccer (Americas)":
+        # MLS is logged and graded but never boarded, so it is excluded here and written
+        # up under Retired instead. `boarded` is absent from rows predating the split.
+        if "boarded" in d.columns:
+            d = d[d.boarded.fillna(1).astype(int) == 1]
         y = outcome(d.get("result"))
         out.append(pd.DataFrame({"date": pd.to_datetime(d.date),
             "matchup": d.home + " vs " + d.away + " (" + d.league + ")",
@@ -416,6 +479,13 @@ def load_board(name):
     ph = _props_head(name)
     if ph is not None:
         out.append(ph)
+    # Each remaining frame is one market built row-for-row off `d`, so the phase tiles
+    # across them. The props frame is skipped: it came from a different file and set its
+    # own above.
+    _phase = phase_of(d)
+    for o in out:
+        if "phase" not in o.columns:
+            o["phase"] = _phase if len(o) == len(_phase) else "live"
     f = pd.concat(out, ignore_index=True).sort_values("date").reset_index(drop=True)
     f["board"] = name
     keep = PRIMARY_HEAD.get(name)
@@ -457,6 +527,111 @@ def board_stats(gg):
         s["layer_edge"] = s["ll_base"] - s["ll_model"]
         s["layer_t"], s["layer_p"] = paired_t(y, pm, np.full(len(y), base))
     return s
+
+
+def phase_split(gg):
+    """Backtest and live metrics side by side, plus the drift between them.
+
+    Returns None where one side is too thin to say anything. Thirty is the same floor the
+    rest of the page uses before it will show a number at all.
+    """
+    bt = gg[gg.phase == "backtest"].dropna(subset=["y"])
+    lv = gg[gg.phase == "live"].dropna(subset=["y"])
+    if len(bt) < 30 and len(lv) < 30:
+        return None
+    def one(g):
+        if len(g) < 30:
+            return None
+        y = g.y.values.astype(float); p = g.p_model.values.astype(float)
+        b = float(np.mean(y))
+        return {"n": len(y), "ll": ll(y, p), "base": ll(y, np.full(len(y), b)),
+                "hit": float(np.mean((p > .5) == (y == 1)))}
+    a, c = one(bt), one(lv)
+    out = {"backtest": a, "live": c}
+    if a and c:
+        # Drift on the skill score rather than raw log loss, because the live window can
+        # sit on an easier or harder slate than the holdout did and skill divides that out.
+        sa = 1 - a["ll"] / a["base"] if a["base"] > 0 else 0.0
+        sc = 1 - c["ll"] / c["base"] if c["base"] > 0 else 0.0
+        out["drift"] = sc - sa
+    return out
+
+
+def reliability_block(gg, edge=0.0):
+    """Does x% actually happen x% of the time.
+
+    The only property that decides whether a printed price is usable. Skill and log loss
+    blend calibration with ordering, so a board can rank games well and still overstate
+    its numbers, which loses money quietly while the scorecard reads fine.
+
+    Everything is oriented to the side the model backs, because that is the side you would
+    bet. `ratio` is real divided by stated: below 1.00 the model is overstating and the
+    price it prints is too short.
+    """
+    d = gg.dropna(subset=["y"])
+    if len(d) < 200:
+        return
+    y = d.y.values.astype(float); p = d.p_model.values.astype(float)
+    side = np.where(p >= .5, 1., 0.); q = np.where(p >= .5, p, 1 - p)
+    hit = (y == side).astype(float)
+    rows = []
+    for lo, hi in ((.5, .6), (.6, .7), (.7, .8), (.8, 1.01)):
+        m = (q >= lo) & (q < hi)
+        if m.sum() < 50:
+            continue
+        said, real, n = q[m].mean(), hit[m].mean(), int(m.sum())
+        se = math.sqrt(max(real * (1 - real), 1e-9) / n)
+        rows.append({"model says": f"{lo:.0%}-{hi:.0%}", "n": f"{n:,}",
+                     "stated": f"{said:.1%}", "actual": f"{real:.1%}",
+                     "+/- 95%": f"{1.96*se:.1%}", "ratio": round(real / said, 3)})
+    if not rows:
+        return
+    st.markdown("**Reliability.** Does x% happen x% of the time. Oriented to the side the "
+                "model backs. A ratio under 1.00 means the model overstates and the price "
+                "it prints is too short; over 1.00 means it understates, which is safe but "
+                "costs you bets you could have taken.")
+    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    worst = min(rows, key=lambda r: r["ratio"])
+    if worst["ratio"] < 1 - 0.03:
+        st.warning(f"At {worst['model says']} the model says {worst['stated']} and "
+                   f"{worst['actual']} happens, on {worst['n']} forecasts. Treat prices in "
+                   f"that band as unproven until the sample grows.")
+
+
+def props_error_block(gg):
+    """Projection error against the naive baseline, split backtest and live.
+
+    The measure this board was actually built on. `l10` is the player's own last-ten
+    average, which is the thing a projection has to beat to be worth anything, and the
+    same baseline its tripwire watches in the runner.
+    """
+    if not {"proj", "l10", "actual"}.issubset(gg.columns):
+        return
+    d = gg.dropna(subset=["proj", "l10", "actual"])
+    if len(d) < 30:
+        return
+    rows = []
+    for label in ("backtest", "live"):
+        g = d[d.phase == label]
+        if len(g) < 30:
+            continue
+        mae = float(np.mean(np.abs(g.actual - g.proj)))
+        base = float(np.mean(np.abs(g.actual - g.l10)))
+        rows.append({"period": label, "n": f"{len(g):,}",
+                     "projection MAE": round(mae, 3),
+                     "last-10 baseline MAE": round(base, 3),
+                     "edge": f"{base - mae:+.3f}"})
+    if not rows:
+        return
+    st.markdown("**Projection error**, the measure this board was frozen against. "
+                "Lower is better; the edge is how much of the naive baseline's error the "
+                "model removes.")
+    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    if len(rows) == 2:
+        drift = float(rows[1]["edge"]) - float(rows[0]["edge"])
+        if drift <= -0.10:
+            st.warning(f"Live edge is {drift:+.3f} against the backtest. That is the "
+                       f"recalibration signal on this board, not the skill score.")
 
 
 def verdict(board, s, head=None):
@@ -655,6 +830,20 @@ def board_rank(b):
 boards = sorted(SOURCES, key=board_rank, reverse=True)
 tabs = st.tabs(["Overview"] + boards + ["Retired"])
 
+def _phase_cols(gg):
+    """Overview columns splitting the frozen backtest from what has happened since."""
+    ps = phase_split(gg)
+    if not ps:
+        return {"backtest n": "", "backtest LL": "", "live n": "", "live LL": "",
+                "drift": ""}
+    bt, lv = ps.get("backtest"), ps.get("live")
+    return {"backtest n": bt["n"] if bt else "",
+            "backtest LL": round(bt["ll"], 4) if bt else "",
+            "live n": lv["n"] if lv else "",
+            "live LL": round(lv["ll"], 4) if lv else "",
+            "drift": f"{ps['drift']:+.1%}" if "drift" in ps else ""}
+
+
 with tabs[0]:
     rows, chart_rows = [], []
     # Walk the boards in tab order, and within a board put its strongest market first,
@@ -673,7 +862,8 @@ with tabs[0]:
                          "reading": s["rating"],
                          "extra calls per 100": f"{s['extra']*100:+.1f}",
                          "hit rate": f"{s['hit']:.1%}", "log loss": round(s["ll_model"], 4),
-                         "base-rate LL": round(s["ll_base"], 4)})
+                         "base-rate LL": round(s["ll_base"], 4),
+                         **_phase_cols(gg)})
             multi = f["head"].nunique() > 1
             chart_rows.append(dict(s, label=f"{b}: {h}" if multi else b, board=b, head=h))
     st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
@@ -695,8 +885,36 @@ for i, b in enumerate(boards, start=1):
                 st.info("Awaiting graded forecasts.")
                 continue
             metrics_block(b, gg, h)
+            ps = phase_split(gg)
+            if ps:
+                bt, lv = ps.get("backtest"), ps.get("live")
+                bits = []
+                if bt:
+                    bits.append(f"frozen backtest **{bt['ll']:.4f}** on {bt['n']:,}")
+                if lv:
+                    bits.append(f"live **{lv['ll']:.4f}** on {lv['n']:,}")
+                line = "Log loss: " + ", ".join(bits) + "."
+                if "drift" in ps:
+                    dr = ps["drift"]
+                    if dr <= -0.03:
+                        line += (f" Skill is **{dr:+.1%}** against the backtest, which is a "
+                                 f"real drop and the case for a recalibration review.")
+                    elif dr >= 0.03:
+                        line += (f" Skill is **{dr:+.1%}** against the backtest, running "
+                                 f"ahead of the frozen result.")
+                    else:
+                        line += (f" Skill is **{dr:+.1%}** against the backtest, holding.")
+                elif not lv:
+                    line += " No live forecasts graded yet."
+                elif not bt:
+                    line += " No backtest was seeded for this board."
+                st.caption(line)
             with st.expander("How to read these numbers"):
                 st.markdown(HOW_TO_READ)
+            reliability_block(gg)
+            if h in HEAD_NOTES:
+                st.info(HEAD_NOTES[h])
+                props_error_block(gg)
             if b in BOARD_NOTES:
                 st.info(BOARD_NOTES[b])
             c1, c2 = st.columns(2)

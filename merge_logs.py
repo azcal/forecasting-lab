@@ -43,6 +43,9 @@ KEYS = {
     "mma":    ["fight_id"],
     "mlb":    ["gamePk"],
     "props":  ["date", "athlete_id"],
+    # Brasileirao, LigaMX and MLS share one log; `id` already encodes league,
+    # date and both clubs, so it is unique across all three.
+    "soccer_americas": ["id"],
 }
 
 # Column to sort the merged file on, so appended rows do not land at the bottom out of
