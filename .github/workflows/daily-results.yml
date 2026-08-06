@@ -1,0 +1,39 @@
+name: daily-results
+# Per-sport recap of whatever settled, rendered on the run's summary page rather than
+# buried in a log. Read-only: it reads data/*.csv and commits nothing.
+#
+# Scheduled 30 minutes after refresh-dashboard-data so it reads the fresh CSVs rather than
+# yesterday's. If you move that job, move this one with it.
+#
+# One day only, always the day before. A game that finished last night is graded when the
+# pipelines run overnight and pulled in by the refresh this morning, so yesterday is the
+# most recent day that is actually complete. The date input exists for backfilling a day
+# you missed, not for widening the window.
+on:
+  schedule:
+    - cron: "30 13 * * *"      # 7:30am MDT / 6:30am MST, after the 13:00 refresh
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "End date, YYYY-MM-DD. Blank means yesterday."
+        type: string
+        default: ""
+permissions:
+  contents: read
+jobs:
+  results:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install pandas numpy
+
+      - name: build the recap
+        run: |
+          set -e
+          if [ -n "${{ inputs.date }}" ]; then
+            python daily_results.py --date "${{ inputs.date }}"
+          else
+            python daily_results.py
+          fi
