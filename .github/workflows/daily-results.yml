@@ -1,6 +1,10 @@
 name: daily-results
-# Per-sport recap of whatever settled, rendered on the run's summary page rather than
-# buried in a log. Read-only: it reads data/*.csv and commits nothing.
+# Per-sport recap of whatever settled, posted to Discord and rendered on the run's summary
+# page. Read-only: it reads data/*.csv and commits nothing.
+#
+# Tables are re-laid as fixed-width text inside code blocks for Discord, which renders
+# neither markdown tables nor their alignment row. The step summary keeps the markdown,
+# which GitHub does render.
 #
 # Scheduled after the SECOND refresh of the day, not the first. The 13:00 refresh runs
 # before the morning pipelines, so at that hour the logs have not seen last night's late
@@ -17,9 +21,13 @@ on:
   workflow_dispatch:
     inputs:
       date:
-        description: "End date, YYYY-MM-DD. Blank means yesterday."
+        description: "Day to report, YYYY-MM-DD. Blank means yesterday."
         type: string
         default: ""
+      dry_run:
+        description: "Print only, do not post to Discord"
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -31,11 +39,15 @@ jobs:
         with: { python-version: "3.11" }
       - run: pip install pandas numpy
 
-      - name: build the recap
+      - name: build the recap and post it
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
           set -e
+          POST="--discord"
+          [ "${{ inputs.dry_run }}" = "true" ] && POST=""
           if [ -n "${{ inputs.date }}" ]; then
-            python daily_results.py --date "${{ inputs.date }}"
+            python daily_results.py --date "${{ inputs.date }}" $POST
           else
-            python daily_results.py
+            python daily_results.py $POST
           fi
