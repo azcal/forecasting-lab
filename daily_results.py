@@ -189,7 +189,38 @@ def main(day):
 
     out = [f"## MBM results, {day:%A %d %B %Y}", ""]
     if not summary and not detail:
-        out += ["Nothing settled."]
+        # "Nothing settled" is ambiguous and was wrong the first time it printed: the
+        # boards had played, the logs just had not been graded yet when the refresh pulled.
+        # So say how current each file actually is, which distinguishes a genuinely quiet
+        # day from a refresh that ran too early.
+        out += ["Nothing settled. Most recent graded row in each file:", "",
+                "| board | last graded | rows |", "|---|---|---:|"]
+        stale = False
+        for stem, label, dcol, _k, _a in BOARDS:
+            path = os.path.join(DATA, f"{stem}.csv")
+            if not os.path.exists(path):
+                out.append(f"| {label} | file missing | |")
+                continue
+            try:
+                d = pd.read_csv(path)
+            except Exception:
+                out.append(f"| {label} | unreadable | |")
+                continue
+            oc = next((c for c in ("result", "y", "actual") if c in d.columns), None)
+            g = d[d[oc].notna()] if oc else d.iloc[0:0]
+            if not len(g):
+                out.append(f"| {label} | never | 0 |")
+                continue
+            last = parse_dates(g[dcol]).max()
+            out.append(f"| {label} | {last:%Y-%m-%d} | {len(g):,} |")
+            if last.date() < day:
+                stale = True
+        out.append("")
+        if stale:
+            out.append("**Every board is graded only up to before the day requested.** "
+                       "That is a refresh that ran ahead of the pipelines rather than a "
+                       "quiet night. Check that refresh-dashboard-data ran after the "
+                       "morning pipeline runs, and re-run this once it has.")
         txt = "\n".join(out) + "\n"
         print(txt)
         _emit(txt)
