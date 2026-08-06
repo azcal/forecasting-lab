@@ -37,7 +37,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - run: pip install pandas numpy
+      # requests is for the Discord post. Listed explicitly rather than relying on
+      # requirements.txt, which carries streamlit and plotly this job has no use for.
+      - run: pip install pandas numpy requests
 
       - name: build the recap and post it
         env:
