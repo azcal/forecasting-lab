@@ -6,13 +6,13 @@ LigaMX|2025-01-12|Guadalajara Chivas|Santos Laguna,2025-01-12,LigaMX,Guadalajara
 LigaMX|2025-01-12|UNAM Pumas|Necaxa,2025-01-12,LigaMX,UNAM Pumas,Necaxa,0.741810816028935,0.7313983005222966,1,v1-backfill,1.0
 LigaMX|2025-01-18|Puebla|Atl. San Luis,2025-01-18,LigaMX,Puebla,Atl. San Luis,0.4171034964700732,0.4780264027812277,1,v1-backfill,0.0
 LigaMX|2025-01-18|Tigres UANL|Mazatlan FC,2025-01-18,LigaMX,Tigres UANL,Mazatlan FC,0.81866953126697,0.8014069558226913,1,v1-backfill,1.0
-LigaMX|2025-01-18|Juarez|Cruz Azul,2025-01-18,LigaMX,Juarez,Cruz Azul,0.3093456364663031,0.42656325109238225,1,v1-backfill,1.0
+LigaMX|2025-01-18|Juarez|Cruz Azul,2025-01-18,LigaMX,Juarez,Cruz Azul,0.3093456364663031,0.4265632510923822,1,v1-backfill,1.0
 LigaMX|2025-01-18|Necaxa|Guadalajara Chivas,2025-01-18,LigaMX,Necaxa,Guadalajara Chivas,0.4561288488290347,0.5095310499791574,1,v1-backfill,1.0
 LigaMX|2025-01-19|Atlas|Club Leon,2025-01-19,LigaMX,Atlas,Club Leon,0.5809099021347769,0.6098853639864463,1,v1-backfill,0.0
 LigaMX|2025-01-19|Queretaro|UNAM Pumas,2025-01-19,LigaMX,Queretaro,UNAM Pumas,0.3984620328470229,0.4785294260816086,1,v1-backfill,1.0
 LigaMX|2025-01-21|Pachuca|Santos Laguna,2025-01-21,LigaMX,Pachuca,Santos Laguna,0.7135025882861404,0.7129511629262458,1,v1-backfill,1.0
 LigaMX|2025-01-25|Club Tijuana|Queretaro,2025-01-25,LigaMX,Club Tijuana,Queretaro,0.7078384364255251,0.7014955772667366,1,v1-backfill,1.0
-LigaMX|2025-01-25|Mazatlan FC|Toluca,2025-01-25,LigaMX,Mazatlan FC,Toluca,0.3253043443921067,0.43502447274485945,1,v1-backfill,1.0
+LigaMX|2025-01-25|Mazatlan FC|Toluca,2025-01-25,LigaMX,Mazatlan FC,Toluca,0.3253043443921067,0.4350244727448594,1,v1-backfill,1.0
 LigaMX|2025-01-25|Atl. San Luis|Necaxa,2025-01-25,LigaMX,Atl. San Luis,Necaxa,0.7170783326709208,0.7188230664933281,1,v1-backfill,0.0
 LigaMX|2025-01-25|Club Leon|Juarez,2025-01-25,LigaMX,Club Leon,Juarez,0.7269392610803386,0.6997368898212267,1,v1-backfill,1.0
 LigaMX|2025-01-26|Santos Laguna|Club America,2025-01-26,LigaMX,Santos Laguna,Club America,0.2696301280803574,0.3301487654869656,1,v1-backfill,0.0
@@ -20,7 +20,7 @@ LigaMX|2025-01-26|Monterrey|Pachuca,2025-01-26,LigaMX,Monterrey,Pachuca,0.761576
 LigaMX|2025-01-29|Club America|Atl. San Luis,2025-01-29,LigaMX,Club America,Atl. San Luis,0.7713470741653828,0.7629091587387737,1,v1-backfill,1.0
 LigaMX|2025-01-29|Club Leon|Guadalajara Chivas,2025-01-29,LigaMX,Club Leon,Guadalajara Chivas,0.5821572133045914,0.6115275242574609,1,v1-backfill,1.0
 LigaMX|2025-01-29|Tigres UANL|Club Tijuana,2025-01-29,LigaMX,Tigres UANL,Club Tijuana,0.7315685284709239,0.7341882083047192,1,v1-backfill,1.0
-LigaMX|2025-01-29|Necaxa|Cruz Azul,2025-01-29,LigaMX,Necaxa,Cruz Azul,0.41883060535356,0.48445042012023765,1,v1-backfill,0.0
+LigaMX|2025-01-29|Necaxa|Cruz Azul,2025-01-29,LigaMX,Necaxa,Cruz Azul,0.41883060535356,0.4844504201202376,1,v1-backfill,0.0
 LigaMX|2025-01-29|Puebla|Mazatlan FC,2025-01-29,LigaMX,Puebla,Mazatlan FC,0.5526451731916908,0.5851355241419787,1,v1-backfill,0.0
 LigaMX|2025-01-30|Juarez|Santos Laguna,2025-01-30,LigaMX,Juarez,Santos Laguna,0.6677153073757558,0.6767415883249314,1,v1-backfill,1.0
 LigaMX|2025-01-30|Queretaro|Pachuca,2025-01-30,LigaMX,Queretaro,Pachuca,0.4897827460224768,0.5400553776025656,1,v1-backfill,0.0
@@ -34,7 +34,7 @@ LigaMX|2025-02-03|Atl. San Luis|UNAM Pumas,2025-02-03,LigaMX,Atl. San Luis,UNAM 
 LigaMX|2025-02-06|Pachuca|Club Leon,2025-02-06,LigaMX,Pachuca,Club Leon,0.5806469750532336,0.6002796202763245,1,v1-backfill,0.0
 LigaMX|2025-02-08|Necaxa|Santos Laguna,2025-02-08,LigaMX,Necaxa,Santos Laguna,0.7394918800096146,0.7081627191856338,1,v1-backfill,1.0
 LigaMX|2025-02-08|Queretaro|Atl. San Luis,2025-02-08,LigaMX,Queretaro,Atl. San Luis,0.4778059717767617,0.5294155053409763,1,v1-backfill,1.0
-LigaMX|2025-02-08|Puebla|Club America,2025-02-08,LigaMX,Puebla,Club America,0.2404071994160284,0.31741213086005016,1,v1-backfill,0.0
+LigaMX|2025-02-08|Puebla|Club America,2025-02-08,LigaMX,Puebla,Club America,0.2404071994160284,0.3174121308600501,1,v1-backfill,0.0
 LigaMX|2025-02-09|Cruz Azul|Pachuca,2025-02-09,LigaMX,Cruz Azul,Pachuca,0.7602418734446883,0.7343023189556748,1,v1-backfill,1.0
 LigaMX|2025-02-09|Tigres UANL|Atlas,2025-02-09,LigaMX,Tigres UANL,Atlas,0.7931749792690509,0.7598024995586183,1,v1-backfill,1.0
 LigaMX|2025-02-09|Juarez|Monterrey,2025-02-09,LigaMX,Juarez,Monterrey,0.3451979627784671,0.4449813509543436,1,v1-backfill,1.0
@@ -52,7 +52,7 @@ LigaMX|2025-02-19|Atlas|Necaxa,2025-02-19,LigaMX,Atlas,Necaxa,0.5915126352503424
 LigaMX|2025-02-20|Santos Laguna|Cruz Azul,2025-02-20,LigaMX,Santos Laguna,Cruz Azul,0.2598711365791997,0.3566716905570256,1,v1-backfill,0.0
 LigaMX|2025-02-22|Puebla|Club Tijuana,2025-02-22,LigaMX,Puebla,Club Tijuana,0.4972422269853866,0.5229850683890317,1,v1-backfill,1.0
 LigaMX|2025-02-22|Necaxa|Mazatlan FC,2025-02-22,LigaMX,Necaxa,Mazatlan FC,0.7025095781592046,0.6872609793558642,1,v1-backfill,1.0
-LigaMX|2025-02-22|Juarez|Toluca,2025-02-22,LigaMX,Juarez,Toluca,0.3522060773042469,0.47426391162398684,1,v1-backfill,0.0
+LigaMX|2025-02-22|Juarez|Toluca,2025-02-22,LigaMX,Juarez,Toluca,0.3522060773042469,0.4742639116239868,1,v1-backfill,0.0
 MLS|2025-02-22|Los Angeles FC|Minnesota United,2025-02-22,MLS,Los Angeles FC,Minnesota United,0.7148537238619452,0.6995311695960408,0,v1-retired-backfill,1.0
 LigaMX|2025-02-23|Guadalajara Chivas|Pachuca,2025-02-23,LigaMX,Guadalajara Chivas,Pachuca,0.6546987123556398,0.6444032628253052,1,v1-backfill,1.0
 LigaMX|2025-02-23|Santos Laguna|Atlas,2025-02-23,LigaMX,Santos Laguna,Atlas,0.4775383808019623,0.5040884328256278,1,v1-backfill,1.0
@@ -71,7 +71,7 @@ LigaMX|2025-02-24|Cruz Azul|Queretaro,2025-02-24,LigaMX,Cruz Azul,Queretaro,0.84
 MLS|2025-02-24|Los Angeles Galaxy|San Diego FC,2025-02-24,MLS,Los Angeles Galaxy,San Diego FC,0.8010995785576867,0.798849806580324,0,v1-retired-backfill,0.0
 LigaMX|2025-02-26|Tigres UANL|Juarez,2025-02-26,LigaMX,Tigres UANL,Juarez,0.8188792055349317,0.7840648526199201,1,v1-backfill,0.0
 LigaMX|2025-02-26|Club Tijuana|UNAM Pumas,2025-02-26,LigaMX,Club Tijuana,UNAM Pumas,0.5170322584637719,0.548913350492158,1,v1-backfill,1.0
-LigaMX|2025-02-26|Mazatlan FC|Monterrey,2025-02-26,LigaMX,Mazatlan FC,Monterrey,0.3655286049737739,0.41933391136551007,1,v1-backfill,1.0
+LigaMX|2025-02-26|Mazatlan FC|Monterrey,2025-02-26,LigaMX,Mazatlan FC,Monterrey,0.3655286049737739,0.41933391136551,1,v1-backfill,1.0
 LigaMX|2025-02-27|Toluca|Queretaro,2025-02-27,LigaMX,Toluca,Queretaro,0.8521907430555448,0.8004113969976491,1,v1-backfill,1.0
 LigaMX|2025-02-27|Pachuca|Puebla,2025-02-27,LigaMX,Pachuca,Puebla,0.7339692687427741,0.7301202494262518,1,v1-backfill,1.0
 LigaMX|2025-02-27|Atl. San Luis|Guadalajara Chivas,2025-02-27,LigaMX,Atl. San Luis,Guadalajara Chivas,0.5274342564037183,0.5763631617211359,1,v1-backfill,1.0
@@ -87,7 +87,7 @@ MLS|2025-03-02|Portland Timbers|Austin FC,2025-03-02,MLS,Portland Timbers,Austin
 MLS|2025-03-02|Los Angeles FC|New York City,2025-03-02,MLS,Los Angeles FC,New York City,0.7216721011709776,0.6976487200674187,0,v1-retired-backfill,1.0
 MLS|2025-03-02|Sporting Kansas City|San Jose Earthquakes,2025-03-02,MLS,Sporting Kansas City,San Jose Earthquakes,0.692354769462087,0.6544901020899183,0,v1-retired-backfill,0.0
 MLS|2025-03-02|New York Red Bulls|Nashville SC,2025-03-02,MLS,New York Red Bulls,Nashville SC,0.7294453691803251,0.6849114877555198,0,v1-retired-backfill,1.0
-MLS|2025-03-02|New England Revolution|Columbus Crew,2025-03-02,MLS,New England Revolution,Columbus Crew,0.4132664720398818,0.47710387162449197,0,v1-retired-backfill,0.0
+MLS|2025-03-02|New England Revolution|Columbus Crew,2025-03-02,MLS,New England Revolution,Columbus Crew,0.4132664720398818,0.4771038716244919,0,v1-retired-backfill,0.0
 MLS|2025-03-02|Minnesota United|CF Montreal,2025-03-02,MLS,Minnesota United,CF Montreal,0.6989734198073375,0.6462617711207916,0,v1-retired-backfill,1.0
 MLS|2025-03-02|Orlando City|Toronto FC,2025-03-02,MLS,Orlando City,Toronto FC,0.7926369592952736,0.7350000679929252,0,v1-retired-backfill,1.0
 MLS|2025-03-02|Philadelphia Union|FC Cincinnati,2025-03-02,MLS,Philadelphia Union,FC Cincinnati,0.6448546651204751,0.5727960382846526,0,v1-retired-backfill,1.0
@@ -115,13 +115,13 @@ MLS|2025-03-09|Nashville SC|Portland Timbers,2025-03-09,MLS,Nashville SC,Portlan
 LigaMX|2025-03-10|Club Tijuana|Atlas,2025-03-10,LigaMX,Club Tijuana,Atlas,0.6399078018783244,0.630931889051281,1,v1-backfill,0.0
 LigaMX|2025-03-15|Necaxa|Club Leon,2025-03-15,LigaMX,Necaxa,Club Leon,0.5197021311434759,0.5248977591592218,1,v1-backfill,1.0
 LigaMX|2025-03-15|Queretaro|Mazatlan FC,2025-03-15,LigaMX,Queretaro,Mazatlan FC,0.5659256466107493,0.6059399284669954,1,v1-backfill,1.0
-LigaMX|2025-03-15|Puebla|Toluca,2025-03-15,LigaMX,Puebla,Toluca,0.2582335626690247,0.35919522685196137,1,v1-backfill,0.0
+LigaMX|2025-03-15|Puebla|Toluca,2025-03-15,LigaMX,Puebla,Toluca,0.2582335626690247,0.3591952268519613,1,v1-backfill,0.0
 LigaMX|2025-03-15|Tigres UANL|Santos Laguna,2025-03-15,LigaMX,Tigres UANL,Santos Laguna,0.8551947530455214,0.8359071609145452,1,v1-backfill,1.0
 MLS|2025-03-15|Charlotte|FC Cincinnati,2025-03-15,MLS,Charlotte,FC Cincinnati,0.6533091070707346,0.5892908351764754,0,v1-retired-backfill,1.0
 MLS|2025-03-15|Toronto FC|Chicago Fire,2025-03-15,MLS,Toronto FC,Chicago Fire,0.6166184793243288,0.5979678694130994,0,v1-retired-backfill,0.0
 MLS|2025-03-15|Los Angeles FC|Austin FC,2025-03-15,MLS,Los Angeles FC,Austin FC,0.7775471444431041,0.743378473142124,0,v1-retired-backfill,0.0
 MLS|2025-03-15|New York City|New England Revolution,2025-03-15,MLS,New York City,New England Revolution,0.7892347759233062,0.7128271124608733,0,v1-retired-backfill,1.0
-LigaMX|2025-03-16|Atlas|Club America,2025-03-16,LigaMX,Atlas,Club America,0.3042787398329928,0.40462494912272895,1,v1-backfill,0.0
+LigaMX|2025-03-16|Atlas|Club America,2025-03-16,LigaMX,Atlas,Club America,0.3042787398329928,0.4046249491227289,1,v1-backfill,0.0
 LigaMX|2025-03-16|Cruz Azul|Atl. San Luis,2025-03-16,LigaMX,Cruz Azul,Atl. San Luis,0.7730362604525106,0.7479012112929795,1,v1-backfill,1.0
 MLS|2025-03-16|FC Dallas|Vancouver Whitecaps,2025-03-16,MLS,FC Dallas,Vancouver Whitecaps,0.5918311708744263,0.5887115346776131,0,v1-retired-backfill,0.0
 MLS|2025-03-16|Atlanta Utd|Inter Miami,2025-03-16,MLS,Atlanta Utd,Inter Miami,0.5532921533511738,0.5394083533706634,0,v1-retired-backfill,0.0
@@ -137,7 +137,7 @@ MLS|2025-03-22|Philadelphia Union|St. Louis City,2025-03-22,MLS,Philadelphia Uni
 MLS|2025-03-22|Charlotte|San Jose Earthquakes,2025-03-22,MLS,Charlotte,San Jose Earthquakes,0.8080925914682663,0.7447013879080862,0,v1-retired-backfill,1.0
 MLS|2025-03-23|Austin FC|San Diego FC,2025-03-23,MLS,Austin FC,San Diego FC,0.6226250136986257,0.6902656642577348,0,v1-retired-backfill,1.0
 MLS|2025-03-23|Vancouver Whitecaps|Chicago Fire,2025-03-23,MLS,Vancouver Whitecaps,Chicago Fire,0.8043200785998681,0.7116095704817021,0,v1-retired-backfill,0.0
-MLS|2025-03-23|Sporting Kansas City|Los Angeles FC,2025-03-23,MLS,Sporting Kansas City,Los Angeles FC,0.4976783650188177,0.46104361698230817,0,v1-retired-backfill,0.0
+MLS|2025-03-23|Sporting Kansas City|Los Angeles FC,2025-03-23,MLS,Sporting Kansas City,Los Angeles FC,0.4976783650188177,0.4610436169823081,0,v1-retired-backfill,0.0
 MLS|2025-03-23|Nashville SC|CF Montreal,2025-03-23,MLS,Nashville SC,CF Montreal,0.6940055124163357,0.6318142235172578,0,v1-retired-backfill,1.0
 MLS|2025-03-23|Real Salt Lake|FC Dallas,2025-03-23,MLS,Real Salt Lake,FC Dallas,0.7177592314316793,0.6878102715654423,0,v1-retired-backfill,0.0
 MLS|2025-03-23|Colorado Rapids|Portland Timbers,2025-03-23,MLS,Colorado Rapids,Portland Timbers,0.6552704060832956,0.6331170636752238,0,v1-retired-backfill,0.0
@@ -159,7 +159,7 @@ LigaMX|2025-03-30|Club America|Tigres UANL,2025-03-30,LigaMX,Club America,Tigres
 LigaMX|2025-03-30|Guadalajara Chivas|Cruz Azul,2025-03-30,LigaMX,Guadalajara Chivas,Cruz Azul,0.492542289330042,0.5320909423141902,1,v1-backfill,0.0
 LigaMX|2025-03-30|Monterrey|Club Tijuana,2025-03-30,LigaMX,Monterrey,Club Tijuana,0.8006044265244412,0.7754040031553278,1,v1-backfill,0.0
 MLS|2025-03-30|St. Louis City|Austin FC,2025-03-30,MLS,St. Louis City,Austin FC,0.6713889148732026,0.6209265994202207,0,v1-retired-backfill,0.0
-MLS|2025-03-30|San Diego FC|Los Angeles FC,2025-03-30,MLS,San Diego FC,Los Angeles FC,0.5194386450888026,0.43910983803501513,0,v1-retired-backfill,1.0
+MLS|2025-03-30|San Diego FC|Los Angeles FC,2025-03-30,MLS,San Diego FC,Los Angeles FC,0.5194386450888026,0.4391098380350151,0,v1-retired-backfill,1.0
 MLS|2025-03-30|Nashville SC|FC Cincinnati,2025-03-30,MLS,Nashville SC,FC Cincinnati,0.6157983286599624,0.5650207956023514,0,v1-retired-backfill,0.0
 MLS|2025-03-30|Minnesota United|Real Salt Lake,2025-03-30,MLS,Minnesota United,Real Salt Lake,0.6695413753063756,0.6205580583362391,0,v1-retired-backfill,1.0
 MLS|2025-03-30|Los Angeles Galaxy|Orlando City,2025-03-30,MLS,Los Angeles Galaxy,Orlando City,0.6704091078633835,0.6247773563422633,0,v1-retired-backfill,0.0
@@ -173,7 +173,7 @@ LigaMX|2025-04-05|Club Tijuana|Necaxa,2025-04-05,LigaMX,Club Tijuana,Necaxa,0.55
 MLS|2025-04-05|Real Salt Lake|Los Angeles Galaxy,2025-04-05,MLS,Real Salt Lake,Los Angeles Galaxy,0.6264875637665966,0.6164707576850575,0,v1-retired-backfill,1.0
 MLS|2025-04-05|Charlotte|Nashville SC,2025-04-05,MLS,Charlotte,Nashville SC,0.7585083785365635,0.6783093448572974,0,v1-retired-backfill,1.0
 Brasileirao|2025-04-06|Botafogo RJ|Juventude,2025-04-06,Brasileirao,Botafogo RJ,Juventude,0.7841471218575425,0.7648806990299464,1,v1-backfill,1.0
-Brasileirao|2025-04-06|Vitoria|Flamengo RJ,2025-04-06,Brasileirao,Vitoria,Flamengo RJ,0.5293130546501782,0.49419925451206964,1,v1-backfill,0.0
+Brasileirao|2025-04-06|Vitoria|Flamengo RJ,2025-04-06,Brasileirao,Vitoria,Flamengo RJ,0.5293130546501782,0.4941992545120696,1,v1-backfill,0.0
 Brasileirao|2025-04-06|Sport Recife|Palmeiras,2025-04-06,Brasileirao,Sport Recife,Palmeiras,0.4044796413796468,0.4085146402514565,1,v1-backfill,0.0
 Brasileirao|2025-04-06|Fluminense|Bragantino,2025-04-06,Brasileirao,Fluminense,Bragantino,0.6429612368060769,0.6425698567327571,1,v1-backfill,1.0
 Brasileirao|2025-04-06|Internacional|Cruzeiro,2025-04-06,Brasileirao,Internacional,Cruzeiro,0.7232891641397362,0.7060016391171584,1,v1-backfill,1.0
@@ -225,7 +225,7 @@ Brasileirao|2025-04-17|Santos|Atletico-MG,2025-04-17,Brasileirao,Santos,Atletico
 Brasileirao|2025-04-17|Flamengo RJ|Juventude,2025-04-17,Brasileirao,Flamengo RJ,Juventude,0.7861866283452416,0.7584377025754812,1,v1-backfill,1.0
 Brasileirao|2025-04-17|Vitoria|Fortaleza,2025-04-17,Brasileirao,Vitoria,Fortaleza,0.5422662230011016,0.5053784301539977,1,v1-backfill,1.0
 LigaMX|2025-04-17|Monterrey|Club America,2025-04-17,LigaMX,Monterrey,Club America,0.4923797680888218,0.5334314929176679,1,v1-backfill,1.0
-LigaMX|2025-04-17|Atl. San Luis|Toluca,2025-04-17,LigaMX,Atl. San Luis,Toluca,0.35067274929401,0.46643741817577483,1,v1-backfill,0.0
+LigaMX|2025-04-17|Atl. San Luis|Toluca,2025-04-17,LigaMX,Atl. San Luis,Toluca,0.35067274929401,0.4664374181757748,1,v1-backfill,0.0
 LigaMX|2025-04-17|Mazatlan FC|Club Tijuana,2025-04-17,LigaMX,Mazatlan FC,Club Tijuana,0.5861362492053132,0.5900208153626244,1,v1-backfill,0.0
 LigaMX|2025-04-17|UNAM Pumas|Santos Laguna,2025-04-17,LigaMX,UNAM Pumas,Santos Laguna,0.8057526872937909,0.784250993484366,1,v1-backfill,1.0
 LigaMX|2025-04-17|Queretaro|Atlas,2025-04-17,LigaMX,Queretaro,Atlas,0.5766917562714494,0.6036682750187432,1,v1-backfill,0.0
@@ -251,7 +251,7 @@ Brasileirao|2025-04-21|Bragantino|Cruzeiro,2025-04-21,Brasileirao,Bragantino,Cru
 LigaMX|2025-04-21|Juarez|Queretaro,2025-04-21,LigaMX,Juarez,Queretaro,0.6591424119203938,0.6794043217603913,1,v1-backfill,0.0
 LigaMX|2025-04-21|Club Leon|Monterrey,2025-04-21,LigaMX,Club Leon,Monterrey,0.5051557176662026,0.5606411412262884,1,v1-backfill,0.0
 LigaMX|2025-04-21|Atl. San Luis|Pachuca,2025-04-21,LigaMX,Atl. San Luis,Pachuca,0.5384536447313105,0.5804408689742564,1,v1-backfill,1.0
-LigaMX|2025-04-21|Santos Laguna|Club Tijuana,2025-04-21,LigaMX,Santos Laguna,Club Tijuana,0.4478738956538201,0.48091119200942944,1,v1-backfill,0.0
+LigaMX|2025-04-21|Santos Laguna|Club Tijuana,2025-04-21,LigaMX,Santos Laguna,Club Tijuana,0.4478738956538201,0.4809111920094294,1,v1-backfill,0.0
 Brasileirao|2025-04-22|Bahia|Ceara,2025-04-22,Brasileirao,Bahia,Ceara,0.6883866633317003,0.6820671306622464,1,v1-backfill,1.0
 Brasileirao|2025-04-26|Internacional|Juventude,2025-04-26,Brasileirao,Internacional,Juventude,0.8089879493836143,0.7357519188803007,1,v1-backfill,1.0
 MLS|2025-04-26|Philadelphia Union|DC United,2025-04-26,MLS,Philadelphia Union,DC United,0.8261666968374775,0.6882258400809337,0,v1-retired-backfill,1.0
@@ -270,7 +270,7 @@ MLS|2025-04-27|Orlando City|Atlanta Utd,2025-04-27,MLS,Orlando City,Atlanta Utd,
 MLS|2025-04-27|Inter Miami|FC Dallas,2025-04-27,MLS,Inter Miami,FC Dallas,0.7951566380940149,0.7392404070672729,0,v1-retired-backfill,0.0
 MLS|2025-04-27|Nashville SC|Chicago Fire,2025-04-27,MLS,Nashville SC,Chicago Fire,0.7039709476604312,0.6489369806952743,0,v1-retired-backfill,1.0
 MLS|2025-04-27|Minnesota United|Vancouver Whitecaps,2025-04-27,MLS,Minnesota United,Vancouver Whitecaps,0.6324842874512799,0.6241977689343235,0,v1-retired-backfill,0.0
-Brasileirao|2025-04-28|Santos|Bragantino,2025-04-28,Brasileirao,Santos,Bragantino,0.4940965358044356,0.49539989924259215,1,v1-backfill,0.0
+Brasileirao|2025-04-28|Santos|Bragantino,2025-04-28,Brasileirao,Santos,Bragantino,0.4940965358044356,0.4953998992425921,1,v1-backfill,0.0
 LigaMX|2025-04-28|Monterrey|Pachuca,2025-04-28,LigaMX,Monterrey,Pachuca,0.7288493677885844,0.7221607217985587,1,v1-backfill,0.0
 MLS|2025-04-28|Los Angeles Galaxy|Portland Timbers,2025-04-28,MLS,Los Angeles Galaxy,Portland Timbers,0.6723139559083376,0.6107448941512413,0,v1-retired-backfill,0.0
 Brasileirao|2025-05-03|Ceara|Vitoria,2025-05-03,Brasileirao,Ceara,Vitoria,0.5728388294977194,0.5614927562791022,1,v1-backfill,1.0
@@ -323,7 +323,7 @@ LigaMX|2025-05-12|Cruz Azul|Club Leon,2025-05-12,LigaMX,Cruz Azul,Club Leon,0.76
 MLS|2025-05-15|Houston Dynamo|Minnesota United,2025-05-15,MLS,Houston Dynamo,Minnesota United,0.6047950123964134,0.5741390042919411,0,v1-retired-backfill,1.0
 MLS|2025-05-15|Orlando City|Charlotte,2025-05-15,MLS,Orlando City,Charlotte,0.7109840441107598,0.6648396554173996,0,v1-retired-backfill,1.0
 MLS|2025-05-15|Philadelphia Union|Los Angeles Galaxy,2025-05-15,MLS,Philadelphia Union,Los Angeles Galaxy,0.7830834044420151,0.6780932700279755,0,v1-retired-backfill,1.0
-MLS|2025-05-15|Toronto FC|FC Cincinnati,2025-05-15,MLS,Toronto FC,FC Cincinnati,0.4555608831742339,0.43195217755644866,0,v1-retired-backfill,0.0
+MLS|2025-05-15|Toronto FC|FC Cincinnati,2025-05-15,MLS,Toronto FC,FC Cincinnati,0.4555608831742339,0.4319521775564486,0,v1-retired-backfill,0.0
 MLS|2025-05-15|Nashville SC|New York Red Bulls,2025-05-15,MLS,Nashville SC,New York Red Bulls,0.6195659260794093,0.5900290855471021,0,v1-retired-backfill,1.0
 MLS|2025-05-15|Los Angeles FC|Seattle Sounders,2025-05-15,MLS,Los Angeles FC,Seattle Sounders,0.6480777713869497,0.6312784162435546,0,v1-retired-backfill,1.0
 MLS|2025-05-15|San Diego FC|Colorado Rapids,2025-05-15,MLS,San Diego FC,Colorado Rapids,0.7626717637964464,0.5852016906506389,0,v1-retired-backfill,1.0
@@ -360,7 +360,7 @@ MLS|2025-05-25|Charlotte|Columbus Crew,2025-05-25,MLS,Charlotte,Columbus Crew,0.
 MLS|2025-05-25|DC United|New York Red Bulls,2025-05-25,MLS,DC United,New York Red Bulls,0.5237874117203404,0.5633171373848911,0,v1-retired-backfill,0.0
 Brasileirao|2025-05-26|Fortaleza|Cruzeiro,2025-05-26,Brasileirao,Fortaleza,Cruzeiro,0.6865601486589888,0.6554328264890577,1,v1-backfill,0.0
 LigaMX|2025-05-26|Toluca|Club America,2025-05-26,LigaMX,Toluca,Club America,0.589683655894565,0.607476235183154,1,v1-backfill,1.0
-MLS|2025-05-26|Atlanta Utd|FC Cincinnati,2025-05-26,MLS,Atlanta Utd,FC Cincinnati,0.536534543561278,0.47648594988534626,0,v1-retired-backfill,1.0
+MLS|2025-05-26|Atlanta Utd|FC Cincinnati,2025-05-26,MLS,Atlanta Utd,FC Cincinnati,0.536534543561278,0.4764859498853462,0,v1-retired-backfill,1.0
 Brasileirao|2025-05-27|Bragantino|Juventude,2025-05-27,Brasileirao,Bragantino,Juventude,0.7900233195934693,0.7096113159117934,1,v1-backfill,1.0
 MLS|2025-05-29|New York City|Houston Dynamo,2025-05-29,MLS,New York City,Houston Dynamo,0.6801630276277594,0.6373762724400163,0,v1-retired-backfill,0.0
 MLS|2025-05-29|New York Red Bulls|Charlotte,2025-05-29,MLS,New York Red Bulls,Charlotte,0.6847817644481307,0.637887520543789,0,v1-retired-backfill,1.0
@@ -417,11 +417,11 @@ MLS|2025-06-26|Columbus Crew|Atlanta Utd,2025-06-26,MLS,Columbus Crew,Atlanta Ut
 MLS|2025-06-26|FC Dallas|San Jose Earthquakes,2025-06-26,MLS,FC Dallas,San Jose Earthquakes,0.7179205791653148,0.6906895790023886,0,v1-retired-backfill,0.0
 MLS|2025-06-26|Vancouver Whitecaps|San Diego FC,2025-06-26,MLS,Vancouver Whitecaps,San Diego FC,0.7104576418253158,0.7250146785627789,0,v1-retired-backfill,0.0
 MLS|2025-06-26|Sporting Kansas City|Charlotte,2025-06-26,MLS,Sporting Kansas City,Charlotte,0.5658427221698041,0.5341756099338412,0,v1-retired-backfill,1.0
-MLS|2025-06-26|St. Louis City|Orlando City,2025-06-26,MLS,St. Louis City,Orlando City,0.4650287741094682,0.46309435069634197,0,v1-retired-backfill,0.0
+MLS|2025-06-26|St. Louis City|Orlando City,2025-06-26,MLS,St. Louis City,Orlando City,0.4650287741094682,0.4630943506963419,0,v1-retired-backfill,0.0
 MLS|2025-06-26|Colorado Rapids|Los Angeles Galaxy,2025-06-26,MLS,Colorado Rapids,Los Angeles Galaxy,0.64463369847961,0.6130366427973947,0,v1-retired-backfill,1.0
-MLS|2025-06-26|CF Montreal|FC Cincinnati,2025-06-26,MLS,CF Montreal,FC Cincinnati,0.5025535297943374,0.47347245382332276,0,v1-retired-backfill,0.0
+MLS|2025-06-26|CF Montreal|FC Cincinnati,2025-06-26,MLS,CF Montreal,FC Cincinnati,0.5025535297943374,0.4734724538233227,0,v1-retired-backfill,0.0
 MLS|2025-06-26|Minnesota United|Houston Dynamo,2025-06-26,MLS,Minnesota United,Houston Dynamo,0.7256464186286863,0.6660240995498331,0,v1-retired-backfill,1.0
-MLS|2025-06-29|Toronto FC|Portland Timbers,2025-06-29,MLS,Toronto FC,Portland Timbers,0.5396274962897519,0.45961404475693685,0,v1-retired-backfill,1.0
+MLS|2025-06-29|Toronto FC|Portland Timbers,2025-06-29,MLS,Toronto FC,Portland Timbers,0.5396274962897519,0.4596140447569368,0,v1-retired-backfill,1.0
 MLS|2025-06-29|CF Montreal|New York City,2025-06-29,MLS,CF Montreal,New York City,0.5407596976283382,0.5185731121542285,0,v1-retired-backfill,1.0
 MLS|2025-06-29|DC United|Nashville SC,2025-06-29,MLS,DC United,Nashville SC,0.4293256981891158,0.5179739376686296,0,v1-retired-backfill,0.0
 MLS|2025-06-29|Orlando City|FC Cincinnati,2025-06-29,MLS,Orlando City,FC Cincinnati,0.7266761312242743,0.6203743374382195,0,v1-retired-backfill,0.0
@@ -437,7 +437,7 @@ MLS|2025-07-05|FC Dallas|Minnesota United,2025-07-05,MLS,FC Dallas,Minnesota Uni
 MLS|2025-07-05|Colorado Rapids|Sporting Kansas City,2025-07-05,MLS,Colorado Rapids,Sporting Kansas City,0.6855976254960733,0.6589747433249412,0,v1-retired-backfill,0.0
 MLS|2025-07-06|Nashville SC|Philadelphia Union,2025-07-06,MLS,Nashville SC,Philadelphia Union,0.6084834591711414,0.5997219808705665,0,v1-retired-backfill,1.0
 MLS|2025-07-06|FC Cincinnati|Chicago Fire,2025-07-06,MLS,FC Cincinnati,Chicago Fire,0.7619279225848727,0.7471913942255727,0,v1-retired-backfill,1.0
-MLS|2025-07-06|CF Montreal|Inter Miami,2025-07-06,MLS,CF Montreal,Inter Miami,0.4504966385337914,0.45354588580377275,0,v1-retired-backfill,0.0
+MLS|2025-07-06|CF Montreal|Inter Miami,2025-07-06,MLS,CF Montreal,Inter Miami,0.4504966385337914,0.4535458858037727,0,v1-retired-backfill,0.0
 MLS|2025-07-06|Portland Timbers|New England Revolution,2025-07-06,MLS,Portland Timbers,New England Revolution,0.7357962826032072,0.6783700339247927,0,v1-retired-backfill,1.0
 MLS|2025-07-06|Real Salt Lake|St. Louis City,2025-07-06,MLS,Real Salt Lake,St. Louis City,0.7530460730300786,0.7096973165961387,0,v1-retired-backfill,1.0
 MLS|2025-07-06|San Diego FC|Houston Dynamo,2025-07-06,MLS,San Diego FC,Houston Dynamo,0.7658040360093611,0.6184414623872648,0,v1-retired-backfill,0.0
@@ -467,12 +467,12 @@ Brasileirao|2025-07-14|Fortaleza|Ceara,2025-07-14,Brasileirao,Fortaleza,Ceara,0.
 Brasileirao|2025-07-14|Cruzeiro|Gremio,2025-07-14,Brasileirao,Cruzeiro,Gremio,0.7449032246816182,0.6752337533452085,1,v1-backfill,1.0
 LigaMX|2025-07-14|Club Leon|Atl. San Luis,2025-07-14,LigaMX,Club Leon,Atl. San Luis,0.6290456114435281,0.6441882472068177,1,v1-backfill,0.0
 LigaMX|2025-07-14|Pachuca|Monterrey,2025-07-14,LigaMX,Pachuca,Monterrey,0.5238580643509199,0.5667202269957727,1,v1-backfill,1.0
-MLS|2025-07-14|St. Louis City|Portland Timbers,2025-07-14,MLS,St. Louis City,Portland Timbers,0.534713883420475,0.48501348280096335,0,v1-retired-backfill,1.0
+MLS|2025-07-14|St. Louis City|Portland Timbers,2025-07-14,MLS,St. Louis City,Portland Timbers,0.534713883420475,0.4850134828009633,0,v1-retired-backfill,1.0
 Brasileirao|2025-07-15|Juventude|Sport Recife,2025-07-15,Brasileirao,Juventude,Sport Recife,0.7215232363845099,0.6934952950640435,1,v1-backfill,1.0
 Brasileirao|2025-07-16|Ceara|Corinthians,2025-07-16,Brasileirao,Ceara,Corinthians,0.6102239300728126,0.5181521935188941,1,v1-backfill,0.0
 Brasileirao|2025-07-17|Fluminense|Cruzeiro,2025-07-17,Brasileirao,Fluminense,Cruzeiro,0.5861134850641547,0.6179214554707997,1,v1-backfill,0.0
-Brasileirao|2025-07-17|Santos|Flamengo RJ,2025-07-17,Brasileirao,Santos,Flamengo RJ,0.3152345456675675,0.36167523030673654,1,v1-backfill,1.0
-LigaMX|2025-07-17|Santos Laguna|Toluca,2025-07-17,LigaMX,Santos Laguna,Toluca,0.2996359914632059,0.37711973607516436,1,v1-backfill,0.0
+Brasileirao|2025-07-17|Santos|Flamengo RJ,2025-07-17,Brasileirao,Santos,Flamengo RJ,0.3152345456675675,0.3616752303067365,1,v1-backfill,1.0
+LigaMX|2025-07-17|Santos Laguna|Toluca,2025-07-17,LigaMX,Santos Laguna,Toluca,0.2996359914632059,0.3771197360751643,1,v1-backfill,0.0
 LigaMX|2025-07-17|Club America|Club Tijuana,2025-07-17,LigaMX,Club America,Club Tijuana,0.7546963671355928,0.7416324525248971,1,v1-backfill,1.0
 MLS|2025-07-17|Philadelphia Union|CF Montreal,2025-07-17,MLS,Philadelphia Union,CF Montreal,0.8510812605686483,0.7544167658251315,0,v1-retired-backfill,1.0
 MLS|2025-07-17|Portland Timbers|Real Salt Lake,2025-07-17,MLS,Portland Timbers,Real Salt Lake,0.6752635073874806,0.6417981091275836,0,v1-retired-backfill,0.0
@@ -554,20 +554,20 @@ Brasileirao|2025-08-10|Cruzeiro|Santos,2025-08-10,Brasileirao,Cruzeiro,Santos,0.
 Brasileirao|2025-08-10|Palmeiras|Ceara,2025-08-10,Brasileirao,Palmeiras,Ceara,0.826673046938359,0.8197241703806721,1,v1-backfill,1.0
 LigaMX|2025-08-10|Club America|Queretaro,2025-08-10,LigaMX,Club America,Queretaro,0.8398952824907934,0.8010181522815709,1,v1-backfill,1.0
 LigaMX|2025-08-10|Atlas|Pachuca,2025-08-10,LigaMX,Atlas,Pachuca,0.4867721935646898,0.5529551721117041,1,v1-backfill,0.0
-MLS|2025-08-10|St. Louis City|Nashville SC,2025-08-10,MLS,St. Louis City,Nashville SC,0.471319017963789,0.45535223946284753,0,v1-retired-backfill,1.0
+MLS|2025-08-10|St. Louis City|Nashville SC,2025-08-10,MLS,St. Louis City,Nashville SC,0.471319017963789,0.4553522394628475,0,v1-retired-backfill,1.0
 MLS|2025-08-10|New York Red Bulls|Real Salt Lake,2025-08-10,MLS,New York Red Bulls,Real Salt Lake,0.6804619189901956,0.6177631074555413,0,v1-retired-backfill,1.0
 MLS|2025-08-10|Minnesota United|Colorado Rapids,2025-08-10,MLS,Minnesota United,Colorado Rapids,0.8066208646897839,0.7362417292059271,0,v1-retired-backfill,0.0
 MLS|2025-08-10|FC Cincinnati|Charlotte,2025-08-10,MLS,FC Cincinnati,Charlotte,0.7303210052964434,0.7190685956532501,0,v1-retired-backfill,0.0
 MLS|2025-08-10|Sporting Kansas City|San Diego FC,2025-08-10,MLS,Sporting Kansas City,San Diego FC,0.5022529141078952,0.5610601423769395,0,v1-retired-backfill,0.0
-MLS|2025-08-10|San Jose Earthquakes|Vancouver Whitecaps,2025-08-10,MLS,San Jose Earthquakes,Vancouver Whitecaps,0.4947293580956784,0.47266002761350834,0,v1-retired-backfill,1.0
+MLS|2025-08-10|San Jose Earthquakes|Vancouver Whitecaps,2025-08-10,MLS,San Jose Earthquakes,Vancouver Whitecaps,0.4947293580956784,0.4726600276135083,0,v1-retired-backfill,1.0
 MLS|2025-08-10|New England Revolution|DC United,2025-08-10,MLS,New England Revolution,DC United,0.7513585125934823,0.6619982389105278,0,v1-retired-backfill,1.0
 MLS|2025-08-10|FC Dallas|Portland Timbers,2025-08-10,MLS,FC Dallas,Portland Timbers,0.6097652378743421,0.5517959562501367,0,v1-retired-backfill,1.0
 Brasileirao|2025-08-11|Gremio|Sport Recife,2025-08-11,Brasileirao,Gremio,Sport Recife,0.8024286752653741,0.7600828453558616,1,v1-backfill,0.0
 LigaMX|2025-08-11|Santos Laguna|Guadalajara Chivas,2025-08-11,LigaMX,Santos Laguna,Guadalajara Chivas,0.4337584483655935,0.4737284781236552,1,v1-backfill,1.0
 MLS|2025-08-11|Los Angeles Galaxy|Seattle Sounders,2025-08-11,MLS,Los Angeles Galaxy,Seattle Sounders,0.5532276282992638,0.5155352672561326,0,v1-retired-backfill,0.0
 MLS|2025-08-11|Orlando City|Inter Miami,2025-08-11,MLS,Orlando City,Inter Miami,0.6215945050345397,0.5774301224315589,0,v1-retired-backfill,1.0
-Brasileirao|2025-08-12|Juventude|Corinthians,2025-08-12,Brasileirao,Juventude,Corinthians,0.4530567877418551,0.48018924958758474,1,v1-backfill,1.0
-LigaMX|2025-08-12|Juarez|Toluca,2025-08-12,LigaMX,Juarez,Toluca,0.3624267303913934,0.46275408633090703,1,v1-backfill,0.0
+Brasileirao|2025-08-12|Juventude|Corinthians,2025-08-12,Brasileirao,Juventude,Corinthians,0.4530567877418551,0.4801892495875847,1,v1-backfill,1.0
+LigaMX|2025-08-12|Juarez|Toluca,2025-08-12,LigaMX,Juarez,Toluca,0.3624267303913934,0.462754086330907,1,v1-backfill,0.0
 LigaMX|2025-08-12|Club Leon|Monterrey,2025-08-12,LigaMX,Club Leon,Monterrey,0.4898396159102293,0.5358961722407273,1,v1-backfill,0.0
 LigaMX|2025-08-12|Atl. San Luis|Cruz Azul,2025-08-12,LigaMX,Atl. San Luis,Cruz Azul,0.4286686640209394,0.4872068113132283,1,v1-backfill,0.0
 Brasileirao|2025-08-16|Ceara|Bragantino,2025-08-16,Brasileirao,Ceara,Bragantino,0.6512640194493782,0.5498955886346861,1,v1-backfill,1.0
@@ -582,7 +582,7 @@ LigaMX|2025-08-17|Cruz Azul|Santos Laguna,2025-08-17,LigaMX,Cruz Azul,Santos Lag
 LigaMX|2025-08-17|Tigres UANL|Club America,2025-08-17,LigaMX,Tigres UANL,Club America,0.5651814618269162,0.6036460943110786,1,v1-backfill,0.0
 LigaMX|2025-08-17|Pachuca|Club Tijuana,2025-08-17,LigaMX,Pachuca,Club Tijuana,0.7153177103608609,0.6955763524737577,1,v1-backfill,0.0
 LigaMX|2025-08-17|Guadalajara Chivas|Juarez,2025-08-17,LigaMX,Guadalajara Chivas,Juarez,0.674766635914499,0.6768698008556916,1,v1-backfill,0.0
-MLS|2025-08-17|New England Revolution|Los Angeles FC,2025-08-17,MLS,New England Revolution,Los Angeles FC,0.4634277610294683,0.47276962748058127,0,v1-retired-backfill,0.0
+MLS|2025-08-17|New England Revolution|Los Angeles FC,2025-08-17,MLS,New England Revolution,Los Angeles FC,0.4634277610294683,0.4727696274805812,0,v1-retired-backfill,0.0
 MLS|2025-08-17|New York Red Bulls|Philadelphia Union,2025-08-17,MLS,New York Red Bulls,Philadelphia Union,0.5799706677103258,0.5606012581905517,0,v1-retired-backfill,1.0
 MLS|2025-08-17|Inter Miami|Los Angeles Galaxy,2025-08-17,MLS,Inter Miami,Los Angeles Galaxy,0.8267472179228105,0.7707126782379609,0,v1-retired-backfill,1.0
 MLS|2025-08-17|Charlotte|Real Salt Lake,2025-08-17,MLS,Charlotte,Real Salt Lake,0.716308216841777,0.6569373774780968,0,v1-retired-backfill,1.0
@@ -617,7 +617,7 @@ MLS|2025-08-24|Columbus Crew|New England Revolution,2025-08-24,MLS,Columbus Crew
 MLS|2025-08-24|Vancouver Whitecaps|St. Louis City,2025-08-24,MLS,Vancouver Whitecaps,St. Louis City,0.8303846891885414,0.7662670664242416,0,v1-retired-backfill,1.0
 Brasileirao|2025-08-25|Sao Paulo|Atletico-MG,2025-08-25,Brasileirao,Sao Paulo,Atletico-MG,0.6991423536860697,0.6507540021902828,1,v1-backfill,1.0
 Brasileirao|2025-08-25|Palmeiras|Sport Recife,2025-08-25,Brasileirao,Palmeiras,Sport Recife,0.8990839671759028,0.8635208802459685,1,v1-backfill,1.0
-LigaMX|2025-08-25|Atlas|Club America,2025-08-25,LigaMX,Atlas,Club America,0.3277749566278677,0.44061875334098854,1,v1-backfill,0.0
+LigaMX|2025-08-25|Atlas|Club America,2025-08-25,LigaMX,Atlas,Club America,0.3277749566278677,0.4406187533409885,1,v1-backfill,0.0
 MLS|2025-08-25|Charlotte|New York Red Bulls,2025-08-25,MLS,Charlotte,New York Red Bulls,0.6928593537655902,0.6475778587733704,0,v1-retired-backfill,1.0
 MLS|2025-08-25|Seattle Sounders|Sporting Kansas City,2025-08-25,MLS,Seattle Sounders,Sporting Kansas City,0.8268588038299505,0.7743884720010494,0,v1-retired-backfill,1.0
 Brasileirao|2025-08-26|Flamengo RJ|Vitoria,2025-08-26,Brasileirao,Flamengo RJ,Vitoria,0.8696219246644241,0.8085127359485808,1,v1-backfill,1.0
@@ -630,10 +630,10 @@ Brasileirao|2025-08-31|Vitoria|Atletico-MG,2025-08-31,Brasileirao,Vitoria,Atleti
 Brasileirao|2025-08-31|Mirassol|Bahia,2025-08-31,Brasileirao,Mirassol,Bahia,0.671938646202999,0.5554238368774913,1,v1-backfill,1.0
 Brasileirao|2025-08-31|Cruzeiro|Sao Paulo,2025-08-31,Brasileirao,Cruzeiro,Sao Paulo,0.7119749464548041,0.6389916264075328,1,v1-backfill,1.0
 LigaMX|2025-08-31|Club America|Pachuca,2025-08-31,LigaMX,Club America,Pachuca,0.758856413564345,0.7254630481139912,1,v1-backfill,1.0
-LigaMX|2025-08-31|Guadalajara Chivas|Cruz Azul,2025-08-31,LigaMX,Guadalajara Chivas,Cruz Azul,0.4176921404786113,0.47050634399105945,1,v1-backfill,0.0
+LigaMX|2025-08-31|Guadalajara Chivas|Cruz Azul,2025-08-31,LigaMX,Guadalajara Chivas,Cruz Azul,0.4176921404786113,0.4705063439910594,1,v1-backfill,0.0
 LigaMX|2025-08-31|UNAM Pumas|Atlas,2025-08-31,LigaMX,UNAM Pumas,Atlas,0.6888408741927317,0.6634180412612327,1,v1-backfill,1.0
 LigaMX|2025-08-31|Club Leon|Queretaro,2025-08-31,LigaMX,Club Leon,Queretaro,0.7218644963004358,0.6980929605924304,1,v1-backfill,1.0
-LigaMX|2025-08-31|Santos Laguna|Tigres UANL,2025-08-31,LigaMX,Santos Laguna,Tigres UANL,0.3175296844460158,0.39415906578879034,1,v1-backfill,0.0
+LigaMX|2025-08-31|Santos Laguna|Tigres UANL,2025-08-31,LigaMX,Santos Laguna,Tigres UANL,0.3175296844460158,0.3941590657887903,1,v1-backfill,0.0
 MLS|2025-08-31|Sporting Kansas City|Colorado Rapids,2025-08-31,MLS,Sporting Kansas City,Colorado Rapids,0.6224852253476881,0.5621964854524221,0,v1-retired-backfill,1.0
 MLS|2025-08-31|FC Cincinnati|Philadelphia Union,2025-08-31,MLS,FC Cincinnati,Philadelphia Union,0.6332368056191082,0.6526593481075789,0,v1-retired-backfill,0.0
 MLS|2025-08-31|New York City|DC United,2025-08-31,MLS,New York City,DC United,0.857278566852391,0.7810658643743071,0,v1-retired-backfill,0.0
@@ -652,7 +652,7 @@ Brasileirao|2025-09-13|Gremio|Mirassol,2025-09-13,Brasileirao,Gremio,Mirassol,0.
 Brasileirao|2025-09-13|Fortaleza|Vitoria,2025-09-13,Brasileirao,Fortaleza,Vitoria,0.6900918368986276,0.6310203505065337,1,v1-backfill,1.0
 LigaMX|2025-09-13|Mazatlan FC|UNAM Pumas,2025-09-13,LigaMX,Mazatlan FC,UNAM Pumas,0.5238505773823589,0.5513231394808975,1,v1-backfill,0.0
 Brasileirao|2025-09-14|Fluminense|Corinthians,2025-09-14,Brasileirao,Fluminense,Corinthians,0.6442711742128159,0.6214984567562306,1,v1-backfill,0.0
-Brasileirao|2025-09-14|Juventude|Flamengo RJ,2025-09-14,Brasileirao,Juventude,Flamengo RJ,0.2764601539561767,0.37263289120719995,1,v1-backfill,0.0
+Brasileirao|2025-09-14|Juventude|Flamengo RJ,2025-09-14,Brasileirao,Juventude,Flamengo RJ,0.2764601539561767,0.3726328912071999,1,v1-backfill,0.0
 Brasileirao|2025-09-14|Sao Paulo|Botafogo RJ,2025-09-14,Brasileirao,Sao Paulo,Botafogo RJ,0.5398335924906403,0.5432993740786152,1,v1-backfill,1.0
 LigaMX|2025-09-14|Pachuca|Cruz Azul,2025-09-14,LigaMX,Pachuca,Cruz Azul,0.4848360293325693,0.510353892796275,1,v1-backfill,0.0
 LigaMX|2025-09-14|Toluca|Puebla,2025-09-14,LigaMX,Toluca,Puebla,0.9048019676090348,0.8428346300369028,1,v1-backfill,1.0
@@ -693,10 +693,10 @@ MLS|2025-09-21|Inter Miami|DC United,2025-09-21,MLS,Inter Miami,DC United,0.8850
 MLS|2025-09-21|Orlando City|Nashville SC,2025-09-21,MLS,Orlando City,Nashville SC,0.7216845133147479,0.6849599117397424,0,v1-retired-backfill,1.0
 MLS|2025-09-21|FC Dallas|Colorado Rapids,2025-09-21,MLS,FC Dallas,Colorado Rapids,0.7118167084680654,0.6330729797438189,0,v1-retired-backfill,1.0
 MLS|2025-09-21|Houston Dynamo|Portland Timbers,2025-09-21,MLS,Houston Dynamo,Portland Timbers,0.6455966249324043,0.5965940900194755,0,v1-retired-backfill,1.0
-MLS|2025-09-21|Sporting Kansas City|Vancouver Whitecaps,2025-09-21,MLS,Sporting Kansas City,Vancouver Whitecaps,0.4254764006372021,0.44591913675041656,0,v1-retired-backfill,0.0
+MLS|2025-09-21|Sporting Kansas City|Vancouver Whitecaps,2025-09-21,MLS,Sporting Kansas City,Vancouver Whitecaps,0.4254764006372021,0.4459191367504165,0,v1-retired-backfill,0.0
 MLS|2025-09-21|San Jose Earthquakes|St. Louis City,2025-09-21,MLS,San Jose Earthquakes,St. Louis City,0.7030371259458831,0.6514254478862513,0,v1-retired-backfill,0.0
 MLS|2025-09-21|Los Angeles Galaxy|FC Cincinnati,2025-09-21,MLS,Los Angeles Galaxy,FC Cincinnati,0.5495623877787216,0.4942302930269991,0,v1-retired-backfill,0.0
-Brasileirao|2025-09-22|Santos|Sao Paulo,2025-09-22,Brasileirao,Santos,Sao Paulo,0.482920384571692,0.46650512002731914,1,v1-backfill,1.0
+Brasileirao|2025-09-22|Santos|Sao Paulo,2025-09-22,Brasileirao,Santos,Sao Paulo,0.482920384571692,0.4665051200273191,1,v1-backfill,1.0
 Brasileirao|2025-09-22|Cruzeiro|Bragantino,2025-09-22,Brasileirao,Cruzeiro,Bragantino,0.8105887654337615,0.7273828178311768,1,v1-backfill,1.0
 LigaMX|2025-09-22|Santos Laguna|Atl. San Luis,2025-09-22,LigaMX,Santos Laguna,Atl. San Luis,0.4876198373572804,0.5249815424301061,1,v1-backfill,0.0
 MLS|2025-09-22|Los Angeles FC|Real Salt Lake,2025-09-22,MLS,Los Angeles FC,Real Salt Lake,0.8091611657908321,0.7327919130677754,0,v1-retired-backfill,1.0
@@ -704,13 +704,13 @@ MLS|2025-09-22|Austin FC|Seattle Sounders,2025-09-22,MLS,Austin FC,Seattle Sound
 Brasileirao|2025-09-24|Vasco|Bahia,2025-09-24,Brasileirao,Vasco,Bahia,0.6006623776108705,0.5535232508062806,1,v1-backfill,1.0
 LigaMX|2025-09-24|Guadalajara Chivas|Necaxa,2025-09-24,LigaMX,Guadalajara Chivas,Necaxa,0.6203320847714944,0.6321325779522188,1,v1-backfill,1.0
 LigaMX|2025-09-24|Juarez|UNAM Pumas,2025-09-24,LigaMX,Juarez,UNAM Pumas,0.5670531884885365,0.5927307214130156,1,v1-backfill,1.0
-LigaMX|2025-09-25|Santos Laguna|Club Tijuana,2025-09-25,LigaMX,Santos Laguna,Club Tijuana,0.3696622282165173,0.45762334695191603,1,v1-backfill,1.0
+LigaMX|2025-09-25|Santos Laguna|Club Tijuana,2025-09-25,LigaMX,Santos Laguna,Club Tijuana,0.3696622282165173,0.457623346951916,1,v1-backfill,1.0
 LigaMX|2025-09-25|Toluca|Monterrey,2025-09-25,LigaMX,Toluca,Monterrey,0.6688701669131698,0.6429644248805507,1,v1-backfill,1.0
 LigaMX|2025-09-25|Tigres UANL|Atlas,2025-09-25,LigaMX,Tigres UANL,Atlas,0.8084788095965969,0.762508954597458,1,v1-backfill,1.0
 LigaMX|2025-09-25|Atl. San Luis|Club America,2025-09-25,LigaMX,Atl. San Luis,Club America,0.3559435263534805,0.4508741770814781,1,v1-backfill,0.0
 MLS|2025-09-25|New York City|Inter Miami,2025-09-25,MLS,New York City,Inter Miami,0.6207342631469175,0.5810875506717478,0,v1-retired-backfill,0.0
 Brasileirao|2025-09-27|Fortaleza|Sport Recife,2025-09-27,Brasileirao,Fortaleza,Sport Recife,0.7617025949567975,0.7242727410976252,1,v1-backfill,1.0
-Brasileirao|2025-09-27|Vasco|Cruzeiro,2025-09-27,Brasileirao,Vasco,Cruzeiro,0.5154796849963486,0.49934160262076766,1,v1-backfill,1.0
+Brasileirao|2025-09-27|Vasco|Cruzeiro,2025-09-27,Brasileirao,Vasco,Cruzeiro,0.5154796849963486,0.4993416026207676,1,v1-backfill,1.0
 LigaMX|2025-09-27|Juarez|Club Leon,2025-09-27,LigaMX,Juarez,Club Leon,0.6056142980453932,0.616077467781403,1,v1-backfill,1.0
 Brasileirao|2025-09-28|Bahia|Palmeiras,2025-09-28,Brasileirao,Bahia,Palmeiras,0.4878506675765196,0.4599111310254501,1,v1-backfill,1.0
 Brasileirao|2025-09-28|Gremio|Vitoria,2025-09-28,Brasileirao,Gremio,Vitoria,0.7542025020019455,0.6780031468711482,1,v1-backfill,1.0
@@ -733,7 +733,7 @@ MLS|2025-09-28|St. Louis City|Los Angeles FC,2025-09-28,MLS,St. Louis City,Los A
 MLS|2025-09-28|Real Salt Lake|Austin FC,2025-09-28,MLS,Real Salt Lake,Austin FC,0.6433578586650424,0.5963784648362,0,v1-retired-backfill,1.0
 MLS|2025-09-28|Nashville SC|Houston Dynamo,2025-09-28,MLS,Nashville SC,Houston Dynamo,0.7221343113483577,0.6466088155960755,0,v1-retired-backfill,1.0
 Brasileirao|2025-09-29|Corinthians|Flamengo RJ,2025-09-29,Brasileirao,Corinthians,Flamengo RJ,0.4275177208924918,0.4756215177337504,1,v1-backfill,0.0
-LigaMX|2025-09-29|Club Tijuana|Cruz Azul,2025-09-29,LigaMX,Club Tijuana,Cruz Azul,0.4469752134954525,0.46382180572809467,1,v1-backfill,1.0
+LigaMX|2025-09-29|Club Tijuana|Cruz Azul,2025-09-29,LigaMX,Club Tijuana,Cruz Azul,0.4469752134954525,0.4638218057280946,1,v1-backfill,1.0
 LigaMX|2025-09-29|Queretaro|Tigres UANL,2025-09-29,LigaMX,Queretaro,Tigres UANL,0.3680151172238433,0.4464714966144514,1,v1-backfill,0.0
 Brasileirao|2025-09-30|Sao Paulo|Ceara,2025-09-30,Brasileirao,Sao Paulo,Ceara,0.7626304503774064,0.7416504051914804,1,v1-backfill,0.0
 Brasileirao|2025-10-01|Palmeiras|Vasco,2025-10-01,Brasileirao,Palmeiras,Vasco,0.8124040862637489,0.7895023803474716,1,v1-backfill,1.0
@@ -756,7 +756,7 @@ Brasileirao|2025-10-05|Corinthians|Mirassol,2025-10-05,Brasileirao,Corinthians,M
 Brasileirao|2025-10-05|Juventude|Fortaleza,2025-10-05,Brasileirao,Juventude,Fortaleza,0.6054966558654652,0.5795020415224397,1,v1-backfill,0.0
 LigaMX|2025-10-05|Club America|Santos Laguna,2025-10-05,LigaMX,Club America,Santos Laguna,0.895276113984661,0.8553743557048197,1,v1-backfill,1.0
 LigaMX|2025-10-05|Queretaro|Puebla,2025-10-05,LigaMX,Queretaro,Puebla,0.7245886700563637,0.7081385254020203,1,v1-backfill,1.0
-LigaMX|2025-10-05|Club Leon|Toluca,2025-10-05,LigaMX,Club Leon,Toluca,0.3193490083190013,0.45684741763559833,1,v1-backfill,0.0
+LigaMX|2025-10-05|Club Leon|Toluca,2025-10-05,LigaMX,Club Leon,Toluca,0.3193490083190013,0.4568474176355983,1,v1-backfill,0.0
 MLS|2025-10-05|Minnesota United|Sporting Kansas City,2025-10-05,MLS,Minnesota United,Sporting Kansas City,0.8453031089019643,0.790286823046143,0,v1-retired-backfill,1.0
 MLS|2025-10-05|Houston Dynamo|San Diego FC,2025-10-05,MLS,Houston Dynamo,San Diego FC,0.5820972856384669,0.6154542890351188,0,v1-retired-backfill,0.0
 MLS|2025-10-05|Seattle Sounders|Portland Timbers,2025-10-05,MLS,Seattle Sounders,Portland Timbers,0.7419533307203897,0.6736766926000426,0,v1-retired-backfill,1.0
@@ -798,7 +798,7 @@ MLS|2025-10-18|Columbus Crew|New York Red Bulls,2025-10-18,MLS,Columbus Crew,New
 MLS|2025-10-18|Charlotte|Philadelphia Union,2025-10-18,MLS,Charlotte,Philadelphia Union,0.5929345327479861,0.5811783279848002,0,v1-retired-backfill,1.0
 Brasileirao|2025-10-19|Flamengo RJ|Palmeiras,2025-10-19,Brasileirao,Flamengo RJ,Palmeiras,0.6822065418902028,0.6092063123508132,1,v1-backfill,1.0
 Brasileirao|2025-10-19|Cruzeiro|Fortaleza,2025-10-19,Brasileirao,Cruzeiro,Fortaleza,0.8134971952188451,0.7377740351040984,1,v1-backfill,1.0
-Brasileirao|2025-10-19|Ceara|Botafogo RJ,2025-10-19,Brasileirao,Ceara,Botafogo RJ,0.5109170501668706,0.46304637217104816,1,v1-backfill,0.0
+Brasileirao|2025-10-19|Ceara|Botafogo RJ,2025-10-19,Brasileirao,Ceara,Botafogo RJ,0.5109170501668706,0.4630463721710481,1,v1-backfill,0.0
 Brasileirao|2025-10-19|Internacional|Sport Recife,2025-10-19,Brasileirao,Internacional,Sport Recife,0.8071487622516883,0.7719324840776086,1,v1-backfill,1.0
 Brasileirao|2025-10-19|Mirassol|Sao Paulo,2025-10-19,Brasileirao,Mirassol,Sao Paulo,0.7261301384888232,0.6219916879591673,1,v1-backfill,1.0
 LigaMX|2025-10-19|Santos Laguna|Club Leon,2025-10-19,LigaMX,Santos Laguna,Club Leon,0.4733349326788152,0.5023531767818066,1,v1-backfill,1.0
@@ -823,7 +823,7 @@ LigaMX|2025-10-23|Queretaro|Guadalajara Chivas,2025-10-23,LigaMX,Queretaro,Guada
 MLS|2025-10-23|Chicago Fire|Orlando City,2025-10-23,MLS,Chicago Fire,Orlando City,0.616938906821853,0.5734976759445605,0,v1-retired-backfill,1.0
 MLS|2025-10-23|Portland Timbers|Real Salt Lake,2025-10-23,MLS,Portland Timbers,Real Salt Lake,0.6757484921658894,0.6272085677526118,0,v1-retired-backfill,1.0
 Brasileirao|2025-10-25|Fluminense|Internacional,2025-10-25,Brasileirao,Fluminense,Internacional,0.6784309332332786,0.6296196501607788,1,v1-backfill,1.0
-Brasileirao|2025-10-25|Sport Recife|Mirassol,2025-10-25,Brasileirao,Sport Recife,Mirassol,0.37787458261775,0.44595446804414784,1,v1-backfill,0.0
+Brasileirao|2025-10-25|Sport Recife|Mirassol,2025-10-25,Brasileirao,Sport Recife,Mirassol,0.37787458261775,0.4459544680441478,1,v1-backfill,0.0
 Brasileirao|2025-10-25|Vitoria|Corinthians,2025-10-25,Brasileirao,Vitoria,Corinthians,0.5768723340328639,0.5587616584379392,1,v1-backfill,0.0
 Brasileirao|2025-10-25|Fortaleza|Flamengo RJ,2025-10-25,Brasileirao,Fortaleza,Flamengo RJ,0.3267878035124157,0.3866435229250254,1,v1-backfill,1.0
 Brasileirao|2025-10-25|Atletico-MG|Ceara,2025-10-25,Brasileirao,Atletico-MG,Ceara,0.6787699477550228,0.6864635458686992,1,v1-backfill,1.0
@@ -870,14 +870,14 @@ Brasileirao|2025-11-05|Botafogo RJ|Vasco,2025-11-05,Brasileirao,Botafogo RJ,Vasc
 Brasileirao|2025-11-06|Fluminense|Mirassol,2025-11-06,Brasileirao,Fluminense,Mirassol,0.5751711042195436,0.6184182152649746,1,v1-backfill,1.0
 Brasileirao|2025-11-07|Palmeiras|Santos,2025-11-07,Brasileirao,Palmeiras,Santos,0.8948855756342944,0.8441539786284334,1,v1-backfill,1.0
 Brasileirao|2025-11-08|Vasco|Juventude,2025-11-08,Brasileirao,Vasco,Juventude,0.8032741867361517,0.7179436235370554,1,v1-backfill,0.0
-Brasileirao|2025-11-08|Sport Recife|Atletico-MG,2025-11-08,Brasileirao,Sport Recife,Atletico-MG,0.4639850881283566,0.43890514191017393,1,v1-backfill,0.0
+Brasileirao|2025-11-08|Sport Recife|Atletico-MG,2025-11-08,Brasileirao,Sport Recife,Atletico-MG,0.4639850881283566,0.4389051419101739,1,v1-backfill,0.0
 LigaMX|2025-11-08|Club Tijuana|Atlas,2025-11-08,LigaMX,Club Tijuana,Atlas,0.706769301590119,0.6622719740255806,1,v1-backfill,1.0
 LigaMX|2025-11-08|Juarez|Queretaro,2025-11-08,LigaMX,Juarez,Queretaro,0.6789712584891612,0.6786045026567171,1,v1-backfill,0.0
 LigaMX|2025-11-08|Tigres UANL|Atl. San Luis,2025-11-08,LigaMX,Tigres UANL,Atl. San Luis,0.8053104703509415,0.7907638922309921,1,v1-backfill,1.0
 LigaMX|2025-11-08|Guadalajara Chivas|Monterrey,2025-11-08,LigaMX,Guadalajara Chivas,Monterrey,0.5314722347798565,0.549851342468509,1,v1-backfill,1.0
 MLS|2025-11-08|FC Cincinnati|Columbus Crew,2025-11-08,MLS,FC Cincinnati,Columbus Crew,0.6799590491175367,0.6551512002341905,0,v1-retired-backfill,1.0
 MLS|2025-11-08|Charlotte|New York City,2025-11-08,MLS,Charlotte,New York City,0.672030960663349,0.6158626097944493,0,v1-retired-backfill,0.0
-Brasileirao|2025-11-09|Mirassol|Palmeiras,2025-11-09,Brasileirao,Mirassol,Palmeiras,0.5220168989386959,0.45336347563711893,1,v1-backfill,1.0
+Brasileirao|2025-11-09|Mirassol|Palmeiras,2025-11-09,Brasileirao,Mirassol,Palmeiras,0.5220168989386959,0.4533634756371189,1,v1-backfill,1.0
 Brasileirao|2025-11-09|Corinthians|Ceara,2025-11-09,Brasileirao,Corinthians,Ceara,0.7500922913240616,0.7279499165626577,1,v1-backfill,0.0
 Brasileirao|2025-11-09|Flamengo RJ|Santos,2025-11-09,Brasileirao,Flamengo RJ,Santos,0.9001364816757297,0.8381751120344708,1,v1-backfill,1.0
 Brasileirao|2025-11-09|Sao Paulo|Bragantino,2025-11-09,Brasileirao,Sao Paulo,Bragantino,0.7608741977717639,0.7007126629853321,1,v1-backfill,0.0
@@ -887,7 +887,7 @@ LigaMX|2025-11-09|Cruz Azul|UNAM Pumas,2025-11-09,LigaMX,Cruz Azul,UNAM Pumas,0.
 LigaMX|2025-11-09|Santos Laguna|Pachuca,2025-11-09,LigaMX,Santos Laguna,Pachuca,0.4139396448810956,0.4848455886564047,1,v1-backfill,1.0
 MLS|2025-11-09|Inter Miami|Nashville SC,2025-11-09,MLS,Inter Miami,Nashville SC,0.7872266154690919,0.7319462109346091,0,v1-retired-backfill,1.0
 MLS|2025-11-10|San Diego FC|Portland Timbers,2025-11-10,MLS,San Diego FC,Portland Timbers,0.7798381438915549,0.6730158621707092,0,v1-retired-backfill,1.0
-Brasileirao|2025-11-15|Sport Recife|Flamengo RJ,2025-11-15,Brasileirao,Sport Recife,Flamengo RJ,0.216545505212128,0.26696871717522175,1,v1-backfill,0.0
+Brasileirao|2025-11-15|Sport Recife|Flamengo RJ,2025-11-15,Brasileirao,Sport Recife,Flamengo RJ,0.216545505212128,0.2669687171752217,1,v1-backfill,0.0
 Brasileirao|2025-11-16|Santos|Palmeiras,2025-11-16,Brasileirao,Santos,Palmeiras,0.3285372518950776,0.3437632150466239,1,v1-backfill,1.0
 Brasileirao|2025-11-16|Bragantino|Atletico-MG,2025-11-16,Brasileirao,Bragantino,Atletico-MG,0.5919526635587714,0.5865465701206717,1,v1-backfill,1.0
 Brasileirao|2025-11-18|Botafogo RJ|Sport Recife,2025-11-18,Brasileirao,Botafogo RJ,Sport Recife,0.8986720564562134,0.8524885004140234,1,v1-backfill,1.0
@@ -903,12 +903,12 @@ Brasileirao|2025-11-23|Sao Paulo|Juventude,2025-11-23,Brasileirao,Sao Paulo,Juve
 Brasileirao|2025-11-23|Bahia|Vasco,2025-11-23,Brasileirao,Bahia,Vasco,0.7016867708863297,0.6693928840487556,1,v1-backfill,1.0
 Brasileirao|2025-11-23|Flamengo RJ|Bragantino,2025-11-23,Brasileirao,Flamengo RJ,Bragantino,0.8750603545804934,0.7898749981716982,1,v1-backfill,1.0
 Brasileirao|2025-11-23|Cruzeiro|Corinthians,2025-11-23,Brasileirao,Cruzeiro,Corinthians,0.7495083264851545,0.7008314824391496,1,v1-backfill,1.0
-Brasileirao|2025-11-23|Sport Recife|Vitoria,2025-11-23,Brasileirao,Sport Recife,Vitoria,0.5033724190443349,0.47332111663099596,1,v1-backfill,0.0
+Brasileirao|2025-11-23|Sport Recife|Vitoria,2025-11-23,Brasileirao,Sport Recife,Vitoria,0.5033724190443349,0.4733211166309959,1,v1-backfill,0.0
 MLS|2025-11-23|FC Cincinnati|Inter Miami,2025-11-23,MLS,FC Cincinnati,Inter Miami,0.5889454241864817,0.6132501559162726,0,v1-retired-backfill,0.0
 Brasileirao|2025-11-24|Mirassol|Ceara,2025-11-24,Brasileirao,Mirassol,Ceara,0.801546946392678,0.7295954108892826,1,v1-backfill,1.0
 MLS|2025-11-24|Philadelphia Union|New York City,2025-11-24,MLS,Philadelphia Union,New York City,0.7235091721413615,0.647398485919181,0,v1-retired-backfill,0.0
 MLS|2025-11-25|San Diego FC|Minnesota United,2025-11-25,MLS,San Diego FC,Minnesota United,0.7228944623956336,0.6172614455191763,0,v1-retired-backfill,1.0
-Brasileirao|2025-11-26|Gremio|Palmeiras,2025-11-26,Brasileirao,Gremio,Palmeiras,0.458009129808796,0.45094832204751834,1,v1-backfill,1.0
+Brasileirao|2025-11-26|Gremio|Palmeiras,2025-11-26,Brasileirao,Gremio,Palmeiras,0.458009129808796,0.4509483220475183,1,v1-backfill,1.0
 Brasileirao|2025-11-26|Bragantino|Fortaleza,2025-11-26,Brasileirao,Bragantino,Fortaleza,0.6543485886992543,0.6172896690368537,1,v1-backfill,0.0
 Brasileirao|2025-11-27|Fluminense|Sao Paulo,2025-11-27,Brasileirao,Fluminense,Sao Paulo,0.6894413979673283,0.6608277373161849,1,v1-backfill,1.0
 LigaMX|2025-11-27|Juarez|Toluca,2025-11-27,LigaMX,Juarez,Toluca,0.3234379518441567,0.416745629219814,1,v1-backfill,0.0
