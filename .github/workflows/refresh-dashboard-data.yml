@@ -28,6 +28,12 @@ name: refresh-dashboard-data
 on:
   schedule:
     - cron: "0 13 * * *"      # 7am MDT / 6am MST, after the overnight pipeline runs
+    # Second pull, after the morning runs. The overnight pipelines finish before last
+    # night's late games do, so the 13:00 pull carries yesterday's board but not
+    # yesterday's results. WNBA grades at 15:00 UTC and soccer at 15:00/16:00, so nothing
+    # from an evening slate is in the logs until after that. Without this the daily recap
+    # reads a log that has not seen last night yet and reports nothing settled.
+    - cron: "30 16 * * *"     # 10:30am MDT / 9:30am MST
   workflow_dispatch: {}
 permissions:
   contents: write
