@@ -23,9 +23,11 @@ even when the over/under call missed.
 import argparse
 import datetime as dt
 import os
+import time
 
 import numpy as np
 import pandas as pd
+import requests
 
 DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 
@@ -160,7 +162,7 @@ def score(y, p):
     return hits, len(y), ll, br
 
 
-def main(day):
+def main(day, post=False):
     summary, detail, ys, ps = [], [], [], []
     for stem, label, dcol, kind, args in BOARDS:
         d = read(stem, dcol, day)
@@ -224,6 +226,8 @@ def main(day):
         txt = "\n".join(out) + "\n"
         print(txt)
         _emit(txt)
+        if post:
+            to_discord(txt)
         return
 
     out += ["### By board", "",
@@ -260,6 +264,8 @@ def main(day):
     txt = "\n".join(out) + "\n"
     print(txt)
     _emit(txt)
+    if post:
+        to_discord(txt)
 
 
 def _emit(txt):
@@ -269,8 +275,101 @@ def _emit(txt):
             fh.write(txt)
 
 
+def for_discord(txt):
+    """Re-lay markdown tables as fixed-width text in code blocks.
+
+    Discord renders neither markdown tables nor the alignment row, so pasting the summary
+    straight through shows a wall of pipes. GitHub's step summary does render them, so the
+    conversion happens here rather than upstream and both surfaces get the right thing.
+    """
+    out, tbl = [], []
+
+    def flush():
+        if not tbl:
+            return
+        rows = [[c.strip().replace("**", "") for c in r.strip().strip("|").split("|")]
+                for r in tbl if not set(r.replace("|", "").replace(":", "").strip()) <= {"-"}]
+        if not rows:
+            tbl.clear()
+            return
+        w = [max(len(r[i]) if i < len(r) else 0 for r in rows) for i in range(len(rows[0]))]
+        out.append("```")
+        for j, r in enumerate(rows):
+            out.append("  ".join((r[i] if i < len(r) else "").ljust(w[i])
+                                 for i in range(len(w))).rstrip())
+            if j == 0:
+                out.append("  ".join("-" * x for x in w))
+        out.append("```")
+        tbl.clear()
+
+    for line in txt.split("\n"):
+        if line.startswith("|"):
+            tbl.append(line)
+            continue
+        flush()
+        out.append(line.replace("### ", "**").replace("## ", "**")
+                   if line.startswith("#") else line)
+    flush()
+    # close the bold on any heading line we opened
+    return "\n".join(l + "**" if l.startswith("**") and not l.endswith("**") else l
+                      for l in out)
+
+
+def to_discord(txt):
+    """Post the recap, split into messages that fit Discord's 2,000-character limit.
+
+    Splits on board sections first so a table is never cut mid-row, then on rows if a
+    single section is still too long, which a busy props night will be. Markdown tables do
+    not render in Discord, so the tables are re-laid as fixed-width text inside a code
+    block, which does.
+    """
+    hook = os.environ.get("DISCORD_WEBHOOK", "").strip()
+    if not hook:
+        print("no DISCORD_WEBHOOK set, printed only")
+        return
+    txt = for_discord(txt)
+    chunks, cur = [], ""
+    for block in txt.split("\n**"):
+        block = block if block.startswith("**") else "**" + block
+        if len(block) <= 1900:
+            pieces = [block]
+        else:                                   # split a long table on its rows
+            head, *rows = block.split("\n")
+            pieces, buf = [], head
+            for row in rows:
+                if len(buf) + len(row) > 1850:
+                    pieces.append(buf)
+                    buf = head + "\n" + row
+                else:
+                    buf += "\n" + row
+            pieces.append(buf)
+        for pc in pieces:
+            if len(cur) + len(pc) > 1900:
+                chunks.append(cur)
+                cur = pc
+            else:
+                cur = (cur + "\n\n" + pc) if cur else pc
+    if cur:
+        chunks.append(cur)
+    sent = 0
+    for i, c in enumerate(chunks):
+        body = {"content": c, "allowed_mentions": {"parse": []}}
+        try:
+            r = requests.post(hook, json=body, timeout=30)
+            if r.status_code >= 300:
+                print(f"discord: chunk {i + 1} failed, HTTP {r.status_code} {r.text[:120]}")
+            else:
+                sent += 1
+        except Exception as ex:
+            print(f"discord: chunk {i + 1} failed, {type(ex).__name__}")
+        time.sleep(1)                           # stay well inside the webhook rate limit
+    print(f"discord: sent {sent} of {len(chunks)} message(s)")
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=None, help="YYYY-MM-DD, defaults to yesterday")
+    ap.add_argument("--discord", action="store_true", help="also post to DISCORD_WEBHOOK")
     a = ap.parse_args()
-    main(dt.date.fromisoformat(a.date) if a.date else dt.date.today() - dt.timedelta(days=1))
+    main(dt.date.fromisoformat(a.date) if a.date else dt.date.today() - dt.timedelta(days=1),
+         post=a.discord)
