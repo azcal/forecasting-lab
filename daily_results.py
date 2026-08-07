@@ -33,15 +33,27 @@ DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 
 
 def parse_dates(col):
-    """WNBA writes the integer 20260508; everything else writes an ISO string.
+    """Parse a date column that may hold more than one format at once.
 
-    Pandas reads that integer as nanoseconds since epoch and silently returns 1970-01-01,
-    which drops the whole board from the recap without erroring.
+    WNBA writes its date as the string "20260806" while its seeded backtest was written
+    with pandas inferring int64, so after a merge the column holds both and its dtype is
+    object. Checking is_numeric_dtype then fails, the mixed parser handles the strings and
+    turns every integer into 1970-01-01, and the board silently drops out of the recap.
+
+    So: normalise to text first, parse anything that is eight digits as %Y%m%d, and let
+    the general parser take the rest. That covers ISO strings, ISO datetimes, bare
+    integers and any mix of them.
     """
-    if pd.api.types.is_numeric_dtype(col):
-        return pd.to_datetime(col.astype("Int64").astype(str), format="%Y%m%d",
-                              errors="coerce")
-    return pd.to_datetime(col, format="mixed", errors="coerce")
+    t = col.astype(str).str.strip().str.replace(r"\.0$", "", regex=True)
+    out = pd.Series(pd.NaT, index=col.index, dtype="datetime64[ns]")
+    ymd = t.str.fullmatch(r"\d{8}")
+    if ymd.any():
+        out.loc[ymd] = pd.to_datetime(t[ymd], format="%Y%m%d", errors="coerce")
+    rest = ~ymd
+    if rest.any():
+        out.loc[rest] = pd.to_datetime(t[rest], format="mixed", errors="coerce",
+                                       utc=True).dt.tz_localize(None)
+    return out
 
 
 def read(stem, dcol, day):
@@ -113,26 +125,56 @@ def spread(d, pcol_unused=None):
 
 
 def props(d):
-    """Forecast against actual, plus the over/under call on the artificial line."""
-    need = {"player", "matchup", "proj", "grade_line", "p_grade", "actual"}
+    """Graded on the bottom rung of the published ladder.
+
+    That is the easiest line the board actually asks you to take, so clearing it is what
+    "the pick won" means. It used to grade on `grade_line`, a line 2.5 above the forecast
+    that exists only to make the board scoreable and is never published, which meant the
+    hit rate described a bet nobody could have placed.
+
+    Rows logged before `line_lo` existed fall back to `grade_line` so history still
+    grades, and they are the reason the two numbers can disagree on old days.
+    """
+    need = {"player", "actual"}
     if not need.issubset(d.columns):
         return None, []
-    d = d[d.actual.notna() & d.p_grade.notna()]
+    d = d[d.actual.notna()].copy()
+    if "line_lo" in d.columns:
+        d["_line"] = pd.to_numeric(d.line_lo, errors="coerce")
+        if "grade_line" in d.columns:
+            d["_line"] = d._line.fillna(pd.to_numeric(d.grade_line, errors="coerce"))
+    elif "grade_line" in d.columns:
+        d["_line"] = pd.to_numeric(d.grade_line, errors="coerce")
+    else:
+        return None, []
+    d = d[d._line.notna()]
     if not len(d):
         return None, []
-    p = d.p_grade.astype(float).values
-    y = (d.actual.astype(float) > d.grade_line.astype(float)).astype(float).values
-    over = p >= .5
-    hit = (over == (y == 1))
-    err = (d.actual.astype(float) - d.proj.astype(float)).values
+    act = d.actual.astype(float).values
+    ln = d._line.values.astype(float)
+    # `median` is what the board publishes and it is always a whole number. `proj` is the
+    # raw mean behind it and showing that instead made the recap quote a forecast nobody
+    # was given. Fall back to the mean only for rows logged before median existed.
+    if "median" in d.columns and pd.to_numeric(d["median"], errors="coerce").notna().any():
+        proj = pd.to_numeric(d["median"], errors="coerce").values
+    else:
+        proj = pd.to_numeric(d.get("proj"), errors="coerce").values
+    if np.isnan(proj).all():
+        return None, []
+    proj = np.where(np.isnan(proj), 0.0, proj)
+    hit = act > ln
     lines = []
-    for i, (_, r) in enumerate(d.sort_values("player").iterrows()):
-        j = d.index.get_loc(r.name)
-        lines.append(f"| {r.player} | {r.matchup} | {r.proj:.1f} | {r.actual:.0f} | "
-                     f"{err[j]:+.1f} | {r.grade_line:.1f} | "
-                     f"{'over' if over[j] else 'under'} | "
-                     f"{'HIT' if hit[j] else 'miss'} |")
-    return (y, p), lines
+    order = np.argsort(-proj)
+    for j in order:
+        r = d.iloc[j]
+        lines.append(f"| {r.player} | over {ln[j]:.1f} | {proj[j]:.0f} | {act[j]:.0f} | "
+                     f"{act[j] - proj[j]:+.0f} | {'HIT' if hit[j] else 'miss'} |")
+    # p is the model's own probability for that rung where it was logged, so log loss and
+    # Brier describe the line that was published rather than a different one.
+    if "p_lo" in d.columns and pd.to_numeric(d.p_lo, errors="coerce").notna().any():
+        p = pd.to_numeric(d.p_lo, errors="coerce").fillna(0.5).values
+        return (hit.astype(float), p), lines
+    return (hit.astype(float), None), lines
 
 
 BOARDS = [
@@ -147,10 +189,69 @@ BOARDS = [
     ("mma",             "MMA",             "date", "money",  ("A", "B", "p_win_a", "result", None, "vs")),
     ("props",           "Player props",    "date", "props",  ()),
 ]
-HEADERS = {"money": "| matchup | pick | result | |\n|---|---|---|---|",
-           "spread": "| matchup | pick | final | |\n|---|---|---|---|",
-           "props": ("| player | game | forecast | actual | error | line | call | |\n"
-                     "|---|---|---:|---:|---:|---:|---|---|")}
+HEADERS = {"money": "| matchup | pick | result | call |\n|---|---|---|---|",
+           "spread": "| matchup | pick | final | call |\n|---|---|---|---|",
+           "props": ("| player | line | forecast | actual | error | call |\n"
+                     "|---|---|---:|---:|---:|---|")}
+
+
+# How a day's log loss compares to that board's own frozen backtest. Ratios, because an
+# absolute scale would call NHL poor for being hockey: its backtest sits at 0.6717 while
+# soccer's is 0.5753, and neither number says anything about how the model performed on a
+# given night. Under 1.00 means better than that board's normal.
+GRADES = [(0.80, "elite"), (0.90, "strong"), (1.00, "good"), (1.10, "average")]
+MIN_TO_GRADE = 10          # below this a single result swings the ratio past a whole band
+
+
+def baseline_ll(stem, pcol, ocol, kind):
+    """That board's log loss on its own seeded backtest, or None if it has none."""
+    path = os.path.join(DATA, f"{stem}.csv")
+    if not os.path.exists(path):
+        return None
+    try:
+        d = pd.read_csv(path)
+    except Exception:
+        return None
+    if "model" in d.columns:
+        d = d[d.model.astype(str).str.contains("backfill", case=False)]
+    if not len(d) or pcol not in d.columns or ocol not in d.columns:
+        return None
+    if kind == "line":
+        # Props changed what it grades against: the bottom rung of the published ladder,
+        # not `grade_line`. Those are different bets with very different hit rates, so the
+        # benchmark has to come from rows scored the same way. Until enough of those exist
+        # there is no honest comparison and the grade column stays blank.
+        if "line_lo" not in d.columns or "p_lo" not in d.columns:
+            return None
+        m = pd.to_numeric(d.line_lo, errors="coerce").notna()
+        d = d[m]
+        if len(d) < 50:
+            return None
+        y = (d[ocol].astype(float) > pd.to_numeric(d.line_lo).astype(float)).astype(float)
+        pcol = "p_lo"
+    else:
+        d = d[d[ocol].isin([0.0, 1.0])]
+        y = d[ocol].astype(float) if len(d) else None
+    if y is None or not len(d):
+        return None
+    m = y.notna() & d[pcol].notna()
+    if m.sum() < 50:
+        return None
+    yy = y[m].values.astype(float)
+    pp = np.clip(d[pcol][m].values.astype(float), 1e-6, 1 - 1e-6)
+    return float(-(yy * np.log(pp) + (1 - yy) * np.log(1 - pp)).mean())
+
+
+def grade(ll, base, n):
+    if ll is None or base is None:
+        return ""
+    if n < MIN_TO_GRADE:
+        return "small sample"
+    r = ll / base
+    for cut, word in GRADES:
+        if r < cut:
+            return word
+    return "poor"
 
 
 def score(y, p):
@@ -163,7 +264,7 @@ def score(y, p):
 
 
 def main(day, post=False):
-    summary, detail, ys, ps = [], [], [], []
+    summary, detail, ys, ps, ungraded = [], [], [], [], []
     for stem, label, dcol, kind, args in BOARDS:
         d = read(stem, dcol, day)
         if d is None:
@@ -175,16 +276,28 @@ def main(day, post=False):
         else:
             got, lines = props(d)
         if not lines:
+            # Rows exist for the day but none could be graded. Almost always the pipeline
+            # has logged the board and the result has not landed yet, which is different
+            # from the board not playing, and the old output made them look identical.
+            ungraded.append((label, len(d)))
             continue
         if got is not None:
             y, p = got
             if p is None:                   # spreads: hit/miss only, see spread()
                 y = np.asarray(y, float)
                 summary.append((label, len(y), int(y.sum()), int((1 - y).sum()),
-                                y.mean(), None, None))
+                                y.mean(), None, None, ""))
             else:
                 hits, n, ll, br = score(y, p)
-                summary.append((label, n, hits, n - hits, hits / n, ll, br))
+                # args is empty for props, so this cannot be a dict lookup: both values
+                # would be evaluated and args[2] would raise.
+                if kind == "money":
+                    pc, oc, bk = args[2], args[3], "binary"
+                else:
+                    pc, oc, bk = "p_grade", "actual", "line"
+                base = baseline_ll(stem, pc, oc, bk)
+                summary.append((label, n, hits, n - hits, hits / n, ll, br,
+                                grade(ll, base, n)))
                 ys.append(np.asarray(y, float))
                 ps.append(np.asarray(p, float))
         detail.append((label, kind, lines))
@@ -231,25 +344,22 @@ def main(day, post=False):
         return
 
     out += ["### By board", "",
-            "| board | graded | hit | miss | hit rate | log loss | Brier |",
-            "|---|---:|---:|---:|---:|---:|---:|"]
+            "| board | graded | hit | miss | hit rate | log loss | Brier | vs normal |",
+            "|---|---:|---:|---:|---:|---:|---:|---|"]
     th = tn = 0
-    for label, n, h, m, hr, ll, br in summary:
+    for label, n, h, m, hr, ll, br, gd in summary:
         lls = f"{ll:.4f}" if ll is not None else "n/a"
         brs = f"{br:.4f}" if br is not None else "n/a"
-        out.append(f"| {label} | {n} | {h} | {m} | {hr:.1%} | {lls} | {brs} |")
+        out.append(f"| {label} | {n} | {h} | {m} | {hr:.1%} | {lls} | {brs} | {gd} |")
         th += h
         tn += n
     if tn:
         out.append(f"| **All boards** | **{tn}** | **{th}** | **{tn - th}** | "
-                   f"**{th / tn:.1%}** | | |")
+                   f"**{th / tn:.1%}** | | | |")
     out.append("")
-    if ys:
-        p = np.concatenate(ps)
-        conf = np.maximum(p, 1 - p)
-        out.append(f"{int((conf < .60).sum())} of {len(p)} two-way forecasts were games the "
-                   f"model itself called under 60%, so close to a toss-up.")
-    if any(ll is None for *_, ll, _ in summary):
+    out.append("*vs normal* compares the day's log loss to that board's own frozen "
+               "backtest. elite is 20% better, poor is 10% worse.")
+    if any(r[5] is None for r in summary):
         out.append("")
         out.append("*Spread boards show hit rate only. They publish a line rather than a "
                    "price, so there is no per-game probability to score.*")
@@ -258,8 +368,21 @@ def main(day, post=False):
         out.append("*Small day. One result moves these a lot.*")
     out.append("")
 
+    CAP = 25
+    if ungraded:
+        out.append("Logged but not yet graded: "
+                   + ", ".join(f"{lab} ({n})" for lab, n in ungraded)
+                   + ". Results land when that pipeline next runs.")
+        out.append("")
+
     for label, kind, lines in detail:
-        out += [f"### {label}", "", HEADERS[kind]] + lines + [""]
+        shown, extra = lines[:CAP], max(0, len(lines) - CAP)
+        out += [f"### {label}", "", HEADERS[kind]] + shown
+        if extra:
+            out.append("")
+            out.append(f"*Showing the {CAP} largest forecasts. {extra} more on the "
+                       f"dashboard.*")
+        out.append("")
 
     txt = "\n".join(out) + "\n"
     print(txt)
