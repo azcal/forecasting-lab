@@ -64,6 +64,33 @@ def _keyframe(d, key):
     return d[key].astype(str).agg("|".join, axis=1)
 
 
+def freshness(d):
+    """Latest date with a graded outcome, and how many rows are graded.
+
+    Printed on both sides of every merge so a stale board is attributable in one look:
+    if the PULLED file is already behind, the pipeline has not graded yet and nothing here
+    can help; if the pulled file is current and the KEPT file is not, the merge is at
+    fault. Without this the two look identical from the outside.
+    """
+    oc = next((c for c in ("result", "y", "actual") if c in d.columns), None)
+    dc = next((c for c in ("date", "ts", "game_date") if c in d.columns), None)
+    if oc is None or dc is None:
+        return "no outcome column", 0
+    g = d[d[oc].notna()]
+    if not len(g):
+        return "none graded", 0
+    t = g[dc].astype(str).str.strip().str.replace(r"\.0$", "", regex=True)
+    ymd = t.str.fullmatch(r"\d{8}")
+    parsed = pd.Series(pd.NaT, index=g.index, dtype="datetime64[ns]")
+    if ymd.any():
+        parsed.loc[ymd] = pd.to_datetime(t[ymd], format="%Y%m%d", errors="coerce")
+    if (~ymd).any():
+        parsed.loc[~ymd] = pd.to_datetime(t[~ymd], format="mixed", errors="coerce",
+                                          utc=True).dt.tz_localize(None)
+    last = parsed.max()
+    return ("unparseable dates" if pd.isna(last) else f"{last:%Y-%m-%d}"), len(g)
+
+
 def merge(sport, pulled_path, kept_path):
     key = KEYS.get(sport)
     if key is None:
@@ -117,7 +144,14 @@ def merge(sport, pulled_path, kept_path):
         bits.append(f"columns added {new_cols}")
     if gone_cols:
         bits.append(f"no longer written {gone_cols}")
+    pf, pn = freshness(pulled)
+    kf, kn = freshness(out)
+    bits.append(f"pulled graded to {pf} ({pn})")
+    bits.append(f"now graded to {kf} ({kn})")
     print(f"  {sport:7} " + ", ".join(bits))
+    if pf != kf:
+        print(f"  {'':7} the pulled file and the merged file disagree on how current they "
+              f"are. That points at the merge key, not the pipeline.")
     return len(out)
 
 
