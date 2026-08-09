@@ -71,11 +71,19 @@ def read(stem, dcol, day):
 
 
 def money(d, home, away, pcol, ycol, extra=None, sep="@"):
-    """A two-way board: pick the side above 50%, grade against a 0/1 outcome."""
+    """A two-way board: pick the side above 50%, grade against a 0/1 outcome.
+
+    Returns the count of rows it could not grade as well. A board that produces some
+    results and quietly drops the rest looks complete, and the dropped ones are exactly
+    the interesting cases: on 2026-08-08 two UFC bouts were boarded whose opponents were
+    then replaced, so the picks were void and the recap simply showed nine of eleven.
+    """
+    total = len(d)
     d = d[d[pcol].notna() & d[ycol].notna()]
     d = d[d[ycol].isin([0.0, 1.0])]
+    dropped = total - len(d)
     if not len(d):
-        return None, []
+        return None, [], dropped
     p = d[pcol].astype(float).values
     y = d[ycol].astype(float).values
     pick_home = p >= .5
@@ -88,7 +96,7 @@ def money(d, home, away, pcol, ycol, extra=None, sep="@"):
         tag = "" if extra is None else f" _{r[extra]}_"
         lines.append(f"| {r[away]} {sep} {r[home]}{tag} | {pick} {conf[i]:.0%} | {won} won | "
                      f"{'HIT' if hit[i] else 'miss'} |")
-    return (y, p), lines
+    return (y, p), lines, dropped
 
 
 def spread(d, pcol_unused=None):
@@ -289,8 +297,9 @@ def main(day, post=False):
         d = read(stem, dcol, day)
         if d is None:
             continue
+        dropped = 0
         if kind == "money":
-            got, lines = money(d, *args)
+            got, lines, dropped = money(d, *args)
         elif kind == "spread":
             got, lines = spread(d)
         else:
@@ -320,6 +329,8 @@ def main(day, post=False):
                                 grade(ll, base, n)))
                 ys.append(np.asarray(y, float))
                 ps.append(np.asarray(p, float))
+        if dropped:
+            ungraded.append((label, dropped))
         detail.append((label, kind, lines))
 
     out = [f"## MBM results, {day:%A %d %B %Y}", ""]
@@ -390,9 +401,10 @@ def main(day, post=False):
 
     CAP = 25
     if ungraded:
-        out.append("Logged but not yet graded: "
+        out.append("Logged but not graded: "
                    + ", ".join(f"{lab} ({n})" for lab, n in ungraded)
-                   + ". Results land when that pipeline next runs.")
+                   + ". Either the result has not landed yet, or the fixture changed after "
+                   + "it was boarded and the pick is void.")
         out.append("")
 
     for label, kind, lines in detail:
