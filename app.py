@@ -214,7 +214,7 @@ BOARD_NOTES = {
 RETIRED_MD = """
 ### Retired boards
 
-Five targets were built, evaluated, and shut off. Each was tested once on a frozen holdout
+Six targets were built, evaluated, and shut off. Each was tested once on a frozen holdout
 and retired against a stated bar rather than on judgement after the fact. They are published
 here because a model that beats nothing is worth more as a documented negative than as a
 green light.
@@ -236,6 +236,31 @@ better than a coin flip. The structural problem is worse than the headline: pred
 0.231 to 0.469 with a standard deviation of 0.042, against a base rate of 0.4334. The model's
 ceiling sits below its own base rate, so it can never call a long series. That is a resolution
 failure, and post-hoc calibration cannot repair it. Retired rather than left paused.
+
+#### Player props: points + rebounds + assists
+*Retired 2026-08-07.* The largest board in the stack, 8,937 graded forecasts, and the one
+that made the clearest case against itself.
+
+The projection is genuinely better than naive. On the 2026 holdout, 8,137 NBA player-games:
+
+| metric | model | naive last-10 | gain |
+|---|---|---|---|
+| mean absolute error | 6.608 | 6.944 | **+0.336** |
+
+That is real and it is not enough. Against a typical standard deviation of 8.3, a 0.336
+point gain converts to roughly **1.6 percentage points** of probability edge at the line.
+Prop markets hold 6.5% to 9%, which needs about **3.2 to 4.5 points** just to break even.
+Short by a factor of two to three.
+
+WNBA is worse: +0.052 points of MAE, about 0.26 points of probability, effectively nothing.
+
+And the 1.6 is measured against a last-ten average, not against a book. A book is not using
+a last-ten average, so the true gap is smaller and possibly negative. Nothing here carries
+market prices, so it cannot be measured either way, and a board that cannot be shown to
+beat its market is not one to publish.
+
+Forecasts are still produced, logged and graded every run, so the decision stays under
+measurement. The tripwire still fires if the projection stops beating the baseline.
 
 #### MLS: match winner, draw no bet
 *Retired 2026-08-03, before it ever boarded.* Built alongside Brasileirao and Liga MX on the
@@ -373,7 +398,13 @@ def phase_of(d):
 
 
 def _props_head(name):
-    """The PRA board for one league, read from the shared props log."""
+    """The PRA board for one league, read from the shared props log.
+
+    Retired 2026-08-07, so this returns None and the head no longer renders on the NBA or
+    WNBA tabs. The log keeps filling and the write-up under Retired carries the numbers.
+    Delete the early return to bring it back.
+    """
+    return None
     if name not in ("NBA", "WNBA") or not os.path.exists(PROPS_FILE):
         return None
     try:

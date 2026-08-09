@@ -139,12 +139,25 @@ def props(d):
     if not need.issubset(d.columns):
         return None, []
     d = d[d.actual.notna()].copy()
-    if "line_lo" in d.columns:
+    if "athlete_id" in d.columns:
+        # Belt and braces. The merge key is fixed upstream, but a duplicated row here
+        # doubles a player in a public post, so drop them at the point of display too.
+        k = (d.athlete_id.astype(str).str.strip().str.replace(r"\.0$", "", regex=True)
+             + "|" + d.get("game_id", pd.Series("", index=d.index)).astype(str))
+        before = len(d)
+        d = d[~k.duplicated()]
+        if before != len(d):
+            print(f"props: dropped {before - len(d)} duplicate row(s) before display")
+    fallback = False
+    if "line_lo" in d.columns and pd.to_numeric(d.line_lo, errors="coerce").notna().any():
         d["_line"] = pd.to_numeric(d.line_lo, errors="coerce")
         if "grade_line" in d.columns:
+            n_fb = int(d._line.isna().sum())
+            fallback = n_fb > 0
             d["_line"] = d._line.fillna(pd.to_numeric(d.grade_line, errors="coerce"))
     elif "grade_line" in d.columns:
         d["_line"] = pd.to_numeric(d.grade_line, errors="coerce")
+        fallback = True
     else:
         return None, []
     d = d[d._line.notna()]
@@ -171,6 +184,10 @@ def props(d):
                      f"{act[j] - proj[j]:+.0f} | {'HIT' if hit[j] else 'miss'} |")
     # p is the model's own probability for that rung where it was logged, so log loss and
     # Brier describe the line that was published rather than a different one.
+    if fallback:
+        lines.append("")
+        lines.append("*Lines shown are forecast +2.5, not the published ladder. Those rows "
+                     "predate the runner logging which rung it posted.*")
     if "p_lo" in d.columns and pd.to_numeric(d.p_lo, errors="coerce").notna().any():
         p = pd.to_numeric(d.p_lo, errors="coerce").fillna(0.5).values
         return (hit.astype(float), p), lines
@@ -187,7 +204,10 @@ BOARDS = [
     ("soccer_americas", "Soccer Americas", "date", "money",  ("home", "away", "p_home", "result", "league")),
     ("cs2",             "CS2",             "ts",   "money",  ("team1", "team2", "p_team1", "y", None, "vs")),
     ("mma",             "MMA",             "date", "money",  ("A", "B", "p_win_a", "result", None, "vs")),
-    ("props",           "Player props",    "date", "props",  ()),
+    # Props retired 2026-08-07: still forecast and graded, never published, so it is not a
+    # result to report. Its numbers live under Retired on the dashboard. Uncomment to
+    # bring it back if it is ever published again.
+    # ("props",         "Player props",    "date", "props",  ()),
 ]
 HEADERS = {"money": "| matchup | pick | result | call |\n|---|---|---|---|",
            "spread": "| matchup | pick | final | call |\n|---|---|---|---|",

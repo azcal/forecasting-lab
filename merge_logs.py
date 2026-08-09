@@ -53,6 +53,19 @@ KEYS = {
 SORT_CANDIDATES = ("date", "ts")
 
 
+def norm_key(s):
+    """Canonical text form of a key column.
+
+    `astype(str)` alone is not enough. A CSV column of ids reads back as float64 the moment
+    it contains one blank, so a stored row keys on "2998938.0" while a freshly built row
+    keys on "2998938". Those never match, the old row is never replaced, and every rerun
+    adds a duplicate. Stripping the trailing .0 makes both sides agree.
+    """
+    return (s.astype(str).str.strip()
+             .str.replace(r"\.0$", "", regex=True)
+             .replace({"nan": "", "None": "", "<NA>": ""}))
+
+
 def _keyframe(d, key):
     """Join the key columns into one string.
 
@@ -61,7 +74,7 @@ def _keyframe(d, key):
     to a string key never matches, so every row would duplicate and the file would double
     in size while looking like it merged. Both sides are cast before the join.
     """
-    return d[key].astype(str).agg("|".join, axis=1)
+    return d[key].apply(norm_key).agg("|".join, axis=1)
 
 
 def freshness(d):
