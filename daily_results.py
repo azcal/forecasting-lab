@@ -70,7 +70,7 @@ def read(stem, dcol, day):
     return d if len(d) else None
 
 
-def money(d, home, away, pcol, ycol, extra=None, sep="@"):
+def money(d, home, away, pcol, ycol, extra=None, sep="@", home_first=False):
     """A two-way board: pick the side above 50%, grade against a 0/1 outcome.
 
     Returns the count of rows it could not grade as well. A board that produces some
@@ -80,8 +80,13 @@ def money(d, home, away, pcol, ycol, extra=None, sep="@"):
     """
     total = len(d)
     d = d[d[pcol].notna() & d[ycol].notna()]
+    # A draw on a draw-no-bet board is a PUSH: stake returned, neither hit nor miss. It is
+    # a known outcome, so counting it as "not graded" alongside a result that has not
+    # landed yet conflates two different things and makes the board look incomplete when
+    # it is settled.
+    pushed = int((d[ycol] == -1.0).sum())
     d = d[d[ycol].isin([0.0, 1.0])]
-    dropped = total - len(d)
+    dropped = total - len(d) - pushed
     if not len(d):
         return None, [], dropped
     p = d[pcol].astype(float).values
@@ -93,9 +98,18 @@ def money(d, home, away, pcol, ycol, extra=None, sep="@"):
     for i, (_, r) in enumerate(d.iterrows()):
         pick = r[home] if pick_home[i] else r[away]
         won = r[home] if y[i] == 1 else r[away]
-        tag = "" if extra is None else f" _{r[extra]}_"
-        lines.append(f"| {r[away]} {sep} {r[home]}{tag} | {pick} {conf[i]:.0%} | {won} won | "
+        tag = "" if extra is None else f" ({r[extra]})"
+        # Soccer names the home side first; the US boards use "away @ home". Matching the
+        # board's own convention matters: a reader comparing the recap to what was posted
+        # should not have to work out that the sides were swapped.
+        mu = (f"{r[home]} {sep} {r[away]}" if home_first
+              else f"{r[away]} {sep} {r[home]}")
+        lines.append(f"| {mu}{tag} | {pick} {conf[i]:.0%} | {won} won | "
                      f"{'HIT' if hit[i] else 'miss'} |")
+    if pushed:
+        lines.append("")
+        lines.append(f"*{pushed} draw{'s' if pushed != 1 else ''}: stake returned on a "
+                     f"draw-no-bet board, neither hit nor miss.*")
     return (y, p), lines, dropped
 
 
@@ -208,8 +222,8 @@ BOARDS = [
     ("nhl",             "NHL",             "date", "money",  ("home", "away", "p_home", "result", None)),
     ("nfl",             "NFL spread",      "date", "spread", ()),
     ("ncaaf",           "NCAAF",           "date", "money",  ("home", "away", "p_home", "result", None)),
-    ("soccer",          "Soccer Big 5",    "date", "money",  ("home", "away", "p_home", "result", "league")),
-    ("soccer_americas", "Soccer Americas", "date", "money",  ("home", "away", "p_home", "result", "league")),
+    ("soccer",          "Soccer Big 5",    "date", "money",  ("home", "away", "p_home", "result", "league", "vs", True)),
+    ("soccer_americas", "Soccer Americas", "date", "money",  ("home", "away", "p_home", "result", "league", "vs", True)),
     ("cs2",             "CS2",             "ts",   "money",  ("team1", "team2", "p_team1", "y", None, "vs")),
     ("mma",             "MMA",             "date", "money",  ("A", "B", "p_win_a", "result", None, "vs")),
     # Props retired 2026-08-07: still forecast and graded, never published, so it is not a
