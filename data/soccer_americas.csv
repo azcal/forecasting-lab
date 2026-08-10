@@ -945,9 +945,9 @@ Brasileirao|2025-12-07|Fluminense|Bahia,2025-12-07,Brasileirao,Fluminense,Bahia,
 LigaMX|2025-12-07|Toluca|Monterrey,2025-12-07,LigaMX,Toluca,Monterrey,0.715761984002102,0.6712489618827614,1,v1-backfill,1.0
 LigaMX|2025-12-12|Tigres UANL|Toluca,2025-12-12,LigaMX,Tigres UANL,Toluca,0.546851369013603,0.5973410284008711,1,v1-backfill,1.0
 LigaMX|2025-12-15|Toluca|Tigres UANL,2025-12-15,LigaMX,Toluca,Tigres UANL,0.6575861604652158,0.6382074856640124,1,v1-backfill,1.0
-Brasileirao|2026-08-09|Bragantino|Corinthians,2026-08-09,Brasileirao,Bragantino,Corinthians,0.6421614548685087,0.6174234207144493,1,v1,
-Brasileirao|2026-08-09|Palmeiras|Internacional,2026-08-09,Brasileirao,Palmeiras,Internacional,0.8639806308207783,0.8072136527581957,1,v1,
-Brasileirao|2026-08-09|Santos|Athletico-PR,2026-08-09,Brasileirao,Santos,Athletico-PR,0.5594827003047634,0.5955745379479029,1,v1,
-Brasileirao|2026-08-09|Cruzeiro|Mirassol,2026-08-09,Brasileirao,Cruzeiro,Mirassol,0.7079134322651449,0.6909195788200405,1,v1,
-Brasileirao|2026-08-09|Bahia|Vasco,2026-08-09,Brasileirao,Bahia,Vasco,0.7680758097081581,0.7123662068370065,1,v1,
-Brasileirao|2026-08-09|Flamengo RJ|Vitoria,2026-08-09,Brasileirao,Flamengo RJ,Vitoria,0.8692169635545319,0.7837084577918649,1,v1,
+Brasileirao|2026-08-09|Bragantino|Corinthians,2026-08-09,Brasileirao,Bragantino,Corinthians,0.6421614548685087,0.6174234207144493,1,v1,0.0
+Brasileirao|2026-08-09|Palmeiras|Internacional,2026-08-09,Brasileirao,Palmeiras,Internacional,0.8639806308207783,0.8072136527581957,1,v1,-1.0
+Brasileirao|2026-08-09|Santos|Athletico-PR,2026-08-09,Brasileirao,Santos,Athletico-PR,0.5594827003047634,0.5955745379479029,1,v1,0.0
+Brasileirao|2026-08-09|Cruzeiro|Mirassol,2026-08-09,Brasileirao,Cruzeiro,Mirassol,0.7079134322651449,0.6909195788200405,1,v1,1.0
+Brasileirao|2026-08-09|Bahia|Vasco,2026-08-09,Brasileirao,Bahia,Vasco,0.7680758097081581,0.7123662068370065,1,v1,-1.0
+Brasileirao|2026-08-09|Flamengo RJ|Vitoria,2026-08-09,Brasileirao,Flamengo RJ,Vitoria,0.8692169635545319,0.7837084577918649,1,v1,1.0
