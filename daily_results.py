@@ -56,6 +56,13 @@ def parse_dates(col):
     return out
 
 
+# Retired leagues that share a log file with live ones. MLS is forecast and graded on every
+# run but never published, so its results must not appear in a record of published picks.
+# Props is excluded wholesale below; MLS cannot be, because its rows sit in the same file as
+# Brasileirao and Liga MX.
+DROP_LEAGUES = {"soccer_americas": {"MLS"}}
+
+
 def read(stem, dcol, day):
     path = os.path.join(DATA, f"{stem}.csv")
     if not os.path.exists(path):
@@ -67,6 +74,9 @@ def read(stem, dcol, day):
     if dcol not in d.columns:
         return None
     d = d[parse_dates(d[dcol]).dt.date == day]
+    drop = DROP_LEAGUES.get(stem)
+    if drop is not None and "league" in d.columns:
+        d = d[~d.league.isin(drop)]
     return d if len(d) else None
 
 
