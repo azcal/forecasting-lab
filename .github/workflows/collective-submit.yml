@@ -1,0 +1,57 @@
+name: collective-submit
+# Sends data/picks.csv to the Model Collective. Reads that one file, writes nothing,
+# commits nothing, and does not touch refresh-dashboard-data or any other pipeline.
+#
+# Defaults to a DRY RUN on every path, including the schedule. Nothing reaches the live
+# endpoint unless someone runs it by hand and sets live to true, or the schedule block is
+# deliberately changed after the first dry run comes back clean.
+#
+# Timing matters more here than it looks. The Collective grades the FIRST submission per
+# game received before kickoff, and every later one is stored but not graded. So whenever
+# this first runs against the live endpoint is the version of the model that goes on the
+# record for those games. Submitting early is how a model shows closing-line value;
+# submitting early with a model that has not seen a snap of the current season is how it
+# locks in its worst numbers. Pick the moment on purpose.
+#
+# Setup:
+#   1. Rotate the Collective key, then add it to THIS repo as a secret COLLECTIVE_KEY
+#      (Settings > Secrets and variables > Actions).
+#   2. Run this workflow by hand with live = false and read the response.
+#   3. Only once the dry run resolves cleanly, run it again with live = true.
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "Submit for real. Leave false for a dry run that stores nothing."
+        type: boolean
+        default: false
+  schedule:
+    # 11:00 UTC daily, an hour before the dashboard's first pull, so it reads the copy
+    # committed yesterday rather than one being rewritten underneath it. Dry run only.
+    - cron: "0 11 * * *"
+permissions:
+  contents: read          # reads picks.csv, writes nothing
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      # No pip install. collective_submit.py is standard library only, so this job cannot
+      # be broken by a dependency change in any other workflow.
+      - name: submit
+        env:
+          COLLECTIVE_KEY: ${{ secrets.COLLECTIVE_KEY }}
+        run: |
+          if [ -z "$COLLECTIVE_KEY" ]; then
+            echo "COLLECTIVE_KEY not set. Add it as a repository secret, then rerun."
+            exit 1
+          fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.live }}" = "true" ]; then
+            echo "LIVE submission"
+            python collective_submit.py --live
+          else
+            echo "dry run"
+            python collective_submit.py
+          fi
