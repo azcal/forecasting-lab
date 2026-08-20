@@ -25,6 +25,13 @@ name: refresh-dashboard-data
 #      repos (Settings > Developer settings > Personal access tokens).
 #   2. Add it to THIS repo as a secret named PIPE_TOKEN.
 #   3. Edit OWNER below, and the repo names in the loop if yours differ.
+#
+# data/picks.csv is pulled separately, after the loop. It is not a prediction log: mbm-nfl
+# rebuilds it in full from its own log every run, so it is already cumulative and
+# self-consistent, and it carries published picks rather than model internals. Running it
+# through merge_logs.py would mean handing that script a sport key it has never seen and a
+# schema it cannot infer a merge key from. It gets the same protection by other means: a
+# failed or short pull leaves the existing copy alone.
 on:
   schedule:
     - cron: "0 13 * * *"      # 7am MDT / 6am MST, after the overnight pipeline runs
@@ -107,6 +114,51 @@ jobs:
             echo "nothing merged, failing so this does not pass silently"
             exit 1
           fi
+
+      # Published NFL picks. Uses PIPE_TOKEN, which already has Contents: Read on mbm-nfl
+      # because the loop above pulls that repo's predictions.csv with it. No second token.
+      #
+      # Deliberately exits 0 on every failure path. A picks pull that cannot complete must
+      # not fail the run and lose the ten merges that just succeeded, and it must not
+      # replace a good file with a short one or an error page. Same rule as the loop:
+      # skipped, not emptied.
+      - name: pull nfl picks
+        env:
+          PIPE_TOKEN: ${{ secrets.PIPE_TOKEN }}
+        run: |
+          mkdir -p data
+          url="https://api.github.com/repos/$OWNER/mbm-nfl/contents/logs/picks.csv"
+          if ! curl -sfL --max-time 60 \
+               -H "Authorization: Bearer $PIPE_TOKEN" \
+               -H "Accept: application/vnd.github.raw" \
+               -H "X-GitHub-Api-Version: 2022-11-28" \
+               "$url" -o data/picks.csv.tmp; then
+            rm -f data/picks.csv.tmp
+            echo "  picks  skipped, could not fetch (no picks.csv yet, or token scope)"
+            exit 0
+          fi
+          # A private repo the token cannot see returns 404, same as a genuinely missing
+          # file, so the status code alone cannot tell those apart. Check the payload is
+          # the file we asked for instead of trusting it.
+          if [ ! -s data/picks.csv.tmp ] || ! head -1 data/picks.csv.tmp | grep -q '^date,game_id,'; then
+            echo "  picks  skipped, response was not picks.csv:"
+            head -c 200 data/picks.csv.tmp 2>/dev/null || true
+            rm -f data/picks.csv.tmp
+            exit 0
+          fi
+          new=$(wc -l < data/picks.csv.tmp)
+          old=0
+          [ -f data/picks.csv ] && old=$(wc -l < data/picks.csv)
+          # picks.csv only ever grows, so a shorter pull means something upstream went
+          # wrong. Keep the longer copy and say so loudly rather than shortening history.
+          if [ "$new" -lt "$old" ]; then
+            echo "  picks  SKIPPED, pulled $((new-1)) rows but have $((old-1)) already;"
+            echo "         keeping the longer copy. Check mbm-nfl's logs/picks.csv."
+            rm -f data/picks.csv.tmp
+            exit 0
+          fi
+          mv data/picks.csv.tmp data/picks.csv
+          echo "  picks  $((new-1)) published picks"
 
       - name: commit
         run: |
