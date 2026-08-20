@@ -50,6 +50,33 @@ MODEL = os.environ.get("COLLECTIVE_MODEL", "").strip() or "moose-metrics"
 SPORT = os.environ.get("COLLECTIVE_SPORT", "").strip() or "NFL"
 ET = ZoneInfo("America/New_York")
 
+# Full names, not abbreviations. A first dry run sent nflverse codes and every row came
+# back quarantined as unknown_game with a null game_id, meaning the Collective could not
+# match them to its own schedule. nflverse uses LA for the Rams where most sources use
+# LAR, WAS where some use WSH, and JAX where some use JAC, so an abbreviation is the least
+# portable thing to key on. A full name is unambiguous under any matching scheme.
+FULL = {
+    "ARI": "Arizona Cardinals", "ATL": "Atlanta Falcons", "BAL": "Baltimore Ravens",
+    "BUF": "Buffalo Bills", "CAR": "Carolina Panthers", "CHI": "Chicago Bears",
+    "CIN": "Cincinnati Bengals", "CLE": "Cleveland Browns", "DAL": "Dallas Cowboys",
+    "DEN": "Denver Broncos", "DET": "Detroit Lions", "GB": "Green Bay Packers",
+    "HOU": "Houston Texans", "IND": "Indianapolis Colts", "JAX": "Jacksonville Jaguars",
+    "KC": "Kansas City Chiefs", "LA": "Los Angeles Rams", "LAR": "Los Angeles Rams",
+    "LAC": "Los Angeles Chargers", "LV": "Las Vegas Raiders", "MIA": "Miami Dolphins",
+    "MIN": "Minnesota Vikings", "NE": "New England Patriots", "NO": "New Orleans Saints",
+    "NYG": "New York Giants", "NYJ": "New York Jets", "PHI": "Philadelphia Eagles",
+    "PIT": "Pittsburgh Steelers", "SEA": "Seattle Seahawks", "SF": "San Francisco 49ers",
+    "TB": "Tampa Bay Buccaneers", "TEN": "Tennessee Titans", "WAS": "Washington Commanders",
+    "WSH": "Washington Commanders",
+}
+
+
+def team(code):
+    """Full club name. Unknown codes pass through unchanged and get flagged, so a rename
+    shows up in the log rather than as a silent quarantine."""
+    c = (code or "").strip().upper()
+    return FULL.get(c, code.strip())
+
 
 def kickoffs():
     """game_id -> ISO kickoff. nflverse gametime is Eastern, so it is localised there and
@@ -121,8 +148,12 @@ def build():
         if yr is None:
             skipped.append((gid, "no season"))
             continue
-        p = {"game_ref": gid, "season": yr, "home_team": r["home"].strip(),
-             "away_team": r["away"].strip(), "kickoff": ko}
+        hm, aw = team(r["home"]), team(r["away"])
+        for c in (r["home"], r["away"]):
+            if c.strip().upper() not in FULL:
+                print(f"  WARNING unmapped team code {c!r}, sending it as-is")
+        p = {"game_ref": gid, "season": yr, "home_team": hm, "away_team": aw,
+             "kickoff": ko}
         side = (r.get("pick_side") or "").strip().lower()
         if side in ("home", "away"):
             p["pick_side"] = side
@@ -189,7 +220,7 @@ def main():
     for g in games:
         ln = g.get("line_at_submission")
         cv = g.get("cover_probability")
-        print(f"{g['game_ref']:<20} {g['away_team'] + ' @ ' + g['home_team']:<11} "
+        print(f"{g['game_ref']:<20} {g['game_ref'].split('_', 2)[2]:<11} "
               f"{g['kickoff']:<21} {g.get('pick_side', '-'):>5} "
               f"{('-' if ln is None else format(ln, '+g')):>6} "
               f"{('-' if cv is None else format(cv, '.4f')):>7}")
