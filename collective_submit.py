@@ -41,6 +41,13 @@ PICKS = os.path.join("data", "picks.csv")
 # Overridable from the workflow so a rename never needs a code change.
 CREATOR = os.environ.get("COLLECTIVE_CREATOR", "").strip() or "mustbemoose"
 MODEL = os.environ.get("COLLECTIVE_MODEL", "").strip() or "moose-metrics"
+# The key is bound to a sport and the envelope has to name it:
+#   HTTP 422  This key submits NFL, the envelope says nothing
+# The field is undocumented, so both plausible names are sent. That is safe here rather
+# than a guess: the first attempt sent "projections" as the row key and the API objected
+# only that "rows" was ABSENT, never that "projections" was unknown, so unrecognised keys
+# are ignored. Once a dry run resolves, whichever one is unused can be dropped.
+SPORT = os.environ.get("COLLECTIVE_SPORT", "").strip() or "NFL"
 ET = ZoneInfo("America/New_York")
 
 
@@ -151,7 +158,8 @@ def main():
     # "projections" with HTTP 422 invalid_payload: "Envelope must include a non-empty rows
     # array." creator and model are kept as metadata; the key already identifies both, so
     # if a later response objects to them they can go without losing anything.
-    payload = {"creator": CREATOR, "model": MODEL, "rows": games}
+    payload = {"creator": CREATOR, "model": MODEL,
+               "sport": SPORT, "league": SPORT, "rows": games}
 
     live = a.live or os.environ.get("COLLECTIVE_LIVE", "").strip().lower() in ("1", "true", "yes")
     print(f"\n=== {len(games)} game(s) {'LIVE' if live else 'DRY RUN'} ===")
@@ -173,10 +181,12 @@ def main():
     url = BASE if live else BASE + "/dry-run"
     code, text = post(url, payload, key)
     print(f"\n=== HTTP {code} ===\n{text[:4000]}")
-    if code == 422 and "not" in text and "submits" in text:
-        print("\nThe key is bound to a different creator or model slug than the one sent.\n"
-              f"Sent creator={CREATOR!r} model={MODEL!r}. Set COLLECTIVE_CREATOR or\n"
-              "COLLECTIVE_MODEL in the workflow env to whatever the message names.")
+    if code == 422 and "This key submits" in text:
+        # Matched on "not" before, and "nothing" contains "not", so a missing-sport error
+        # printed advice about creator and model slugs. Match the actual phrase instead.
+        print(f"\nIdentity sent: creator={CREATOR!r} model={MODEL!r} sport={SPORT!r}.\n"
+              "Override with COLLECTIVE_CREATOR, COLLECTIVE_MODEL or COLLECTIVE_SPORT in\n"
+              "the workflow env to whatever the message above names.")
     if code >= 300 or code == 0:
         sys.exit(1)
 
