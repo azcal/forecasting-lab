@@ -1,0 +1,146 @@
+"""
+Send the published NFL picks to the Model Collective.
+
+Reads data/picks.csv and nothing else in this repo. Writes nothing, changes nothing,
+touches no other pipeline. Standard library only, so it needs no requirements file.
+
+Usage:
+    python collective_submit.py            # dry run, stores nothing
+    python collective_submit.py --live     # real submission
+
+WHAT LEAVES THIS REPO
+Finished numbers only: the game id, the two teams, kickoff, which side the pick is on,
+the market line it was priced against, and the probability that pick covers. No source,
+no weights, no formulas, no model internals. Everything sent is already public in
+data/picks.csv.
+
+KICKOFF
+picks.csv carries a date but not a time, and the Collective needs a real kickoff because
+only the first submission BEFORE kickoff counts toward the record. Times come from the
+nflverse schedule, which is public, needs no key, and is the same source the model itself
+uses. If picks.csv ever grows a `kickoff` column this prefers it and skips the fetch.
+
+COVER PROBABILITY
+Sent only where the row is a `covers` claim priced against a real book line. A `median`
+row is a wins-outright claim with no line behind it, so cover_probability would be a
+different quantity wearing the same name. Those rows go without it rather than with a
+wrong one.
+"""
+import argparse, csv, json, os, sys, urllib.request, urllib.error
+import datetime as dt
+from zoneinfo import ZoneInfo
+
+BASE = "https://iattxbkbufslbauoumga.supabase.co/functions/v1/collective_ingest/v1/projections"
+SCHEDULE = "https://github.com/nflverse/nfldata/raw/master/data/games.csv"
+PICKS = os.path.join("data", "picks.csv")
+CREATOR, MODEL = "MustBeMoose", "Moose Metrics (NFL)"
+ET = ZoneInfo("America/New_York")
+
+
+def kickoffs():
+    """game_id -> ISO kickoff. nflverse gametime is Eastern, so it is localised there and
+    converted, which keeps September (EDT) and December (EST) both correct."""
+    out = {}
+    with urllib.request.urlopen(SCHEDULE, timeout=60) as r:
+        rows = csv.DictReader(r.read().decode("utf-8", "replace").splitlines())
+        for g in rows:
+            day, tm = g.get("gameday"), g.get("gametime")
+            if not day or not tm:
+                continue
+            try:
+                naive = dt.datetime.strptime(f"{day} {tm}", "%Y-%m-%d %H:%M")
+            except ValueError:
+                continue
+            out[g["game_id"]] = naive.replace(tzinfo=ET).astimezone(dt.timezone.utc) \
+                                     .isoformat().replace("+00:00", "Z")
+    return out
+
+
+def num(v):
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def build():
+    if not os.path.exists(PICKS):
+        sys.exit(f"{PICKS} not found. Run the dashboard refresh first.")
+    with open(PICKS, newline="") as f:
+        rows = list(csv.DictReader(f))
+    need_times = not any(r.get("kickoff") for r in rows)
+    times = kickoffs() if need_times else {}
+    if need_times:
+        print(f"kickoff times: {len(times)} games from the nflverse schedule")
+
+    out, skipped = [], []
+    for r in rows:
+        gid = (r.get("game_ref") or r.get("game_id") or "").strip()
+        # Already played. The Collective grades first submissions before kickoff, so a
+        # settled game is noise at best and a "late" row at worst.
+        if (r.get("pick_result") or "").strip():
+            continue
+        ko = (r.get("kickoff") or "").strip() or times.get(gid)
+        if not (gid and r.get("home") and r.get("away") and ko):
+            skipped.append((gid or "?", "no kickoff" if not ko else "missing id or teams"))
+            continue
+        p = {"game_ref": gid, "home_team": r["home"].strip(),
+             "away_team": r["away"].strip(), "kickoff": ko}
+        side = (r.get("pick_side") or "").strip().lower()
+        if side in ("home", "away"):
+            p["pick_side"] = side
+        line = num(r.get("book_line"))
+        prob = num(r.get("pick_prob"))
+        # line_at_submission is the HOME team's handicap, negative meaning home favoured,
+        # which is already the convention picks.csv stores. No sign flip needed.
+        if line is not None:
+            p["line_at_submission"] = line
+            if prob is not None and (r.get("pick_claim") or "").strip() == "covers":
+                p["cover_probability"] = round(prob, 4)
+        out.append(p)
+    return out, skipped
+
+
+def post(url, payload, key):
+    body = json.dumps(payload).encode()
+    req = urllib.request.Request(url, data=body, method="POST", headers={
+        "x-collective-key": key, "content-type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=90) as r:
+            return r.status, r.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as e:
+        return e.code, e.read().decode("utf-8", "replace")
+    except Exception as e:
+        return 0, f"{type(e).__name__}: {e}"
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--live", action="store_true",
+                    help="submit for real. Without this it is a dry run and nothing is stored.")
+    a = ap.parse_args()
+    key = os.environ.get("COLLECTIVE_KEY", "").strip()
+    if not key:
+        sys.exit("COLLECTIVE_KEY is empty. Add it as a repository secret and list it in "
+                 "the workflow step's env: block.")
+
+    games, skipped = build()
+    if not games:
+        print("no unplayed games with a kickoff, nothing to send")
+        return
+    payload = {"creator": CREATOR, "model": MODEL, "projections": games}
+
+    print(f"\n=== {len(games)} game(s) {'LIVE' if a.live else 'DRY RUN'} ===")
+    print(json.dumps(payload, indent=2)[:4000])
+    for gid, why in skipped:
+        print(f"  skipped {gid}: {why}")
+
+    url = BASE if a.live else BASE + "/dry-run"
+    code, text = post(url, payload, key)
+    print(f"\n=== HTTP {code} ===\n{text[:4000]}")
+    if code >= 300 or code == 0:
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
