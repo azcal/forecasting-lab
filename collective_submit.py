@@ -73,6 +73,7 @@ def build():
     if need_times:
         print(f"kickoff times: {len(times)} games from the nflverse schedule")
 
+    now = dt.datetime.now(dt.timezone.utc)
     out, skipped = [], []
     for r in rows:
         gid = (r.get("game_ref") or r.get("game_id") or "").strip()
@@ -83,6 +84,17 @@ def build():
         ko = (r.get("kickoff") or "").strip() or times.get(gid)
         if not (gid and r.get("home") and r.get("away") and ko):
             skipped.append((gid or "?", "no kickoff" if not ko else "missing id or teams"))
+            continue
+        # Kicked off already. Only submissions received BEFORE kickoff are graded, so
+        # sending these produces "late" rows and nothing else. A game that has started but
+        # whose result has not reached the log yet still has an empty pick_result, so the
+        # settled-game filter above does not catch it; this does.
+        try:
+            if dt.datetime.fromisoformat(ko.replace("Z", "+00:00")) <= now:
+                skipped.append((gid, "already kicked off"))
+                continue
+        except ValueError:
+            skipped.append((gid, f"unparseable kickoff {ko!r}"))
             continue
         p = {"game_ref": gid, "home_team": r["home"].strip(),
              "away_team": r["away"].strip(), "kickoff": ko}
@@ -128,14 +140,30 @@ def main():
     if not games:
         print("no unplayed games with a kickoff, nothing to send")
         return
-    payload = {"creator": CREATOR, "model": MODEL, "projections": games}
+    # The envelope key is "rows". Confirmed by the API, which answered an earlier guess of
+    # "projections" with HTTP 422 invalid_payload: "Envelope must include a non-empty rows
+    # array." creator and model are kept as metadata; the key already identifies both, so
+    # if a later response objects to them they can go without losing anything.
+    payload = {"creator": CREATOR, "model": MODEL, "rows": games}
 
-    print(f"\n=== {len(games)} game(s) {'LIVE' if a.live else 'DRY RUN'} ===")
-    print(json.dumps(payload, indent=2)[:4000])
+    live = a.live or os.environ.get("COLLECTIVE_LIVE", "").strip().lower() in ("1", "true", "yes")
+    print(f"\n=== {len(games)} game(s) {'LIVE' if live else 'DRY RUN'} ===")
+    # A compact table rather than a wall of JSON, so every game is visible in the log
+    # instead of the first few and a truncation mark. One full row follows as a shape check.
+    print(f"{'game_ref':<20} {'matchup':<11} {'kickoff':<21} {'side':>5} "
+          f"{'line':>6} {'cover':>7}")
+    for g in games:
+        ln = g.get("line_at_submission")
+        cv = g.get("cover_probability")
+        print(f"{g['game_ref']:<20} {g['away_team'] + ' @ ' + g['home_team']:<11} "
+              f"{g['kickoff']:<21} {g.get('pick_side', '-'):>5} "
+              f"{('-' if ln is None else format(ln, '+g')):>6} "
+              f"{('-' if cv is None else format(cv, '.4f')):>7}")
     for gid, why in skipped:
         print(f"  skipped {gid}: {why}")
+    print("\nfirst row as sent:\n" + json.dumps(games[0], indent=2))
 
-    url = BASE if a.live else BASE + "/dry-run"
+    url = BASE if live else BASE + "/dry-run"
     code, text = post(url, payload, key)
     print(f"\n=== HTTP {code} ===\n{text[:4000]}")
     if code >= 300 or code == 0:
