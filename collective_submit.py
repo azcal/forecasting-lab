@@ -48,6 +48,16 @@ MODEL = os.environ.get("COLLECTIVE_MODEL", "").strip() or "moose-metrics"
 # only that "rows" was ABSENT, never that "projections" was unknown, so unrecognised keys
 # are ignored. Once a dry run resolves, whichever one is unused can be dropped.
 SPORT = os.environ.get("COLLECTIVE_SPORT", "").strip() or "NFL"
+# data_origin is a NOT NULL column in their projections table with no default, and their
+# handler was not filling it, so a live insert died with Postgres 23502 while the dry run
+# looked clean because it never touches the database. The field appears in every dry-run
+# response as data_origin: null, which is what gave it away.
+#
+# Sending it is a workaround for a server-side bug, not a documented field, so the accepted
+# value is a guess. Their grading rules separate live first submissions from backfilled
+# history, which is the likeliest thing this column records. If the value is rejected the
+# error should name the valid ones.
+DATA_ORIGIN = os.environ.get("COLLECTIVE_DATA_ORIGIN", "").strip() or "live"
 ET = ZoneInfo("America/New_York")
 
 # Full names, not abbreviations. A first dry run sent nflverse codes and every row came
@@ -186,11 +196,37 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--live", action="store_true",
                     help="submit for real. Without this it is a dry run and nothing is stored.")
+    ap.add_argument("--probe", action="store_true",
+                    help="post a deliberately INVALID row to the live endpoint. Safe: their "
+                         "validator has to reject it, so nothing can be written. Tells you "
+                         "whether a 500 comes from parsing or from persistence.")
     a = ap.parse_args()
     key = os.environ.get("COLLECTIVE_KEY", "").strip()
     if not key:
         sys.exit("COLLECTIVE_KEY is empty. Add it as a repository secret and list it in "
                  "the workflow step's env: block.")
+
+    if a.probe:
+        # season must be an integer; sending a string is guaranteed invalid. A 422 back
+        # means the validator runs fine on the live route and the 500 is downstream of it,
+        # in whatever writes the rows. A 500 back means the route is broken before
+        # validation. Either answer localises the fault, and no valid row is ever sent.
+        bad = {"creator": CREATOR, "model": MODEL, "sport": SPORT, "league": SPORT,
+               "season": "not-an-integer",
+               "rows": [{"game_ref": "PROBE-DO-NOT-STORE", "season": "not-an-integer",
+                         "home_team": "Seattle Seahawks",
+                         "away_team": "New England Patriots",
+                         "kickoff": "2026-09-10T00:20:00Z"}]}
+        code, text = post(BASE, bad, key)
+        print(f"PROBE of the LIVE endpoint with a deliberately invalid payload\n"
+              f"=== HTTP {code} ===\n{text[:2000]}\n")
+        if code == 422:
+            print("422: validation works on the live route, so the 500 is downstream of\n"
+                  "it. The crash is in whatever persists the rows, not in parsing.")
+        elif code >= 500:
+            print("500 even on an invalid payload: the live route is failing before it\n"
+                  "validates anything. Nothing you send will get through until it is fixed.")
+        return
 
     games, skipped = build()
     if not games:
@@ -209,7 +245,7 @@ def main():
     if len(set(yrs)) > 1:
         print(f"note: rows span seasons {sorted(set(yrs))}, envelope says {season}")
     payload = {"creator": CREATOR, "model": MODEL, "sport": SPORT, "league": SPORT,
-               "season": season, "rows": games}
+               "season": season, "data_origin": DATA_ORIGIN, "rows": games}
 
     live = a.live or os.environ.get("COLLECTIVE_LIVE", "").strip().lower() in ("1", "true", "yes")
     print(f"\n=== {len(games)} game(s) {'LIVE' if live else 'DRY RUN'} ===")
@@ -231,6 +267,26 @@ def main():
     url = BASE if live else BASE + "/dry-run"
     code, text = post(url, payload, key)
     print(f"\n=== HTTP {code} ===\n{text[:4000]}")
+    if code >= 500 or code == 0:
+        # A 5xx says the request reached them and something broke while handling it. It
+        # does NOT say whether the write happened, and only the first submission per game
+        # before kickoff is graded, so a blind retry can spend that status on rows that
+        # already have one. Verify before resending; a dry run is free and its duplicate
+        # flag answers the question.
+        print("\nSERVER ERROR, on their side: the same envelope validates on /dry-run.")
+        # A Postgres constraint code means the insert was refused and the transaction rolled
+        # back, so nothing persisted and a retry is safe. Any other 5xx leaves the write
+        # state unknown, and a blind retry can spend the first-submission status that
+        # grading depends on.
+        if '"db_code"' in text:
+            print("A db_code means the database REFUSED the insert, so nothing was stored\n"
+                  "and retrying is safe. Send the db_message to whoever runs the Collective;\n"
+                  "a not-null or constraint failure on their own table is their fix.")
+        else:
+            print("No database detail returned, so it is unknown whether rows were stored.\n"
+                  "Do NOT resubmit until you know. Run with live=false and check the\n"
+                  "duplicate flag, and check the Collective dashboard for a submission at\n"
+                  "the timestamp above.")
     if code == 422 and "This key submits" in text:
         # Matched on "not" before, and "nothing" contains "not", so a missing-sport error
         # printed advice about creator and model slugs. Match the actual phrase instead.
