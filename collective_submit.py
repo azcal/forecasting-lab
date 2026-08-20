@@ -110,7 +110,18 @@ def build():
         except ValueError:
             skipped.append((gid, f"unparseable kickoff {ko!r}"))
             continue
-        p = {"game_ref": gid, "home_team": r["home"].strip(),
+        # season is required and must be an integer. picks.csv carries it; the game_id
+        # prefix is the fallback, since nflverse ids start with the season year.
+        yr = None
+        try:
+            yr = int(float(r.get("season") or ""))
+        except (TypeError, ValueError):
+            head = gid.split("_")[0]
+            yr = int(head) if head.isdigit() and len(head) == 4 else None
+        if yr is None:
+            skipped.append((gid, "no season"))
+            continue
+        p = {"game_ref": gid, "season": yr, "home_team": r["home"].strip(),
              "away_team": r["away"].strip(), "kickoff": ko}
         side = (r.get("pick_side") or "").strip().lower()
         if side in ("home", "away"):
@@ -158,8 +169,16 @@ def main():
     # "projections" with HTTP 422 invalid_payload: "Envelope must include a non-empty rows
     # array." creator and model are kept as metadata; the key already identifies both, so
     # if a later response objects to them they can go without losing anything.
-    payload = {"creator": CREATOR, "model": MODEL,
-               "sport": SPORT, "league": SPORT, "rows": games}
+    # Envelope-level too. The error did not say which level it wanted, and the same
+    # ignored-unknown-keys behaviour that made sport/league safe applies here. An NFL
+    # season label is constant through its own playoffs, so one value per envelope is
+    # never ambiguous; if a slate ever straddled two, the most common wins and it says so.
+    yrs = [g["season"] for g in games]
+    season = max(set(yrs), key=yrs.count)
+    if len(set(yrs)) > 1:
+        print(f"note: rows span seasons {sorted(set(yrs))}, envelope says {season}")
+    payload = {"creator": CREATOR, "model": MODEL, "sport": SPORT, "league": SPORT,
+               "season": season, "rows": games}
 
     live = a.live or os.environ.get("COLLECTIVE_LIVE", "").strip().lower() in ("1", "true", "yes")
     print(f"\n=== {len(games)} game(s) {'LIVE' if live else 'DRY RUN'} ===")
