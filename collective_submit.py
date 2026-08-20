@@ -179,7 +179,10 @@ def build():
         # convention; only the displayed pick uses the picked team's side.
         pl = num(r.get("pick_line"))
         if pl is not None:
-            p["projected_spread"] = round(pl, 4)
+            # A pick on the away side of a pick'em gives -0.0, which JSON serialises as
+            # -0.0 and reads as a negative number that is not one. Normalise it.
+            pl = round(pl, 4)
+            p["projected_spread"] = 0.0 if pl == 0 else pl
         for field, col in (("projected_total", "model_total"),
                            ("home_win_probability", "home_win_prob")):
             v = num(r.get(col))
@@ -276,7 +279,7 @@ def main():
         cv = g.get("cover_probability")
         print(f"{g['game_ref']:<20} {g['game_ref'].split('_', 2)[2]:<11} "
               f"{g['kickoff']:<21} {g.get('pick_side', '-'):>5} "
-              f"{('-' if 'projected_spread' not in g else format(g['projected_spread'], '+g')):>6} "
+              f"{('-' if 'projected_spread' not in g else format(g['projected_spread'] + 0.0, '+g')):>6} "
               f"{('-' if 'home_win_probability' not in g else format(g['home_win_probability'], '.3f')):>6} "
               f"{('-' if ln is None else format(ln, '+g')):>6} "
               f"{('-' if cv is None else format(cv, '.4f')):>7}")
