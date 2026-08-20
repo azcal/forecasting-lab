@@ -167,6 +167,24 @@ def build():
         side = (r.get("pick_side") or "").strip().lower()
         if side in ("home", "away"):
             p["pick_side"] = side
+        # projected_spread is the PUBLISHED pick exactly as Discord shows it, on the
+        # PICKED team, with no sign conversion. The Board renders it next to pick_side as
+        # "pick away spr +3.5", so the two have to describe the same team: NE +3.5 goes
+        # over as pick_side away, projected_spread +3.5.
+        #
+        # This departs from the onboarding doc, which defines the field on the home team.
+        # Converting to home form made the Board read "pick away spr -3.5", which is
+        # Seattle's number under New England's label. line_at_submission stays in home
+        # form below, so anything grading against the market still gets the documented
+        # convention; only the displayed pick uses the picked team's side.
+        pl = num(r.get("pick_line"))
+        if pl is not None:
+            p["projected_spread"] = round(pl, 4)
+        for field, col in (("projected_total", "model_total"),
+                           ("home_win_probability", "home_win_prob")):
+            v = num(r.get(col))
+            if v is not None:
+                p[field] = round(v, 4)
         line = num(r.get("book_line"))
         prob = num(r.get("pick_prob"))
         # line_at_submission is the HOME team's handicap, negative meaning home favoured,
@@ -252,12 +270,14 @@ def main():
     # A compact table rather than a wall of JSON, so every game is visible in the log
     # instead of the first few and a truncation mark. One full row follows as a shape check.
     print(f"{'game_ref':<20} {'matchup':<11} {'kickoff':<21} {'side':>5} "
-          f"{'line':>6} {'cover':>7}")
+          f"{'mdlspr':>6} {'homeW':>6} {'line':>6} {'cover':>7}")
     for g in games:
         ln = g.get("line_at_submission")
         cv = g.get("cover_probability")
         print(f"{g['game_ref']:<20} {g['game_ref'].split('_', 2)[2]:<11} "
               f"{g['kickoff']:<21} {g.get('pick_side', '-'):>5} "
+              f"{('-' if 'projected_spread' not in g else format(g['projected_spread'], '+g')):>6} "
+              f"{('-' if 'home_win_probability' not in g else format(g['home_win_probability'], '.3f')):>6} "
               f"{('-' if ln is None else format(ln, '+g')):>6} "
               f"{('-' if cv is None else format(cv, '.4f')):>7}")
     for gid, why in skipped:
