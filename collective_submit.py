@@ -33,7 +33,14 @@ from zoneinfo import ZoneInfo
 BASE = "https://iattxbkbufslbauoumga.supabase.co/functions/v1/collective_ingest/v1/projections"
 SCHEDULE = "https://github.com/nflverse/nfldata/raw/master/data/games.csv"
 PICKS = os.path.join("data", "picks.csv")
-CREATOR, MODEL = "MustBeMoose", "Moose Metrics (NFL)"
+# Slugs, not display names. The onboarding page shows "Moose Metrics (NFL)", which is the
+# label; the API binds each key to a slug and rejected that with HTTP 422:
+#   This key submits model "moose-metrics", not "Moose Metrics (NFL)"
+# The creator slug matches data-collective-host in the embed snippet.
+#
+# Overridable from the workflow so a rename never needs a code change.
+CREATOR = os.environ.get("COLLECTIVE_CREATOR", "").strip() or "mustbemoose"
+MODEL = os.environ.get("COLLECTIVE_MODEL", "").strip() or "moose-metrics"
 ET = ZoneInfo("America/New_York")
 
 
@@ -166,6 +173,10 @@ def main():
     url = BASE if live else BASE + "/dry-run"
     code, text = post(url, payload, key)
     print(f"\n=== HTTP {code} ===\n{text[:4000]}")
+    if code == 422 and "not" in text and "submits" in text:
+        print("\nThe key is bound to a different creator or model slug than the one sent.\n"
+              f"Sent creator={CREATOR!r} model={MODEL!r}. Set COLLECTIVE_CREATOR or\n"
+              "COLLECTIVE_MODEL in the workflow env to whatever the message names.")
     if code >= 300 or code == 0:
         sys.exit(1)
 
