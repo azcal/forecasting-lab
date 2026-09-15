@@ -1129,13 +1129,13 @@ Brasileirao|2026-09-12|Atletico-MG|Fluminense,2026-09-12,Brasileirao,Atletico-MG
 Brasileirao|2026-09-12|Gremio|Vasco,2026-09-12,Brasileirao,Gremio,Vasco,0.7179656345788433,0.6542882833716607,1,v1,0.0
 Brasileirao|2026-09-12|Chapecoense-SC|Internacional,2026-09-12,Brasileirao,Chapecoense-SC,Internacional,0.5133462054753724,0.5237118685366807,1,v1,0.0
 Brasileirao|2026-09-12|Palmeiras|Sao Paulo,2026-09-12,Brasileirao,Palmeiras,Sao Paulo,0.831948048263913,0.7805522868974939,1,v1,1.0
-Brasileirao|2026-09-12|Botafogo RJ|Bragantino,2026-09-12,Brasileirao,Botafogo RJ,Bragantino,0.7183075183047055,0.6820022303817022,1,v1,-1.0
-LigaMX|2026-09-12|Toluca|Atlas,2026-09-12,LigaMX,Toluca,Atlas,0.7871857478242147,0.7337274840386041,1,v1,1.0
-MLS|2026-09-12|Inter Miami|Nashville SC,2026-09-12,MLS,Inter Miami,Nashville SC,0.6962954416462849,0.6495701185321445,0,v1-retired,-1.0
-MLS|2026-09-12|FC Cincinnati|Charlotte,2026-09-12,MLS,FC Cincinnati,Charlotte,0.6262893655339183,0.6330063340829807,0,v1-retired,-1.0
-MLS|2026-09-12|Orlando City|Toronto FC,2026-09-12,MLS,Orlando City,Toronto FC,0.6883197603186396,0.6839545108119001,0,v1-retired,1.0
-MLS|2026-09-12|Columbus Crew|New York Red Bulls,2026-09-12,MLS,Columbus Crew,New York Red Bulls,0.7340087848713677,0.6411847322314146,0,v1-retired,0.0
-MLS|2026-09-12|DC United|Atlanta Utd,2026-09-12,MLS,DC United,Atlanta Utd,0.6921847561545642,0.6614778507196152,0,v1-retired,-1.0
+Brasileirao|2026-09-12|Botafogo RJ|Bragantino,2026-09-12,Brasileirao,Botafogo RJ,Bragantino,0.7183075183047055,0.6820022303817022,1,v1,
+LigaMX|2026-09-12|Toluca|Atlas,2026-09-12,LigaMX,Toluca,Atlas,0.7871857478242147,0.7337274840386041,1,v1,
+MLS|2026-09-12|Inter Miami|Nashville SC,2026-09-12,MLS,Inter Miami,Nashville SC,0.6962954416462849,0.6495701185321445,0,v1-retired,
+MLS|2026-09-12|FC Cincinnati|Charlotte,2026-09-12,MLS,FC Cincinnati,Charlotte,0.6262893655339183,0.6330063340829807,0,v1-retired,
+MLS|2026-09-12|Orlando City|Toronto FC,2026-09-12,MLS,Orlando City,Toronto FC,0.6883197603186396,0.6839545108119001,0,v1-retired,
+MLS|2026-09-12|Columbus Crew|New York Red Bulls,2026-09-12,MLS,Columbus Crew,New York Red Bulls,0.7340087848713677,0.6411847322314146,0,v1-retired,
+MLS|2026-09-12|DC United|Atlanta Utd,2026-09-12,MLS,DC United,Atlanta Utd,0.6921847561545642,0.6614778507196152,0,v1-retired,
 Brasileirao|2026-09-13|Santos|Cruzeiro,2026-09-13,Brasileirao,Santos,Cruzeiro,0.5865555765667407,0.5152844150234667,1,v1,1.0
 LigaMX|2026-09-13|Cruz Azul|Club America,2026-09-13,LigaMX,Cruz Azul,Club America,0.6447630448525847,0.640200520589304,1,v1,1.0
 LigaMX|2026-09-13|Monterrey|Tigres UANL,2026-09-13,LigaMX,Monterrey,Tigres UANL,0.5403616029487346,0.5985569460788616,1,v1,-1.0
@@ -1153,41 +1153,41 @@ MLS|2026-09-13|Chicago Fire|New England Revolution,2026-09-13,MLS,Chicago Fire,N
 LigaMX|2026-09-14|Santos Laguna|Juarez,2026-09-14,LigaMX,Santos Laguna,Juarez,0.6071018973133893,0.5831762828535155,1,v1,1.0
 LigaMX|2026-09-14|Guadalajara Chivas|UNAM Pumas,2026-09-14,LigaMX,Guadalajara Chivas,UNAM Pumas,0.663138109274251,0.6557186363747333,1,v1,1.0
 MLS|2026-09-14|San Diego FC|Philadelphia Union,2026-09-14,MLS,San Diego FC,Philadelphia Union,0.6682505316173668,0.5824951088229356,0,v1-retired,0.0
-Brasileirao|2026-09-14|Bahia|Remo,2026-09-14,Brasileirao,Bahia,Remo,0.7975117483902875,0.7854693102958369,1,v1,1.0
+Brasileirao|2026-09-14|Bahia|Remo,2026-09-14,Brasileirao,Bahia,Remo,0.7975117483902875,0.7854693102958369,1,v1,
 LigaMX|2026-09-15|Club Leon|Atl. San Luis,2026-09-15,LigaMX,Club Leon,Atl. San Luis,0.6313897199919436,0.6552035885893869,1,v1,1.0
-Brasileirao|2026-09-16|Botafogo RJ|Gremio,2026-09-16,Brasileirao,Botafogo RJ,Gremio,0.7478625195552736,0.7084061293289494,1,v1,
-LigaMX|2026-09-16|Puebla|Toluca,2026-09-16,LigaMX,Puebla,Toluca,0.2964758192198614,0.4282231435513111,1,v1,
-MLS|2026-09-18|New York City|New York Red Bulls,2026-09-18,MLS,New York City,New York Red Bulls,0.7807168046679827,0.6842652149228302,0,v1-retired,
-Brasileirao|2026-09-19|Remo|Santos,2026-09-19,Brasileirao,Remo,Santos,0.5518705691458812,0.5070883286623916,1,v1,
-Brasileirao|2026-09-19|Atletico-MG|Chapecoense-SC,2026-09-19,Brasileirao,Atletico-MG,Chapecoense-SC,0.851678655986119,0.7937703819625179,1,v1,
-Brasileirao|2026-09-19|Mirassol|Botafogo RJ,2026-09-19,Brasileirao,Mirassol,Botafogo RJ,0.6127270748660247,0.5732890688895059,1,v1,
+Brasileirao|2026-09-16|Botafogo RJ|Gremio,2026-09-16,Brasileirao,Botafogo RJ,Gremio,0.7418006469109021,0.7084061293289494,1,v1,
+LigaMX|2026-09-16|Puebla|Toluca,2026-09-16,LigaMX,Puebla,Toluca,0.3130156096136981,0.4282231435513111,1,v1,
+MLS|2026-09-18|New York City|New York Red Bulls,2026-09-18,MLS,New York City,New York Red Bulls,0.7773315136171081,0.6842652149228302,0,v1-retired,
+Brasileirao|2026-09-19|Remo|Santos,2026-09-19,Brasileirao,Remo,Santos,0.5567289437299953,0.5070883286623916,1,v1,
+Brasileirao|2026-09-19|Atletico-MG|Chapecoense-SC,2026-09-19,Brasileirao,Atletico-MG,Chapecoense-SC,0.8516786559861189,0.7937703819625179,1,v1,
+Brasileirao|2026-09-19|Mirassol|Botafogo RJ,2026-09-19,Brasileirao,Mirassol,Botafogo RJ,0.6080503580662018,0.5732890688895059,1,v1,
 Brasileirao|2026-09-19|Vasco|Coritiba,2026-09-19,Brasileirao,Vasco,Coritiba,0.6264810854830359,0.6320275594774137,1,v1,
 LigaMX|2026-09-19|Juarez|Tigres UANL,2026-09-19,LigaMX,Juarez,Tigres UANL,0.3561142053558312,0.4711269243211016,1,v1,
-LigaMX|2026-09-19|Atlas|UNAM Pumas,2026-09-19,LigaMX,Atlas,UNAM Pumas,0.4813169779163518,0.5637988214239876,1,v1,
-LigaMX|2026-09-19|Puebla|Atlante,2026-09-19,LigaMX,Puebla,Atlante,0.6467150099925381,0.6747662087540501,1,v1,
+LigaMX|2026-09-19|Atlas|UNAM Pumas,2026-09-19,LigaMX,Atlas,UNAM Pumas,0.4862281580889592,0.5637988214239876,1,v1,
+LigaMX|2026-09-19|Puebla|Atlante,2026-09-19,LigaMX,Puebla,Atlante,0.6467150099925382,0.6747662087540501,1,v1,
 LigaMX|2026-09-19|Atl. San Luis|Necaxa,2026-09-19,LigaMX,Atl. San Luis,Necaxa,0.6254459668602982,0.6165853323519781,1,v1,
-MLS|2026-09-19|CF Montreal|Columbus Crew,2026-09-19,MLS,CF Montreal,Columbus Crew,0.5519863864383516,0.562302351349523,0,v1-retired,
-MLS|2026-09-19|DC United|Charlotte,2026-09-19,MLS,DC United,Charlotte,0.4787456596299509,0.5043899849086975,0,v1-retired,
-MLS|2026-09-19|New England Revolution|Orlando City,2026-09-19,MLS,New England Revolution,Orlando City,0.6851571112135335,0.6072405291062731,0,v1-retired,
-MLS|2026-09-19|San Jose Earthquakes|Los Angeles FC,2026-09-19,MLS,San Jose Earthquakes,Los Angeles FC,0.5494786072420322,0.5580643304977265,0,v1-retired,
+MLS|2026-09-19|CF Montreal|Columbus Crew,2026-09-19,MLS,CF Montreal,Columbus Crew,0.5471183160140566,0.562302351349523,0,v1-retired,
+MLS|2026-09-19|DC United|Charlotte,2026-09-19,MLS,DC United,Charlotte,0.4787456596299511,0.5043899849086975,0,v1-retired,
+MLS|2026-09-19|New England Revolution|Orlando City,2026-09-19,MLS,New England Revolution,Orlando City,0.6808995458850855,0.6072405291062731,0,v1-retired,
+MLS|2026-09-19|San Jose Earthquakes|Los Angeles FC,2026-09-19,MLS,San Jose Earthquakes,Los Angeles FC,0.5494786072420323,0.5580643304977265,0,v1-retired,
 Brasileirao|2026-09-20|Vitoria|Cruzeiro,2026-09-20,Brasileirao,Vitoria,Cruzeiro,0.5323436547068203,0.5239026136844669,1,v1,
 Brasileirao|2026-09-20|Corinthians|Fluminense,2026-09-20,Brasileirao,Corinthians,Fluminense,0.582199484312648,0.5133392418115835,1,v1,
-Brasileirao|2026-09-20|Flamengo RJ|Bragantino,2026-09-20,Brasileirao,Flamengo RJ,Bragantino,0.8606142986614238,0.7941350729760163,1,v1,
+Brasileirao|2026-09-20|Flamengo RJ|Bragantino,2026-09-20,Brasileirao,Flamengo RJ,Bragantino,0.8582384946996059,0.7941350729760163,1,v1,
 Brasileirao|2026-09-20|Sao Paulo|Internacional,2026-09-20,Brasileirao,Sao Paulo,Internacional,0.7020481063259497,0.6529479960043572,1,v1,
-Brasileirao|2026-09-20|Gremio|Palmeiras,2026-09-20,Brasileirao,Gremio,Palmeiras,0.3951447528931949,0.3959794324914126,1,v1,
-Brasileirao|2026-09-20|Athletico-PR|Bahia,2026-09-20,Brasileirao,Athletico-PR,Bahia,0.6637128149411502,0.5601692263826905,1,v1,
+Brasileirao|2026-09-20|Gremio|Palmeiras,2026-09-20,Brasileirao,Gremio,Palmeiras,0.3951447528931952,0.3959794324914126,1,v1,
+Brasileirao|2026-09-20|Athletico-PR|Bahia,2026-09-20,Brasileirao,Athletico-PR,Bahia,0.6593094567917382,0.5601692263826905,1,v1,
 LigaMX|2026-09-20|Monterrey|Cruz Azul,2026-09-20,LigaMX,Monterrey,Cruz Azul,0.5000390684913669,0.4995607940882989,1,v1,
 LigaMX|2026-09-20|Club America|Guadalajara Chivas,2026-09-20,LigaMX,Club America,Guadalajara Chivas,0.603248285293196,0.6347536764306544,1,v1,
-MLS|2026-09-20|Colorado Rapids|Seattle Sounders,2026-09-20,MLS,Colorado Rapids,Seattle Sounders,0.641346292482138,0.5914599958191579,0,v1-retired,
-MLS|2026-09-20|Real Salt Lake|Vancouver Whitecaps,2026-09-20,MLS,Real Salt Lake,Vancouver Whitecaps,0.4198173853260956,0.4909056752799444,0,v1-retired,
-MLS|2026-09-20|Nashville SC|Chicago Fire,2026-09-20,MLS,Nashville SC,Chicago Fire,0.7596408531309562,0.7014556337526716,0,v1-retired,
-MLS|2026-09-20|St. Louis City|Toronto FC,2026-09-20,MLS,St. Louis City,Toronto FC,0.7491202485938165,0.6907221034250841,0,v1-retired,
-MLS|2026-09-20|Portland Timbers|Atlanta Utd,2026-09-20,MLS,Portland Timbers,Atlanta Utd,0.7834789192958719,0.6994986174328874,0,v1-retired,
+MLS|2026-09-20|Real Salt Lake|Vancouver Whitecaps,2026-09-20,MLS,Real Salt Lake,Vancouver Whitecaps,0.4198173853260958,0.4909056752799444,0,v1-retired,
+MLS|2026-09-20|Nashville SC|Chicago Fire,2026-09-20,MLS,Nashville SC,Chicago Fire,0.7632131721825113,0.7014556337526716,0,v1-retired,
+MLS|2026-09-20|Colorado Rapids|Seattle Sounders,2026-09-20,MLS,Colorado Rapids,Seattle Sounders,0.6413462924821383,0.5914599958191579,0,v1-retired,
+MLS|2026-09-20|St. Louis City|Toronto FC,2026-09-20,MLS,St. Louis City,Toronto FC,0.7454062389971539,0.6907221034250841,0,v1-retired,
+MLS|2026-09-20|Portland Timbers|Atlanta Utd,2026-09-20,MLS,Portland Timbers,Atlanta Utd,0.7801242604766715,0.6994986174328874,0,v1-retired,
 MLS|2026-09-20|Minnesota United|Los Angeles Galaxy,2026-09-20,MLS,Minnesota United,Los Angeles Galaxy,0.708255862484487,0.6473198771586814,0,v1-retired,
-MLS|2026-09-20|Houston Dynamo|FC Cincinnati,2026-09-20,MLS,Houston Dynamo,FC Cincinnati,0.6838398075782927,0.6116861874195482,0,v1-retired,
-MLS|2026-09-20|FC Dallas|Austin FC,2026-09-20,MLS,FC Dallas,Austin FC,0.7784159153882654,0.7123086233882473,0,v1-retired,
+MLS|2026-09-20|Houston Dynamo|FC Cincinnati,2026-09-20,MLS,Houston Dynamo,FC Cincinnati,0.6795727594958211,0.6116861874195482,0,v1-retired,
+MLS|2026-09-20|FC Dallas|Austin FC,2026-09-20,MLS,FC Dallas,Austin FC,0.7784159153882653,0.7123086233882473,0,v1-retired,
 MLS|2026-09-20|Sporting Kansas City|Philadelphia Union,2026-09-20,MLS,Sporting Kansas City,Philadelphia Union,0.3458760881264281,0.4271423178015766,0,v1-retired,
-MLS|2026-09-20|Inter Miami|San Diego FC,2026-09-20,MLS,Inter Miami,San Diego FC,0.7871599480209645,0.7622598862946347,0,v1-retired,
-LigaMX|2026-09-21|Toluca|Santos Laguna,2026-09-21,LigaMX,Toluca,Santos Laguna,0.8848537726281751,0.8284653169440619,1,v1,
+MLS|2026-09-20|Inter Miami|San Diego FC,2026-09-20,MLS,Inter Miami,San Diego FC,0.7904360985716233,0.7622598862946347,0,v1-retired,
+LigaMX|2026-09-21|Toluca|Santos Laguna,2026-09-21,LigaMX,Toluca,Santos Laguna,0.8868423379440845,0.8284653169440619,1,v1,
 LigaMX|2026-09-21|Pachuca|Club Tijuana,2026-09-21,LigaMX,Pachuca,Club Tijuana,0.6453457924022667,0.6408563722895927,1,v1,
 LigaMX|2026-09-21|Queretaro|Club Leon,2026-09-21,LigaMX,Queretaro,Club Leon,0.6603327578912014,0.6580653412513395,1,v1,
