@@ -79,29 +79,30 @@ date,game_id,season,week,away,home,pick,pick_team,pick_side,pick_line,pick_claim
 2026-10-11,2026_05_SF_SEA,2026,5,SF,SEA,SF +3,SF,away,3.0,covers,0.6311,0.0673,-3.0,8.0,8.0,1.5,0.4547,47.35,market,False,-3.0,win
 2026-10-12,2026_05_BUF_LA,2026,5,BUF,LAR,BUF +3.5,BUF,away,3.5,covers,0.6254,0.0,-3.5,9.0,9.0,-0.5,0.5062,53.08,market,False,-3.0,win
 2026-10-15,2026_06_SEA_DEN,2026,6,SEA,DEN,DEN +2.5,DEN,home,2.5,covers,0.59,0.0,2.5,8.0,9.0,-1.5,0.5353,38.72,market,False,3.0,win
-2026-10-18,2026_06_ARI_LA,2026,6,ARI,LAR,ARI +13,ARI,away,13.0,covers,0.5843,0.0153,-13.0,6.0,9.0,-8.5,0.7917,50.52,market,False,,
-2026-10-18,2026_06_BAL_CLE,2026,6,BAL,CLE,CLE +10.5,CLE,home,10.5,covers,0.729,0.0,10.5,5.0,6.0,3.5,0.3853,40.3,market,False,,
-2026-10-18,2026_06_BUF_LV,2026,6,BUF,LV,BUF -5,BUF,away,-5.0,covers,0.5414,0.0243,5.0,4.0,9.0,6.5,0.2918,52.56,market,False,,
-2026-10-18,2026_06_CAR_PHI,2026,6,CAR,PHI,PHI +5.5,PHI,home,5.5,covers,0.6571,0.0,5.5,3.0,6.0,2.5,0.4418,45.44,market,False,,
-2026-10-18,2026_06_CHI_ATL,2026,6,CHI,ATL,ATL +13.5,ATL,home,13.5,covers,0.87,0.0,13.5,1.0,5.0,-1.5,0.526,47.36,market,False,,
+2026-10-18,2026_06_ARI_LA,2026,6,ARI,LAR,ARI +13,ARI,away,13.0,covers,0.5843,0.0153,-13.0,6.0,9.0,-8.5,0.7917,50.52,market,False,-2.0,win
+2026-10-18,2026_06_BAL_CLE,2026,6,BAL,CLE,CLE +10.5,CLE,home,10.5,covers,0.729,0.0,10.5,5.0,6.0,3.5,0.3853,40.3,market,False,3.0,win
+2026-10-18,2026_06_BUF_LV,2026,6,BUF,LV,BUF -5,BUF,away,-5.0,covers,0.5414,0.0243,5.0,4.0,9.0,6.5,0.2918,52.56,market,False,-3.0,loss
+2026-10-18,2026_06_CAR_PHI,2026,6,CAR,PHI,PHI +5.5,PHI,home,5.5,covers,0.6571,0.0,5.5,3.0,6.0,2.5,0.4418,45.44,market,False,-11.0,loss
+2026-10-18,2026_06_CHI_ATL,2026,6,CHI,ATL,ATL +13.5,ATL,home,13.5,covers,0.87,0.0,13.5,1.0,5.0,-1.5,0.526,47.36,market,False,-8.0,win
 2026-10-18,2026_06_DAL_GB,2026,6,DAL,GB,GB -1,GB,home,-1.0,covers,0.5999,0.0256,-1.0,4.0,9.0,-3.5,0.6101,52.87,market,False,,
 2026-10-18,2026_06_HOU_JAX,2026,6,HOU,JAX,JAX -2.5,JAX,home,-2.5,covers,0.5679,0.0,-2.5,8.0,9.0,-3.5,0.6217,44.12,market,False,-3.0,loss
-2026-10-18,2026_06_LAC_KC,2026,6,LAC,KC,LAC +7.5,LAC,away,7.5,covers,0.5769,0.0,-7.5,8.0,9.0,-6.5,0.7469,40.41,market,False,,
-2026-10-18,2026_06_NO_NYG,2026,6,NO,NYG,NO +3.5,NO,away,3.5,covers,0.5788,0.0,-3.5,3.0,5.0,-2.5,0.5606,43.53,market,False,,
-2026-10-18,2026_06_NYJ_NE,2026,6,NYJ,NE,NYJ +10.5,NYJ,away,10.5,covers,0.5127,0.0,-10.5,5.0,6.0,-10.5,0.804,43.97,market,False,,
-2026-10-18,2026_06_PIT_TB,2026,6,PIT,TB,PIT +6.5,PIT,away,6.5,covers,0.7184,0.0,-6.5,3.0,5.0,1.5,0.4848,43.03,market,False,,
-2026-10-18,2026_06_TEN_IND,2026,6,TEN,IND,TEN +9.5,TEN,away,9.5,covers,0.5813,0.0,-9.5,4.0,6.0,-6.5,0.7271,41.56,market,False,,
-2026-10-19,2026_06_WAS_SF,2026,6,WAS,SF,WAS +7.5,WAS,away,7.5,covers,0.5187,0.0,-7.5,8.0,9.0,-7.5,0.7726,50.23,market,False,,
-2026-10-22,2026_07_NE_CHI,2026,7,NE,CHI,NE -2.5,NE,away,-2.5,wins outright,0.5955,0.0,,0.0,0.0,2.5,0.4045,47.21,median,False,,
-2026-10-25,2026_07_CIN_BAL,2026,7,CIN,BAL,CIN -2.5,CIN,away,-2.5,wins outright,0.5501,0.0,,0.0,0.0,2.5,0.4499,48.54,median,False,,
-2026-10-25,2026_07_CLE_TEN,2026,7,CLE,TEN,CLE -2.5,CLE,away,-2.5,wins outright,0.5933,0.0,,0.0,0.0,2.5,0.4067,38.34,median,False,,
-2026-10-25,2026_07_DEN_ARI,2026,7,DEN,ARI,DEN -4.5,DEN,away,-4.5,wins outright,0.6511,0.0,,0.0,0.0,4.5,0.3489,42.72,median,False,,
-2026-10-25,2026_07_GB_DET,2026,7,GB,DET,DET -3.5,DET,home,-3.5,wins outright,0.6138,0.0,,0.0,0.0,-3.5,0.6138,55.66,median,False,,
-2026-10-25,2026_07_IND_MIN,2026,7,IND,MIN,MIN -4.5,MIN,home,-4.5,wins outright,0.687,0.0,,0.0,0.0,-4.5,0.687,41.98,median,False,,
-2026-10-25,2026_07_KC_SEA,2026,7,KC,SEA,KC -0.5,KC,away,-0.5,wins outright,0.512,0.0,,0.0,0.0,0.5,0.488,41.61,median,False,,
-2026-10-25,2026_07_LA_LV,2026,7,LAR,LV,LAR -5.5,LAR,away,-5.5,wins outright,0.6894,0.0,,0.0,0.0,5.5,0.3106,49.73,median,False,,
-2026-10-25,2026_07_MIA_NYJ,2026,7,MIA,NYJ,NYJ -1.5,NYJ,home,-1.5,wins outright,0.5159,0.0,,0.0,0.0,-1.5,0.5159,41.8,median,False,,
-2026-10-25,2026_07_NYG_HOU,2026,7,NYG,HOU,HOU -5.5,HOU,home,-5.5,wins outright,0.6982,0.0,,0.0,0.0,-5.5,0.6982,42.6,median,False,,
-2026-10-25,2026_07_PIT_NO,2026,7,PIT,NO,PIT -2.5,PIT,away,-2.5,wins outright,0.5467,0.0,,0.0,0.0,2.5,0.4533,45.67,median,False,,
-2026-10-25,2026_07_SF_ATL,2026,7,SF,ATL,SF -3.5,SF,away,-3.5,wins outright,0.6145,0.0,,0.0,0.0,3.5,0.3855,49.18,median,False,,
-2026-10-25,2026_07_TB_CAR,2026,7,TB,CAR,CAR -3.5,CAR,home,-3.5,wins outright,0.6514,0.0,,0.0,0.0,-3.5,0.6514,45.61,median,False,,
+2026-10-18,2026_06_LAC_KC,2026,6,LAC,KC,LAC +7.5,LAC,away,7.5,covers,0.5769,0.0,-7.5,8.0,9.0,-6.5,0.7469,40.41,market,False,16.0,loss
+2026-10-18,2026_06_NO_NYG,2026,6,NO,NYG,NO +3.5,NO,away,3.5,covers,0.5788,0.0,-3.5,3.0,5.0,-2.5,0.5606,43.53,market,False,-7.0,win
+2026-10-18,2026_06_NYJ_NE,2026,6,NYJ,NE,NYJ +10.5,NYJ,away,10.5,covers,0.5127,0.0,-10.5,5.0,6.0,-10.5,0.804,43.97,market,False,7.0,win
+2026-10-18,2026_06_PIT_TB,2026,6,PIT,TB,PIT +6.5,PIT,away,6.5,covers,0.7184,0.0,-6.5,3.0,5.0,1.5,0.4848,43.03,market,False,-7.0,win
+2026-10-18,2026_06_TEN_IND,2026,6,TEN,IND,TEN +9.5,TEN,away,9.5,covers,0.5813,0.0,-9.5,4.0,6.0,-6.5,0.7271,41.56,market,False,-6.0,win
+2026-10-19,2026_06_WAS_SF,2026,6,WAS,SF,WAS +7.5,WAS,away,7.5,covers,0.5166,0.0,-7.5,8.0,9.0,-7.5,0.7734,50.23,market,False,,
+2026-10-22,2026_07_NE_CHI,2026,7,NE,CHI,NE +3,NE,away,3.0,covers,0.6659,0.0817,-3.0,5.0,6.0,2.5,0.4435,47.82,market,False,,
+2026-10-25,2026_07_CIN_BAL,2026,7,CIN,BAL,CIN +3,CIN,away,3.0,covers,0.5772,0.0666,-3.0,6.0,6.0,-0.5,0.5032,48.66,market,False,,
+2026-10-25,2026_07_CLE_TEN,2026,7,CLE,TEN,CLE -1.5,CLE,away,-1.5,covers,0.5505,0.0,1.5,5.0,6.0,2.5,0.4219,37.59,market,False,,
+2026-10-25,2026_07_DEN_ARI,2026,7,DEN,ARI,ARI +4.5,ARI,home,4.5,covers,0.5408,0.0,4.5,4.0,6.0,3.5,0.3738,42.5,market,False,,
+2026-10-25,2026_07_GB_DET,2026,7,GB,DET,GB +3.5,GB,away,3.5,covers,0.5353,0.0,-3.5,5.0,6.0,-3.5,0.6144,55.66,market,False,,
+2026-10-25,2026_07_IND_MIN,2026,7,IND,MIN,IND +6,IND,away,6.0,covers,0.5254,0.0432,-6.0,3.0,6.0,-5.5,0.7029,41.76,market,False,,
+2026-10-25,2026_07_KC_SEA,2026,7,KC,SEA,KC +1.5,KC,away,1.5,covers,0.5383,0.0,-1.5,3.0,6.0,0.5,0.4852,41.3,market,False,,
+2026-10-25,2026_07_LA_LV,2026,7,LAR,LV,LV +5.5,LV,home,5.5,covers,0.5496,0.0,5.5,4.0,6.0,3.5,0.3696,49.59,market,False,,
+2026-10-25,2026_07_MIA_NYJ,2026,7,MIA,NYJ,MIA +5.5,MIA,away,5.5,covers,0.6386,0.0,-5.5,5.0,7.0,-2.5,0.5421,42.3,market,False,,
+2026-10-25,2026_07_NYG_HOU,2026,7,NYG,HOU,NYG +9.5,NYG,away,9.5,covers,0.5912,0.0,-9.5,3.0,6.0,-6.5,0.7464,43.14,market,False,,
+2026-10-25,2026_07_PIT_NO,2026,7,PIT,NO,NO +2.5,NO,home,2.5,covers,0.5218,0.0,2.5,3.0,6.0,1.5,0.4688,44.42,market,False,,
+2026-10-25,2026_07_SF_ATL,2026,7,SF,ATL,ATL +4.5,ATL,home,4.5,covers,0.5271,0.0,4.5,5.0,6.0,3.5,0.3439,47.83,market,False,,
+2026-10-25,2026_07_TB_CAR,2026,7,TB,CAR,CAR -3,CAR,home,-3.0,covers,0.6087,0.1005,-3.0,6.0,6.0,-5.5,0.712,42.93,market,False,,
+2026-10-26,2026_07_DAL_PHI,2026,7,DAL,PHI,PHI +6,PHI,home,6.0,covers,0.6565,0.0423,6.0,2.0,4.0,2.5,0.4079,46.93,market,False,,
