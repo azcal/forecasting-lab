@@ -9670,3 +9670,4 @@ date,league,game_id,athlete_id,player,matchup,proj,sd,median,l10,grade_line,p_gr
 2026-11-09,NBA,401909952,4869342.0,Dyson Daniels,ATL vs LAL,20.2,7.81,20.0,22.2,22.5,0.3765,2.0,v1-retired,,16.5,0.6811,0.0
 2026-11-09,NBA,401909952,4431680.0,Onyeka Okongwu,ATL vs LAL,22.72,8.17,22.0,24.4,24.5,0.4065,1.68,v1-retired,,18.5,0.6965,0.0
 2026-11-09,NBA,401909952,4397020.0,Luguentz Dort,ATL vs LAL,14.41,7.07,14.0,15.7,16.5,0.3759,1.29,v1-retired,,10.5,0.7096,0.0
+2026-11-10,NBA,401909961,4431678.0,Tyrese Maxey,PHI vs BOS,34.14,9.18,33.0,35.9,35.5,0.4368,1.76,v1-retired,,30.5,0.6472,0.0
