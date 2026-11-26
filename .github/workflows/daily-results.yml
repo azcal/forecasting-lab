@@ -17,7 +17,9 @@ name: daily-results
 # you missed, not for widening the window.
 on:
   schedule:
-    - cron: "0 17 * * *"       # 11am MDT / 10am MST, after the 16:30 refresh
+    # Hourly tick; slot_gate.py decides whether a tick does work, because GitHub starts
+    # scheduled jobs hours late. Slots (America/Edmonton): recap=12:00
+    - cron: "27 * * * *"
   workflow_dispatch:
     inputs:
       date:
@@ -29,13 +31,38 @@ on:
         type: boolean
         default: false
 permissions:
-  contents: read
+  contents: write
+# One run at a time. A second tick waits, then its gate sees the first one's marker.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+      slot: ${{ steps.g.outputs.slot }}
+      name: ${{ steps.g.outputs.name }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            slot_gate.py
+            .slots/daily-results.txt
+          sparse-checkout-cone-mode: false
+      - id: g
+        run: python3 slot_gate.py
+        env:
+          SLOTS: "recap=12:00"
+          SLOT_MARKER: ".slots/daily-results.txt"
+          SLOT_EVENT: ${{ github.event_name }}
   results:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with: { python-version: "3.11" }
       # requests is for the Discord post. Listed explicitly rather than relying on
       # requirements.txt, which carries streamlit and plotly this job has no use for.
@@ -53,3 +80,18 @@ jobs:
           else
             python daily_results.py $POST
           fi
+      # Last step on purpose: the slot is only marked done when everything above succeeded,
+      # so a failed run is retried by the next hourly tick.
+      - name: record slot
+        if: needs.gate.outputs.slot != 'manual'
+        run: |
+          mkdir -p .slots && echo "${{ needs.gate.outputs.slot }}" > .slots/daily-results.txt
+          git config user.name mbm-bot
+          git config user.email mbm-bot@users.noreply.github.com
+          git add .slots/daily-results.txt
+          git commit -q -m "slot daily-results ${{ needs.gate.outputs.slot }}" || exit 0
+          for i in 1 2 3 4; do
+            if git pull -q --rebase --autostash && git push -q; then exit 0; fi
+            sleep $((i * 4))
+          done
+          echo "could not record the slot; the next tick will run this again"

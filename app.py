@@ -24,13 +24,28 @@ SOURCES = {
     "MMA":    {"file": "data/mma.csv",    "url": ""},
 }
 
-STATUS = {
-    "WNBA": "live", "CS2": "live",
-    "Soccer": "live (season opens mid-Aug)",
-    "Soccer (Americas)": "live",
-    "NFL": "pre-season (Sept)", "NCAAF": "pre-season (late Aug)",
-    "NHL": "pre-season (Oct)", "NBA": "pre-season (Oct)", "MMA": "live",
-}
+# Status is read off the data, not typed in. The table that used to sit here still said
+# "pre-season" for the NFL, NCAAF, NHL and NBA in late November, and "live" for a WNBA board
+# three weeks into its off-season, because nobody edits a label when a season turns over.
+STATUS = {}
+
+
+def board_status(f):
+    """'live', 'idle since <date>' or 'no data', from the newest forecast date on the board.
+
+    Live means a forecast dated within the last 10 days or in the future. Ten days covers
+    a bye week, an international window and the gap between fight cards without calling a
+    board that has genuinely stopped 'live'."""
+    try:
+        d = pd.to_datetime(f["date"].astype(str).str[:10], errors="coerce", format="mixed").dropna()
+        if not len(d):
+            return "no data"
+        newest = d.max().normalize()
+        if (pd.Timestamp.now().normalize() - newest).days <= 10:
+            return "live"
+        return f"idle since {newest:%b %-d}"
+    except Exception:
+        return "unknown"
 
 # which side the base-rate strategy always backs, per board listing convention
 # Which side the base-rate strategy always backs. Keyed by board, or by (board, head)
@@ -652,7 +667,7 @@ def reliability_block(gg, edge=0.0):
                 "model backs. A ratio under 1.00 means the model overstates and the price "
                 "it prints is too short; over 1.00 means it understates, which is safe but "
                 "costs you bets you could have taken.")
-    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
     worst = min(rows, key=lambda r: r["ratio"])
     if worst["ratio"] < 1 - 0.03:
         st.warning(f"At {worst['model says']} the model says {worst['stated']} and "
@@ -688,7 +703,7 @@ def props_error_block(gg):
     st.markdown("**Projection error**, the measure this board was frozen against. "
                 "Lower is better; the edge is how much of the naive baseline's error the "
                 "model removes.")
-    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
     if len(rows) == 2:
         drift = float(rows[1]["edge"]) - float(rows[0]["edge"])
         if drift <= -0.10:
@@ -776,7 +791,7 @@ def contribution_chart(stats):
                       legend=dict(orientation="h", y=1.04, yanchor="bottom",
                                   x=0, xanchor="left"))
     st.markdown("**Where each board's edge comes from**")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     st.caption("Grey is what a simple win-loss power rating gets you. Blue is what the model "
                "adds on top, and it is the only part that is modelling rather than bookkeeping. "
                "The t value next to each bar says whether that blue segment could be luck: "
@@ -822,7 +837,7 @@ def rolling_chart(g):
         fig.add_scatter(x=frame.index, y=frame[c], name=c, line=dict(color=col))
     fig.update_layout(title=f"Recent form: rolling {n}-forecast log loss (lower is better)",
                       height=340, margin=dict(t=40, b=10), legend=dict(orientation="h"))
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     st.caption("The blue line is the model and it should sit below the grey ones. The "
                "shaded band is where a model with no edge at all would wander by chance, so "
                "blue inside the band is not evidence of anything either way. Only sustained "
@@ -841,7 +856,7 @@ def calibration_chart(g):
     fig.update_layout(title="Honesty check: does a 70% forecast win 70% of the time?",
                       xaxis_title="what the model said", yaxis_title="what actually happened",
                       height=340, margin=dict(t=40, b=10))
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     st.caption("Dots on the dashed line mean the stated confidence is accurate. Above the line "
                "the model is underselling itself, below it the model is overconfident. Bigger "
                "dots cover more forecasts, so read those hardest.")
@@ -857,7 +872,7 @@ def skill_chart(g):
     fig.add_hline(y=0, line=dict(color="#d1d5db", dash="dash"))
     fig.update_layout(title="Running total: how far ahead of a no-information guess",
                       height=340, margin=dict(t=40, b=10))
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     st.caption("Every forecast nudges this line up if the model beat the base rate on that game "
                "and down if it did not. A steady climb is what real signal looks like. A line "
                "that wanders sideways or falls is luck, and the health monitor above watches "
@@ -928,7 +943,7 @@ with tabs[0]:
                 continue
             graded.append((h, gg, board_stats(gg)))
         for h, gg, s in sorted(graded, key=lambda x: -x[2]["skill"]):
-            rows.append({"board": b, "status": STATUS.get(b, "live"), "target": h,
+            rows.append({"board": b, "status": board_status(f), "target": h,
                          "graded n": s["n"], "skill score": f"{s['skill']:.1%}",
                          "reading": s["rating"],
                          "extra calls per 100": f"{s['extra']*100:+.1f}",
@@ -937,7 +952,7 @@ with tabs[0]:
                          **_phase_cols(gg)})
             multi = f["head"].nunique() > 1
             chart_rows.append(dict(s, label=f"{b}: {h}" if multi else b, board=b, head=h))
-    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
     with st.expander("How to read these numbers", expanded=True):
         st.markdown(HOW_TO_READ)
     if chart_rows:
@@ -1017,7 +1032,7 @@ for i, b in enumerate(boards, start=1):
                     "date": pd.to_datetime(sh.date).dt.strftime("%Y-%m-%d").values,
                     "matchup": sh.matchup.values, label: col,
                     "find at or better": find})
-                st.dataframe(show, use_container_width=True, hide_index=True)
+                st.dataframe(show, width="stretch", hide_index=True)
                 if not upcoming:
                     st.caption("No games scheduled in this board's window, so these are the "
                                "last forecasts it made rather than upcoming ones.")
