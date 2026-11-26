@@ -34,25 +34,46 @@ name: refresh-dashboard-data
 # failed or short pull leaves the existing copy alone.
 on:
   schedule:
-    - cron: "0 13 * * *"      # 7am MDT / 6am MST, after the overnight pipeline runs
-    # Second pull, after the morning runs. The overnight pipelines finish before last
-    # night's late games do, so the 13:00 pull carries yesterday's board but not
-    # yesterday's results. WNBA grades at 15:00 UTC and soccer at 15:00/16:00, so nothing
-    # from an evening slate is in the logs until after that. Without this the daily recap
-    # reads a log that has not seen last night yet and reports nothing settled.
-    - cron: "30 16 * * *"     # 10:30am MDT / 9:30am MST
+    # Hourly tick; slot_gate.py decides whether a tick does work, because GitHub starts
+    # scheduled jobs hours late. Slots (America/Edmonton): early=07:00,mid=10:30,late=17:30
+    - cron: "27 * * * *"
   workflow_dispatch: {}
 permissions:
   contents: write
+# One run at a time. A second tick waits, then its gate sees the first one's marker.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+      slot: ${{ steps.g.outputs.slot }}
+      name: ${{ steps.g.outputs.name }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            slot_gate.py
+            .slots/refresh-dashboard-data.txt
+          sparse-checkout-cone-mode: false
+      - id: g
+        run: python3 slot_gate.py
+        env:
+          SLOTS: "early=07:00,mid=10:30,late=17:30"
+          SLOT_MARKER: ".slots/refresh-dashboard-data.txt"
+          SLOT_EVENT: ${{ github.event_name }}
   refresh:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     env:
       OWNER: azcal
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with: { python-version: "3.11" }
       - run: pip install pandas
 
@@ -166,3 +187,18 @@ jobs:
           git add data/
           git diff --cached --quiet || git commit -m "dashboard data $(date +%F)"
           git push
+      # Last step on purpose: the slot is only marked done when everything above succeeded,
+      # so a failed run is retried by the next hourly tick.
+      - name: record slot
+        if: needs.gate.outputs.slot != 'manual'
+        run: |
+          mkdir -p .slots && echo "${{ needs.gate.outputs.slot }}" > .slots/refresh-dashboard-data.txt
+          git config user.name mbm-bot
+          git config user.email mbm-bot@users.noreply.github.com
+          git add .slots/refresh-dashboard-data.txt
+          git commit -q -m "slot refresh-dashboard-data ${{ needs.gate.outputs.slot }}" || exit 0
+          for i in 1 2 3 4; do
+            if git pull -q --rebase --autostash && git push -q; then exit 0; fi
+            sleep $((i * 4))
+          done
+          echo "could not record the slot; the next tick will run this again"
